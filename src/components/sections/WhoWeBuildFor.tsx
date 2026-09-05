@@ -1,3 +1,4 @@
+import { AnimatedBackground } from "../AnimatedBackground";
 import { useReveal } from "../../hooks/useReveal";
 
 const audiences = [
@@ -23,8 +24,9 @@ export function WhoWeBuildFor() {
   const ref = useReveal<HTMLDivElement>();
 
   return (
-    <section className="border-b border-line bg-surface py-24">
-      <div ref={ref} className="reveal mx-auto max-w-6xl px-6">
+    <section className="theme-dark relative overflow-hidden bg-paper py-24">
+      <AnimatedBackground strength="subtle" />
+      <div ref={ref} className="reveal relative mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
             Who we build for
@@ -34,7 +36,7 @@ export function WhoWeBuildFor() {
           {audiences.map((audience) => (
             <div
               key={audience.title}
-              className="rounded-2xl border border-line bg-paper p-6 text-center"
+              className="rounded-2xl border border-line bg-surface p-6 text-center"
             >
               <h3 className="text-sm font-bold text-ink">{audience.title}</h3>
               <p className="mt-2 text-sm text-ink-soft">{audience.text}</p>

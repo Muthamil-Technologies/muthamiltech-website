@@ -1,16 +1,17 @@
+import { AnimatedBackground } from "../AnimatedBackground";
+import { useParallax } from "../../hooks/useParallax";
+
 export function Hero() {
+  const { ref, offset } = useParallax<HTMLElement>(14);
+
   return (
-    <section id="top" className="relative overflow-hidden border-b border-line">
-      {/* subtle geometric motif, not literal Japanese iconography */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--color-ink) 1px, transparent 1px), linear-gradient(90deg, var(--color-ink) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
+    <section
+      id="top"
+      ref={ref}
+      className="theme-dark relative overflow-hidden bg-paper"
+    >
+      <AnimatedBackground strength="strong" parallax={offset} />
+
       <div className="relative mx-auto max-w-4xl px-6 py-28 text-center md:py-36">
         <div className="text-xs font-bold tracking-[0.2em] text-accent uppercase">
           Japan-focused technology
@@ -19,7 +20,7 @@ export function Hero() {
           Technology for life in Japan.
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-lg font-medium text-ink-soft md:text-xl">
-          Learn Japanese. Prepare for your future. Find opportunities. Explore Japan.
+          Built for every step of your Japan journey.
         </p>
         <p className="mx-auto mt-4 max-w-lg text-base text-ink-soft">
           Muthamil Tech builds practical digital products designed around the real needs of
@@ -28,7 +29,7 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#products"
-            className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper transition-colors hover:bg-accent-deep"
+            className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper transition-colors hover:bg-accent"
           >
             Explore Our Products
           </a>

@@ -1,12 +1,14 @@
 import { contact } from "../../data/products";
 import { useReveal } from "../../hooks/useReveal";
+import { AnimatedBackground } from "../AnimatedBackground";
 
 export function Contact() {
   const ref = useReveal<HTMLDivElement>();
 
   return (
-    <section id="contact" className="scroll-mt-20 py-24">
-      <div ref={ref} className="reveal mx-auto max-w-2xl px-6 text-center">
+    <section id="contact" className="theme-dark relative overflow-hidden bg-paper py-24">
+      <AnimatedBackground strength="subtle" />
+      <div ref={ref} className="reveal relative mx-auto max-w-2xl px-6 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
           Let's build something useful.
         </h2>
@@ -17,7 +19,7 @@ export function Contact() {
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href={`mailto:${contact.email}`}
-            className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper transition-colors hover:bg-accent-deep"
+            className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper transition-colors hover:bg-accent"
           >
             {contact.email}
           </a>

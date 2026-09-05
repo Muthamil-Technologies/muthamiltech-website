@@ -32,6 +32,7 @@ export function Home() {
         heading="Prepare with purpose."
         tagline="Whether you're starting with N5 or aiming for N1, JapTest is designed to make JLPT preparation more structured and practical."
         mockup={<JapTestMockup />}
+        tone="dark"
         reversed
       />
       <FeatureSection
@@ -45,6 +46,7 @@ export function Home() {
         heading="Explore Japan your way."
         tagline="From weekend getaways to family holidays, plan your Japan experience with a smarter itinerary. Future: curated Japan travel experiences and packages."
         mockup={<JapTourMockup />}
+        tone="dark"
         reversed
       />
 

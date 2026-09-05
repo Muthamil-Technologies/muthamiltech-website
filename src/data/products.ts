@@ -7,7 +7,8 @@ export const statusLabels: Record<ProductStatus, string> = {
 };
 
 export interface Product {
-  slug: "japtalk" | "japtest" | "japjob" | "japtour";
+  /** Stable id, also used for the in-page anchor (#slug) and as a React key. */
+  slug: string;
   name: string;
   category: string;
   description: string;
@@ -15,9 +16,14 @@ export interface Product {
   status: ProductStatus;
   /** Only real (shipped) or genuinely planned features — never invented. */
   features: string[];
-  journeyStep: string;
+  /** Where this product sits in the "Learn -> Prepare -> Work -> Explore" journey, if it fits one. */
+  journeyStep?: string;
+  url: string;
 }
 
+// Add future products to this array — every ecosystem view (grid, network
+// visualization, journey diagram, footer links) is generated from it, so
+// nothing needs to be hard-coded elsewhere for a 5th, 6th, etc. product.
 export const products: Product[] = [
   {
     slug: "japtalk",
@@ -34,6 +40,7 @@ export const products: Product[] = [
       "Fully offline, no account required",
     ],
     journeyStep: "Learn",
+    url: "/#japtalk",
   },
   {
     slug: "japtest",
@@ -50,6 +57,7 @@ export const products: Product[] = [
       "Progress tracking",
     ],
     journeyStep: "Prepare",
+    url: "/#japtest",
   },
   {
     slug: "japjob",
@@ -66,6 +74,7 @@ export const products: Product[] = [
       "Japanese-level requirement information",
     ],
     journeyStep: "Work",
+    url: "/#japjob",
   },
   {
     slug: "japtour",
@@ -81,6 +90,7 @@ export const products: Product[] = [
       "Destination guidance",
     ],
     journeyStep: "Explore",
+    url: "/#japtour",
   },
 ];
 

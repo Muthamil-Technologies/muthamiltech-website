@@ -3,7 +3,7 @@ import { contact, products } from "../data/products";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line">
+    <footer className="theme-dark border-t border-line bg-paper">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div>
@@ -13,7 +13,7 @@ export function Footer() {
 
           <FooterColumn title="Products">
             {products.map((p) => (
-              <a key={p.slug} href={`/#${p.slug}`} className="block hover:text-ink">
+              <a key={p.slug} href={p.url} className="block hover:text-ink">
                 {p.name}
               </a>
             ))}

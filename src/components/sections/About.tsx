@@ -4,7 +4,7 @@ export function About() {
   const ref = useReveal<HTMLDivElement>();
 
   return (
-    <section id="about" className="scroll-mt-20 border-b border-line py-24">
+    <section id="about" className="theme-light scroll-mt-20 bg-paper py-24">
       <div ref={ref} className="reveal mx-auto max-w-3xl px-6 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
           About Muthamil Tech

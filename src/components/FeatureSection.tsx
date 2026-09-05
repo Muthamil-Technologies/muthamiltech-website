@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Product } from "../data/products";
 import { useReveal } from "../hooks/useReveal";
+import { AnimatedBackground } from "./AnimatedBackground";
 import { StatusPill } from "./StatusPill";
 
 interface FeatureSectionProps {
@@ -8,6 +9,7 @@ interface FeatureSectionProps {
   heading: string;
   tagline: string;
   mockup: ReactNode;
+  tone?: "dark" | "light";
   reversed?: boolean;
 }
 
@@ -16,15 +18,23 @@ export function FeatureSection({
   heading,
   tagline,
   mockup,
+  tone = "light",
   reversed = false,
 }: FeatureSectionProps) {
   const ref = useReveal<HTMLDivElement>();
+  const isDark = tone === "dark";
 
   return (
-    <section id={product.slug} className="scroll-mt-20 border-b border-line py-20 md:py-28">
+    <section
+      id={product.slug}
+      className={`relative scroll-mt-20 overflow-hidden bg-paper py-20 md:py-28 ${
+        isDark ? "theme-dark" : "theme-light"
+      }`}
+    >
+      {isDark && <AnimatedBackground strength="subtle" />}
       <div
         ref={ref}
-        className={`reveal mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 md:flex-row md:gap-20 ${
+        className={`reveal relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-6 md:flex-row md:gap-20 ${
           reversed ? "md:flex-row-reverse" : ""
         }`}
       >
@@ -43,7 +53,7 @@ export function FeatureSection({
             ))}
           </ul>
           <a
-            href={`/#${product.slug}`}
+            href={product.url}
             className="mt-8 inline-flex items-center gap-1.5 rounded-full border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
           >
             Discover {product.name}
