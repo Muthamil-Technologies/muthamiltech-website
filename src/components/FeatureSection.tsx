@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import type { Product } from "../data/products";
 import { useReveal } from "../hooks/useReveal";
 import { AnimatedBackground } from "./AnimatedBackground";
@@ -11,6 +12,8 @@ interface FeatureSectionProps {
   mockup: ReactNode;
   tone?: "dark" | "light";
   reversed?: boolean;
+  /** Optional link to a lightweight interactive teaser page for this product. */
+  tryLink?: { to: string; label: string };
 }
 
 export function FeatureSection({
@@ -20,6 +23,7 @@ export function FeatureSection({
   mockup,
   tone = "light",
   reversed = false,
+  tryLink,
 }: FeatureSectionProps) {
   const ref = useReveal<HTMLDivElement>();
   const isDark = tone === "dark";
@@ -52,12 +56,19 @@ export function FeatureSection({
               </li>
             ))}
           </ul>
-          <a
-            href={product.url}
-            className="mt-8 inline-flex items-center gap-1.5 rounded-full border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
-          >
-            Discover {product.name}
-          </a>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href={product.url}
+              className="inline-flex items-center gap-1.5 rounded-full border border-ink px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
+            >
+              Discover {product.name}
+            </a>
+            {tryLink && (
+              <Link to={tryLink.to} className="text-sm font-semibold text-accent">
+                {tryLink.label} &rarr;
+              </Link>
+            )}
+          </div>
         </div>
         <div className="flex-1">{mockup}</div>
       </div>

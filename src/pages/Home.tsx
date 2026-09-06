@@ -26,6 +26,7 @@ export function Home() {
         heading="Start with Japanese."
         tagline="Japanese becomes easier when you can practice it in the situations that actually matter."
         mockup={<JapTalkMockup />}
+        tryLink={{ to: "/japtalk/level-check", label: "Check your level" }}
       />
       <FeatureSection
         product={japtest}
@@ -34,6 +35,7 @@ export function Home() {
         mockup={<JapTestMockup />}
         tone="dark"
         reversed
+        tryLink={{ to: "/jappass/plan-builder", label: "Build your plan" }}
       />
       <FeatureSection
         product={japjob}
