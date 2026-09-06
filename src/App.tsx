@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
 import { Home } from "./pages/Home";
+import { JapTestLegal } from "./pages/JapTestLegal";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/japtest/legal" element={<JapTestLegal />} />
         </Routes>
       </main>
       <Footer />
