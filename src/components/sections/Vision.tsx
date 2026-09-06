@@ -11,7 +11,7 @@ export function Vision() {
         </h2>
         <p className="mt-6 text-lg text-ink-soft">
           Japan is an incredible place to learn, work, live, and explore — but navigating it
-          can sometimes be complicated. Muthamil Tech focuses on practical digital products
+          can sometimes be complicated. Muthamil Technologies focuses on practical digital products
           that solve specific problems and make the Japan experience simpler.
         </p>
       </div>

@@ -23,7 +23,7 @@ export function Hero() {
           Built for every step of your Japan journey.
         </p>
         <p className="mx-auto mt-4 max-w-lg text-base text-ink-soft">
-          Muthamil Tech builds practical digital products designed around the real needs of
+          Muthamil Technologies builds practical digital products designed around the real needs of
           people learning, working, living, and travelling in Japan.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -37,7 +37,7 @@ export function Hero() {
             href="#about"
             className="rounded-full border border-ink px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
           >
-            About Muthamil Tech
+            About Muthamil Technologies
           </a>
         </div>
       </div>

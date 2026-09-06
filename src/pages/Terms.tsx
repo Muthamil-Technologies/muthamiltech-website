@@ -5,7 +5,7 @@ export function Terms() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-20">
       <Link to="/" className="text-sm font-semibold text-accent">
-        &larr; Back to Muthamil Tech
+        &larr; Back to Muthamil Technologies
       </Link>
       <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink">Terms</h1>
       <p className="mt-2 text-sm text-ink-faint">Last updated: September 2026</p>
@@ -19,7 +19,7 @@ export function Terms() {
         <section>
           <h2 className="text-lg font-semibold text-ink">Using this site</h2>
           <p className="mt-2">
-            This website is provided as informational content about Muthamil Tech and its
+            This website is provided as informational content about Muthamil Technologies and its
             products. You're welcome to browse it and share links to it. Please don't copy or
             republish its content as your own.
           </p>

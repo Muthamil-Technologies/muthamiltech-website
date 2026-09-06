@@ -7,7 +7,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <div className="text-base font-bold tracking-tight text-ink">Muthamil Tech</div>
+            <div className="text-base font-bold tracking-tight text-ink">Muthamil Technologies</div>
             <p className="mt-2 text-sm text-ink-soft">Technology for life in Japan.</p>
           </div>
 
@@ -40,7 +40,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-line pt-6 text-xs text-ink-faint">
-          &copy; 2026 Muthamil Tech. All rights reserved.
+          &copy; 2026 Muthamil Technologies. All rights reserved.
         </div>
       </div>
     </footer>

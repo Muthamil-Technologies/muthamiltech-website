@@ -1,6 +1,6 @@
-# Muthamil Tech
+# Muthamil Technologies
 
-Source for [muthamiltech.com](https://muthamiltech.com) — the Muthamil Tech product ecosystem site (JapTalk, JapTest, JapJob, JapTour).
+Source for [muthamiltech.com](https://muthamiltech.com) — the Muthamil Technologies product ecosystem site (JapTalk, JapTest, JapJob, JapTour).
 
 Built with React + TypeScript + Tailwind CSS + Vite. Deploys automatically to Netlify on every push to `main`.
 

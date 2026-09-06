@@ -44,17 +44,17 @@ export const products: Product[] = [
   },
   {
     slug: "japtest",
-    name: "JapTest",
+    name: "JapPass",
     category: "JLPT Preparation",
     description:
-      "Prepare smarter for the JLPT with focused practice, structured learning, and progress tracking.",
+      "Tell it your JLPT level and exam date — it builds your daily study plan and keeps you on track.",
     longDescription:
-      "Where JapTalk is about real-world speaking, JapTest is built around the JLPT itself — its actual format, question types, and time pressure — so study time goes toward what the exam asks for, from N5 through N1.",
-    status: "in-development",
+      "Where JapTalk is about real-world speaking, JapPass is built around the JLPT itself: tell it your level, exam date, and daily study time, and it generates a personalized day-by-day plan using spaced repetition — starting with N5, with N4 through N1 to follow.",
+    status: "launching-soon",
     features: [
-      "JLPT-aligned vocabulary, kanji, and grammar practice",
-      "Structured N5 → N1 progression",
-      "Progress tracking",
+      "Personalized daily study plan based on your exam date",
+      "Spaced-repetition review for kanji, vocabulary, and grammar",
+      "On-track / at-risk progress signals, not just streaks",
     ],
     journeyStep: "Prepare",
     url: "/#japtest",

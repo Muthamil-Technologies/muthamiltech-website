@@ -36,7 +36,7 @@ export function Nav() {
           className="text-base font-bold tracking-tight text-ink"
           onClick={() => setOpen(false)}
         >
-          Muthamil Tech
+          Muthamil Technologies
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-ink-soft md:flex">

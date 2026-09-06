@@ -5,7 +5,7 @@ export function Privacy() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-20">
       <Link to="/" className="text-sm font-semibold text-accent">
-        &larr; Back to Muthamil Tech
+        &larr; Back to Muthamil Technologies
       </Link>
       <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink">Privacy Policy</h1>
       <p className="mt-2 text-sm text-ink-faint">Last updated: September 2026</p>
