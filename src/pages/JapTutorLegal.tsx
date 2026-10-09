@@ -18,9 +18,10 @@ export function JapTutorLegal() {
         <section id="privacy">
           <h2 className="text-lg font-semibold text-ink">Privacy Policy</h2>
           <p className="mt-2">
-            JapTutor does not collect personal data. Your study information stays on your
-            device. There are no accounts, no sign-in, no analytics, no advertising and no
-            tracking.
+            The JapTutor app does not collect personal data. Your study information stays on
+            your device and is never sent to us. There are no accounts, no sign-in, no
+            analytics, no advertising and no tracking. If you email us for support, see
+            &ldquo;Contacting support&rdquo; below.
           </p>
           <p className="mt-2">
             The app stores your exam date and level, your study plan, lesson progress,
@@ -43,12 +44,30 @@ export function JapTutorLegal() {
             has no recording, your device&apos;s built-in text-to-speech reads it on the device.
           </p>
           <p className="mt-2">
-            Deleting the app deletes all of its data from your device. Because we don&apos;t
-            hold any of your data, there is nothing for us to delete on our side.
+            If your device backs up apps (for example iCloud Backup on iPhone, or Google backup
+            on Android), that backup may include JapTutor&apos;s data, such as your study
+            progress. Backups are stored by Apple or Google under your own account, not by us,
+            and let you restore your progress on a new device.
+          </p>
+          <p className="mt-2">
+            Deleting the app deletes its data from your device. Copies in your device backups
+            stay until you delete those backups in your device or account settings. Because we
+            don&apos;t hold any of your study data, there is nothing for us to delete on our
+            side.
           </p>
           <p className="mt-2">
             JapTutor is a general study app and does not knowingly collect information from
             anyone, including children.
+          </p>
+        </section>
+
+        <section id="contacting-support">
+          <h2 className="text-lg font-semibold text-ink">Contacting support</h2>
+          <p className="mt-2">
+            If you email us, we receive your email address and whatever you include in your
+            message. We use it only to reply to you. Messages are handled by our email provider
+            and are never used for marketing or shared with anyone else. You can ask us to
+            delete your messages at any time.
           </p>
         </section>
 
