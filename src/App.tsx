@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { JapPassPlanBuilder } from "./pages/JapPassPlanBuilder";
 import { JapTalkLevelCheck } from "./pages/JapTalkLevelCheck";
 import { JapTestLegal } from "./pages/JapTestLegal";
+import { JapTourLegal } from "./pages/JapTourLegal";
 import { JapTutorLegal } from "./pages/JapTutorLegal";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/japtest/legal" element={<JapTestLegal />} />
           <Route path="/japtutor/legal" element={<JapTutorLegal />} />
+          <Route path="/japtour/legal" element={<JapTourLegal />} />
           <Route path="/japtalk/level-check" element={<JapTalkLevelCheck />} />
           <Route path="/jappass/plan-builder" element={<JapPassPlanBuilder />} />
         </Routes>
