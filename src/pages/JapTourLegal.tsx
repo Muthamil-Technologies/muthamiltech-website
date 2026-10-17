@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { contact } from "../data/products";
 
-// Privacy & support page for the JapTour iOS app (japtour-mobile links here
+// Privacy & support page for the JapTour iOS and Android apps (japtour-mobile links here
 // from its Profile tab). Keep in step with what the app actually does.
 export function JapTourLegal() {
   return (
@@ -36,14 +36,15 @@ export function JapTourLegal() {
           <h2 className="text-lg font-semibold text-ink">Permissions</h2>
           <p className="mt-2">
             <span className="font-semibold text-ink">Calendar (optional).</span> When you choose
-            &ldquo;Add to Calendar&rdquo;, JapTour asks for write-only access so it can add your
-            trip&apos;s events and reminders. It cannot read, change or delete anything else in
-            your calendar. The events then belong to your calendar app and sync however your
-            calendar is set up.
+            &ldquo;Add to Calendar&rdquo;, JapTour asks for calendar access so it can add your
+            trip&apos;s events and reminders. On iPhone this is write-only access. On Android the
+            permission also covers reading, which JapTour uses only to find a calendar to put the
+            events in; it never reads, changes or deletes your other events. The events then
+            belong to your calendar app and sync however your calendar is set up.
           </p>
           <p className="mt-2">
             <span className="font-semibold text-ink">Photos (optional).</span> When you add a
-            memory to your trip journal, you pick photos in Apple&apos;s photo picker. Only the
+            memory to your trip journal, you pick photos in your phone&apos;s photo picker. Only the
             photos you choose are copied into JapTour&apos;s own storage on your device, where
             they are used for your journal and recap reel. JapTour does not browse your library
             and never uploads your photos.
@@ -58,8 +59,9 @@ export function JapTourLegal() {
           <h2 className="text-lg font-semibold text-ink">Maps, sharing and other apps</h2>
           <p className="mt-2">
             Map directions open in Apple Maps or Google Maps when you tap them; JapTour passes
-            only the name of the place. From then on that app&apos;s own privacy policy applies.
-            The in-app map is shown by Apple&apos;s MapKit.
+            only the name of the place (or, for a whole day&apos;s route on Android, the stops&apos;
+            approximate coordinates). From then on that app&apos;s own privacy policy applies. On
+            iPhone the in-app map is shown by Apple&apos;s MapKit.
           </p>
           <p className="mt-2">
             When you share a trip, a PDF, images or a recap, it goes only where you send it
@@ -68,11 +70,12 @@ export function JapTourLegal() {
           <p className="mt-2">
             Phrase audio is pre-recorded and included in the app. Text you save in your own
             cards, and taxi-card addresses, are read aloud by your device&apos;s built-in voice,
-            on the device. JapTour does not use the microphone.
+            on the device (Apple&apos;s or Android&apos;s text-to-speech). JapTour does not use the
+            microphone.
           </p>
           <p className="mt-2">
             The current version of JapTour has no purchases, bookings or payments. If paid
-            features are added later, they will be bought through Apple and we never receive
+            features are added later, they will be bought through the App Store or Google Play and we never receive
             your payment details. This page will be updated before that ships.
           </p>
         </section>
@@ -80,8 +83,9 @@ export function JapTourLegal() {
         <section id="backups">
           <h2 className="text-lg font-semibold text-ink">Backups and deleting your data</h2>
           <p className="mt-2">
-            If your iPhone backs up apps (for example with iCloud Backup), that backup may include
-            JapTour&apos;s data, including journal photos. Backups are stored by Apple under your
+            If your phone backs up apps (for example iCloud Backup or Google backup), that backup
+            may include JapTour&apos;s data, including journal photos. Backups are stored by Apple
+            or Google under your
             own account, not by us.
           </p>
           <p className="mt-2">
