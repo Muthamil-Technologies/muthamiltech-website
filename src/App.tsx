@@ -17,6 +17,10 @@ import { JapTutorTest } from "./pages/learn/JapTutorTest";
 import { LearnHome } from "./pages/learn/LearnHome";
 import { LearnPrivacy } from "./pages/learn/LearnPrivacy";
 import { Login } from "./pages/learn/Login";
+import { Admin } from "./pages/partners/Admin";
+import { ListingEditor } from "./pages/partners/ListingEditor";
+import { PartnersHome } from "./pages/partners/PartnersHome";
+import { ProviderPage } from "./pages/partners/ProviderPage";
 
 function App() {
   return (
@@ -40,6 +44,10 @@ function App() {
           <Route path="/learn/account" element={<Account />} />
           <Route path="/learn/privacy" element={<LearnPrivacy />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/partners" element={<PartnersHome />} />
+          <Route path="/partners/p/:id" element={<ProviderPage />} />
+          <Route path="/partners/listing/:id" element={<ListingEditor />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </main>
       <Footer />
