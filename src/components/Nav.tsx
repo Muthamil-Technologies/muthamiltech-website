@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../lib/auth";
 
 const links = [
   { label: "Home", href: "#top" },
@@ -14,6 +15,7 @@ export function Nav() {
   const location = useLocation();
   const navigate = useNavigate();
   const onHome = location.pathname === "/";
+  const { session, enabled } = useAuth();
 
   function goToSection(href: string) {
     setOpen(false);
@@ -49,6 +51,14 @@ export function Nav() {
               {link.label}
             </button>
           ))}
+          <Link to="/learn" className="transition-colors hover:text-ink">
+            Learn
+          </Link>
+          {enabled && (
+            <Link to={session ? "/learn/account" : "/login"} className="transition-colors hover:text-ink">
+              {session ? "Account" : "Sign in"}
+            </Link>
+          )}
           <button
             onClick={() => goToSection("#products")}
             className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-accent-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
@@ -88,6 +98,14 @@ export function Nav() {
               {link.label}
             </button>
           ))}
+          <Link to="/learn" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
+            Learn
+          </Link>
+          {enabled && (
+            <Link to={session ? "/learn/account" : "/login"} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
+              {session ? "Account" : "Sign in"}
+            </Link>
+          )}
         </nav>
       )}
     </header>

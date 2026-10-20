@@ -10,6 +10,13 @@ import { JapTalkLegal } from "./pages/JapTalkLegal";
 import { JapTutorLegal } from "./pages/JapTutorLegal";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
+import { Account } from "./pages/learn/Account";
+import { JapTalkLesson } from "./pages/learn/JapTalkLesson";
+import { JapTalkLessons } from "./pages/learn/JapTalkLessons";
+import { JapTutorTest } from "./pages/learn/JapTutorTest";
+import { LearnHome } from "./pages/learn/LearnHome";
+import { LearnPrivacy } from "./pages/learn/LearnPrivacy";
+import { Login } from "./pages/learn/Login";
 
 function App() {
   return (
@@ -26,6 +33,13 @@ function App() {
           <Route path="/japtalk/legal" element={<JapTalkLegal />} />
           <Route path="/japtalk/level-check" element={<JapTalkLevelCheck />} />
           <Route path="/jappass/plan-builder" element={<JapPassPlanBuilder />} />
+          <Route path="/learn" element={<LearnHome />} />
+          <Route path="/learn/japtutor" element={<JapTutorTest />} />
+          <Route path="/learn/japtalk" element={<JapTalkLessons />} />
+          <Route path="/learn/japtalk/:id" element={<JapTalkLesson />} />
+          <Route path="/learn/account" element={<Account />} />
+          <Route path="/learn/privacy" element={<LearnPrivacy />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       <Footer />
