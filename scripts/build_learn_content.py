@@ -5,6 +5,7 @@ Run from the Website folder after the apps' content changes:
 Reads ../japtalk-mobile and ../japtutor-mobile (sibling repos); writes trimmed JSON.
 """
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -42,7 +43,21 @@ for l in sorted(content["lessons"], key=lambda x: x["order_index"]):
 bank = json.loads((MT / "japtutor-mobile/marketing/n5_shorts/validated_bank_n5.json").read_text())
 bank = bank if isinstance(bank, list) else next(iter(bank.values()))
 LISTENING = {"taskBasedListening", "pointComprehension", "verbalExpressions", "quickResponse"}
-items = [{k: x[k] for k in ("key", "itemType", "instruction", "stem", "options", "correctIndex", "explanation", "passage")}
+UNDERLINED = {"kanjiReading", "orthography", "paraphrase"}
+
+
+def underline(x):
+    """The tested word (shown underlined, JLPT style). The export drops the app's `underline`
+    field, but every explanation names the word in 「」, so take the first one found in the stem."""
+    if x["itemType"] not in UNDERLINED:
+        return None
+    return next((w for w in re.findall(r"「([^」]+)」", x.get("explanation") or "") if w in x["stem"]), None)
+
+
+items = [{**{k: x[k] for k in ("key", "itemType", "instruction", "stem", "options", "correctIndex", "explanation", "passage")},
+          "underline": underline(x)}
          for x in bank if x["itemType"] not in LISTENING]
+missing = [x["key"] for x in items if x["itemType"] in UNDERLINED and not x["underline"]]
+assert not missing, f"no underline for {missing[:5]}"
 (OUT / "japtutor_n5.json").write_text(json.dumps(items, ensure_ascii=False, separators=(",", ":")))
 print(f"japtalk: {len(lessons)} lessons; japtutor N5: {len(items)} questions")

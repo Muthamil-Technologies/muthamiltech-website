@@ -22,7 +22,7 @@ export function LearnHome() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
-      <div className="text-xs font-bold tracking-[0.2em] text-accent uppercase">Learn on the web</div>
+      <div className="text-xs font-bold tracking-[0.2em] text-accent uppercase">JapanOne · Learn on the web</div>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
         {session ? `Welcome back${name ? `, ${name}` : ""}` : "Practise Japanese in your browser"}
       </h1>
@@ -40,7 +40,7 @@ export function LearnHome() {
           to="/login"
           className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper hover:bg-accent-deep"
         >
-          Sign in or create an account
+          Sign in or create a JapanOne account
         </Link>
       )}
 

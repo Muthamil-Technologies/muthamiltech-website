@@ -38,8 +38,9 @@ export function Login() {
 
   return (
     <div className="mx-auto max-w-md px-6 py-20">
-      <h1 className="text-3xl font-bold tracking-tight text-ink">Sign in</h1>
-      <p className="mt-2 text-ink-soft">One account for JapTalk and JapTutor on the web. No password needed.</p>
+      <div className="text-xs font-bold tracking-[0.2em] text-accent uppercase">JapanOne</div>
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Sign in to JapanOne</h1>
+      <p className="mt-2 text-ink-soft">One JapanOne account for JapTalk and JapTutor on the web. No password needed.</p>
 
       {!enabled ? (
         <p className="mt-8 rounded-xl border border-line bg-surface p-5 text-sm text-ink-soft">

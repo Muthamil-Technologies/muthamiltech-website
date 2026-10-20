@@ -7,7 +7,8 @@ export function LearnPrivacy() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-20">
       <Link to="/learn" className="text-sm font-semibold text-accent">&larr; Learn</Link>
-      <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink">Learn on the web — Privacy</h1>
+      <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink">JapanOne Learn — Privacy</h1>
+      <p className="mt-2 text-ink-soft">JapanOne is a brand of Muthamil Technologies, which runs this service.</p>
       <p className="mt-2 text-sm text-ink-faint">Last updated: October 2026</p>
 
       <div className="mt-8 flex flex-col gap-6 text-ink-soft">

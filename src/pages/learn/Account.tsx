@@ -26,7 +26,7 @@ export function Account() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-16">
       <Link to="/learn" className="text-sm font-semibold text-accent">&larr; Learn</Link>
-      <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink">Your account</h1>
+      <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink">Your JapanOne account</h1>
 
       <div className="mt-8 rounded-2xl border border-line bg-surface p-6">
         <div className="text-sm text-ink-faint">Signed in as</div>

@@ -12,7 +12,21 @@ type Item = {
   correctIndex: number;
   explanation: string | null;
   passage: string | null;
+  underline: string | null;
 };
+
+/** The stem with the tested word underlined, as on the JLPT paper. */
+function Stem({ stem, underline }: { stem: string; underline: string | null }) {
+  const at = underline ? stem.indexOf(underline) : -1;
+  if (!underline || at < 0) return <>{stem}</>;
+  return (
+    <>
+      {stem.slice(0, at)}
+      <span className="underline decoration-2 underline-offset-[6px]">{underline}</span>
+      {stem.slice(at + underline.length)}
+    </>
+  );
+}
 
 type Summary = { tests: number; best: number; wrong: string[]; lastDate?: string };
 
@@ -164,7 +178,9 @@ export function JapTutorTest() {
           <div className="mt-6 rounded-2xl border border-line bg-surface p-7" lang="ja">
             <div className="text-sm text-ink-soft">{q.instruction}</div>
             {q.passage && <p className="mt-4 rounded-xl bg-paper p-4 leading-loose text-ink">{q.passage}</p>}
-            <div className="mt-4 text-2xl font-semibold leading-relaxed text-ink">{q.stem}</div>
+            <div className="mt-4 text-2xl font-semibold leading-relaxed text-ink">
+              <Stem stem={q.stem} underline={q.underline} />
+            </div>
             <div className="mt-6 grid gap-3">
               {q.options.map((o, i) => {
                 const state =
