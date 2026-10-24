@@ -5,9 +5,9 @@ import { isJapanOne, SITE_NAME } from "../lib/brand";
 
 const links = isJapanOne
   ? [
+      { label: "Learn", href: "#learn" },
       { label: "Travel", href: "#travel" },
       { label: "Work", href: "#work" },
-      { label: "Apps", href: "#apps" },
     ]
   : [
       { label: "Home", href: "#top" },
@@ -65,9 +65,11 @@ export function Nav() {
               {link.label}
             </button>
           ))}
-          <Link to="/learn" className="transition-colors hover:text-ink">
-            Learn
-          </Link>
+          {!isJapanOne && (
+            <Link to="/learn" className="transition-colors hover:text-ink">
+              Learn
+            </Link>
+          )}
           <Link to="/partners" className="transition-colors hover:text-ink">
             Become a partner
           </Link>
@@ -115,9 +117,11 @@ export function Nav() {
               {link.label}
             </button>
           ))}
-          <Link to="/learn" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
-            Learn
-          </Link>
+          {!isJapanOne && (
+            <Link to="/learn" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
+              Learn
+            </Link>
+          )}
           <Link to="/partners" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
             Become a partner
           </Link>
