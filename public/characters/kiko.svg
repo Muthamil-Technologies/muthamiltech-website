@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 320">
+ 
+ <!-- body -->
+ <path d="M90 300 Q80 220 150 210 Q220 220 210 300 Z" fill="#e8a25c"/>
+ <path d="M120 300 Q118 245 150 240 Q182 245 180 300 Z" fill="#fff4e6"/>
+ <!-- scarf -->
+ <path d="M95 215 Q150 245 205 215 L208 232 Q150 262 92 232 Z" fill="#e63946"/>
+ <path d="M175 238 L196 285 L178 282 L165 245 Z" fill="#c1121f"/>
+ <!-- ears -->
+ <path d="M78 95 L70 20 L130 70 Z" fill="#e8a25c"/><path d="M84 85 L80 40 L118 72 Z" fill="#fff4e6"/>
+ <path d="M222 95 L230 20 L170 70 Z" fill="#e8a25c"/><path d="M216 85 L220 40 L182 72 Z" fill="#fff4e6"/>
+ <!-- head -->
+ <ellipse cx="150" cy="130" rx="85" ry="78" fill="#e8a25c"/>
+ <path d="M80 150 Q90 205 150 208 Q210 205 220 150 Q200 120 150 125 Q100 120 80 150 Z" fill="#fff4e6"/>
+ <!-- brows dots -->
+ <ellipse cx="118" cy="98" rx="9" ry="5" fill="#fff4e6"/><ellipse cx="182" cy="98" rx="9" ry="5" fill="#fff4e6"/>
+ <!-- eyes -->
+ <ellipse cx="118" cy="125" rx="11" ry="14" fill="#1b1b1b"/><circle cx="122" cy="119" r="4" fill="#fff"/>
+ <ellipse cx="182" cy="125" rx="11" ry="14" fill="#1b1b1b"/><circle cx="186" cy="119" r="4" fill="#fff"/>
+ <!-- cheeks -->
+ <ellipse cx="100" cy="155" rx="12" ry="7" fill="#f4978e" opacity=".7"/><ellipse cx="200" cy="155" rx="12" ry="7" fill="#f4978e" opacity=".7"/>
+ <!-- nose + mouth (talking) -->
+ <ellipse cx="150" cy="152" rx="13" ry="9" fill="#1b1b1b"/>
+ <path d="M134 168 Q150 200 166 168 Z" fill="#7a1f1f"/><path d="M140 180 Q150 195 160 180 Z" fill="#f28482"/>
+ <!-- J1 badge -->
+ <circle cx="150" cy="275" r="14" fill="#e63946"/><text x="150" y="281" font-size="15" text-anchor="middle" font-weight="800" fill="#fff">J1</text>
+</svg>

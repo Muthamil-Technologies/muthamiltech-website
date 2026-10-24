@@ -19,6 +19,8 @@ import { LearnPrivacy } from "./pages/learn/LearnPrivacy";
 import { Login } from "./pages/learn/Login";
 import { Admin } from "./pages/partners/Admin";
 import { ListingEditor } from "./pages/partners/ListingEditor";
+import { JapanOneHome } from "./pages/JapanOneHome";
+import { isJapanOne } from "./lib/brand";
 import { PartnersHome } from "./pages/partners/PartnersHome";
 import { PartnerProgramPage } from "./pages/partners/PartnerProgramPage";
 import { PROGRAMS } from "./pages/partners/partnerTypes";
@@ -30,7 +32,7 @@ function App() {
       <Nav />
       <main className="flex-1">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={isJapanOne ? <JapanOneHome /> : <Home />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/japtest/legal" element={<JapTestLegal />} />

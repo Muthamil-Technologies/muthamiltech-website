@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 320">
+ 
+ <!-- feet/arms -->
+ <ellipse cx="115" cy="292" rx="20" ry="10" fill="#f6f1e7"/><ellipse cx="185" cy="292" rx="20" ry="10" fill="#f6f1e7"/>
+ <path d="M58 200 Q30 180 38 150" stroke="#f6f1e7" stroke-width="14" stroke-linecap="round" fill="none"/>
+ <path d="M242 200 Q275 190 268 150" stroke="#f6f1e7" stroke-width="14" stroke-linecap="round" fill="none"/>
+ <!-- rice body -->
+ <path d="M150 40 Q175 40 200 85 L250 185 Q270 240 225 280 Q150 300 75 280 Q30 240 50 185 L100 85 Q125 40 150 40 Z" fill="#f6f1e7" stroke="#e2dccd" stroke-width="3"/>
+ <!-- rice grain texture -->
+ <g fill="#e2dccd"><ellipse cx="120" cy="90" rx="5" ry="2.5" transform="rotate(30 120 90)"/><ellipse cx="185" cy="105" rx="5" ry="2.5" transform="rotate(-20 185 105)"/><ellipse cx="90" cy="170" rx="5" ry="2.5"/><ellipse cx="215" cy="175" rx="5" ry="2.5" transform="rotate(40 215 175)"/><ellipse cx="150" cy="70" rx="5" ry="2.5"/></g>
+ <!-- nori -->
+ <path d="M90 215 L210 215 L222 282 Q150 298 78 282 Z" fill="#1d3b2a"/>
+ <rect x="130" y="230" width="40" height="40" rx="8" fill="#e63946"/><text x="150" y="257" font-size="18" text-anchor="middle" font-weight="800" fill="#fff">J1</text>
+ <!-- face -->
+ <path d="M108 140 Q120 128 132 140" stroke="#1b1b1b" stroke-width="7" stroke-linecap="round" fill="none"/>
+ <ellipse cx="185" cy="138" rx="10" ry="13" fill="#1b1b1b"/><circle cx="189" cy="133" r="3.5" fill="#fff"/>
+ <ellipse cx="102" cy="165" rx="13" ry="7" fill="#f4978e" opacity=".75"/><ellipse cx="203" cy="165" rx="13" ry="7" fill="#f4978e" opacity=".75"/>
+ <path d="M135 165 Q150 190 165 165 Z" fill="#7a1f1f"/>
+</svg>

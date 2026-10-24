@@ -1,14 +1,21 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../lib/auth";
+import { isJapanOne, SITE_NAME } from "../lib/brand";
 
-const links = [
-  { label: "Home", href: "#top" },
-  { label: "Products", href: "#products" },
-  { label: "Vision", href: "#vision" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+const links = isJapanOne
+  ? [
+      { label: "Travel", href: "#travel" },
+      { label: "Work", href: "#work" },
+      { label: "Apps", href: "#apps" },
+    ]
+  : [
+      { label: "Home", href: "#top" },
+      { label: "Products", href: "#products" },
+      { label: "Vision", href: "#vision" },
+      { label: "About", href: "#about" },
+      { label: "Contact", href: "#contact" },
+    ];
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -38,7 +45,14 @@ export function Nav() {
           className="text-base font-bold tracking-tight text-ink"
           onClick={() => setOpen(false)}
         >
-          Muthamil Technologies
+          {isJapanOne ? (
+            <span className="flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#e63946] text-[11px] font-extrabold text-white">J1</span>
+              JapanOne
+            </span>
+          ) : (
+            SITE_NAME
+          )}
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-ink-soft md:flex">
@@ -63,10 +77,10 @@ export function Nav() {
             </Link>
           )}
           <button
-            onClick={() => goToSection("#products")}
+            onClick={() => (isJapanOne ? navigate("/learn") : goToSection("#products"))}
             className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-accent-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
-            Explore Products
+            {isJapanOne ? "Start learning" : "Explore Products"}
           </button>
         </nav>
 

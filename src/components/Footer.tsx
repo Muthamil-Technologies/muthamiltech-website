@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { contact, products } from "../data/products";
+import { isJapanOne, SITE_NAME, social } from "../lib/brand";
+
+const JAPANONE_ANCHOR: Record<string, string> = { japtalk: "/#learn", japtutor: "/#learn", japwork: "/#work", japtour: "/#travel" };
 
 export function Footer() {
   return (
@@ -7,22 +10,31 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <div className="text-base font-bold tracking-tight text-ink">Muthamil Technologies</div>
-            <p className="mt-2 text-sm text-ink-soft">Technology for life in Japan.</p>
+            <div className="text-base font-bold tracking-tight text-ink">{SITE_NAME}</div>
+            <p className="mt-2 text-sm text-ink-soft">{isJapanOne ? "Gateway to Japan: learn, travel, work." : "Technology for life in Japan."}</p>
           </div>
 
           <FooterColumn title="Products">
             {products.map((p) => (
-              <a key={p.slug} href={p.url} className="block hover:text-ink">
+              <a key={p.slug} href={isJapanOne ? JAPANONE_ANCHOR[p.slug] ?? "/#apps" : p.url} className="block hover:text-ink">
                 {p.name}
               </a>
             ))}
           </FooterColumn>
 
           <FooterColumn title="Company">
-            <a href="/#vision" className="block hover:text-ink">Vision</a>
-            <a href="/#about" className="block hover:text-ink">About</a>
-            <a href="/#contact" className="block hover:text-ink">Contact</a>
+            {isJapanOne ? (
+              <>
+                <a href="https://muthamiltech.com" className="block hover:text-ink">About Muthamil Technologies</a>
+                <a href={`mailto:${contact.email}`} className="block hover:text-ink">{contact.email}</a>
+              </>
+            ) : (
+              <>
+                <a href="/#vision" className="block hover:text-ink">Vision</a>
+                <a href="/#about" className="block hover:text-ink">About</a>
+                <a href="/#contact" className="block hover:text-ink">Contact</a>
+              </>
+            )}
             <Link to="/partners" className="block hover:text-ink">Become a partner</Link>
           </FooterColumn>
 
@@ -30,7 +42,7 @@ export function Footer() {
             <Link to="/privacy" className="block hover:text-ink">Privacy Policy</Link>
             <Link to="/terms" className="block hover:text-ink">Terms</Link>
             <a
-              href={contact.instagram}
+              href={isJapanOne ? social.instagram : contact.instagram}
               target="_blank"
               rel="noreferrer noopener"
               className="block hover:text-ink"
@@ -41,7 +53,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-line pt-6 text-xs text-ink-faint">
-          &copy; 2026 Muthamil Technologies. All rights reserved.
+          {isJapanOne ? <>&copy; 2026 JapanOne, a product of Muthamil Technologies.</> : <>&copy; 2026 Muthamil Technologies. All rights reserved.</>}
         </div>
       </div>
     </footer>
