@@ -3,10 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
 import { db, KIND_LABEL, type Provider, type ProviderKind } from "../../lib/listings";
 
+// Employers first: one marketplace at a time. Tour agencies (JapTour) and sellers (JapMart)
+// stay in the database and come back here when those listings open.
 const KINDS: { kind: ProviderKind; title: string; body: string }[] = [
-  { kind: "employer", title: "Employers & recruiters", body: "Post jobs for foreign workers in Japan — caregiving, construction, food, factory, hotel and more. JapJob shows them in workers' own languages." },
-  { kind: "tour_agency", title: "Tour agencies", body: "List your Japan tour packages in JapTour. Travellers book on your own website." },
-  { kind: "seller", title: "Sellers", body: "Show products you can ship overseas in JapMart. Buyers order through your shop or WhatsApp." },
+  {
+    kind: "employer",
+    title: "Employers & registered support organisations",
+    body: "Post jobs for foreign workers in Japan: caregiving, construction, food, factory, hotel and more. Your listings appear in the JapWork app, where workers contact you directly.",
+  },
 ];
 
 export function PartnersHome() {
@@ -45,15 +49,23 @@ export function PartnersHome() {
   return (
     <div className="mx-auto max-w-4xl px-6 py-14">
       <div className="text-xs font-bold tracking-[0.2em] text-accent uppercase">JapanOne Partners</div>
-      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Reach people coming to Japan</h1>
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Reach foreign workers looking for jobs in Japan</h1>
       <p className="mt-3 max-w-2xl text-ink-soft">
-        List jobs, tours or products in the JapanOne apps. Every listing is checked by our team before it goes live.
-        Listing is free during our launch period.
+        JapWork helps people preparing for skilled and hands-on jobs in Japan: their visa route, Japanese CV,
+        interview practice and rights at work. Post your jobs and reach them there.
+      </p>
+      <ol className="mt-6 grid max-w-3xl gap-3 text-sm text-ink-soft sm:grid-cols-3">
+        <li className="rounded-xl border border-line bg-surface p-4"><b className="text-ink">1. Register your company.</b> We verify it with your corporate number (法人番号) before anything goes live.</li>
+        <li className="rounded-xl border border-line bg-surface p-4"><b className="text-ink">2. Post a job</b> with clear pay, hours, days off and who can apply. Our team checks every listing.</li>
+        <li className="rounded-xl border border-line bg-surface p-4"><b className="text-ink">3. Workers contact you directly</b> by your link, email or phone. We don't take part in hiring and never charge workers.</li>
+      </ol>
+      <p className="mt-4 max-w-2xl text-sm text-ink-faint">
+        Listings are shown in the JapWork app, in the language you write them in. Listing is free during our launch period.
       </p>
 
       {!ready ? null : !session ? (
         <>
-          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {KINDS.map((k) => (
               <div key={k.kind} className="rounded-2xl border border-line bg-surface p-6">
                 <div className="font-semibold text-ink">{k.title}</div>
@@ -86,7 +98,7 @@ export function PartnersHome() {
 
           <section className="mt-10">
             <h2 className="text-lg font-semibold text-ink">{mine?.length ? "Add another company" : "Create your company profile"}</h2>
-            <div className="mt-3 grid gap-3 sm:grid-cols-3">
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
               {KINDS.map((k) => (
                 <button
                   key={k.kind}

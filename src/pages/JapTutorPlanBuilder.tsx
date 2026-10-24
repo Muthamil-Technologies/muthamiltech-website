@@ -12,7 +12,7 @@ function formatDate(date: Date) {
   return date.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
 }
 
-export function JapPassPlanBuilder() {
+export function JapTutorPlanBuilder() {
   const jlptDates = useMemo(() => upcomingJlptDates(4), []);
   const [examDate, setExamDate] = useState<Date>(jlptDates[0]);
   const [dailyMinutes, setDailyMinutes] = useState(30);
@@ -28,13 +28,13 @@ export function JapPassPlanBuilder() {
       </Link>
 
       <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">
-        JapPass Plan Builder
+        JapTutor Plan Builder
       </div>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink">
         Build your JLPT study plan.
       </h1>
       <p className="mt-3 max-w-lg text-ink-soft">
-        Pick your exam and your daily time, and see exactly what JapPass would put in front
+        Pick your exam and your daily time, and see exactly what JapTutor would put in front
         of you on day one — the same plan logic the app actually runs.
       </p>
 
@@ -45,7 +45,7 @@ export function JapPassPlanBuilder() {
           </p>
           <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-semibold text-ink">
             N5
-            <span className="text-ink-faint">— N4 through N1 coming soon</span>
+            <span className="text-ink-faint">— this preview shows N5; the app covers N5 to N3</span>
           </div>
         </div>
 
@@ -133,7 +133,7 @@ export function JapPassPlanBuilder() {
                 ))}
             </div>
             <p className="mt-4 text-xs text-ink-faint">
-              JapPass sequences kana first — the real foundation everything else builds on —
+              JapTutor sequences kana first — the real foundation everything else builds on —
               then layers in kanji, vocabulary, and grammar as you're ready. From tomorrow,
               spaced review of what you've learned joins the mix automatically.
             </p>

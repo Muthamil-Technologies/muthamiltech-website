@@ -1,7 +1,7 @@
 import { FeatureSection } from "../components/FeatureSection";
-import { JapJobMockup } from "../components/mockups/JapJobMockup";
+import { JapWorkMockup } from "../components/mockups/JapWorkMockup";
 import { JapTalkMockup } from "../components/mockups/JapTalkMockup";
-import { JapTestMockup } from "../components/mockups/JapTestMockup";
+import { JapTutorMockup } from "../components/mockups/JapTutorMockup";
 import { JapTourMockup } from "../components/mockups/JapTourMockup";
 import { About } from "../components/sections/About";
 import { Contact } from "../components/sections/Contact";
@@ -12,7 +12,7 @@ import { Vision } from "../components/sections/Vision";
 import { WhoWeBuildFor } from "../components/sections/WhoWeBuildFor";
 import { products } from "../data/products";
 
-const [japtalk, japtest, japjob, japtour] = products;
+const [japtalk, japtutor, japwork, japtour] = products;
 
 export function Home() {
   return (
@@ -29,24 +29,24 @@ export function Home() {
         tryLink={{ to: "/japtalk/level-check", label: "Check your level" }}
       />
       <FeatureSection
-        product={japtest}
+        product={japtutor}
         heading="Prepare with purpose."
-        tagline="Whether you're starting with N5 or aiming for N1, JapTest is designed to make JLPT preparation more structured and practical."
-        mockup={<JapTestMockup />}
+        tagline="From N5 to N3, JapTutor turns your exam date into a daily plan, so JLPT preparation is structured and practical."
+        mockup={<JapTutorMockup />}
         tone="dark"
         reversed
-        tryLink={{ to: "/jappass/plan-builder", label: "Build your plan" }}
+        tryLink={{ to: "/japtutor/plan-builder", label: "Build your plan" }}
       />
       <FeatureSection
-        product={japjob}
-        heading="Find your next opportunity in Japan."
-        tagline="Discover jobs, understand requirements, and take the next step in your career in Japan."
-        mockup={<JapJobMockup />}
+        product={japwork}
+        heading="Work in Japan, step by step."
+        tagline="Find your route into a skilled job, prepare your Japanese CV and interview, and know your rights at work."
+        mockup={<JapWorkMockup />}
       />
       <FeatureSection
         product={japtour}
         heading="Explore Japan your way."
-        tagline="From weekend getaways to family holidays, plan your Japan experience with a smarter itinerary. Future: curated Japan travel experiences and packages."
+        tagline="From weekend getaways to family ski trips, plan your Japan trip with an itinerary that works offline."
         mockup={<JapTourMockup />}
         tone="dark"
         reversed

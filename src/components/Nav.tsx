@@ -54,6 +54,9 @@ export function Nav() {
           <Link to="/learn" className="transition-colors hover:text-ink">
             Learn
           </Link>
+          <Link to="/partners" className="transition-colors hover:text-ink">
+            For employers
+          </Link>
           {enabled && (
             <Link to={session ? "/learn/account" : "/login"} className="transition-colors hover:text-ink">
               {session ? "Account" : "Sign in"}
@@ -100,6 +103,9 @@ export function Nav() {
           ))}
           <Link to="/learn" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
             Learn
+          </Link>
+          <Link to="/partners" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
+            For employers
           </Link>
           {enabled && (
             <Link to={session ? "/learn/account" : "/login"} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">

@@ -1,8 +1,8 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
 import { Home } from "./pages/Home";
-import { JapPassPlanBuilder } from "./pages/JapPassPlanBuilder";
+import { JapTutorPlanBuilder } from "./pages/JapTutorPlanBuilder";
 import { JapTalkLevelCheck } from "./pages/JapTalkLevelCheck";
 import { JapTestLegal } from "./pages/JapTestLegal";
 import { JapTourLegal } from "./pages/JapTourLegal";
@@ -36,7 +36,8 @@ function App() {
           <Route path="/japtour/legal" element={<JapTourLegal />} />
           <Route path="/japtalk/legal" element={<JapTalkLegal />} />
           <Route path="/japtalk/level-check" element={<JapTalkLevelCheck />} />
-          <Route path="/jappass/plan-builder" element={<JapPassPlanBuilder />} />
+          <Route path="/japtutor/plan-builder" element={<JapTutorPlanBuilder />} />
+          <Route path="/jappass/plan-builder" element={<Navigate to="/japtutor/plan-builder" replace />} />
           <Route path="/learn" element={<LearnHome />} />
           <Route path="/learn/japtutor" element={<JapTutorTest />} />
           <Route path="/learn/japtalk" element={<JapTalkLessons />} />

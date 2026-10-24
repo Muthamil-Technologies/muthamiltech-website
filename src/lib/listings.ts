@@ -125,12 +125,13 @@ export const DETAIL_FIELDS: Record<Product, Field[]> = {
         ["temporary", "Temporary"],
       ],
     },
-    { key: "salary_min", label: "Salary from (¥)", type: "number" },
-    { key: "salary_max", label: "Salary to (¥)", type: "number" },
+    { key: "salary_min", label: "Pay from (¥)", type: "number", required: true, hint: "Before tax. Must be at least the minimum wage for the prefecture." },
+    { key: "salary_max", label: "Pay up to (¥)", type: "number" },
     {
       key: "salary_unit",
       label: "Per",
       type: "select",
+      required: true,
       options: [
         ["hour", "hour"],
         ["day", "day"],
@@ -166,6 +167,8 @@ export const DETAIL_FIELDS: Record<Product, Field[]> = {
         ["n1", "N1"],
       ],
     },
+    { key: "work_hours", label: "Working hours", type: "text", required: true, hint: "e.g. 8:00–17:00, 1 hour break; shifts; usual overtime" },
+    { key: "days_off", label: "Days off", type: "text", required: true, hint: "e.g. Sat & Sun, about 105 days a year" },
     { key: "dormitory", label: "Dormitory / housing provided", type: "bool" },
     { key: "transport_paid", label: "Commuting costs paid", type: "bool" },
     {

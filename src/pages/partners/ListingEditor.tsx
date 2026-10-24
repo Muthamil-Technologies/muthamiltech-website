@@ -192,6 +192,7 @@ export function ListingEditor() {
           </label>
           <label className="text-sm">
             <span className="font-medium text-ink">Written in</span>
+            <span className="ml-1 text-xs text-ink-faint">(workers see it in this language)</span>
             <select disabled={!editable} value={listing.default_lang} onChange={(e) => setListing({ ...listing, default_lang: e.target.value, languages: [e.target.value] })} className={input}>
               {LANGS.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
             </select>

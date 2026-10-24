@@ -1,8 +1,8 @@
 import { PhoneFrame } from "./PhoneFrame";
 
-const levels = ["N5", "N4", "N3", "N2", "N1"];
+const levels = ["N5", "N4", "N3"];
 
-export function JapTestMockup() {
+export function JapTutorMockup() {
   return (
     <PhoneFrame>
       <div className="flex h-full flex-col gap-6">

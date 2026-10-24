@@ -23,6 +23,7 @@ export function Footer() {
             <a href="/#vision" className="block hover:text-ink">Vision</a>
             <a href="/#about" className="block hover:text-ink">About</a>
             <a href="/#contact" className="block hover:text-ink">Contact</a>
+            <Link to="/partners" className="block hover:text-ink">For employers</Link>
           </FooterColumn>
 
           <FooterColumn title="Legal">
