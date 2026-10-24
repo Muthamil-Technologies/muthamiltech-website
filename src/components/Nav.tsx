@@ -55,7 +55,7 @@ export function Nav() {
             Learn
           </Link>
           <Link to="/partners" className="transition-colors hover:text-ink">
-            For employers
+            Become a partner
           </Link>
           {enabled && (
             <Link to={session ? "/learn/account" : "/login"} className="transition-colors hover:text-ink">
@@ -105,7 +105,7 @@ export function Nav() {
             Learn
           </Link>
           <Link to="/partners" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
-            For employers
+            Become a partner
           </Link>
           {enabled && (
             <Link to={session ? "/learn/account" : "/login"} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">

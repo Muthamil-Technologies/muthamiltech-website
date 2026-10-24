@@ -20,6 +20,8 @@ import { Login } from "./pages/learn/Login";
 import { Admin } from "./pages/partners/Admin";
 import { ListingEditor } from "./pages/partners/ListingEditor";
 import { PartnersHome } from "./pages/partners/PartnersHome";
+import { PartnerProgramPage } from "./pages/partners/PartnerProgramPage";
+import { PROGRAMS } from "./pages/partners/partnerTypes";
 import { ProviderPage } from "./pages/partners/ProviderPage";
 
 function App() {
@@ -46,6 +48,9 @@ function App() {
           <Route path="/learn/privacy" element={<LearnPrivacy />} />
           <Route path="/login" element={<Login />} />
           <Route path="/partners" element={<PartnersHome />} />
+          {PROGRAMS.map((p) => (
+            <Route key={p.slug} path={`/partners/${p.slug}`} element={<PartnerProgramPage program={p} />} />
+          ))}
           <Route path="/partners/p/:id" element={<ProviderPage />} />
           <Route path="/partners/listing/:id" element={<ListingEditor />} />
           <Route path="/admin" element={<Admin />} />

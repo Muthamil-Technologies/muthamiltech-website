@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { programFor } from "./partnerTypes";
 import { db, KIND_LABEL, PRODUCT_LABEL, PRODUCT_OF, STATUS_LABEL, STATUS_TONE, type Listing, type Provider } from "../../lib/listings";
 
 export function ProviderPage() {
@@ -23,7 +24,7 @@ export function ProviderPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-14">
-      <Link to="/partners" className="text-sm font-semibold text-accent">&larr; Partners</Link>
+      <Link to={programFor(provider.kind) ? `/partners/${programFor(provider.kind)!.slug}` : "/partners"} className="text-sm font-semibold text-accent">&larr; {programFor(provider.kind)?.app ?? "Partners"} partners</Link>
       <div className="mt-6 flex flex-wrap items-start justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-ink">{provider.name}</h1>
