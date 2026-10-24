@@ -48,7 +48,7 @@ export function JapanOneHome() {
       <section id="top" className="relative overflow-hidden bg-[#12263f] text-white">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 md:grid-cols-2 md:py-28">
           <div>
-            <div className="text-xs font-bold tracking-[0.25em] text-[#ff6b6b] uppercase">Gateway to Japan</div>
+            <img src="/japanone_logo_512.png" alt="JapanOne — Gateway to Japan" className="h-24 w-24 rounded-full md:h-28 md:w-28" />
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight md:text-6xl">
               Learn. Travel. Work.<br />
               <span className="text-[#f2c94c]">All of Japan, in one place.</span>

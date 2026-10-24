@@ -47,7 +47,7 @@ export function Nav() {
         >
           {isJapanOne ? (
             <span className="flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#e63946] text-[11px] font-extrabold text-white">J1</span>
+              <img src="/japanone_logo_180.png" alt="" className="h-9 w-9 rounded-full" />
               JapanOne
             </span>
           ) : (
