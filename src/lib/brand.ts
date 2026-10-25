@@ -12,5 +12,5 @@ export const social = {
   instagram: "https://www.instagram.com/japanone_app/",
   tiktok: "https://www.tiktok.com/@japanone_app",
   youtube: "https://www.youtube.com/channel/UCkrDY_FR9c3NKCCGbdV8bqw",
-  facebook: "https://www.facebook.com/profile.php?id=61595200264737",
+  facebook: "https://www.facebook.com/japanoneapp",
 };
