@@ -19,13 +19,16 @@ type App = {
   status?: string;
   /** A few real features, shown as chips. */
   features?: string[];
-  /** Things to try right now in the browser. `highlight` = the JLPT countdown card. */
-  tryIt?: { to: string; title: string; sub: string; highlight?: boolean }[];
+  /** Things to try right now in the browser; `countdown` adds the days left to the JLPT. */
+  tryIt?: { to: string; title: string; sub: string; countdown?: boolean }[];
+  /** The app's character, shown on its try-it cards. */
+  character?: string;
 };
 
 const APPS: App[] = [
   {
     name: "JapTalk",
+    character: "/characters/maru.svg",
     line: "Speak Japanese in real situations",
     icon: "/apps/japtalk.png",
     links: [{ label: "App Store", href: "https://apps.apple.com/app/japtalk/id6807840880" }],
@@ -35,15 +38,17 @@ const APPS: App[] = [
   },
   {
     name: "JapTutor",
+    character: "/characters/maru.svg",
     line: "JLPT N5–N3 study plan from your exam date",
     icon: "/apps/japtutor.png",
     links: [],
     status: "Coming soon to the App Store and Google Play",
     features: ["Study plan to your exam date", "Kanji, vocabulary & grammar", "Reading & listening with audio", "Timed mock exams", "Daily tests", "Reminders"],
-    tryIt: [{ to: "/learn/japtutor", title: "Free JLPT practice test", sub: "N5 · N4 · N3, with answers explained. No sign-up.", highlight: true }],
+    tryIt: [{ to: "/learn/japtutor", title: "Free JLPT practice test", sub: "N5 · N4 · N3, with answers explained. No sign-up.", countdown: true }],
   },
   {
     name: "JapTour",
+    character: "/characters/musubi.svg",
     line: "Offline Japan trip planner, ski season included",
     icon: "/apps/japtour.png",
     links: [],
@@ -56,6 +61,7 @@ const APPS: App[] = [
   },
   {
     name: "JapWork",
+    character: "/characters/kiko.svg",
     line: "Prepare step by step for work in Japan",
     icon: "/characters/kiko.svg",
     round: true,
@@ -139,17 +145,15 @@ export function JapanOneLinks() {
                 <Link
                   key={t.to}
                   to={t.to}
-                  className={`mt-3 flex items-center gap-3 rounded-xl p-3 transition hover:-translate-y-0.5 ${
-                    t.highlight ? "bg-[#f2c94c] text-[#12263f]" : "bg-white/10 text-white hover:bg-white/15"
-                  }`}
+                  className="mt-3 flex items-center gap-3 rounded-xl bg-[#f2c94c] p-3 text-[#12263f] transition hover:-translate-y-0.5"
                 >
-                  {t.highlight && <img src="/characters/maru.svg" alt="" className="h-11 w-11 flex-none" />}
+                  {a.character && <img src={a.character} alt="" className="h-11 w-11 flex-none" />}
                   <div className="flex-1">
-                    {t.highlight && days > 0 && (
+                    {t.countdown && days > 0 && (
                       <div className="text-[11px] font-bold tracking-wider uppercase">{days} {days === 1 ? "day" : "days"} to the JLPT</div>
                     )}
                     <div className="font-bold">{t.title}</div>
-                    <div className={`text-xs ${t.highlight ? "opacity-75" : "text-white/70"}`}>{t.sub}</div>
+                    <div className="text-xs opacity-75">{t.sub}</div>
                   </div>
                   <span className="text-xl" aria-hidden="true">→</span>
                 </Link>
