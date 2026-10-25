@@ -21,6 +21,8 @@ import { Admin } from "./pages/partners/Admin";
 import { ListingEditor } from "./pages/partners/ListingEditor";
 import { JapanOneHome } from "./pages/JapanOneHome";
 import { JapanOneLinks } from "./pages/JapanOneLinks";
+import { CvBuilder } from "./pages/japwork/CvBuilder";
+import { PathwayFinder } from "./pages/japwork/PathwayFinder";
 import { isJapanOne } from "./lib/brand";
 import { PartnersHome } from "./pages/partners/PartnersHome";
 import { PartnerProgramPage } from "./pages/partners/PartnerProgramPage";
@@ -35,6 +37,8 @@ function JapanOneApp() {
       <Route path="/learn/japtutor" element={<MiniLayout><JapTutorTest /></MiniLayout>} />
       <Route path="/learn/japtalk" element={<MiniLayout><JapTalkLessons /></MiniLayout>} />
       <Route path="/learn/japtalk/:id" element={<MiniLayout><JapTalkLesson /></MiniLayout>} />
+      <Route path="/work/pathway" element={<MiniLayout><PathwayFinder /></MiniLayout>} />
+      <Route path="/work/cv" element={<MiniLayout><CvBuilder /></MiniLayout>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

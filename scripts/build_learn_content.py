@@ -71,3 +71,10 @@ for level, src in BANKS.items():
     (OUT / f"japtutor_{level}.json").write_text(json.dumps(items, ensure_ascii=False, separators=(",", ":")))
     counts[level] = f"{len(items)} questions" + (f" ({len(dropped)} dropped: no underline)" if dropped else "")
 print(f"japtalk: {len(lessons)} lessons; japtutor: {counts}")
+
+# JapWork: field guides and the 履歴書 sentence templates (pathway finder and CV builder on the web).
+for name, out in (("fields.json", "japwork_fields.json"), ("cv_templates.json", "japwork_cv.json")):
+    data = json.loads((MT / "japjob-mobile/assets/data" / name).read_text())
+    data.pop("_about", None)
+    (OUT / out).write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
+print("japwork: fields + CV templates")
