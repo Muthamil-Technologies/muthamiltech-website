@@ -66,7 +66,7 @@ const APPS: App[] = [
     icon: "/characters/kiko.svg",
     round: true,
     links: [],
-    status: "In development",
+    status: "Coming soon to the App Store and Google Play",
     features: ["Work pathway finder", "Japanese CV (履歴書) maker", "Interview practice", "Pay & rights checker"],
     tryIt: [
       { to: "/work/pathway", title: "Find your path", sub: "3 questions: the routes, tests and next steps that fit you." },
@@ -78,7 +78,7 @@ const APPS: App[] = [
     line: "Japanese products, shipping all over the world",
     icon: "🛍️",
     links: [],
-    status: "In development",
+    status: "Coming soon",
     features: ["Products from shops in Japan", "Worldwide shipping"],
   },
 ];
