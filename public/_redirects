@@ -1,1 +1,22 @@
+# Consumer pages moved to the JapanOne site. App legal pages (/privacy, /terms, /<app>/legal) stay here.
+
+https://muthamiltech.com/learn  https://japanone.app/learn  301!
+https://muthamiltech.com/learn/*  https://japanone.app/learn/:splat  301!
+https://muthamiltech.com/login  https://japanone.app/login  301!
+https://muthamiltech.com/partners  https://japanone.app/partners  301!
+https://muthamiltech.com/partners/*  https://japanone.app/partners/:splat  301!
+https://muthamiltech.com/admin  https://japanone.app/admin  301!
+https://muthamiltech.com/japtalk/level-check  https://japanone.app/japtalk/level-check  301!
+https://muthamiltech.com/japtutor/plan-builder  https://japanone.app/japtutor/plan-builder  301!
+https://muthamiltech.com/jappass/plan-builder  https://japanone.app/japtutor/plan-builder  301!
+https://www.muthamiltech.com/learn  https://japanone.app/learn  301!
+https://www.muthamiltech.com/learn/*  https://japanone.app/learn/:splat  301!
+https://www.muthamiltech.com/login  https://japanone.app/login  301!
+https://www.muthamiltech.com/partners  https://japanone.app/partners  301!
+https://www.muthamiltech.com/partners/*  https://japanone.app/partners/:splat  301!
+https://www.muthamiltech.com/admin  https://japanone.app/admin  301!
+https://www.muthamiltech.com/japtalk/level-check  https://japanone.app/japtalk/level-check  301!
+https://www.muthamiltech.com/japtutor/plan-builder  https://japanone.app/japtutor/plan-builder  301!
+https://www.muthamiltech.com/jappass/plan-builder  https://japanone.app/japtutor/plan-builder  301!
+
 /*    /index.html   200

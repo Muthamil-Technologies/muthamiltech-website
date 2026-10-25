@@ -20,24 +20,24 @@ export function Hero() {
           Technology for life in Japan.
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-lg font-medium text-ink-soft md:text-xl">
-          Built for every step of your Japan journey.
+          Practical tools for your next step in Japan.
         </p>
         <p className="mx-auto mt-4 max-w-lg text-base text-ink-soft">
-          Muthamil Technologies builds practical digital products designed around the real needs of
-          people learning, working, living, and travelling in Japan.
+          Muthamil Technologies is the company behind JapanOne: apps for learning Japanese,
+          travelling in Japan and working in Japan.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
-            href="#products"
+            href="https://japanone.app"
             className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper transition-colors hover:bg-accent"
           >
-            Explore Our Products
+            Visit JapanOne
           </a>
           <a
-            href="#about"
+            href="#contact"
             className="rounded-full border border-ink px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
           >
-            About Muthamil Technologies
+            Contact us
           </a>
         </div>
       </div>

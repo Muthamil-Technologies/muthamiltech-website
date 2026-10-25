@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
           <div>
             <div className="text-base font-bold tracking-tight text-ink">{SITE_NAME}</div>
-            <p className="mt-2 text-sm text-ink-soft">{isJapanOne ? "Gateway to Japan: learn, travel, work." : "Technology for life in Japan."}</p>
+            <p className="mt-2 text-sm text-ink-soft">{isJapanOne ? "Gateway to Japan: learn, travel, work." : "The company behind JapanOne."}</p>
           </div>
 
           <FooterColumn title="Products">
@@ -30,19 +30,18 @@ export function Footer() {
               </>
             ) : (
               <>
-                <a href="/#vision" className="block hover:text-ink">Vision</a>
                 <a href="/#about" className="block hover:text-ink">About</a>
                 <a href="/#contact" className="block hover:text-ink">Contact</a>
               </>
             )}
-            <Link to="/partners" className="block hover:text-ink">Become a partner</Link>
+            <a href={isJapanOne ? "/partners" : "https://japanone.app/partners"} className="block hover:text-ink">Become a partner</a>
           </FooterColumn>
 
           <FooterColumn title="Legal">
             <Link to="/privacy" className="block hover:text-ink">Privacy Policy</Link>
             <Link to="/terms" className="block hover:text-ink">Terms</Link>
             <a
-              href={isJapanOne ? social.instagram : contact.instagram}
+              href={social.instagram}
               target="_blank"
               rel="noreferrer noopener"
               className="block hover:text-ink"

@@ -10,9 +10,7 @@ const links = isJapanOne
       { label: "Work", href: "#work" },
     ]
   : [
-      { label: "Home", href: "#top" },
       { label: "Products", href: "#products" },
-      { label: "Vision", href: "#vision" },
       { label: "About", href: "#about" },
       { label: "Contact", href: "#contact" },
     ];
@@ -65,24 +63,21 @@ export function Nav() {
               {link.label}
             </button>
           ))}
-          {!isJapanOne && (
-            <Link to="/learn" className="transition-colors hover:text-ink">
-              Learn
+          {isJapanOne && (
+            <Link to="/partners" className="transition-colors hover:text-ink">
+              Become a partner
             </Link>
           )}
-          <Link to="/partners" className="transition-colors hover:text-ink">
-            Become a partner
-          </Link>
-          {enabled && (
+          {isJapanOne && enabled && (
             <Link to={session ? "/learn/account" : "/login"} className="transition-colors hover:text-ink">
               {session ? "Account" : "Sign in"}
             </Link>
           )}
           <button
-            onClick={() => (isJapanOne ? navigate("/learn") : goToSection("#products"))}
+            onClick={() => (isJapanOne ? navigate("/learn") : (window.location.href = "https://japanone.app"))}
             className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-accent-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
-            {isJapanOne ? "Start learning" : "Explore Products"}
+            {isJapanOne ? "Start learning" : "Visit JapanOne"}
           </button>
         </nav>
 
@@ -117,15 +112,17 @@ export function Nav() {
               {link.label}
             </button>
           ))}
-          {!isJapanOne && (
-            <Link to="/learn" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
-              Learn
+          {isJapanOne && (
+            <Link to="/partners" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
+              Become a partner
             </Link>
           )}
-          <Link to="/partners" onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
-            Become a partner
-          </Link>
-          {enabled && (
+          {!isJapanOne && (
+            <a href="https://japanone.app" className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
+              Visit JapanOne
+            </a>
+          )}
+          {isJapanOne && enabled && (
             <Link to={session ? "/learn/account" : "/login"} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink-soft hover:bg-surface hover:text-ink">
               {session ? "Account" : "Sign in"}
             </Link>
