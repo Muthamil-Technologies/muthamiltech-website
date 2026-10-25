@@ -75,7 +75,7 @@ function pickTest(bank: Item[], date: string, wrong: string[]) {
 }
 
 export function JapTutorTest() {
-  const { session } = useAuth();
+  const { session, enabled } = useAuth();
   const userId = session?.user.id;
   const [bank, setBank] = useState<Item[] | null>(null);
   const [summary, setSummary] = useState<Summary>({ tests: 0, best: 0, wrong: [] });
@@ -136,7 +136,7 @@ export function JapTutorTest() {
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-14">
-      <Link to="/learn" className="text-sm font-semibold text-accent">&larr; Learn</Link>
+      <Link to="/" className="text-sm font-semibold text-accent">&larr; JapanOne</Link>
       <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">JapTutor · JLPT N5</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Today's daily test</h1>
 
@@ -153,7 +153,7 @@ export function JapTutorTest() {
               Tests taken: {summary.tests} · Best score: {summary.best}/10
             </p>
           )}
-          {!session && (
+          {enabled && !session && (
             <p className="mt-3 text-sm text-ink-faint">
               <Link to="/login?next=/learn/japtutor" className="font-semibold text-accent">Sign in</Link> to keep your
               scores on every device.

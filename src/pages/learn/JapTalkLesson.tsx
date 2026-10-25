@@ -30,7 +30,7 @@ function speak(text: string) {
 
 export function JapTalkLesson() {
   const { id } = useParams();
-  const { session } = useAuth();
+  const { session, enabled } = useAuth();
   const userId = session?.user.id;
   const [lesson, setLesson] = useState<Lesson | null>(null);
   const [progress, setProgress] = useState<LessonProgress>({ done: [] });
@@ -184,7 +184,7 @@ export function JapTalkLesson() {
               </div>
             )}
           </div>
-          {!session && (
+          {enabled && !session && (
             <p className="mt-4 text-sm text-ink-faint">
               <Link to={`/login?next=/learn/japtalk/${lesson.id}`} className="font-semibold text-accent">Sign in</Link> to
               save this lesson to your account.

@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Link, Route, Routes, Navigate } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
 import { Home } from "./pages/Home";
@@ -20,13 +20,45 @@ import { Login } from "./pages/learn/Login";
 import { Admin } from "./pages/partners/Admin";
 import { ListingEditor } from "./pages/partners/ListingEditor";
 import { JapanOneHome } from "./pages/JapanOneHome";
+import { JapanOneLinks } from "./pages/JapanOneLinks";
 import { isJapanOne } from "./lib/brand";
 import { PartnersHome } from "./pages/partners/PartnersHome";
 import { PartnerProgramPage } from "./pages/partners/PartnerProgramPage";
 import { PROGRAMS } from "./pages/partners/partnerTypes";
 import { ProviderPage } from "./pages/partners/ProviderPage";
 
+/** japanone.app for now: the link page, plus the free practice the videos point to (guest only). */
+function JapanOneApp() {
+  return (
+    <Routes>
+      <Route path="/" element={<JapanOneLinks />} />
+      <Route path="/learn/japtutor" element={<MiniLayout><JapTutorTest /></MiniLayout>} />
+      <Route path="/learn/japtalk" element={<MiniLayout><JapTalkLessons /></MiniLayout>} />
+      <Route path="/learn/japtalk/:id" element={<MiniLayout><JapTalkLesson /></MiniLayout>} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
+}
+
+function MiniLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <header className="theme-dark border-b border-line bg-paper">
+        <div className="mx-auto flex h-16 max-w-6xl items-center px-6">
+          <Link to="/" className="flex items-center gap-2 font-bold text-ink">
+            <img src="/japanone_logo_180.png" alt="" className="h-9 w-9 rounded-full" />
+            JapanOne
+          </Link>
+        </div>
+      </header>
+      <main className="flex-1">{children}</main>
+      <footer className="py-8 text-center text-xs text-ink-faint">© 2026 JapanOne</footer>
+    </div>
+  );
+}
+
 function App() {
+  if (isJapanOne) return <JapanOneApp />;
   return (
     <div className="flex min-h-screen flex-col">
       <Nav />
