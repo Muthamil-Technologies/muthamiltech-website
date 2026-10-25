@@ -19,8 +19,8 @@ type App = {
   status?: string;
   /** A few real features, shown as chips. */
   features?: string[];
-  /** Something to try right now in the browser. `highlight` = the JLPT countdown card. */
-  tryIt?: { to: string; title: string; sub: string; highlight?: boolean };
+  /** Things to try right now in the browser. `highlight` = the JLPT countdown card. */
+  tryIt?: { to: string; title: string; sub: string; highlight?: boolean }[];
 };
 
 const APPS: App[] = [
@@ -31,7 +31,7 @@ const APPS: App[] = [
     links: [{ label: "App Store", href: "https://apps.apple.com/app/japtalk/id6807840880" }],
     status: "Android coming soon",
     features: ["Type or say each sentence", "Real-life conversations", "Paths for travel, daily life and work", "Grammar help when stuck", "Works offline"],
-    tryIt: { to: "/learn/japtalk", title: "Try speaking lessons in your browser", sub: "Real conversations to read and say aloud." },
+    tryIt: [{ to: "/learn/japtalk", title: "Try speaking lessons in your browser", sub: "Real conversations to read and say aloud." }],
   },
   {
     name: "JapTutor",
@@ -40,7 +40,7 @@ const APPS: App[] = [
     links: [],
     status: "Coming soon to the App Store and Google Play",
     features: ["Study plan to your exam date", "Kanji, vocabulary & grammar", "Reading & listening with audio", "Timed mock exams", "Daily tests", "Reminders"],
-    tryIt: { to: "/learn/japtutor", title: "Free JLPT practice test", sub: "N5 · N4 · N3, with answers explained. No sign-up.", highlight: true },
+    tryIt: [{ to: "/learn/japtutor", title: "Free JLPT practice test", sub: "N5 · N4 · N3, with answers explained. No sign-up.", highlight: true }],
   },
   {
     name: "JapTour",
@@ -49,6 +49,10 @@ const APPS: App[] = [
     links: [],
     status: "Coming soon to the App Store and Google Play",
     features: ["Day-by-day itineraries", "Works offline", "Phrases with audio", "Food & dietary cards", "Ski: Niseko, Hakuba", "Budget tracker"],
+    tryIt: [
+      { to: "/tour/plan", title: "Plan your trip", sub: "A day-by-day plan with estimated costs, free in your browser." },
+      { to: "/tour/phrases", title: "Travel phrases with audio", sub: "Hear them, or show them to staff." },
+    ],
   },
   {
     name: "JapWork",
@@ -58,6 +62,10 @@ const APPS: App[] = [
     links: [],
     status: "In development",
     features: ["Work pathway finder", "Japanese CV (履歴書) maker", "Interview practice", "Pay & rights checker"],
+    tryIt: [
+      { to: "/work/pathway", title: "Find your path", sub: "3 questions: the routes, tests and next steps that fit you." },
+      { to: "/work/cv", title: "Make your Japanese CV (履歴書)", sub: "Fill in simple English; save it as a PDF." },
+    ],
   },
   {
     name: "JapMart",
@@ -127,24 +135,25 @@ export function JapanOneLinks() {
                   ))}
                 </ul>
               )}
-              {a.tryIt && (
+              {a.tryIt?.map((t) => (
                 <Link
-                  to={a.tryIt.to}
+                  key={t.to}
+                  to={t.to}
                   className={`mt-3 flex items-center gap-3 rounded-xl p-3 transition hover:-translate-y-0.5 ${
-                    a.tryIt.highlight ? "bg-[#f2c94c] text-[#12263f]" : "bg-white/10 text-white hover:bg-white/15"
+                    t.highlight ? "bg-[#f2c94c] text-[#12263f]" : "bg-white/10 text-white hover:bg-white/15"
                   }`}
                 >
-                  {a.tryIt.highlight && <img src="/characters/maru.svg" alt="" className="h-11 w-11 flex-none" />}
+                  {t.highlight && <img src="/characters/maru.svg" alt="" className="h-11 w-11 flex-none" />}
                   <div className="flex-1">
-                    {a.tryIt.highlight && days > 0 && (
+                    {t.highlight && days > 0 && (
                       <div className="text-[11px] font-bold tracking-wider uppercase">{days} {days === 1 ? "day" : "days"} to the JLPT</div>
                     )}
-                    <div className="font-bold">{a.tryIt.title}</div>
-                    <div className={`text-xs ${a.tryIt.highlight ? "opacity-75" : "text-white/70"}`}>{a.tryIt.sub}</div>
+                    <div className="font-bold">{t.title}</div>
+                    <div className={`text-xs ${t.highlight ? "opacity-75" : "text-white/70"}`}>{t.sub}</div>
                   </div>
                   <span className="text-xl" aria-hidden="true">→</span>
                 </Link>
-              )}
+              ))}
             </li>
           ))}
         </ul>

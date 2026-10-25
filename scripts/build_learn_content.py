@@ -78,3 +78,16 @@ for name, out in (("fields.json", "japwork_fields.json"), ("cv_templates.json", 
     data.pop("_about", None)
     (OUT / out).write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
 print("japwork: fields + CV templates")
+
+# JapTour: the trip planner's destination catalog and the travel phrases with their audio.
+import shutil
+for name, out in (("destinations.json", "japtour_destinations.json"), ("phrases.json", "japtour_phrases.json")):
+    data = json.loads((MT / "japtour-mobile/assets/data" / name).read_text())
+    for k in [k for k in data if k.startswith("_")]:
+        data.pop(k)
+    (OUT / out).write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")))
+audio_out = ROOT / "public" / "tour" / "phrases"
+audio_out.mkdir(parents=True, exist_ok=True)
+for mp3 in (MT / "japtour-mobile/assets/audio/phrases").glob("*.mp3"):
+    shutil.copy2(mp3, audio_out / mp3.name)
+print("japtour: destinations + phrases +", len(list(audio_out.glob("*.mp3"))), "audio files")
