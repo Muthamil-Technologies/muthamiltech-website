@@ -11,6 +11,7 @@ const JLPT = new Date("2026-12-06T09:00:00+09:00");
 type App = {
   name: string;
   line: string;
+  /** Image path, or an emoji for apps without an icon yet. */
   icon: string;
   round?: boolean;
   links: { label: string; href: string }[];
@@ -47,6 +48,13 @@ const APPS: App[] = [
     links: [],
     status: "In development",
   },
+  {
+    name: "JapMart",
+    line: "Japanese products, shipping all over the world",
+    icon: "🛍️",
+    links: [],
+    status: "In development",
+  },
 ];
 
 function daysToJlpt() {
@@ -66,7 +74,7 @@ export function JapanOneLinks() {
         <div className="text-center">
           <img src="/japanone_logo_180.png" alt="JapanOne" className="mx-auto h-24 w-24 rounded-full ring-4 ring-white/10" />
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight">JapanOne</h1>
-          <p className="mt-1 text-white/70">Free apps for learning Japanese and travelling in Japan</p>
+          <p className="mt-1 text-white/70">Apps for learning Japanese, travelling in Japan, and more</p>
         </div>
 
         {days > 0 && (
@@ -89,7 +97,11 @@ export function JapanOneLinks() {
           {APPS.map((a) => (
             <li key={a.name} className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
               <div className="flex items-center gap-4">
-                <img src={a.icon} alt="" className={`h-14 w-14 flex-none ${a.round ? "rounded-full bg-white/10 p-1" : "rounded-2xl"}`} />
+                {a.icon.startsWith("/") ? (
+                  <img src={a.icon} alt="" className={`h-14 w-14 flex-none ${a.round ? "rounded-full bg-white/10 p-1" : "rounded-2xl"}`} />
+                ) : (
+                  <span aria-hidden="true" className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-[#e63946] text-3xl">{a.icon}</span>
+                )}
                 <div className="min-w-0 flex-1">
                   <div className="text-lg font-bold">{a.name}</div>
                   <div className="text-sm text-white/70">{a.line}</div>
