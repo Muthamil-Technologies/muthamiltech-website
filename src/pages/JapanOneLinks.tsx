@@ -135,6 +135,7 @@ export function JapanOneLinks() {
           <a href={social.instagram} target="_blank" rel="noreferrer noopener" className="hover:text-white">Instagram</a>
           <a href={social.tiktok} target="_blank" rel="noreferrer noopener" className="hover:text-white">TikTok</a>
           <a href={social.youtube} target="_blank" rel="noreferrer noopener" className="hover:text-white">YouTube</a>
+          <a href={social.facebook} target="_blank" rel="noreferrer noopener" className="hover:text-white">Facebook</a>
         </div>
         <p className="mt-6 text-center text-xs text-white/40">© 2026 JapanOne</p>
       </div>
