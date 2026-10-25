@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { social } from "../lib/brand";
 
 // japanone.app as a link-in-bio page while the full JapanOne site is prepared: the apps and
-// where to get them, plus the free JLPT practice test the countdown videos point to.
+// where to get them, a few features, and what can be tried now in the browser (the free JLPT
+// practice test the countdown videos point to sits under JapTutor).
 // Update `status`/`href` as each app goes live in a store.
 
 const JLPT = new Date("2026-12-06T09:00:00+09:00");
@@ -16,6 +17,10 @@ type App = {
   round?: boolean;
   links: { label: string; href: string }[];
   status?: string;
+  /** A few real features, shown as chips. */
+  features?: string[];
+  /** Something to try right now in the browser. `highlight` = the JLPT countdown card. */
+  tryIt?: { to: string; title: string; sub: string; highlight?: boolean };
 };
 
 const APPS: App[] = [
@@ -25,6 +30,7 @@ const APPS: App[] = [
     icon: "/apps/japtalk.png",
     links: [{ label: "App Store", href: "https://apps.apple.com/app/japtalk/id6807840880" }],
     status: "Android coming soon",
+    tryIt: { to: "/learn/japtalk", title: "Try speaking lessons in your browser", sub: "Real conversations to read and say aloud." },
   },
   {
     name: "JapTutor",
@@ -32,6 +38,7 @@ const APPS: App[] = [
     icon: "/apps/japtutor.png",
     links: [],
     status: "Coming soon to the App Store and Google Play",
+    tryIt: { to: "/learn/japtutor", title: "Free JLPT practice test", sub: "N5 · N4 · N3, with answers explained. No sign-up.", highlight: true },
   },
   {
     name: "JapTour",
@@ -39,6 +46,7 @@ const APPS: App[] = [
     icon: "/apps/japtour.png",
     links: [],
     status: "Coming soon to the App Store and Google Play",
+    features: ["Day-by-day itineraries", "Works offline", "Phrases with audio", "Food & dietary cards", "Ski: Niseko, Hakuba", "Budget tracker"],
   },
   {
     name: "JapWork",
@@ -47,6 +55,7 @@ const APPS: App[] = [
     round: true,
     links: [],
     status: "In development",
+    features: ["Work pathway finder", "Japanese CV (履歴書) maker", "Interview practice", "Pay & rights checker"],
   },
   {
     name: "JapMart",
@@ -77,22 +86,7 @@ export function JapanOneLinks() {
           <p className="mx-auto mt-2 max-w-sm text-white/70">Discover Japan through language, travel, work and useful digital tools. From learning Japanese to planning your next step in Japan — your gateway starts here.</p>
         </div>
 
-        {days > 0 && (
-          <Link
-            to="/learn/japtutor"
-            className="mt-8 flex items-center gap-4 rounded-2xl bg-[#f2c94c] p-4 text-[#12263f] shadow-lg transition hover:-translate-y-0.5"
-          >
-            <img src="/characters/maru.svg" alt="" className="h-14 w-14 flex-none" />
-            <div className="flex-1">
-              <div className="text-xs font-bold tracking-wider uppercase">{days} {days === 1 ? "day" : "days"} to the JLPT</div>
-              <div className="text-lg font-bold">Free JLPT practice test</div>
-              <div className="text-sm opacity-75">N5 · N4 · N3, with answers explained. No sign-up.</div>
-            </div>
-            <span className="text-2xl" aria-hidden="true">→</span>
-          </Link>
-        )}
-
-        <h2 className="mt-10 text-xs font-bold tracking-[0.2em] text-white/50 uppercase">Our apps</h2>
+        <h2 className="mt-8 text-xs font-bold tracking-[0.2em] text-white/50 uppercase">Our apps</h2>
         <ul className="mt-3 space-y-3">
           {APPS.map((a) => (
             <li key={a.name} className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
@@ -123,13 +117,34 @@ export function JapanOneLinks() {
                   {a.status && <span className="text-xs font-medium text-[#f2c94c]">{a.status}</span>}
                 </div>
               )}
+              {a.features && (
+                <ul className="mt-3 flex flex-wrap gap-1.5">
+                  {a.features.map((f) => (
+                    <li key={f} className="rounded-full bg-white/10 px-2.5 py-1 text-xs text-white/80">{f}</li>
+                  ))}
+                </ul>
+              )}
+              {a.tryIt && (
+                <Link
+                  to={a.tryIt.to}
+                  className={`mt-3 flex items-center gap-3 rounded-xl p-3 transition hover:-translate-y-0.5 ${
+                    a.tryIt.highlight ? "bg-[#f2c94c] text-[#12263f]" : "bg-white/10 text-white hover:bg-white/15"
+                  }`}
+                >
+                  {a.tryIt.highlight && <img src="/characters/maru.svg" alt="" className="h-11 w-11 flex-none" />}
+                  <div className="flex-1">
+                    {a.tryIt.highlight && days > 0 && (
+                      <div className="text-[11px] font-bold tracking-wider uppercase">{days} {days === 1 ? "day" : "days"} to the JLPT</div>
+                    )}
+                    <div className="font-bold">{a.tryIt.title}</div>
+                    <div className={`text-xs ${a.tryIt.highlight ? "opacity-75" : "text-white/70"}`}>{a.tryIt.sub}</div>
+                  </div>
+                  <span className="text-xl" aria-hidden="true">→</span>
+                </Link>
+              )}
             </li>
           ))}
         </ul>
-
-        <Link to="/learn/japtalk" className="mt-6 block rounded-2xl bg-white/5 p-4 text-center font-semibold ring-1 ring-white/10 hover:bg-white/10">
-          Try speaking lessons in your browser →
-        </Link>
 
         <div className="mt-10 flex justify-center gap-5 text-sm font-semibold text-white/70">
           <a href={social.instagram} target="_blank" rel="noreferrer noopener" className="hover:text-white">Instagram</a>
