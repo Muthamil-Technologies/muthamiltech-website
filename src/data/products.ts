@@ -18,7 +18,6 @@ export interface Product {
   features: string[];
   /** Where this product sits in the "Learn -> Prepare -> Work -> Explore" journey, if it fits one. */
   journeyStep?: string;
-  /** Product page on the JapanOne consumer site. */
   url: string;
 }
 
@@ -41,7 +40,7 @@ export const products: Product[] = [
       "Fully offline, no account required",
     ],
     journeyStep: "Learn",
-    url: "https://japanone.app/#learn",
+    url: "https://japanone.app/learn/japtalk",
   },
   {
     slug: "japtutor",
@@ -58,7 +57,7 @@ export const products: Product[] = [
       "Mock exams and on-track / at-risk progress signals",
     ],
     journeyStep: "Prepare",
-    url: "https://japanone.app/#learn",
+    url: "https://japanone.app/learn/japtutor",
   },
   {
     slug: "japwork",
@@ -75,7 +74,7 @@ export const products: Product[] = [
       "Interview practice with audio, and a pay and rights checker",
     ],
     journeyStep: "Work",
-    url: "https://japanone.app/#work",
+    url: "https://japanone.app/work/pathway",
   },
   {
     slug: "japtour",
@@ -92,7 +91,7 @@ export const products: Product[] = [
       "Budget estimates and spending tracker",
     ],
     journeyStep: "Explore",
-    url: "https://japanone.app/#travel",
+    url: "https://japanone.app/tour/plan",
   },
 ];
 

@@ -16,6 +16,13 @@ export function Contact() {
           Have an idea, feedback, partnership opportunity, or want to learn more about our
           products?
         </p>
+        <p className="mx-auto mt-6 max-w-xl rounded-2xl border border-line bg-surface p-5 text-sm text-ink-soft">
+          <span className="block font-semibold text-ink">For employers, support organisations and tour operators</span>
+          Listing your job openings or tours on JapanOne is free during our launch period. Email us and we'll help you get started.
+          <span className="mt-3 block" lang="ja">
+            求人やツアーの掲載をご希望の事業者さまは、メールでお気軽にご連絡ください。サービス開始期間中、掲載は無料です。
+          </span>
+        </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href={`mailto:${contact.email}`}

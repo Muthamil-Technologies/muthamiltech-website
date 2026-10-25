@@ -34,7 +34,7 @@ export function Footer() {
                 <a href="/#contact" className="block hover:text-ink">Contact</a>
               </>
             )}
-            <a href={isJapanOne ? "/partners" : "https://japanone.app/partners"} className="block hover:text-ink">Become a partner</a>
+            <a href={isJapanOne ? "/partners" : "/#contact"} className="block hover:text-ink">Become a partner</a>
           </FooterColumn>
 
           <FooterColumn title="Legal">
