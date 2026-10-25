@@ -74,7 +74,7 @@ export function JapanOneLinks() {
         <div className="text-center">
           <img src="/japanone_logo_180.png" alt="JapanOne" className="mx-auto h-24 w-24 rounded-full ring-4 ring-white/10" />
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight">JapanOne</h1>
-          <p className="mt-1 text-white/70">Apps for learning Japanese, travelling in Japan, and more</p>
+          <p className="mx-auto mt-2 max-w-sm text-white/70">Discover Japan through language, travel, work and useful digital tools. From learning Japanese to planning your next step in Japan — your gateway starts here.</p>
         </div>
 
         {days > 0 && (
