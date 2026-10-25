@@ -98,10 +98,12 @@ export function JapanOneLinks() {
         </div>
 
         <h2 className="mt-8 text-xs font-bold tracking-[0.2em] text-white/50 uppercase lg:mt-12 lg:text-center">Our apps</h2>
-        <ul className="mt-3 grid gap-3 lg:grid-cols-5 lg:gap-4">
+        {/* Desktop: five columns on one shared grid (subgrid rows), so the header, store status,
+            features and try-it card line up across every app. Phones: one card under another. */}
+        <ul className="mt-3 grid gap-3 lg:grid-cols-5 lg:grid-rows-[auto_auto_1fr_auto] lg:gap-x-4 lg:gap-y-0">
           {APPS.map((a) => (
-            <li key={a.name} className="flex flex-col rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-              <div className="flex items-center gap-4">
+            <li key={a.name} className="flex flex-col gap-3 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 lg:row-span-4 lg:grid lg:grid-rows-subgrid lg:gap-y-3">
+              <div className="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-3">
                 {a.icon.startsWith("/") ? (
                   <img src={a.icon} alt="" className={`h-14 w-14 flex-none ${a.round ? "rounded-full bg-white/10 p-1" : "rounded-2xl"}`} />
                 ) : (
@@ -112,47 +114,54 @@ export function JapanOneLinks() {
                   <div className="text-sm text-white/70">{a.line}</div>
                 </div>
               </div>
-              {(a.links.length > 0 || a.status) && (
-                <div className="mt-3 flex flex-wrap items-center gap-2">
-                  {a.links.map((l) => (
-                    <a
-                      key={l.href}
-                      href={l.href}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#12263f] hover:bg-[#f2c94c]"
-                    >
-                      Get it on the {l.label}
-                    </a>
-                  ))}
-                  {a.status && <span className="text-xs font-medium text-[#f2c94c]">{a.status}</span>}
-                </div>
-              )}
-              {a.features && (
-                <ul className="mt-3 flex flex-wrap gap-1.5">
-                  {a.features.map((f) => (
-                    <li key={f} className="rounded-full bg-white/10 px-2.5 py-1 text-xs text-white/80">{f}</li>
-                  ))}
-                </ul>
-              )}
-              <div className="lg:mt-auto">
-              {a.tryIt?.map((t) => (
-                <Link
-                  key={t.to}
-                  to={t.to}
-                  className="mt-3 flex items-center gap-3 rounded-xl bg-[#f2c94c] p-3 text-[#12263f] transition hover:-translate-y-0.5"
-                >
-                  {a.character && <img src={a.character} alt="" className="h-11 w-11 flex-none" />}
-                  <div className="flex-1">
-                    {t.countdown && days > 0 && (
-                      <div className="text-[11px] font-bold tracking-wider uppercase">{days} {days === 1 ? "day" : "days"} to the JLPT</div>
-                    )}
-                    <div className="font-bold">{t.title}</div>
-                    <div className="text-xs opacity-75">{t.sub}</div>
+
+              <div className="flex flex-wrap items-center gap-2 lg:content-start">
+                {a.links.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#12263f] hover:bg-[#f2c94c]"
+                  >
+                    Get it on the {l.label}
+                  </a>
+                ))}
+                {a.status && <span className="text-xs font-medium text-[#f2c94c]">{a.status}</span>}
+              </div>
+
+              <ul className="flex flex-wrap gap-1.5 lg:flex-col lg:flex-nowrap lg:gap-2">
+                {a.features?.map((f) => (
+                  <li key={f} className="rounded-full bg-white/10 px-2.5 py-1 text-xs text-white/80 lg:rounded-none lg:bg-transparent lg:p-0 lg:text-sm">
+                    <span className="hidden text-[#f2c94c] lg:inline">✓ </span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <div>
+                {a.tryIt?.map((t) => (
+                  <Link
+                    key={t.to}
+                    to={t.to}
+                    className="flex items-center gap-3 rounded-xl bg-[#f2c94c] p-3 text-[#12263f] transition hover:-translate-y-0.5 lg:h-36"
+                  >
+                    {a.character && <img src={a.character} alt="" className="h-11 w-11 flex-none" />}
+                    <div className="flex-1">
+                      {t.countdown && days > 0 && (
+                        <div className="text-[11px] font-bold tracking-wider uppercase">{days} {days === 1 ? "day" : "days"} to the JLPT</div>
+                      )}
+                      <div className="font-bold leading-snug">{t.title}</div>
+                      <div className="text-xs opacity-75">{t.sub}</div>
+                    </div>
+                    <span className="text-xl" aria-hidden="true">→</span>
+                  </Link>
+                ))}
+                {!a.tryIt && (
+                  <div className="hidden h-36 items-center justify-center rounded-xl border border-dashed border-white/20 p-3 text-center text-sm text-white/50 lg:flex">
+                    {a.status}
                   </div>
-                  <span className="text-xl" aria-hidden="true">→</span>
-                </Link>
-              ))}
+                )}
               </div>
             </li>
           ))}
