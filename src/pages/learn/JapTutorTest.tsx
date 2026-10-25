@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
 import { loadProgress, saveProgress, saveTestResult } from "../../lib/progress";
 
@@ -35,6 +35,7 @@ const TYPE_LABEL: Record<string, string> = {
   orthography: "Writing",
   contextualVocabulary: "Vocabulary",
   paraphrase: "Vocabulary",
+  usage: "Vocabulary",
   grammarForm: "Grammar",
   sentenceComposition: "Grammar",
   textGrammar: "Grammar",
@@ -42,10 +43,13 @@ const TYPE_LABEL: Record<string, string> = {
   informationRetrieval: "Reading",
 };
 
-// The mix of a JLPT N5 paper, scaled to 10 questions.
+const LEVELS = ["n5", "n4", "n3"] as const;
+type Level = (typeof LEVELS)[number];
+
+// The mix of a JLPT paper (language knowledge and reading), scaled to 10 questions.
 const MIX: [string[], number][] = [
   [["kanjiReading", "orthography"], 3],
-  [["contextualVocabulary", "paraphrase"], 2],
+  [["contextualVocabulary", "paraphrase", "usage"], 2],
   [["grammarForm", "sentenceComposition", "textGrammar"], 3],
   [["readingComprehension", "informationRetrieval"], 2],
 ];
@@ -77,6 +81,9 @@ function pickTest(bank: Item[], date: string, wrong: string[]) {
 export function JapTutorTest() {
   const { session, enabled } = useAuth();
   const userId = session?.user.id;
+  // ?level=n4 picks the level (links from videos and the home page can point straight at one).
+  const [params, setParams] = useSearchParams();
+  const level: Level = (LEVELS as readonly string[]).includes(params.get("level") ?? "") ? (params.get("level") as Level) : "n5";
   const [bank, setBank] = useState<Item[] | null>(null);
   const [summary, setSummary] = useState<Summary>({ tests: 0, best: 0, wrong: [] });
   const [stage, setStage] = useState<"intro" | "quiz" | "done">("intro");
@@ -86,11 +93,14 @@ export function JapTutorTest() {
   const today = new Date().toISOString().slice(0, 10);
 
   useEffect(() => {
-    fetch("/learn/japtutor_n5.json").then((r) => r.json()).then(setBank);
-  }, []);
+    setBank(null);
+    setStage("intro");
+    fetch(`/learn/japtutor_${level}.json`).then((r) => r.json()).then(setBank);
+  }, [level]);
   useEffect(() => {
-    loadProgress<Summary>("japtutor", "n5", userId).then((s) => s && setSummary(s));
-  }, [userId]);
+    setSummary({ tests: 0, best: 0, wrong: [] });
+    loadProgress<Summary>("japtutor", level, userId).then((s) => s && setSummary(s));
+  }, [userId, level]);
 
   const test = useMemo(() => (bank ? pickTest(bank, today, summary.wrong) : []), [bank, today, summary.wrong]);
   const q = test[step];
@@ -121,8 +131,8 @@ export function JapTutorTest() {
     const wrong = [...new Set([...summary.wrong.filter((k) => !nowRight.has(k)), ...nowWrong])].slice(-50);
     const updated = { tests: summary.tests + 1, best: Math.max(summary.best, score), wrong, lastDate: today };
     setSummary(updated);
-    await saveProgress("japtutor", "n5", updated, userId);
-    await saveTestResult(userId, "n5", score, test.length, byType);
+    await saveProgress("japtutor", level, updated, userId);
+    await saveTestResult(userId, level, score, test.length, byType);
   }
 
   function restart() {
@@ -137,16 +147,31 @@ export function JapTutorTest() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-14">
       <Link to="/" className="text-sm font-semibold text-accent">&larr; JapanOne</Link>
-      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">JapTutor · JLPT N5</div>
+      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">JapTutor · JLPT {level.toUpperCase()}</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Today's daily test</h1>
+
+      {stage !== "quiz" && (
+        <div className="mt-6 inline-flex rounded-full border border-line bg-surface p-1" role="group" aria-label="JLPT level">
+          {LEVELS.map((l) => (
+            <button
+              key={l}
+              onClick={() => setParams({ level: l }, { replace: true })}
+              aria-pressed={l === level}
+              className={`rounded-full px-5 py-2 text-sm font-semibold ${l === level ? "bg-ink text-paper" : "text-ink-soft hover:text-ink"}`}
+            >
+              {l.toUpperCase()}
+            </button>
+          ))}
+        </div>
+      )}
 
       {!bank && <p className="mt-8 text-ink-soft">Loading questions…</p>}
 
       {bank && stage === "intro" && (
         <div className="mt-8 rounded-2xl border border-line bg-surface p-7">
           <p className="text-ink-soft">
-            10 JLPT-style questions in the N5 mix: kanji, vocabulary, grammar and reading. Questions you missed before come
-            back for another try.
+            10 JLPT-style questions in the {level.toUpperCase()} mix: kanji, vocabulary, grammar and reading. Questions you
+            missed before come back for another try.
           </p>
           {summary.tests > 0 && (
             <p className="mt-3 text-sm text-ink-faint">
@@ -155,7 +180,7 @@ export function JapTutorTest() {
           )}
           {enabled && !session && (
             <p className="mt-3 text-sm text-ink-faint">
-              <Link to="/login?next=/learn/japtutor" className="font-semibold text-accent">Sign in</Link> to keep your
+              <Link to={`/login?next=${encodeURIComponent(`/learn/japtutor?level=${level}`)}`} className="font-semibold text-accent">Sign in</Link> to keep your
               scores on every device.
             </p>
           )}

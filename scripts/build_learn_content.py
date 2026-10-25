@@ -39,10 +39,14 @@ for l in sorted(content["lessons"], key=lambda x: x["order_index"]):
     "lessons": lessons,
 }, ensure_ascii=False, separators=(",", ":")))
 
-# JapTutor: the validated N5 question bank, without the listening item types (no audio on the web yet).
-bank = json.loads((MT / "japtutor-mobile/marketing/n5_shorts/validated_bank_n5.json").read_text())
-bank = bank if isinstance(bank, list) else next(iter(bank.values()))
-LISTENING = {"taskBasedListening", "pointComprehension", "verbalExpressions", "quickResponse"}
+# JapTutor: the validated question banks (N5 from the shorts kit, N4/N3 from marketing/web_bank),
+# without the listening item types (no audio on the web yet).
+BANKS = {
+    "n5": MT / "japtutor-mobile/marketing/n5_shorts/validated_bank_n5.json",
+    "n4": MT / "japtutor-mobile/marketing/web_bank/validated_bank_n4.json",
+    "n3": MT / "japtutor-mobile/marketing/web_bank/validated_bank_n3.json",
+}
+LISTENING = {"taskBasedListening", "pointComprehension", "verbalExpressions", "quickResponse", "summaryComprehension"}
 UNDERLINED = {"kanjiReading", "orthography", "paraphrase"}
 
 
@@ -54,10 +58,16 @@ def underline(x):
     return next((w for w in re.findall(r"「([^」]+)」", x.get("explanation") or "") if w in x["stem"]), None)
 
 
-items = [{**{k: x[k] for k in ("key", "itemType", "instruction", "stem", "options", "correctIndex", "explanation", "passage")},
-          "underline": underline(x)}
-         for x in bank if x["itemType"] not in LISTENING]
-missing = [x["key"] for x in items if x["itemType"] in UNDERLINED and not x["underline"]]
-assert not missing, f"no underline for {missing[:5]}"
-(OUT / "japtutor_n5.json").write_text(json.dumps(items, ensure_ascii=False, separators=(",", ":")))
-print(f"japtalk: {len(lessons)} lessons; japtutor N5: {len(items)} questions")
+counts = {}
+for level, src in BANKS.items():
+    bank = json.loads(src.read_text())
+    bank = bank if isinstance(bank, list) else next(iter(bank.values()))
+    items = [{**{k: x[k] for k in ("key", "itemType", "instruction", "stem", "options", "correctIndex", "explanation", "passage")},
+              "underline": underline(x)}
+             for x in bank if x["itemType"] not in LISTENING]
+    # An underlined question without its word can't be shown fairly; leave it out.
+    dropped = [x["key"] for x in items if x["itemType"] in UNDERLINED and not x["underline"]]
+    items = [x for x in items if x["key"] not in dropped]
+    (OUT / f"japtutor_{level}.json").write_text(json.dumps(items, ensure_ascii=False, separators=(",", ":")))
+    counts[level] = f"{len(items)} questions" + (f" ({len(dropped)} dropped: no underline)" if dropped else "")
+print(f"japtalk: {len(lessons)} lessons; japtutor: {counts}")

@@ -78,7 +78,7 @@ export function JapanOneLinks() {
             <div className="flex-1">
               <div className="text-xs font-bold tracking-wider uppercase">{days} {days === 1 ? "day" : "days"} to the JLPT</div>
               <div className="text-lg font-bold">Free JLPT practice test</div>
-              <div className="text-sm opacity-75">N5 questions with answers. No sign-up.</div>
+              <div className="text-sm opacity-75">N5 · N4 · N3, with answers explained. No sign-up.</div>
             </div>
             <span className="text-2xl" aria-hidden="true">→</span>
           </Link>
