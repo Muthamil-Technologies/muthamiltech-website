@@ -96,17 +96,17 @@ export function JapanOneLinks() {
 
   return (
     <div className="min-h-screen bg-[#12263f] px-5 pt-12 pb-16 text-white">
-      <div className="mx-auto max-w-md">
+      <div className="mx-auto max-w-md lg:max-w-[1440px]">
         <div className="text-center">
           <img src="/japanone_logo_180.png" alt="JapanOne" className="mx-auto h-24 w-24 rounded-full ring-4 ring-white/10" />
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight">JapanOne</h1>
-          <p className="mx-auto mt-2 max-w-sm text-white/70">Discover Japan through language, travel, work and useful digital tools. From learning Japanese to planning your next step in Japan — your gateway starts here.</p>
+          <p className="mx-auto mt-2 max-w-sm text-white/70 lg:max-w-xl lg:text-lg">Discover Japan through language, travel, work and useful digital tools. From learning Japanese to planning your next step in Japan — your gateway starts here.</p>
         </div>
 
-        <h2 className="mt-8 text-xs font-bold tracking-[0.2em] text-white/50 uppercase">Our apps</h2>
-        <ul className="mt-3 space-y-3">
+        <h2 className="mt-8 text-xs font-bold tracking-[0.2em] text-white/50 uppercase lg:mt-12 lg:text-center">Our apps</h2>
+        <ul className="mt-3 grid gap-3 lg:grid-cols-5 lg:gap-4">
           {APPS.map((a) => (
-            <li key={a.name} className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+            <li key={a.name} className="flex flex-col rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
               <div className="flex items-center gap-4">
                 {a.icon.startsWith("/") ? (
                   <img src={a.icon} alt="" className={`h-14 w-14 flex-none ${a.round ? "rounded-full bg-white/10 p-1" : "rounded-2xl"}`} />
@@ -141,6 +141,7 @@ export function JapanOneLinks() {
                   ))}
                 </ul>
               )}
+              <div className="lg:mt-auto">
               {a.tryIt?.map((t) => (
                 <Link
                   key={t.to}
@@ -158,6 +159,7 @@ export function JapanOneLinks() {
                   <span className="text-xl" aria-hidden="true">→</span>
                 </Link>
               ))}
+              </div>
             </li>
           ))}
         </ul>
