@@ -30,6 +30,7 @@ const APPS: App[] = [
     icon: "/apps/japtalk.png",
     links: [{ label: "App Store", href: "https://apps.apple.com/app/japtalk/id6807840880" }],
     status: "Android coming soon",
+    features: ["Type or say each sentence", "Real-life conversations", "Paths for travel, daily life and work", "Grammar help when stuck", "Works offline"],
     tryIt: { to: "/learn/japtalk", title: "Try speaking lessons in your browser", sub: "Real conversations to read and say aloud." },
   },
   {
@@ -38,6 +39,7 @@ const APPS: App[] = [
     icon: "/apps/japtutor.png",
     links: [],
     status: "Coming soon to the App Store and Google Play",
+    features: ["Study plan to your exam date", "Kanji, vocabulary & grammar", "Reading & listening with audio", "Timed mock exams", "Daily tests", "Reminders"],
     tryIt: { to: "/learn/japtutor", title: "Free JLPT practice test", sub: "N5 · N4 · N3, with answers explained. No sign-up.", highlight: true },
   },
   {
@@ -63,6 +65,7 @@ const APPS: App[] = [
     icon: "🛍️",
     links: [],
     status: "In development",
+    features: ["Products from shops in Japan", "Worldwide shipping"],
   },
 ];
 
