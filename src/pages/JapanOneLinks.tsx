@@ -54,10 +54,7 @@ const APPS: App[] = [
     links: [],
     status: "Coming soon to the App Store and Google Play",
     features: ["Day-by-day itineraries", "Works offline", "Phrases with audio", "Food & dietary cards", "Ski: Niseko, Hakuba", "Budget tracker"],
-    tryIt: [
-      { to: "/tour/plan", title: "Plan your trip", sub: "A day-by-day plan with estimated costs, free in your browser." },
-      { to: "/tour/phrases", title: "Travel phrases with audio", sub: "Hear them, or show them to staff." },
-    ],
+    tryIt: [{ to: "/tour/plan", title: "Plan your trip", sub: "A day-by-day plan with estimated costs, free in your browser." }],
   },
   {
     name: "JapWork",
@@ -68,10 +65,7 @@ const APPS: App[] = [
     links: [],
     status: "Coming soon to the App Store and Google Play",
     features: ["Work pathway finder", "Japanese CV (履歴書) maker", "Interview practice", "Pay & rights checker"],
-    tryIt: [
-      { to: "/work/pathway", title: "Find your path", sub: "3 questions: the routes, tests and next steps that fit you." },
-      { to: "/work/cv", title: "Make your Japanese CV (履歴書)", sub: "Fill in simple English; save it as a PDF." },
-    ],
+    tryIt: [{ to: "/work/pathway", title: "Find your path", sub: "3 questions: the routes, tests and next steps that fit you." }],
   },
   {
     name: "JapMart",
