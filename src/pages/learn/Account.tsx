@@ -38,7 +38,7 @@ export function Account() {
         </div>
       </div>
 
-      <h2 className="mt-10 text-lg font-semibold text-ink">Recent JapTutor tests</h2>
+      <h2 className="mt-10 text-lg font-semibold text-ink">Recent JLPT tests</h2>
       {results.length === 0 ? (
         <p className="mt-3 text-sm text-ink-soft">
           No tests yet. <Link to="/learn/japtutor" className="font-semibold text-accent">Take today's test</Link>

@@ -1,4 +1,4 @@
-import { Link, Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
 import { Home } from "./pages/Home";
@@ -21,7 +21,8 @@ import { Login } from "./pages/learn/Login";
 import { Admin } from "./pages/partners/Admin";
 import { ListingEditor } from "./pages/partners/ListingEditor";
 import { JapanOneHome } from "./pages/JapanOneHome";
-import { JapanOneLinks } from "./pages/JapanOneLinks";
+import { JapanOneHub } from "./pages/JapanOneHub";
+import { JapanOneHeader } from "./components/JapanOneHeader";
 import { CvBuilder } from "./pages/japwork/CvBuilder";
 import { PathwayFinder } from "./pages/japwork/PathwayFinder";
 import { TravelPhrases } from "./pages/japtour/TravelPhrases";
@@ -32,11 +33,13 @@ import { PartnerProgramPage } from "./pages/partners/PartnerProgramPage";
 import { PROGRAMS } from "./pages/partners/partnerTypes";
 import { ProviderPage } from "./pages/partners/ProviderPage";
 
-/** japanone.app for now: the link page, plus the free practice the videos point to (guest only). */
+/** japanone.app: the home of every free tool, each in a small layout (guest only). */
 function JapanOneApp() {
   return (
     <Routes>
-      <Route path="/" element={<JapanOneLinks />} />
+      <Route path="/" element={<JapanOneHub />} />
+      <Route path="/japtalk/level-check" element={<MiniLayout><JapTalkLevelCheck /></MiniLayout>} />
+      <Route path="/japtutor/plan-builder" element={<MiniLayout><JapTutorPlanBuilder /></MiniLayout>} />
       <Route path="/learn/japtutor" element={<MiniLayout><JapTutorTest /></MiniLayout>} />
       <Route path="/learn/japtalk" element={<MiniLayout><JapTalkLessons /></MiniLayout>} />
       <Route path="/learn/japtalk/:id" element={<MiniLayout><JapTalkLesson /></MiniLayout>} />
@@ -52,16 +55,9 @@ function JapanOneApp() {
 function MiniLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="theme-dark border-b border-line bg-paper">
-        <div className="mx-auto flex h-16 max-w-6xl items-center px-6">
-          <Link to="/" className="flex items-center gap-2 font-bold text-ink">
-            <img src="/japanone_logo_180.png" alt="" className="h-9 w-9 rounded-full" />
-            JapanOne
-          </Link>
-        </div>
-      </header>
+      <JapanOneHeader />
       <main className="flex-1">{children}</main>
-      <footer className="py-8 text-center text-xs text-ink-faint">© 2026 JapanOne</footer>
+      <footer className="py-8 text-center text-xs text-ink-faint">© 2026 Muthamil Technologies</footer>
     </div>
   );
 }

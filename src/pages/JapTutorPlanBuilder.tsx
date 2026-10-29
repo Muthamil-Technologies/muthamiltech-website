@@ -24,7 +24,7 @@ export function JapTutorPlanBuilder() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-20">
       <Link to="/" className="text-sm font-semibold text-accent">
-        &larr; Back to Muthamil Technologies
+        &larr; JapanOne
       </Link>
 
       <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">
@@ -139,15 +139,15 @@ export function JapTutorPlanBuilder() {
             </p>
 
             <div className="mt-8 border-t border-line pt-6">
-              <p className="text-sm font-semibold text-ink">
-                Get this exact plan, kept on track every day.
-              </p>
-              <span
-                className="mt-4 inline-flex cursor-not-allowed items-center gap-2 rounded-full border border-line px-7 py-3.5 text-sm font-semibold text-ink-faint"
-                aria-disabled="true"
-              >
-                Coming Soon on the App Store
-              </span>
+              <p className="text-sm font-semibold text-ink">Start today with a free practice test.</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link to="/learn/japtutor" className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper hover:bg-accent-deep">
+                  JLPT practice test →
+                </Link>
+                <a href="https://apps.apple.com/app/id6807840880" target="_blank" rel="noreferrer noopener" className="rounded-full border border-line px-7 py-3.5 text-sm font-semibold text-ink hover:border-ink">
+                  Keep this plan in the JapanOne app
+                </a>
+              </div>
             </div>
           </div>
         )}

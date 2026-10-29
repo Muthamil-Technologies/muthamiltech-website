@@ -49,7 +49,7 @@ export function PathwayFinder() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-12">
       <Link to="/" className="text-sm font-semibold text-accent">&larr; JapanOne</Link>
-      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">JapWork · Pathway finder</div>
+      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">Work in Japan · Pathway finder</div>
 
       {step < 3 ? (
         <>

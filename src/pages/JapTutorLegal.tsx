@@ -13,6 +13,13 @@ export function JapTutorLegal() {
         JapTutor — Privacy &amp; Support
       </h1>
       <p className="mt-2 text-sm text-ink-faint">Last updated: October 2026</p>
+      <p className="mt-4 rounded-lg border border-line bg-paper px-4 py-3 text-sm text-ink-soft">
+        JapTutor is now the JLPT section of the JapanOne app; the separate JapTutor app was not released. See the{" "}
+        <Link to="/japanone/legal" className="font-semibold text-accent">
+          JapanOne privacy policy and support
+        </Link>
+        . This page stays for earlier versions.
+      </p>
 
       <div className="mt-8 flex flex-col gap-6 text-ink-soft">
         <section id="privacy">

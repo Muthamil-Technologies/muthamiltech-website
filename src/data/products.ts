@@ -26,55 +26,21 @@ export interface Product {
 // nothing needs to be hard-coded elsewhere for a 5th, 6th, etc. product.
 export const products: Product[] = [
   {
-    slug: "japtalk",
-    name: "JapTalk",
-    category: "Japanese Learning & Communication",
+    slug: "japanone",
+    name: "JapanOne",
+    category: "Japanese Learning & JLPT",
     description:
-      "Practice Japanese, improve everyday communication, and build confidence using Japanese in real situations.",
+      "Speak Japanese in real situations and prepare for the JLPT, in one free app.",
     longDescription:
-      "JapTalk is a speaking-first Japanese learning app. Every lesson opens with a real sentence to speak — typed or spoken aloud — instead of a flashcard deck, with grammar and vocabulary available on demand but never gating the practice. Content is organized into five goal-based Learning Paths: Beginner Foundations, Everyday Japan, Everyday Conversation, Business Japanese, and Interview Japanese.",
+      "JapanOne brings our learning apps together in one place. Speak (formerly JapTalk) is speaking-first: every lesson opens with a real sentence to say or type, in goal-based paths for travel, daily life and work. JLPT (formerly JapTutor) builds a dated study plan to your exam, with N5–N3 lessons, a short JLPT-style test every day and mock exams. Work and Study in Japan sections are being added. Free, offline, with no account.",
     status: "live",
     features: [
-      "Speaking-first lessons, typed or spoken",
-      "Five goal-based Learning Paths",
-      "Fully offline, no account required",
+      "Speak: speaking-first lessons, typed or spoken",
+      "JLPT: a dated N5–N3 plan and a daily test",
+      "Work and Study in Japan sections coming",
     ],
     journeyStep: "Learn",
-    url: "https://japanone.app/learn/japtalk",
-  },
-  {
-    slug: "japtutor",
-    name: "JapTutor",
-    category: "JLPT Preparation",
-    description:
-      "Tell it your JLPT level and exam date — it builds your daily study plan and keeps you on track.",
-    longDescription:
-      "Where JapTalk is about real-world speaking, JapTutor is built around the JLPT itself: tell it your level, exam date and daily study time, and it builds a day-by-day plan with lessons, flashcards and mock exams. It covers N5 to N3.",
-    status: "launching-soon",
-    features: [
-      "Personalized daily study plan based on your exam date",
-      "Spaced-repetition review for kanji, vocabulary and grammar",
-      "Mock exams and on-track / at-risk progress signals",
-    ],
-    journeyStep: "Prepare",
-    url: "https://japanone.app/learn/japtutor",
-  },
-  {
-    slug: "japwork",
-    name: "JapWork",
-    category: "Work in Japan",
-    description:
-      "For foreign workers in skilled and hands-on jobs: find your route into work in Japan, step by step.",
-    longDescription:
-      "JapWork helps people working towards jobs like caregiving, construction, food, factory and hotel work under the Specified Skilled Worker visa. It shows which routes fit your situation and the tests you need, writes your Japanese CV (履歴書), lets you practise interviews with audio, and explains your pay and rights at work.",
-    status: "in-development",
-    features: [
-      "Pathway finder for the 16 Specified Skilled Worker fields",
-      "Japanese CV (履歴書) as a PDF, from simple English answers",
-      "Interview practice with audio, and a pay and rights checker",
-    ],
-    journeyStep: "Work",
-    url: "https://japanone.app/work/pathway",
+    url: "https://japanone.app",
   },
   {
     slug: "japtour",

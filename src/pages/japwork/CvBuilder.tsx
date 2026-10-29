@@ -190,7 +190,7 @@ export function CvBuilder() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-12">
       <Link to="/" className="text-sm font-semibold text-accent">&larr; JapanOne</Link>
-      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">JapWork · CV builder</div>
+      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">Work in Japan · CV builder</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Japanese CV (履歴書)</h1>
       <p className="mt-2 max-w-2xl text-ink-soft">
         Fill in each part in simple English or Japanese. It becomes a standard Japanese CV (履歴書) you can save as a PDF and print.

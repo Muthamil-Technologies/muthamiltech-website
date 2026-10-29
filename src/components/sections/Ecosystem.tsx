@@ -15,7 +15,8 @@ export function Ecosystem() {
           </div>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-ink md:text-4xl">JapanOne</h2>
           <p className="mt-4 text-lg text-ink-soft">
-            Our apps are published under one consumer brand, JapanOne. Each app does one job well.
+            JapanOne is our app and website for learning Japanese and preparing for life in Japan.
+            JapTour, our trip planner, joins it on japanone.app.
           </p>
         </div>
 

@@ -4,13 +4,13 @@ import { useAuth } from "../../lib/auth";
 const apps = [
   {
     to: "/learn/japtutor",
-    name: "JapTutor",
+    name: "JLPT",
     tag: "JLPT N5 daily test",
     body: "Ten JLPT-style questions: kanji, vocabulary, grammar and reading. See your score by section and what to review.",
   },
   {
     to: "/learn/japtalk",
-    name: "JapTalk",
+    name: "Speak",
     tag: "Speaking lessons",
     body: "Real situations, from introductions to the bank and the office. Say or type your answer in Japanese and get it checked.",
   },
@@ -27,7 +27,7 @@ export function LearnHome() {
         {session ? `Welcome back${name ? `, ${name}` : ""}` : "Practise Japanese in your browser"}
       </h1>
       <p className="mt-3 max-w-2xl text-ink-soft">
-        The same lessons as the JapTalk and JapTutor apps. Free to use.{" "}
+        The same lessons as the JapanOne app. Free to use.{" "}
         {session
           ? "Your progress is saved to your account."
           : enabled
