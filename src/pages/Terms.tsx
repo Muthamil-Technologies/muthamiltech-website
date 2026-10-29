@@ -13,7 +13,7 @@ export function Terms() {
       <div className="mt-8 flex flex-col gap-6 text-ink-soft">
         <p>
           These terms cover use of the muthamiltech.com website. Our individual products —
-          JapTalk, JapTutor, JapWork, and JapTour — each have their own terms where applicable.
+          JapanOne and JapTour — each have their own terms where applicable.
         </p>
 
         <section>

@@ -13,7 +13,7 @@ export function Privacy() {
       <div className="mt-8 flex flex-col gap-6 text-ink-soft">
         <p>
           This page covers the muthamiltech.com website itself. Our individual products —
-          JapTalk, JapTutor, JapWork, and JapTour — each publish their own privacy policy
+          JapanOne and JapTour — each publish their own privacy policy
           covering how that specific app handles data.
         </p>
 

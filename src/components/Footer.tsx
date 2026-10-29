@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { contact, products } from "../data/products";
 import { isJapanOne, SITE_NAME, social } from "../lib/brand";
 
-const JAPANONE_ANCHOR: Record<string, string> = { japtalk: "/#learn", japtutor: "/#learn", japwork: "/#work", japtour: "/#travel" };
+const JAPANONE_ANCHOR: Record<string, string> = { japanone: "/#learn", japtalk: "/#learn", japtutor: "/#learn", japwork: "/#work", japtour: "/#travel" };
 
 export function Footer() {
   return (
