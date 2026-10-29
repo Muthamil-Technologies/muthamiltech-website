@@ -7,6 +7,7 @@ import { JapTalkLevelCheck } from "./pages/JapTalkLevelCheck";
 import { JapTestLegal } from "./pages/JapTestLegal";
 import { JapTourLegal } from "./pages/JapTourLegal";
 import { JapTalkLegal } from "./pages/JapTalkLegal";
+import { JapanOneLegal } from "./pages/JapanOneLegal";
 import { JapTutorLegal } from "./pages/JapTutorLegal";
 import { Privacy } from "./pages/Privacy";
 import { Terms } from "./pages/Terms";
@@ -79,6 +80,7 @@ function App() {
           <Route path="/japtutor/legal" element={<JapTutorLegal />} />
           <Route path="/japtour/legal" element={<JapTourLegal />} />
           <Route path="/japtalk/legal" element={<JapTalkLegal />} />
+          <Route path="/japanone/legal" element={<JapanOneLegal />} />
           <Route path="/japtalk/level-check" element={<JapTalkLevelCheck />} />
           <Route path="/japtutor/plan-builder" element={<JapTutorPlanBuilder />} />
           <Route path="/jappass/plan-builder" element={<Navigate to="/japtutor/plan-builder" replace />} />
