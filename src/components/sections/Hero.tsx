@@ -23,8 +23,8 @@ export function Hero() {
           Practical tools for your next step in Japan.
         </p>
         <p className="mx-auto mt-4 max-w-lg text-base text-ink-soft">
-          Muthamil Technologies is the company behind JapanOne: apps for learning Japanese,
-          travelling in Japan and working in Japan.
+          Muthamil Technologies makes JapanOne: one app and website to learn Japanese, and to
+          study, work, travel and live in Japan.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a

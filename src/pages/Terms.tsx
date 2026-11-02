@@ -12,8 +12,8 @@ export function Terms() {
 
       <div className="mt-8 flex flex-col gap-6 text-ink-soft">
         <p>
-          These terms cover use of the muthamiltech.com website. Our individual products —
-          JapanOne and JapTour — each have their own terms where applicable.
+          These terms cover use of the muthamiltech.com website. JapanOne (the app and japanone.app) has its own{" "}
+          <a href="https://japanone.app/terms" className="text-accent">Terms of Use</a>.
         </p>
 
         <section>
@@ -28,10 +28,8 @@ export function Terms() {
         <section>
           <h2 className="text-lg font-semibold text-ink">Product information</h2>
           <p className="mt-2">
-            Products shown as "in development" are not yet available and their features may
-            change before launch. Any example screens or listings shown on this site (for
-            instance, on the JapWork section) are illustrative only and do not represent real,
-            live data.
+            Product descriptions on this site summarise what JapanOne does; features may change
+            over time. Example screens are illustrative only and do not represent real, live data.
           </p>
         </section>
 

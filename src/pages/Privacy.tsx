@@ -12,9 +12,9 @@ export function Privacy() {
 
       <div className="mt-8 flex flex-col gap-6 text-ink-soft">
         <p>
-          This page covers the muthamiltech.com website itself. Our individual products —
-          JapanOne and JapTour — each publish their own privacy policy
-          covering how that specific app handles data.
+          This page covers the muthamiltech.com website itself. JapanOne (the app and japanone.app) has its own{" "}
+          <a href="/japanone/legal" className="text-accent">privacy policy</a>{" "}
+          covering how it handles data.
         </p>
 
         <section>

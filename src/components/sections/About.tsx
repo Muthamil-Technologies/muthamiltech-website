@@ -11,12 +11,12 @@ export function About() {
         </h2>
         <p className="mt-6 text-lg text-ink-soft">
           Muthamil Technologies is an independent software company based in Japan. We build
-          practical apps for people coming to Japan from abroad: to learn the language, plan a
-          trip, or find their path to work.
+          JapanOne for people coming to Japan from abroad: to learn the language, study, work,
+          travel and settle in.
         </p>
         <p className="mt-4 text-lg text-ink-soft">
-          Our apps work offline, need no account, and link to official sources wherever rules
-          and procedures are involved.
+          JapanOne works without an account, keeps its tools on your device, and links to official
+          sources wherever rules and procedures are involved.
         </p>
       </div>
     </section>

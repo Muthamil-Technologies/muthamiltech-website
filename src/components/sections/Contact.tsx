@@ -17,10 +17,11 @@ export function Contact() {
           products?
         </p>
         <p className="mx-auto mt-6 max-w-xl rounded-2xl border border-line bg-surface p-5 text-sm text-ink-soft">
-          <span className="block font-semibold text-ink">For employers, support organisations and tour operators</span>
-          Listing your job openings or tours on JapanOne is free during our launch period. Email us and we'll help you get started.
+          <span className="block font-semibold text-ink">For schools, employers, tour agencies and shops</span>
+          Reach people coming to Japan by listing on JapanOne. There is no charge to list during our launch period.{" "}
+          <a href="https://japanone.app/partners" className="font-semibold text-ink underline">Become a partner →</a>
           <span className="mt-3 block" lang="ja">
-            求人やツアーの掲載をご希望の事業者さまは、メールでお気軽にご連絡ください。サービス開始期間中、掲載は無料です。
+            学校・求人・ツアー・商品の掲載をご希望の事業者さまは、JapanOneのパートナーページからご登録いただくか、メールでお気軽にご連絡ください。
           </span>
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

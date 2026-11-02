@@ -28,36 +28,19 @@ export const products: Product[] = [
   {
     slug: "japanone",
     name: "JapanOne",
-    category: "Japanese Learning & JLPT",
+    category: "Your gateway to Japan",
     description:
-      "Speak Japanese in real situations and prepare for the JLPT, in one free app.",
+      "Learn Japanese, then study, work, travel and live in Japan, all in one app and website.",
     longDescription:
-      "JapanOne brings our learning apps together in one place. Speak (formerly JapTalk) is speaking-first: every lesson opens with a real sentence to say or type, in goal-based paths for travel, daily life and work. JLPT (formerly JapTutor) builds a dated study plan to your exam, with N5–N3 lessons, a short JLPT-style test every day and mock exams. Work and Study in Japan sections are being added. Free, offline, with no account.",
+      "JapanOne brings everything for people coming to Japan into one app and website. Learn: speaking practice in real situations, JLPT N5–N3 lessons with a plan to your exam, and a daily kanji quiz. Study: school types, a study path planner, scholarships, costs and the student visa. Work: the residence statuses that allow work, the Specified Skilled Worker guide, a pathway finder and a Japanese CV builder. Travel: a trip planner and travel phrases with audio. Live: address registration, health insurance, pension and where to get help. Facts come from official sources, with the date we checked them.",
     status: "live",
     features: [
-      "Speak: speaking-first lessons, typed or spoken",
-      "JLPT: a dated N5–N3 plan and a daily test",
-      "Work and Study in Japan sections coming",
+      "Learn: speaking practice, JLPT N5–N3, daily kanji",
+      "Study and Work: guides, planners and a Japanese CV builder",
+      "Travel and Live: trip planner, phrases, first-weeks checklist",
     ],
     journeyStep: "Learn",
     url: "https://japanone.app",
-  },
-  {
-    slug: "japtour",
-    name: "JapTour",
-    category: "Japan Travel",
-    description:
-      "Plan better trips around Japan with day-by-day itineraries and travel tools that work offline.",
-    longDescription:
-      "JapTour builds a trip itinerary that fits how you want to travel — days, places, pace and interests — and keeps it on your phone, offline, with maps, phrases, food and dietary cards, a budget tracker, and ski areas like Niseko and Hakuba. No account needed.",
-    status: "launching-soon",
-    features: [
-      "Day-by-day itineraries by trip length and interests",
-      "Works offline: maps hand-off, phrases, dietary cards",
-      "Budget estimates and spending tracker",
-    ],
-    journeyStep: "Explore",
-    url: "https://japanone.app/travel/plan",
   },
 ];
 
