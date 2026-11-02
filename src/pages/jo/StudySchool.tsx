@@ -76,14 +76,14 @@ function Block({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-export function Sources({ sources, checked }: { sources: Src[]; checked: string }) {
+export function Sources({ sources, checked, note = "General information, not advice. Fees and rules vary by school and change over time: always check with the school." }: { sources: Src[]; checked: string; note?: string }) {
   return (
     <section className="mt-8 rounded-[18px] border border-[#d9dee6] bg-white/60 p-6">
       <h2 className="m-0 text-base font-extrabold">Sources · checked {formatChecked(checked)}</h2>
       <ul className="mb-3 mt-3 flex flex-col gap-1.5 pl-5">
         {sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noreferrer" className="text-[#1f4fa8] underline">{s.name}</a></li>)}
       </ul>
-      <p className="m-0 text-sm text-jo-muted">General information, not advice. Fees and rules vary by school and change over time: always check with the school.</p>
+      <p className="m-0 text-sm text-jo-muted">{note}</p>
     </section>
   );
 }

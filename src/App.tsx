@@ -31,6 +31,7 @@ import { StudyHoursCheck } from "./pages/jo/StudyHoursCheck";
 import { StudyPathPlanner } from "./pages/jo/StudyPathPlanner";
 import { StudyHome } from "./pages/jo/StudyHome";
 import { StudySchool } from "./pages/jo/StudySchool";
+import { SswHub, WorkHome, WorkStatusPage } from "./pages/jo/WorkPages";
 import { CvBuilder } from "./pages/japwork/CvBuilder";
 import { PathwayFinder } from "./pages/japwork/PathwayFinder";
 import { TravelPhrases } from "./pages/japtour/TravelPhrases";
@@ -65,6 +66,9 @@ function JapanOneApp() {
       <Route path="/study/path" element={page(<StudyPathPlanner />)} />
       <Route path="/study/work-hours" element={page(<StudyHoursCheck />)} />
       <Route path="/live/address" element={page(<LiveAddressCheck />)} />
+      <Route path="/work" element={page(<WorkHome />)} />
+      <Route path="/work/ssw" element={page(<SswHub />)} />
+      <Route path="/work/status/:id" element={page(<WorkStatusPage />)} />
       <Route path="/work/pathway" element={page(<PathwayFinder />)} />
       <Route path="/work/cv" element={page(<CvBuilder />)} />
       <Route path="/travel/plan" element={page(<TripPlanner />)} />
