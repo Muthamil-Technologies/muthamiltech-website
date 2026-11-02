@@ -10,7 +10,7 @@ export function JOFooter() {
         <div className="flex max-w-sm flex-col gap-2.5">
           <strong className="text-[22px] font-black text-white">JapanOne</strong>
           <p className="m-0 text-sm leading-relaxed">
-            General information only, not legal or visa advice. Facts come from official sources such as ISA, MEXT, JASSO and MHLW,
+            © Muthamil Technologies. No copying or scraping: see the Terms of Use. General information only, not legal or visa advice. Facts come from official sources such as ISA, MEXT, JASSO and MHLW,
             and show the date we checked them.
           </p>
         </div>
@@ -25,7 +25,7 @@ export function JOFooter() {
             <strong className="text-white">Company</strong>
             <Link to="/partners" className="text-[#b9c6d6] hover:text-white">For partners</Link>
             <Link to="/japanone/legal" className="text-[#b9c6d6] hover:text-white">Privacy &amp; support</Link>
-            <a href="https://muthamiltech.com/terms" className="text-[#b9c6d6] hover:text-white">Terms</a>
+            <Link to="/terms" className="text-[#b9c6d6] hover:text-white">Terms of Use</Link>
           </div>
           <div className="flex flex-col gap-2">
             <strong className="text-white">Follow</strong>

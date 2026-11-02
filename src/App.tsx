@@ -26,6 +26,7 @@ import { JOGuide, JOGuides } from "./pages/jo/JOGuide";
 import { JOHome } from "./pages/jo/JOHome";
 import { JOSearch } from "./pages/jo/JOSearch";
 import { JOAccount } from "./pages/jo/JOAccount";
+import { JOTerms } from "./pages/jo/JOTerms";
 import { JOSection } from "./pages/jo/JOSection";
 import { LiveAddressCheck } from "./pages/jo/LiveAddressCheck";
 import { StudyPathPlanner } from "./pages/jo/StudyPathPlanner";
@@ -95,6 +96,7 @@ function JapanOneApp() {
       <Route path="/tour/plan" element={<Navigate to="/travel/plan" replace />} />
       <Route path="/tour/phrases" element={<Navigate to="/travel/phrases" replace />} />
       <Route path="/japanone/legal" element={page(<JapanOneLegal />)} />
+      <Route path="/terms" element={page(<JOTerms />)} />
       <Route path="/partners" element={page(<PartnersHome />)} />
       {PROGRAMS.map((p) => (
         <Route key={p.slug} path={`/partners/${p.slug}`} element={page(<PartnerProgramPage program={p} />)} />

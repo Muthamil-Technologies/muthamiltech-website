@@ -109,7 +109,7 @@ export function Login() {
       {error && <p className="mt-4 text-sm text-accent">{error}</p>}
 
       <p className="mt-10 text-xs text-ink-faint">
-        By signing in you agree to our <a href="https://muthamiltech.com/terms" className="underline">Terms</a> and{" "}
+        By signing in you agree to our <Link to="/terms" className="underline">Terms of Use</Link> and{" "}
         <Link to="/japanone/legal#accounts" className="underline">privacy policy</Link>.
       </p>
     </div>
