@@ -96,7 +96,7 @@ export function StudyPathPlanner() {
           <p className="m-0 mt-1">
             {goal === "vocational"
               ? "To enter a vocational school you need, for example, more than 6 months at an approved Japanese language school, or JLPT N2 or above."
-              : "Classes at universities are in Japanese, and many universities ask for EJU scores. Plan a year or two at a language school, with the EJU in June or November."}
+              : "Classes at universities are in Japanese, and many universities ask for EJU scores. Plan time at a language school first, and take the EJU in June or November."}
             {" "}Plan your language school start with this planner, then apply from Japan.
           </p>
         </div>
