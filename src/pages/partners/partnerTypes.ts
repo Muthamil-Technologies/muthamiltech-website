@@ -1,10 +1,12 @@
 import type { ProviderKind } from "../../lib/listings";
 import type { SectionId } from "../../lib/joSections";
 
-/** One partner programme per JapanOne section that takes listings (Work, Travel, Shop). */
+/** One partner programme per JapanOne section that takes listings (Study, Work, Travel, Shop). */
 export type PartnerProgram = {
-  slug: "work" | "travel" | "shop";
+  slug: "study" | "work" | "travel" | "shop";
   section: SectionId;
+  /** Other section pages that also invite this kind of partner. */
+  alsoOn?: SectionId[];
   kind: ProviderKind;
   app: string;
   who: string;
@@ -18,6 +20,26 @@ export type PartnerProgram = {
 };
 
 export const PROGRAMS: PartnerProgram[] = [
+  {
+    slug: "study",
+    section: "study",
+    alsoOn: ["learn"],
+    kind: "school",
+    app: "JapanOne Study",
+    who: "Language schools & educational institutes",
+    cardBody: "Introduce your Japanese courses and programmes to learners who want to study in Japan.",
+    headline: "Reach learners who want to study in Japan",
+    intro:
+      "JapanOne helps people learn Japanese and plan their studies in Japan: JLPT practice, school types, scholarships and student visa rules. List your courses so they find you while they plan.",
+    steps: [
+      ["Register your school.", "We check it against the official lists (MEXT accreditation or the Immigration list of approved schools) before anything goes live."],
+      ["List a course", "with length, intakes, tuition and the Japanese level needed. Our team checks every listing."],
+      ["Students apply on your website.", "JapanOne links to your application page; we don't take applications or fees."],
+    ],
+    note: "Courses are shown in JapanOne (app and website), in the language you write them in. There is no charge to list during our launch period.",
+    registrationLabel: "Corporate number (法人番号) or school code",
+    registrationHint: "We verify each school before its courses go live. Your accreditation or approval details speed this up.",
+  },
   {
     slug: "work",
     section: "work",

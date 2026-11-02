@@ -1,8 +1,8 @@
 import { supabase } from "./supabase";
 
-// Types and helpers for the shared listing platform (muthamil-platform/supabase/migrations/0002).
-export type ProviderKind = "employer" | "tour_agency" | "seller";
-export type Product = "job" | "tour" | "item";
+// Types and helpers for the shared listing platform (muthamil-platform/supabase/migrations/0002, schools from 0007).
+export type ProviderKind = "employer" | "tour_agency" | "seller" | "school";
+export type Product = "job" | "tour" | "item" | "course";
 export type ListingStatus = "draft" | "submitted" | "published" | "rejected" | "expired" | "removed";
 
 export type Provider = {
@@ -41,15 +41,16 @@ export type Listing = {
 
 export type Details = Record<string, unknown>;
 
-export const PRODUCT_OF: Record<ProviderKind, Product> = { employer: "job", tour_agency: "tour", seller: "item" };
-export const DETAIL_TABLE: Record<Product, string> = { job: "job_details", tour: "tour_details", item: "item_details" };
+export const PRODUCT_OF: Record<ProviderKind, Product> = { employer: "job", tour_agency: "tour", seller: "item", school: "course" };
+export const DETAIL_TABLE: Record<Product, string> = { job: "job_details", tour: "tour_details", item: "item_details", course: "course_details" };
 
 export const KIND_LABEL: Record<ProviderKind, string> = {
   employer: "Employer / recruiter",
   tour_agency: "Tour agency",
   seller: "Seller",
+  school: "School / institute",
 };
-export const PRODUCT_LABEL: Record<Product, string> = { job: "Job", tour: "Tour package", item: "Product" };
+export const PRODUCT_LABEL: Record<Product, string> = { job: "Job", tour: "Tour package", item: "Product", course: "Course" };
 
 export const STATUS_LABEL: Record<ListingStatus, string> = {
   draft: "Draft",
@@ -220,6 +221,24 @@ export const DETAIL_FIELDS: Record<Product, Field[]> = {
     { key: "size", label: "Size", type: "text" },
     { key: "color", label: "Colour", type: "text" },
     { key: "contact_url", label: "Where to buy (shop link or WhatsApp)", type: "text", required: true },
+  ],
+  course: [
+    {
+      key: "school_type", label: "Type of school", type: "select", required: true,
+      options: [["language_school", "Japanese language school (日本語学校)"], ["vocational", "Vocational school (専門学校)"], ["university", "University / graduate school"], ["junior_college", "Junior college (短期大学)"], ["other", "Other"]],
+    },
+    {
+      key: "course_type", label: "Course", type: "select", required: true,
+      options: [["long_term", "Long-term (student visa)"], ["short_term", "Short-term"], ["online", "Online"], ["university_prep", "University preparation"], ["business_japanese", "Business Japanese"], ["jlpt_prep", "JLPT preparation"], ["other", "Other"]],
+    },
+    { key: "duration_months", label: "Length (months)", type: "number" },
+    { key: "intakes", label: "Intakes", type: "multi", options: [["january", "January"], ["april", "April"], ["july", "July"], ["october", "October"]] },
+    { key: "tuition_year_jpy", label: "Tuition per year (¥)", type: "number", hint: "Tuition only. Put entrance and other fees in the note." },
+    { key: "fees_note", label: "Other fees", type: "text", hint: "Entrance fee, materials, insurance, dormitory…" },
+    { key: "student_visa", label: "Can sponsor a student visa (留学)", type: "bool", hint: "We check this against the official lists before publishing." },
+    { key: "entry_level", label: "Japanese needed to start", type: "select", options: [["none", "None"], ["n5", "N5"], ["n4", "N4"], ["n3", "N3"], ["n2", "N2"], ["n1", "N1"]] },
+    { key: "support_languages", label: "Staff support in", type: "multi", options: LANGS },
+    { key: "apply_url", label: "How to apply (your website)", type: "text", required: true },
   ],
 };
 

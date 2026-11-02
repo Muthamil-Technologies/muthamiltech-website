@@ -30,7 +30,7 @@ export function PartnersHome() {
       </p>
       <p lang="ja" className="mt-2 text-sm text-jo-muted">日本の企業・団体の皆さまへ：掲載のご案内は日本語でも承ります。</p>
 
-      <div className="mt-10 grid gap-[18px] md:grid-cols-3">
+      <div className="mt-10 grid gap-[18px] md:grid-cols-2 xl:grid-cols-4">
         {PROGRAMS.map((p) => {
           const s = sectionById(p.section)!;
           return (

@@ -42,7 +42,7 @@ export function Admin() {
   const loadListings = useCallback(async (status: string) => {
     const { data } = await db()
       .from("listings")
-      .select("*, providers(*), job_details(*), tour_details(*), item_details(*), listing_media(path)")
+      .select("*, providers(*), job_details(*), tour_details(*), item_details(*), course_details(*), listing_media(path)")
       .eq("status", status)
       .order(status === "submitted" ? "submitted_at" : "published_at", { ascending: status === "submitted" });
     return ((data ?? []) as Record<string, unknown>[]).map((r) => ({

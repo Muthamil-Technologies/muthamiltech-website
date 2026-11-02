@@ -15,7 +15,7 @@ export function JOSection() {
   if (!s) return <Navigate to="/" replace />;
   const tools = TOOLS.filter((t) => t.section === s.id);
   const guides = GUIDES.filter((g) => g.section === s.id);
-  const program = PROGRAMS.find((p) => p.section === s.id);
+  const program = PROGRAMS.find((p) => p.section === s.id || p.alsoOn?.includes(s.id));
 
   return (
     <>

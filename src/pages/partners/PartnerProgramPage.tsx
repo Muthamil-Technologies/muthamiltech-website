@@ -1,8 +1,16 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
-import { db, type Provider } from "../../lib/listings";
+import { db, type Provider, type ProviderKind } from "../../lib/listings";
 import type { PartnerProgram } from "./partnerTypes";
+
+// What each kind of partner is called, and what it lists.
+const NOUN: Record<ProviderKind, { one: string; many: string; lists: string }> = {
+  employer: { one: "company", many: "companies", lists: "jobs" },
+  tour_agency: { one: "agency", many: "agencies", lists: "tours" },
+  seller: { one: "shop", many: "shops", lists: "products" },
+  school: { one: "school", many: "schools", lists: "courses" },
+};
 
 const input = "mt-1 w-full rounded-lg border border-line bg-paper px-3 py-2 text-ink outline-none focus:border-accent";
 
@@ -46,7 +54,7 @@ export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
   }
 
   const fields: [keyof typeof form, string, boolean][] = [
-    ["name", program.kind === "tour_agency" ? "Agency name" : program.kind === "seller" ? "Shop name" : "Company name", true],
+    ["name", program.kind === "tour_agency" ? "Agency name" : program.kind === "seller" ? "Shop name" : program.kind === "school" ? "School name" : "Company name", true],
     ["website", "Website", false],
     ["contact_email", "Contact email", true],
     ["phone", "Phone", false],
@@ -78,7 +86,7 @@ export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
         <>
           {mine && mine.length > 0 && (
             <section className="mt-10">
-              <h2 className="text-lg font-semibold text-ink">Your {program.kind === "tour_agency" ? "agencies" : "companies"}</h2>
+              <h2 className="text-lg font-semibold text-ink">Your {NOUN[program.kind].many}</h2>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 {mine.map((p) => (
                   <Link key={p.id} to={`/partners/p/${p.id}`} className="rounded-xl border border-line bg-surface p-5 hover:shadow-md">
@@ -86,7 +94,7 @@ export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
                       <span className="font-semibold text-ink">{p.name}</span>
                       <span className="text-xs text-ink-faint">{p.status === "active" ? "Verified" : p.status === "pending" ? "Awaiting verification" : "Suspended"}</span>
                     </div>
-                    <div className="mt-1 text-sm text-ink-soft">Open to post and manage {program.kind === "tour_agency" ? "tours" : "jobs"} &rarr;</div>
+                    <div className="mt-1 text-sm text-ink-soft">Open to post and manage {NOUN[program.kind].lists} &rarr;</div>
                   </Link>
                 ))}
               </div>
@@ -96,7 +104,7 @@ export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
           <section className="mt-10">
             {!showForm ? (
               <button onClick={() => setShowForm(true)} className="rounded-full bg-ink px-6 py-3 font-semibold text-paper hover:bg-accent-deep">
-                {mine?.length ? "Register another" : "Register"} {program.kind === "tour_agency" ? "agency" : "company"}
+                {mine?.length ? "Register another" : "Register"} {NOUN[program.kind].one}
               </button>
             ) : (
               <form onSubmit={create} className="grid gap-4 rounded-2xl border border-line bg-surface p-6 sm:grid-cols-2">
