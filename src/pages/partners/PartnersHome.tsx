@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { SectionIcon } from "../../components/jo/SectionIcon";
 import { useAuth } from "../../lib/auth";
+import { sectionById } from "../../lib/joSections";
 import { db, KIND_LABEL, type Provider } from "../../lib/listings";
 import { PROGRAMS } from "./partnerTypes";
 
-/** "Become a partner": choose JapWork (employers) or JapTour (tour agencies). */
+/** "Become a partner": employers (Work), tour agencies and guides (Travel), shop owners (Shop). */
 export function PartnersHome() {
   const { session } = useAuth();
   const [mine, setMine] = useState<Provider[] | null>(null);
@@ -19,35 +21,43 @@ export function PartnersHome() {
   }, [session]);
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-14">
-      <div className="text-xs font-bold tracking-wide text-accent">JapanOne Partners</div>
-      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Become a partner</h1>
-      <p className="mt-3 max-w-2xl text-ink-soft">
-        Reach the people our apps serve. Choose the app that fits your business. Every partner and listing is checked by our team.
+    <div className="mx-auto max-w-[1200px] px-4 py-14 sm:px-6">
+      <p className="m-0 text-sm font-bold tracking-wide text-[#4a2f99]">JapanOne Partners</p>
+      <h1 className="mb-3 mt-2 text-[36px] font-black sm:text-[44px]">Become a partner</h1>
+      <p className="m-0 max-w-2xl text-lg leading-relaxed text-jo-muted">
+        Reach people who are learning Japanese and coming to Japan to study, work, travel or shop. Choose the section that fits
+        your business. Our team checks every partner and every listing.
       </p>
+      <p lang="ja" className="mt-2 text-sm text-jo-muted">日本の企業・団体の皆さまへ：掲載のご案内は日本語でも承ります。</p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2">
-        {PROGRAMS.map((p) => (
-          <Link key={p.slug} to={`/partners/${p.slug}`} className="group rounded-2xl border border-line bg-surface p-7 transition hover:border-ink hover:shadow-md">
-            <div className="text-xs font-bold tracking-wide text-accent">{p.app}</div>
-            <div className="mt-2 text-xl font-semibold text-ink">{p.who}</div>
-            <p className="mt-2 text-sm text-ink-soft">{p.cardBody}</p>
-            <div className="mt-5 text-sm font-semibold text-ink group-hover:text-accent">Partner with {p.app} &rarr;</div>
-          </Link>
-        ))}
+      <div className="mt-10 grid gap-[18px] md:grid-cols-3">
+        {PROGRAMS.map((p) => {
+          const s = sectionById(p.section)!;
+          return (
+            <Link key={p.slug} to={`/partners/${p.slug}`} className="flex flex-col gap-3 rounded-[22px] bg-white p-7 text-jo-navy no-underline shadow-[0_6px_20px_rgba(18,38,63,0.06)] hover:shadow-[0_8px_26px_rgba(18,38,63,0.14)]">
+              <span className="flex h-[52px] w-[52px] items-center justify-center rounded-[14px]" style={{ background: s.tint }}>
+                <SectionIcon id={s.id} color={s.ink} size={28} />
+              </span>
+              <span className="text-sm font-bold" style={{ color: s.tag }}>{p.app}</span>
+              <strong className="text-xl font-extrabold">{p.who}</strong>
+              <span className="leading-relaxed text-jo-muted">{p.cardBody}</span>
+              <span className="mt-auto pt-2 font-bold">Partner with {p.app} →</span>
+            </Link>
+          );
+        })}
       </div>
 
       {mine && mine.length > 0 && (
         <section className="mt-12">
-          <h2 className="text-lg font-semibold text-ink">Your companies</h2>
+          <h2 className="text-2xl font-black">Your companies</h2>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             {mine.map((p) => (
-              <Link key={p.id} to={`/partners/p/${p.id}`} className="rounded-xl border border-line bg-surface p-5 hover:shadow-md">
+              <Link key={p.id} to={`/partners/p/${p.id}`} className="rounded-[18px] bg-white p-5 text-jo-navy no-underline hover:shadow-md">
                 <div className="flex justify-between gap-3">
-                  <span className="font-semibold text-ink">{p.name}</span>
-                  <span className="text-xs text-ink-faint">{p.status === "active" ? "Verified" : p.status === "pending" ? "Awaiting verification" : "Suspended"}</span>
+                  <span className="font-bold">{p.name}</span>
+                  <span className="text-xs text-jo-faint">{p.status === "active" ? "Verified" : p.status === "pending" ? "Awaiting verification" : "Suspended"}</span>
                 </div>
-                <div className="mt-1 text-sm text-ink-soft">{KIND_LABEL[p.kind]}</div>
+                <div className="mt-1 text-sm text-jo-muted">{KIND_LABEL[p.kind]}</div>
               </Link>
             ))}
           </div>

@@ -69,6 +69,14 @@ function JapanOneApp() {
       <Route path="/tour/phrases" element={<Navigate to="/travel/phrases" replace />} />
       <Route path="/japanone/legal" element={page(<JapanOneLegal />)} />
       <Route path="/partners" element={page(<PartnersHome />)} />
+      {PROGRAMS.map((p) => (
+        <Route key={p.slug} path={`/partners/${p.slug}`} element={page(<PartnerProgramPage program={p} />)} />
+      ))}
+      <Route path="/partners/tour" element={<Navigate to="/partners/travel" replace />} />
+      <Route path="/partners/p/:id" element={page(<ProviderPage />)} />
+      <Route path="/partners/listing/:id" element={page(<ListingEditor />)} />
+      <Route path="/admin" element={page(<Admin />)} />
+      <Route path="/login" element={page(<Login />)} />
       <Route path="/:section" element={page(<JOSection />)} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

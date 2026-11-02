@@ -104,7 +104,7 @@ export function JOHome() {
             <span className="flex items-center gap-2 text-[13px] font-bold text-[#9e2232]">SHOP <span className="rounded-full bg-white px-2.5 py-0.5 text-[12px]">Coming soon</span></span>
             <h3 className="m-0 text-[30px] font-black leading-tight">Made in Japan, from local sellers</h3>
             <p className="m-0 leading-relaxed text-[#4a2e33]">Snacks, stationery, kitchen tools and crafts from small Japanese shops. Are you a Japanese seller? Join before we open.</p>
-            <Link to="/partners" className="mt-2 self-start rounded-full bg-jo-navy px-5 py-3 font-bold text-white no-underline">Sellers: join early →</Link>
+            <Link to="/partners/shop" className="mt-2 self-start rounded-full bg-jo-navy px-5 py-3 font-bold text-white no-underline">Sellers: join early →</Link>
           </article>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { SectionIcon } from "../../components/jo/SectionIcon";
 import { GUIDES } from "../../lib/joContent";
 import { sectionById, type Section } from "../../lib/joSections";
 import { TOOLS, type Tool } from "../../lib/joTools";
+import { PROGRAMS } from "../partners/partnerTypes";
 import { Heading } from "./JOHome";
 
 // One page per section (/learn, /study, …): header, tools you can use, then guides.
@@ -14,6 +15,7 @@ export function JOSection() {
   if (!s) return <Navigate to="/" replace />;
   const tools = TOOLS.filter((t) => t.section === s.id);
   const guides = GUIDES.filter((g) => g.section === s.id);
+  const program = PROGRAMS.find((p) => p.section === s.id);
 
   return (
     <>
@@ -43,6 +45,18 @@ export function JOSection() {
               <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">{guides.map((g) => <GuideCard key={g.id} guide={g} />)}</div>
             </section>
           )}
+          {program && (
+            <section className="pt-12">
+              <div className="flex flex-wrap items-center gap-6 rounded-3xl bg-jo-navy p-8 text-white">
+                <div className="flex min-w-0 flex-[999_1_420px] flex-col gap-2">
+                  <span className="text-sm font-bold tracking-wide text-jo-yellow">FOR {program.who.toUpperCase()}</span>
+                  <h2 className="m-0 text-[28px] font-black leading-tight">{program.headline}</h2>
+                  <p className="m-0 leading-relaxed text-[#d9e1ec]">{program.cardBody}</p>
+                </div>
+                <Link to={`/partners/${program.slug}`} className="rounded-[14px] bg-jo-yellow px-6 py-3.5 font-bold text-jo-navy no-underline">Become a partner →</Link>
+              </div>
+            </section>
+          )}
           {tools.length === 0 && guides.length === 0 && (
             <p className="pt-12 text-lg text-jo-muted">Guides for this section are being checked against official sources.</p>
           )}
@@ -68,7 +82,7 @@ function ShopSoon() {
       <span className="rounded-full bg-[#fbe3e6] px-3 py-1 text-sm font-bold text-[#9e2232]">Coming soon</span>
       <h2 className="mb-3 mt-5 text-[32px] font-black">Made in Japan, straight from local sellers</h2>
       <p className="mx-auto mb-8 max-w-[560px] text-lg leading-relaxed text-jo-muted">Snacks, stationery, kitchen tools and crafts from small Japanese shops. We are inviting the first sellers now.</p>
-      <Link to="/partners" className="rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">Japanese sellers: join early →</Link>
+      <Link to="/partners/shop" className="rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">Japanese sellers: join early →</Link>
       <p lang="ja" className="mt-5 text-sm text-jo-muted">出店をご希望の事業者さまはこちらからご登録ください。</p>
     </div>
   );

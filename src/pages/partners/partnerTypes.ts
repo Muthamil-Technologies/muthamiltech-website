@@ -1,8 +1,10 @@
 import type { ProviderKind } from "../../lib/listings";
+import type { SectionId } from "../../lib/joSections";
 
-/** One partner programme per app. JapMart sellers stay hidden while JapMart is on hold. */
+/** One partner programme per JapanOne section that takes listings (Work, Travel, Shop). */
 export type PartnerProgram = {
-  slug: "work" | "tour";
+  slug: "work" | "travel" | "shop";
+  section: SectionId;
   kind: ProviderKind;
   app: string;
   who: string;
@@ -18,6 +20,7 @@ export type PartnerProgram = {
 export const PROGRAMS: PartnerProgram[] = [
   {
     slug: "work",
+    section: "work",
     kind: "employer",
     app: "JapanOne Work",
     who: "Employers & registered support organisations",
@@ -35,7 +38,8 @@ export const PROGRAMS: PartnerProgram[] = [
     registrationHint: "We verify each company before its jobs go live. The corporate number speeds this up.",
   },
   {
-    slug: "tour",
+    slug: "travel",
+    section: "travel",
     kind: "tour_agency",
     app: "JapanOne Travel",
     who: "Tour agencies & local guides",
@@ -51,6 +55,25 @@ export const PROGRAMS: PartnerProgram[] = [
     note: "Tours are shown in JapanOne (app and website), in the language you write them in. There is no charge to list during our launch period.",
     registrationLabel: "Travel agency registration no. (旅行業登録番号)",
     registrationHint: "We verify each agency before its tours go live. The registration number speeds this up.",
+  },
+  {
+    slug: "shop",
+    section: "shop",
+    kind: "seller",
+    app: "JapanOne Shop",
+    who: "Shop owners & makers in Japan",
+    cardBody: "Sell Made-in-Japan products to people around the world who love Japan.",
+    headline: "Sell Made in Japan to people who love Japan",
+    intro:
+      "JapanOne Shop will show products from small Japanese shops and makers to learners, students and travellers around the world. Register now and your shop is ready when Shop opens.",
+    steps: [
+      ["Register your shop.", "Tell us who you are and what you sell. We check every shop before it goes live."],
+      ["Add your products", "with photos, price, where you ship and how to buy. Our team checks every listing."],
+      ["Buyers order from you directly", "through your own shop page or contact link. We don't take orders or payments."],
+    ],
+    note: "Shop opens in JapanOne after our launch. There is no charge to register.",
+    registrationLabel: "Corporate number (法人番号), if you have one",
+    registrationHint: "Sole traders are welcome. We may ask for your business details before your products go live.",
   },
 ];
 

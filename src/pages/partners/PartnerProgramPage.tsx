@@ -6,7 +6,7 @@ import type { PartnerProgram } from "./partnerTypes";
 
 const input = "mt-1 w-full rounded-lg border border-line bg-paper px-3 py-2 text-ink outline-none focus:border-accent";
 
-/** One partner programme (JapWork or JapTour): what it offers, then register and manage companies. */
+/** One partner programme (Work, Travel or Shop): what it offers, then register and manage companies. */
 export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
   const { ready, session } = useAuth();
   const navigate = useNavigate();
@@ -46,7 +46,7 @@ export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
   }
 
   const fields: [keyof typeof form, string, boolean][] = [
-    ["name", program.kind === "tour_agency" ? "Agency name" : "Company name", true],
+    ["name", program.kind === "tour_agency" ? "Agency name" : program.kind === "seller" ? "Shop name" : "Company name", true],
     ["website", "Website", false],
     ["contact_email", "Contact email", true],
     ["phone", "Phone", false],
