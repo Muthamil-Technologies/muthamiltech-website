@@ -1,0 +1,353 @@
+[
+ {
+  "id": "study-part-time",
+  "section": "study",
+  "title": "Can students work part-time in Japan?",
+  "checked": "2026-11-01",
+  "sources": [
+   {
+    "name": "Immigration Services Agency: permission for students (留学) to work",
+    "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00003.html"
+   },
+   {
+    "name": "Immigration Services Agency: permission to engage in activity other than that permitted (資格外活動許可)",
+    "url": "https://www.moj.go.jp/isa/applications/procedures/16-8.html"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "STUDY IN JAPAN",
+    "title": "Can students work part-time in Japan?",
+    "body": "Yes, with permission. Here are the rules."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Get permission first",
+    "body": "On a student visa (留学), you need “permission to engage in activity other than that permitted” (資格外活動許可) before any paid work.",
+    "note": "Apply at your regional immigration office. No fee. It can take 2 weeks to 2 months."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Up to 28 hours a week",
+    "body": "During the school term you can work up to 28 hours a week.",
+    "note": "Count every job together, not each job separately."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Long holidays: up to 8 hours a day",
+    "body": "During your school's long vacation (for example summer or spring break), you can work up to 8 hours a day.",
+    "note": "Only during the vacation your school sets, not on any day without class."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Where you can't work",
+    "body": "No work at adult entertainment or nightlife businesses (風俗営業 and similar), in any role, even cleaning or washing dishes.",
+    "note": "Breaking the rules can put your visa at risk."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Immigration Services Agency of Japan (moj.go.jp/isa)",
+    "note": "Checked Nov 1, 2026. General information, not visa advice. Check the official site or ask your school."
+   }
+  ]
+ },
+ {
+  "id": "study-mext",
+  "section": "study",
+  "title": "MEXT scholarship: who can apply and how",
+  "checked": "2026-11-01",
+  "sources": [
+   {
+    "name": "Study in Japan (JASSO): MEXT scholarships",
+    "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "style": "bold",
+    "tag": "SCHOLARSHIP",
+    "title": "*Free tuition* in Japan: the MEXT scholarship",
+    "body": "Tuition, airfare and a monthly allowance.",
+    "swipe": "Swipe to see if you qualify →"
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "What you get",
+    "body": "Tuition is exempted, your round-trip airfare is paid, and you get a monthly allowance.",
+    "note": "Most categories: about ¥117,000–¥145,000 a month. The exact amount is in the current MEXT guidelines."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "7 categories",
+    "body": "Research · Teacher training · Undergraduate · Japanese studies · College of technology · Specialized training college · Young Leaders Program",
+    "note": "Choose the one that matches your level and goal."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Age limits",
+    "body": "Undergraduate, college of technology, specialized training college: under 25\nResearch, teacher training: under 35\nJapanese studies: 18 to 29",
+    "note": "The exact cut-off date is in each year's guidelines."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Two ways to apply",
+    "body": "Embassy: through the Japanese embassy or consulate in your country (documents and interview).\nUniversity: through a Japanese university that has an exchange agreement with your school.",
+    "note": "Application periods differ by country. Check your Japanese embassy's website."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Study in Japan (JASSO): MEXT scholarships",
+    "note": "Checked Nov 1, 2026. The official MEXT guidelines take priority. General information, not advice.",
+    "cta": "Comment MEXT for the official links"
+   }
+  ]
+ },
+ {
+  "id": "work-overtime-pay",
+  "section": "work",
+  "title": "Overtime, night and holiday pay in Japan",
+  "checked": "2026-11-01",
+  "sources": [
+   {
+    "name": "MHLW: working hours, breaks and holidays",
+    "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/roudouzikan/index.html"
+   },
+   {
+    "name": "MHLW Aichi Employment Consultation Center: premium pay",
+    "url": "https://aichi-elcc.mhlw.go.jp/roudou_hourei/4486/"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "style": "bold",
+    "tag": "WORK IN JAPAN",
+    "title": "Are you paid right for *overtime*?",
+    "body": "Japan's legal minimum extra pay, in 4 slides.",
+    "swipe": "Swipe and check your payslip →"
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Normal hours: 8 a day, 40 a week",
+    "body": "Work beyond 8 hours a day or 40 hours a week is overtime.",
+    "note": "Breaks: at least 45 minutes if you work over 6 hours, 1 hour if over 8. At least 1 day off a week."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Overtime: +25% or more",
+    "body": "Every overtime hour is paid at least 25% more than your normal hourly pay.",
+    "note": "Over 60 overtime hours in a month: at least +50% (all companies since April 2023)."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Late night: +25% or more",
+    "body": "Work from 10pm to 5am is paid at least 25% extra.",
+    "note": "Late-night overtime counts both: at least +50%."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Legal day off: +35% or more",
+    "body": "Work on your legal day off is paid at least 35% extra.",
+    "note": "Check your payslip (給与明細) every month."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Ministry of Health, Labour and Welfare (mhlw.go.jp)",
+    "note": "Checked Nov 1, 2026. General information, not legal advice. Pay problems? Your local Labour Standards Inspection Office (労働基準監督署) can help, free.",
+    "cta": "Comment PAY if this helped"
+   }
+  ]
+ },
+ {
+  "id": "study-school-types",
+  "section": "study",
+  "title": "Which school is right for you in Japan?",
+  "checked": "2026-11-01",
+  "sources": [
+   {
+    "name": "Study in Japan (JASSO): Japan's educational system",
+    "url": "https://www.studyinjapan.go.jp/en/planning/educational-system/"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "style": "bold",
+    "tag": "STUDY IN JAPAN",
+    "title": "*Which school* is right for you in Japan?",
+    "body": "Language school, vocational college or university?",
+    "swipe": "Swipe to compare →"
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Japanese language school",
+    "body": "Many international students start here to learn Japanese before moving on to a college or university.",
+    "note": "Check that the school can accept students on a student visa."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Vocational college (専門学校)",
+    "body": "Practical skills for a job. Diploma programs take 2 to 3 years; Advanced Diploma programs take 4 years.",
+    "note": "Programs differ: check each school's entry requirements."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "University",
+    "body": "A Bachelor's degree takes 4 years (6 for medicine, dentistry, veterinary medicine and some pharmacy).\nMaster's: 2 years. Doctorate: 5 years.",
+    "note": "Check each university's language and entry requirements."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Other options",
+    "body": "Junior college: 2 to 3 years (associate degree).\nCollege of technology: international students join from the 3rd year.",
+    "note": "All higher education starts after 12 years of school."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Study in Japan (JASSO): Japan's educational system",
+    "note": "Checked Nov 1, 2026. General information, not advice. Check each school's own requirements.",
+    "cta": "Comment SCHOOL for the official guide"
+   }
+  ]
+ },
+ {
+  "id": "work-paid-leave",
+  "section": "work",
+  "title": "Paid holidays in Japan",
+  "checked": "2026-11-01",
+  "sources": [
+   {
+    "name": "Aichi Labour Bureau (MHLW): annual paid leave",
+    "url": "https://jsite.mhlw.go.jp/aichi-roudoukyoku/hourei_seido_tetsuzuki/koyou_kintou/20130802/_121855.html"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "style": "bold",
+    "tag": "WORK IN JAPAN",
+    "title": "Do you get *paid holidays* in Japan?",
+    "body": "Yes, by law. Here's how it works.",
+    "swipe": "Swipe to check yours →"
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "After 6 months: 10 days",
+    "body": "Work 6 months in a row and come to at least 80% of your working days, and you get 10 days of paid leave (有給休暇).",
+    "note": "You take them by asking your employer."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "More days over time",
+    "body": "The number of days goes up with your years at the company.",
+    "note": "Part-time? Your days depend on how many days a week you're scheduled to work."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "At least 5 days a year",
+    "body": "Since April 2019, if you get 10 or more days, your employer must make sure you take at least 5 of them every year.",
+    "note": "Days you choose yourself count toward the 5."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Know your balance",
+    "body": "Ask how many paid leave days you have left, and plan them like any other holiday.",
+    "note": "Paid leave means you get your normal pay for that day."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Aichi Labour Bureau, Ministry of Health, Labour and Welfare",
+    "note": "Checked Nov 1, 2026. General information, not legal advice. Questions? Your local Labour Standards Inspection Office can help, free.",
+    "cta": "Comment LEAVE if this helped"
+   }
+  ]
+ },
+ {
+  "id": "work-written-conditions",
+  "section": "work",
+  "title": "Get your working conditions in writing",
+  "checked": "2026-11-01",
+  "sources": [
+   {
+    "name": "MHLW: written working conditions for foreign workers",
+    "url": "https://www.mhlw.go.jp/www2/topics/seido/anteikyoku/gairou/980908gai08.htm"
+   },
+   {
+    "name": "MHLW: working-condition rules from April 2024",
+    "url": "https://muki.mhlw.go.jp/rule.html"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "style": "bold",
+    "tag": "WORK IN JAPAN",
+    "title": "*No paper?* Read this before you start work",
+    "body": "Your working conditions should be in writing.",
+    "swipe": "Swipe for what to check →"
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Ask for the paper",
+    "body": "Before you start, your employer should give you your working conditions in writing (労働条件通知書): pay, working hours and holidays.",
+    "note": "The Ministry has model notices in English and other languages."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Where and what job",
+    "body": "It must say where you'll work and what job you'll do, and how far that can change later.",
+    "note": "This \"scope of change\" rule started in April 2024."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Contract with an end date?",
+    "body": "If your contract is fixed-term, it must say whether there's a limit on renewals.",
+    "note": "Ask about it before you sign."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Keep a copy",
+    "body": "Keep the paper, or a photo of it. If your pay or hours are different, it's your proof.",
+    "note": "Your local Labour Standards Inspection Office (労働基準監督署) can help, free."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Ministry of Health, Labour and Welfare (mhlw.go.jp)",
+    "note": "Checked Nov 1, 2026. General information, not legal advice.",
+    "cta": "Comment PAPER if this helped"
+   }
+  ]
+ }
+]

@@ -1,0 +1,2378 @@
+[
+ {
+  "date": "2026-11-01",
+  "level": "N4",
+  "words": [
+   {
+    "word": "遅れる",
+    "reading": "おくれる",
+    "meaning": "to be late",
+    "options": [
+     "おくれる",
+     "おぐれる",
+     "はたらく",
+     "あつめる"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "間に合う",
+    "reading": "まにあう",
+    "meaning": "to be in time",
+    "options": [
+     "しらべる",
+     "おくれる",
+     "ふりだす",
+     "まにあう"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "急ぐ",
+    "reading": "いそぐ",
+    "meaning": "to hurry",
+    "options": [
+     "まわる",
+     "いぞぐ",
+     "こまる",
+     "いそぐ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "着く",
+    "reading": "つく",
+    "meaning": "to arrive",
+    "options": [
+     "つく",
+     "ある",
+     "あう",
+     "きる"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "答える",
+    "reading": "こたえる",
+    "meaning": "to answer",
+    "options": [
+     "きがつく",
+     "ごたえる",
+     "みつかる",
+     "こたえる"
+    ],
+    "answer_index": 3
+   }
+  ]
+ },
+ {
+  "date": "2026-11-02",
+  "level": "N3",
+  "words": [
+   {
+    "word": "直す",
+    "reading": "なおす",
+    "meaning": "to fix, to correct",
+    "options": [
+     "ふえる",
+     "はらう",
+     "なおす",
+     "たべる"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "怖い",
+    "reading": "こわい",
+    "meaning": "scary",
+    "options": [
+     "おおい",
+     "こわい",
+     "わるい",
+     "ごわい"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "治る",
+    "reading": "なおる",
+    "meaning": "to get better, to heal",
+    "options": [
+     "へらす",
+     "なおる",
+     "はしる",
+     "もどる"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "謝る",
+    "reading": "あやまる",
+    "meaning": "to apologize",
+    "options": [
+     "はやめる",
+     "あやまる",
+     "とどまる",
+     "ささげる"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "落ち着く",
+    "reading": "おちつく",
+    "meaning": "to calm down",
+    "options": [
+     "おちつく",
+     "すすめる",
+     "みわける",
+     "おちちゃくく"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-11-03",
+  "level": "N5",
+  "words": [
+   {
+    "word": "山",
+    "reading": "やま",
+    "meaning": "mountain",
+    "options": [
+     "みみ",
+     "あし",
+     "かみ",
+     "やま"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "川",
+    "reading": "かわ",
+    "meaning": "river",
+    "options": [
+     "かわ",
+     "くち",
+     "がわ",
+     "うえ"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "道",
+    "reading": "みち",
+    "meaning": "road",
+    "options": [
+     "これ",
+     "ここ",
+     "いま",
+     "みち"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "人",
+    "reading": "ひと",
+    "meaning": "person",
+    "options": [
+     "ひと",
+     "ひど",
+     "そら",
+     "もも"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "口",
+    "reading": "くち",
+    "meaning": "mouth",
+    "options": [
+     "みず",
+     "ぐち",
+     "あの",
+     "くち"
+    ],
+    "answer_index": 3
+   }
+  ]
+ },
+ {
+  "date": "2026-11-04",
+  "level": "N4",
+  "words": [
+   {
+    "word": "夜",
+    "reading": "よる",
+    "meaning": "night",
+    "options": [
+     "くろ",
+     "じゃあ",
+     "こと",
+     "よる"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "昼",
+    "reading": "ひる",
+    "meaning": "noon",
+    "options": [
+     "びる",
+     "きた",
+     "ひる",
+     "せわ"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "朝",
+    "reading": "あさ",
+    "meaning": "morning",
+    "options": [
+     "ばしょ",
+     "あざ",
+     "ひる",
+     "あさ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "池",
+    "reading": "いけ",
+    "meaning": "pond",
+    "options": [
+     "いけ",
+     "それ",
+     "した",
+     "いげ"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "海",
+    "reading": "うみ",
+    "meaning": "sea",
+    "options": [
+     "そと",
+     "がか",
+     "かお",
+     "うみ"
+    ],
+    "answer_index": 3
+   }
+  ]
+ },
+ {
+  "date": "2026-11-05",
+  "level": "N3",
+  "words": [
+   {
+    "word": "届ける",
+    "reading": "とどける",
+    "meaning": "to deliver",
+    "options": [
+     "とぎれる",
+     "どどける",
+     "てつだう",
+     "とどける"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "支払う",
+    "reading": "しはらう",
+    "meaning": "to pay",
+    "options": [
+     "しばらう",
+     "しふつう",
+     "まかせる",
+     "しはらう"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "散らかる",
+    "reading": "ちらかる",
+    "meaning": "to be messy",
+    "options": [
+     "あやまる",
+     "ちらかる",
+     "おこなう",
+     "かわかす"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "暮らす",
+    "reading": "くらす",
+    "meaning": "to live, to get by",
+    "options": [
+     "ぐらす",
+     "とどく",
+     "おわる",
+     "くらす"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "汚れる",
+    "reading": "よごれる",
+    "meaning": "to get dirty",
+    "options": [
+     "みなおす",
+     "よごれる",
+     "たかまる",
+     "よこれる"
+    ],
+    "answer_index": 1
+   }
+  ]
+ },
+ {
+  "date": "2026-11-06",
+  "level": "N4",
+  "words": [
+   {
+    "word": "町",
+    "reading": "まち",
+    "meaning": "town",
+    "options": [
+     "がか",
+     "ここ",
+     "まち",
+     "そふ"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "頭",
+    "reading": "あたま",
+    "meaning": "head",
+    "options": [
+     "ぶどう",
+     "あたま",
+     "きもの",
+     "あだま"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "顔",
+    "reading": "かお",
+    "meaning": "face",
+    "options": [
+     "ごみ",
+     "その",
+     "がお",
+     "かお"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "広い",
+    "reading": "ひろい",
+    "meaning": "wide",
+    "options": [
+     "ひろい",
+     "びろい",
+     "くらい",
+     "ぬるい"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "早い",
+    "reading": "はやい",
+    "meaning": "early",
+    "options": [
+     "はやい",
+     "かるい",
+     "つよい",
+     "ばやい"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-11-07",
+  "level": "N5",
+  "words": [
+   {
+    "word": "手",
+    "reading": "て",
+    "meaning": "hand",
+    "options": [
+     "て",
+     "で",
+     "ち",
+     "き"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "目",
+    "reading": "め",
+    "meaning": "eye",
+    "options": [
+     "め",
+     "き",
+     "て",
+     "ち"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "耳",
+    "reading": "みみ",
+    "meaning": "ear",
+    "options": [
+     "じゃあ",
+     "うえ",
+     "みみ",
+     "つき"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "足",
+    "reading": "あし",
+    "meaning": "foot",
+    "options": [
+     "あじ",
+     "いつ",
+     "いぬ",
+     "あし"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "紙",
+    "reading": "かみ",
+    "meaning": "paper",
+    "options": [
+     "かみ",
+     "はは",
+     "とお",
+     "がみ"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-11-08",
+  "level": "N4",
+  "words": [
+   {
+    "word": "明るい",
+    "reading": "あかるい",
+    "meaning": "bright",
+    "options": [
+     "あかるい",
+     "すくない",
+     "まぶしい",
+     "あがるい"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "暗い",
+    "reading": "くらい",
+    "meaning": "dark",
+    "options": [
+     "ぬるい",
+     "ぐらい",
+     "くらい",
+     "まずい"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "短い",
+    "reading": "みじかい",
+    "meaning": "short",
+    "options": [
+     "したしい",
+     "みじがい",
+     "ただしい",
+     "みじかい"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "軽い",
+    "reading": "かるい",
+    "meaning": "light",
+    "options": [
+     "おもい",
+     "がるい",
+     "かるい",
+     "おそい"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "近い",
+    "reading": "ちかい",
+    "meaning": "near",
+    "options": [
+     "ぬるい",
+     "ひどい",
+     "ちかい",
+     "ちがい"
+    ],
+    "answer_index": 2
+   }
+  ]
+ },
+ {
+  "date": "2026-11-09",
+  "level": "N3",
+  "words": [
+   {
+    "word": "片付く",
+    "reading": "かたづく",
+    "meaning": "to be put in order",
+    "options": [
+     "がたづく",
+     "たかめる",
+     "かたづく",
+     "つぶれる"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "伝わる",
+    "reading": "つたわる",
+    "meaning": "to be conveyed",
+    "options": [
+     "まとめる",
+     "つだわる",
+     "つたわる",
+     "ささやく"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "枯れる",
+    "reading": "かれる",
+    "meaning": "to wither",
+    "options": [
+     "ねらう",
+     "あてる",
+     "かれる",
+     "がれる"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "植える",
+    "reading": "うえる",
+    "meaning": "to plant",
+    "options": [
+     "おもう",
+     "のびる",
+     "きざむ",
+     "うえる"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "燃える",
+    "reading": "もえる",
+    "meaning": "to burn",
+    "options": [
+     "おとす",
+     "うつす",
+     "やぶる",
+     "もえる"
+    ],
+    "answer_index": 3
+   }
+  ]
+ },
+ {
+  "date": "2026-11-10",
+  "level": "N5",
+  "words": [
+   {
+    "word": "長い",
+    "reading": "ながい",
+    "meaning": "long",
+    "options": [
+     "なかい",
+     "ちかい",
+     "ながい",
+     "やすい"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "休みます",
+    "reading": "やすみます",
+    "meaning": "to rest",
+    "options": [
+     "やずみます",
+     "わかります",
+     "うまれます",
+     "やすみます"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "入ります",
+    "reading": "はいります",
+    "meaning": "to enter",
+    "options": [
+     "はいります",
+     "ばいります",
+     "はしります",
+     "あるきます"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "住みます",
+    "reading": "すみます",
+    "meaning": "to live",
+    "options": [
+     "すみます",
+     "ずみます",
+     "いいます",
+     "いれます"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "空",
+    "reading": "そら",
+    "meaning": "sky",
+    "options": [
+     "あめ",
+     "そら",
+     "ぞら",
+     "みせ"
+    ],
+    "answer_index": 1
+   }
+  ]
+ },
+ {
+  "date": "2026-11-11",
+  "level": "N4",
+  "words": [
+   {
+    "word": "遅い",
+    "reading": "おそい",
+    "meaning": "late",
+    "options": [
+     "かるい",
+     "まるい",
+     "おそい",
+     "おぞい"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "遠い",
+    "reading": "とおい",
+    "meaning": "far",
+    "options": [
+     "どおい",
+     "かるい",
+     "あかい",
+     "とおい"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "重い",
+    "reading": "おもい",
+    "meaning": "heavy",
+    "options": [
+     "おもい",
+     "さむい",
+     "とおい",
+     "まるい"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "好き",
+    "reading": "すき",
+    "meaning": "liked",
+    "options": [
+     "ずき",
+     "これ",
+     "おや",
+     "すき"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "冬",
+    "reading": "ふゆ",
+    "meaning": "winter",
+    "options": [
+     "ぶゆ",
+     "ふゆ",
+     "ちず",
+     "はな"
+    ],
+    "answer_index": 1
+   }
+  ]
+ },
+ {
+  "date": "2026-11-12",
+  "level": "N3",
+  "words": [
+   {
+    "word": "確か",
+    "reading": "たしか",
+    "meaning": "if I remember correctly",
+    "options": [
+     "たしか",
+     "ししゅつ",
+     "しじょう",
+     "だしか"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "窓",
+    "reading": "まど",
+    "meaning": "window",
+    "options": [
+     "そで",
+     "まど",
+     "まと",
+     "せき"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "靴",
+    "reading": "くつ",
+    "meaning": "shoes",
+    "options": [
+     "ぐつ",
+     "なか",
+     "えん",
+     "くつ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "忙しい",
+    "reading": "いそがしい",
+    "meaning": "busy",
+    "options": [
+     "たのもしい",
+     "いそがしい",
+     "ややこしい",
+     "いそかしい"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "易しい",
+    "reading": "やさしい",
+    "meaning": "easy",
+    "options": [
+     "やさしい",
+     "かしこい",
+     "たのしい",
+     "やざしい"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-11-13",
+  "level": "N4",
+  "words": [
+   {
+    "word": "夏",
+    "reading": "なつ",
+    "meaning": "summer",
+    "options": [
+     "かお",
+     "なつ",
+     "いつ",
+     "けん"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "春",
+    "reading": "はる",
+    "meaning": "spring",
+    "options": [
+     "いろ",
+     "はる",
+     "した",
+     "ばる"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "秋",
+    "reading": "あき",
+    "meaning": "autumn",
+    "options": [
+     "あき",
+     "あぎ",
+     "でも",
+     "とお"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "風",
+    "reading": "かぜ",
+    "meaning": "wind",
+    "options": [
+     "かぜ",
+     "とお",
+     "いぬ",
+     "かせ"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "薬",
+    "reading": "くすり",
+    "meaning": "medicine",
+    "options": [
+     "やしろ",
+     "あいだ",
+     "くすり",
+     "ぐすり"
+    ],
+    "answer_index": 2
+   }
+  ]
+ },
+ {
+  "date": "2026-11-14",
+  "level": "N5",
+  "words": [
+   {
+    "word": "雨",
+    "reading": "あめ",
+    "meaning": "rain",
+    "options": [
+     "けさ",
+     "あの",
+     "つち",
+     "あめ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "上",
+    "reading": "うえ",
+    "meaning": "on",
+    "options": [
+     "うえ",
+     "いま",
+     "ごと",
+     "おば"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "下",
+    "reading": "した",
+    "meaning": "under",
+    "options": [
+     "にし",
+     "どこ",
+     "した",
+     "しだ"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "右",
+    "reading": "みぎ",
+    "meaning": "right",
+    "options": [
+     "みず",
+     "みき",
+     "よん",
+     "みぎ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "左",
+    "reading": "ひだり",
+    "meaning": "left",
+    "options": [
+     "ひだり",
+     "びだり",
+     "くがつ",
+     "みっか"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-11-15",
+  "level": "N4",
+  "words": [
+   {
+    "word": "歌",
+    "reading": "うた",
+    "meaning": "song",
+    "options": [
+     "うた",
+     "うだ",
+     "この",
+     "いか"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "鳥",
+    "reading": "とり",
+    "meaning": "bird",
+    "options": [
+     "どり",
+     "ちず",
+     "とり",
+     "かみ"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "低い",
+    "reading": "ひくい",
+    "meaning": "low",
+    "options": [
+     "ひくい",
+     "ひぐい",
+     "ながい",
+     "ふるい"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "太い",
+    "reading": "ふとい",
+    "meaning": "thick",
+    "options": [
+     "わかい",
+     "ふとい",
+     "わるい",
+     "ふどい"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "弱い",
+    "reading": "よわい",
+    "meaning": "weak",
+    "options": [
+     "わかい",
+     "やすい",
+     "よわい",
+     "かるい"
+    ],
+    "answer_index": 2
+   }
+  ]
+ },
+ {
+  "date": "2026-11-16",
+  "level": "N3",
+  "words": [
+   {
+    "word": "難しい",
+    "reading": "むずかしい",
+    "meaning": "difficult",
+    "options": [
+     "むずかしい",
+     "きがよわい",
+     "むずがしい",
+     "ものすごい"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "静か",
+    "reading": "しずか",
+    "meaning": "quiet",
+    "options": [
+     "じずか",
+     "はやし",
+     "しぜん",
+     "しずか"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "庭",
+    "reading": "にわ",
+    "meaning": "garden",
+    "options": [
+     "なか",
+     "すり",
+     "この",
+     "にわ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "冷たい",
+    "reading": "つめたい",
+    "meaning": "cold",
+    "options": [
+     "まぶしい",
+     "けわしい",
+     "つめたい",
+     "ちいさい"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "雪",
+    "reading": "ゆき",
+    "meaning": "snow",
+    "options": [
+     "つま",
+     "ゆき",
+     "ゆぎ",
+     "ぬし"
+    ],
+    "answer_index": 1
+   }
+  ]
+ },
+ {
+  "date": "2026-11-17",
+  "level": "N5",
+  "words": [
+   {
+    "word": "生まれます",
+    "reading": "うまれます",
+    "meaning": "to be born",
+    "options": [
+     "うまれます",
+     "はしります",
+     "あるきます",
+     "はいります"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "女",
+    "reading": "おんな",
+    "meaning": "woman",
+    "options": [
+     "みかん",
+     "こちら",
+     "おんな",
+     "おな"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "男",
+    "reading": "おとこ",
+    "meaning": "man",
+    "options": [
+     "みかん",
+     "おとこ",
+     "でんき",
+     "おとご"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "何",
+    "reading": "なに",
+    "meaning": "what",
+    "options": [
+     "なか",
+     "なに",
+     "はは",
+     "とし"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "犬",
+    "reading": "いぬ",
+    "meaning": "dog",
+    "options": [
+     "じゃあ",
+     "さき",
+     "いぬ",
+     "にし"
+    ],
+    "answer_index": 2
+   }
+  ]
+ },
+ {
+  "date": "2026-11-18",
+  "level": "N4",
+  "words": [
+   {
+    "word": "強い",
+    "reading": "つよい",
+    "meaning": "strong",
+    "options": [
+     "かゆい",
+     "あつい",
+     "まずい",
+     "つよい"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "若い",
+    "reading": "わかい",
+    "meaning": "young",
+    "options": [
+     "わかい",
+     "ひくい",
+     "わがい",
+     "おもい"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "同じ",
+    "reading": "おなじ",
+    "meaning": "same",
+    "options": [
+     "いがい",
+     "おなじ",
+     "かない",
+     "みかん"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "所",
+    "reading": "ところ",
+    "meaning": "place",
+    "options": [
+     "いがい",
+     "さっか",
+     "とごろ",
+     "ところ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "体",
+    "reading": "からだ",
+    "meaning": "body",
+    "options": [
+     "なのか",
+     "からた",
+     "からだ",
+     "いくつ"
+    ],
+    "answer_index": 2
+   }
+  ]
+ },
+ {
+  "date": "2026-11-19",
+  "level": "N3",
+  "words": [
+   {
+    "word": "横",
+    "reading": "よこ",
+    "meaning": "side",
+    "options": [
+     "まと",
+     "よこ",
+     "よご",
+     "あれ"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "橋",
+    "reading": "はし",
+    "meaning": "bridge",
+    "options": [
+     "ちょう",
+     "はじ",
+     "かわ",
+     "はし"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "猫",
+    "reading": "ねこ",
+    "meaning": "cat",
+    "options": [
+     "ねご",
+     "そぼ",
+     "なべ",
+     "ねこ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "欲しい",
+    "reading": "ほしい",
+    "meaning": "want",
+    "options": [
+     "えらい",
+     "おおい",
+     "ぼしい",
+     "ほしい"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "汚い",
+    "reading": "きたない",
+    "meaning": "dirty",
+    "options": [
+     "きたない",
+     "おさない",
+     "たのしい",
+     "きだない"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-11-20",
+  "level": "N4",
+  "words": [
+   {
+    "word": "声",
+    "reading": "こえ",
+    "meaning": "voice",
+    "options": [
+     "ここ",
+     "ごえ",
+     "こえ",
+     "かね"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "首",
+    "reading": "くび",
+    "meaning": "neck",
+    "options": [
+     "くび",
+     "あし",
+     "にし",
+     "ぐび"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "林",
+    "reading": "はやし",
+    "meaning": "woods",
+    "options": [
+     "ほどう",
+     "そんな",
+     "はやじ",
+     "はやし"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "森",
+    "reading": "もり",
+    "meaning": "forest",
+    "options": [
+     "はる",
+     "もり",
+     "そぼ",
+     "つき"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "牛",
+    "reading": "うし",
+    "meaning": "cow",
+    "options": [
+     "うし",
+     "そぼ",
+     "あの",
+     "うじ"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-11-21",
+  "level": "N5",
+  "words": [
+   {
+    "word": "花",
+    "reading": "はな",
+    "meaning": "flower",
+    "options": [
+     "ばな",
+     "じゃあ",
+     "きた",
+     "はな"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "多い",
+    "reading": "おおい",
+    "meaning": "many",
+    "options": [
+     "ちかい",
+     "おおい",
+     "まるい",
+     "ぬるい"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "少ない",
+    "reading": "すくない",
+    "meaning": "few",
+    "options": [
+     "すくない",
+     "おおきい",
+     "すぐない",
+     "ずくない"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "前",
+    "reading": "まえ",
+    "meaning": "before",
+    "options": [
+     "あさ",
+     "とき",
+     "まえ",
+     "さき"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "時",
+    "reading": "とき",
+    "meaning": "time",
+    "options": [
+     "どき",
+     "この",
+     "まえ",
+     "とき"
+    ],
+    "answer_index": 3
+   }
+  ]
+ },
+ {
+  "date": "2026-11-22",
+  "level": "N4",
+  "words": [
+   {
+    "word": "物",
+    "reading": "もの",
+    "meaning": "thing",
+    "options": [
+     "もの",
+     "なつ",
+     "そぼ",
+     "せん"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "村",
+    "reading": "むら",
+    "meaning": "village",
+    "options": [
+     "かぜ",
+     "むら",
+     "あれ",
+     "ひゃく"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "青",
+    "reading": "あお",
+    "meaning": "blue",
+    "options": [
+     "あね",
+     "みず",
+     "べつ",
+     "あお"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "黒",
+    "reading": "くろ",
+    "meaning": "black",
+    "options": [
+     "ほん",
+     "ちず",
+     "くろ",
+     "ぐろ"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "足りる",
+    "reading": "たりる",
+    "meaning": "to be enough",
+    "options": [
+     "とまる",
+     "だりる",
+     "たりる",
+     "のこる"
+    ],
+    "answer_index": 2
+   }
+  ]
+ },
+ {
+  "date": "2026-11-23",
+  "level": "N3",
+  "words": [
+   {
+    "word": "痛い",
+    "reading": "いたい",
+    "meaning": "painful",
+    "options": [
+     "いだい",
+     "いたい",
+     "ぬるい",
+     "わかい"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "危ない",
+    "reading": "あぶない",
+    "meaning": "dangerous",
+    "options": [
+     "おかしい",
+     "あふない",
+     "あぶない",
+     "みじかい"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "指",
+    "reading": "ゆび",
+    "meaning": "finger",
+    "options": [
+     "そら",
+     "てら",
+     "ゆび",
+     "ゆひ"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "歯",
+    "reading": "は",
+    "meaning": "tooth",
+    "options": [
+     "は",
+     "た",
+     "て",
+     "ば"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "肩",
+    "reading": "かた",
+    "meaning": "shoulder",
+    "options": [
+     "かだ",
+     "ゆう",
+     "かた",
+     "はん"
+    ],
+    "answer_index": 2
+   }
+  ]
+ },
+ {
+  "date": "2026-11-24",
+  "level": "N5",
+  "words": [
+   {
+    "word": "中",
+    "reading": "なか",
+    "meaning": "inside",
+    "options": [
+     "そら",
+     "なが",
+     "あれ",
+     "なか"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "北",
+    "reading": "きた",
+    "meaning": "north",
+    "options": [
+     "きだ",
+     "きた",
+     "あし",
+     "いま"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "南",
+    "reading": "みなみ",
+    "meaning": "south",
+    "options": [
+     "ゆうべ",
+     "あいだ",
+     "でんわ",
+     "みなみ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "国",
+    "reading": "くに",
+    "meaning": "country",
+    "options": [
+     "くに",
+     "とも",
+     "つち",
+     "ぐに"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "外",
+    "reading": "そと",
+    "meaning": "outside",
+    "options": [
+     "さき",
+     "そと",
+     "した",
+     "ぞと"
+    ],
+    "answer_index": 1
+   }
+  ]
+ },
+ {
+  "date": "2026-11-25",
+  "level": "N4",
+  "words": [
+   {
+    "word": "変える",
+    "reading": "かえる",
+    "meaning": "to change",
+    "options": [
+     "つれる",
+     "かえる",
+     "がえる",
+     "あがる"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "始める",
+    "reading": "はじめる",
+    "meaning": "to begin",
+    "options": [
+     "ばじめる",
+     "はたらく",
+     "はじめる",
+     "わかれる"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "止める",
+    "reading": "とめる",
+    "meaning": "to stop",
+    "options": [
+     "どめる",
+     "とめる",
+     "およぐ",
+     "うごく"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "決まる",
+    "reading": "きまる",
+    "meaning": "to be decided",
+    "options": [
+     "はなす",
+     "ぎまる",
+     "きまる",
+     "もらう"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "落とす",
+    "reading": "おとす",
+    "meaning": "to drop",
+    "options": [
+     "おとす",
+     "あがる",
+     "とおる",
+     "きめる"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-11-26",
+  "level": "N3",
+  "words": [
+   {
+    "word": "背",
+    "reading": "せ",
+    "meaning": "height",
+    "options": [
+     "ば",
+     "き",
+     "せ",
+     "ぜ"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "腕",
+    "reading": "うで",
+    "meaning": "arm",
+    "options": [
+     "たび",
+     "もり",
+     "うて",
+     "うで"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "髪",
+    "reading": "かみ",
+    "meaning": "hair",
+    "options": [
+     "よる",
+     "がみ",
+     "かみ",
+     "もと"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "鼻",
+    "reading": "はな",
+    "meaning": "nose",
+    "options": [
+     "ちず",
+     "ばな",
+     "はな",
+     "えさ"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "石",
+    "reading": "いし",
+    "meaning": "stone",
+    "options": [
+     "かしゅ",
+     "そぼ",
+     "いじ",
+     "いし"
+    ],
+    "answer_index": 3
+   }
+  ]
+ },
+ {
+  "date": "2026-11-27",
+  "level": "N4",
+  "words": [
+   {
+    "word": "起こす",
+    "reading": "おこす",
+    "meaning": "to wake up",
+    "options": [
+     "はこぶ",
+     "かえす",
+     "かわる",
+     "おこす"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "運ぶ",
+    "reading": "はこぶ",
+    "meaning": "to carry",
+    "options": [
+     "はこぶ",
+     "はごぶ",
+     "かよう",
+     "いそぐ"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "集まる",
+    "reading": "あつまる",
+    "meaning": "to gather",
+    "options": [
+     "こたえる",
+     "あつまる",
+     "しらせる",
+     "みおくる"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "集める",
+    "reading": "あつめる",
+    "meaning": "to collect",
+    "options": [
+     "はたらく",
+     "こたえる",
+     "あつめる",
+     "きわめる"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "思い出す",
+    "reading": "おもいだす",
+    "meaning": "to remember",
+    "options": [
+     "おもいたす",
+     "しいだす",
+     "おもいだす",
+     "きにする"
+    ],
+    "answer_index": 2
+   }
+  ]
+ },
+ {
+  "date": "2026-11-28",
+  "level": "N5",
+  "words": [
+   {
+    "word": "東",
+    "reading": "ひがし",
+    "meaning": "east",
+    "options": [
+     "そちら",
+     "ひがじ",
+     "ひがし",
+     "ゆうべ"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "西",
+    "reading": "にし",
+    "meaning": "west",
+    "options": [
+     "この",
+     "にじ",
+     "にし",
+     "あし"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "土",
+    "reading": "つち",
+    "meaning": "soil",
+    "options": [
+     "もも",
+     "つち",
+     "ここ",
+     "おば"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "木",
+    "reading": "き",
+    "meaning": "tree",
+    "options": [
+     "な",
+     "こ",
+     "ぎ",
+     "き"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "火",
+    "reading": "ひ",
+    "meaning": "fire",
+    "options": [
+     "ひ",
+     "め",
+     "び",
+     "き"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-11-29",
+  "level": "N4",
+  "words": [
+   {
+    "word": "知らせる",
+    "reading": "しらせる",
+    "meaning": "to inform",
+    "options": [
+     "しらせる",
+     "じらせる",
+     "はたらく",
+     "きがつく"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "考える",
+    "reading": "かんがえる",
+    "meaning": "to think about",
+    "options": [
+     "がんがえる",
+     "かんがえる",
+     "かがえる",
+     "はじめる"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "見つかる",
+    "reading": "みつかる",
+    "meaning": "to be found",
+    "options": [
+     "わかれる",
+     "うまれる",
+     "つかえる",
+     "みつかる"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "見つける",
+    "reading": "みつける",
+    "meaning": "to find",
+    "options": [
+     "たのしむ",
+     "わかれる",
+     "みつける",
+     "きこえる"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "調べる",
+    "reading": "しらべる",
+    "meaning": "to look up",
+    "options": [
+     "おしえる",
+     "しらべる",
+     "みつかる",
+     "じらべる"
+    ],
+    "answer_index": 1
+   }
+  ]
+ },
+ {
+  "date": "2026-11-30",
+  "level": "N3",
+  "words": [
+   {
+    "word": "草",
+    "reading": "くさ",
+    "meaning": "grass",
+    "options": [
+     "くさ",
+     "こと",
+     "くざ",
+     "さか"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "馬",
+    "reading": "うま",
+    "meaning": "horse",
+    "options": [
+     "さき",
+     "うま",
+     "ごと",
+     "ふね"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "箱",
+    "reading": "はこ",
+    "meaning": "box",
+    "options": [
+     "はこ",
+     "ばこ",
+     "ゆめ",
+     "せん"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "港",
+    "reading": "みなと",
+    "meaning": "port",
+    "options": [
+     "みなと",
+     "みなど",
+     "やけど",
+     "ながし"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "船",
+    "reading": "ふね",
+    "meaning": "ship",
+    "options": [
+     "ゆめ",
+     "ふね",
+     "ぶね",
+     "いご"
+    ],
+    "answer_index": 1
+   }
+  ]
+ },
+ {
+  "date": "2026-12-01",
+  "level": "N5",
+  "words": [
+   {
+    "word": "車",
+    "reading": "くるま",
+    "meaning": "car",
+    "options": [
+     "あそこ",
+     "ぐるま",
+     "くるま",
+     "てんき"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "間",
+    "reading": "あいだ",
+    "meaning": "between",
+    "options": [
+     "あいだ",
+     "あいた",
+     "いちご",
+     "はつか"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "白",
+    "reading": "しろ",
+    "meaning": "white",
+    "options": [
+     "しろ",
+     "でも",
+     "さき",
+     "じろ"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "赤",
+    "reading": "あか",
+    "meaning": "red",
+    "options": [
+     "かわ",
+     "あが",
+     "いま",
+     "あか"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "先",
+    "reading": "さき",
+    "meaning": "ahead",
+    "options": [
+     "ざき",
+     "さき",
+     "じゃあ",
+     "うえ"
+    ],
+    "answer_index": 1
+   }
+  ]
+ },
+ {
+  "date": "2026-12-02",
+  "level": "N4",
+  "words": [
+   {
+    "word": "正しい",
+    "reading": "ただしい",
+    "meaning": "correct",
+    "options": [
+     "だだしい",
+     "おおきい",
+     "ただしい",
+     "すくない"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "光",
+    "reading": "ひかり",
+    "meaning": "light",
+    "options": [
+     "ひかり",
+     "ひがし",
+     "そちら",
+     "びかり"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "親",
+    "reading": "おや",
+    "meaning": "parent",
+    "options": [
+     "にし",
+     "けん",
+     "ここ",
+     "おや"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "手伝う",
+    "reading": "てつだう",
+    "meaning": "to help",
+    "options": [
+     "てつだう",
+     "でつだう",
+     "きがつく",
+     "みおくる"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "上がる",
+    "reading": "あがる",
+    "meaning": "to go up",
+    "options": [
+     "あがる",
+     "すすむ",
+     "のこす",
+     "もらう"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-12-03",
+  "level": "N3",
+  "words": [
+   {
+    "word": "速い",
+    "reading": "はやい",
+    "meaning": "fast",
+    "options": [
+     "ひろい",
+     "はやい",
+     "わかい",
+     "ばやい"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "他",
+    "reading": "ほか",
+    "meaning": "other",
+    "options": [
+     "ほが",
+     "ほか",
+     "かみ",
+     "ちず"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "初め",
+    "reading": "はじめ",
+    "meaning": "beginning",
+    "options": [
+     "うがい",
+     "どんな",
+     "ばじめ",
+     "はじめ"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "次",
+    "reading": "つぎ",
+    "meaning": "next",
+    "options": [
+     "ごみ",
+     "りか",
+     "つぎ",
+     "つき"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "倒れる",
+    "reading": "たおれる",
+    "meaning": "to fall down",
+    "options": [
+     "しらべる",
+     "だおれる",
+     "たおれる",
+     "むくいる"
+    ],
+    "answer_index": 2
+   }
+  ]
+ },
+ {
+  "date": "2026-12-04",
+  "level": "N4",
+  "words": [
+   {
+    "word": "上げる",
+    "reading": "あげる",
+    "meaning": "to raise",
+    "options": [
+     "おこる",
+     "やすむ",
+     "つづく",
+     "あげる"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "下がる",
+    "reading": "さがる",
+    "meaning": "to go down",
+    "options": [
+     "おもう",
+     "うごく",
+     "ざがる",
+     "さがる"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "下げる",
+    "reading": "さげる",
+    "meaning": "to lower",
+    "options": [
+     "おわる",
+     "さげる",
+     "ざげる",
+     "たてる"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "通う",
+    "reading": "かよう",
+    "meaning": "to commute",
+    "options": [
+     "がよう",
+     "のこる",
+     "のこす",
+     "かよう"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "通る",
+    "reading": "とおる",
+    "meaning": "to pass through",
+    "options": [
+     "おとす",
+     "とおる",
+     "いきる",
+     "どおる"
+    ],
+    "answer_index": 1
+   }
+  ]
+ },
+ {
+  "date": "2026-12-05",
+  "level": "N4",
+  "words": [
+   {
+    "word": "進む",
+    "reading": "すすむ",
+    "meaning": "to advance",
+    "options": [
+     "ひろう",
+     "すすむ",
+     "おこる",
+     "すずむ"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "味",
+    "reading": "あじ",
+    "meaning": "taste",
+    "options": [
+     "あじ",
+     "まえ",
+     "あし",
+     "じゃあ"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "残す",
+    "reading": "のこす",
+    "meaning": "to leave",
+    "options": [
+     "さげる",
+     "のごす",
+     "あるく",
+     "のこす"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "無くす",
+    "reading": "なくす",
+    "meaning": "to lose",
+    "options": [
+     "かよう",
+     "もらう",
+     "なくす",
+     "ひろう"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "無くなる",
+    "reading": "なくなる",
+    "meaning": "to be lost",
+    "options": [
+     "なくなる",
+     "あつめる",
+     "みつける",
+     "こたえる"
+    ],
+    "answer_index": 0
+   }
+  ]
+ },
+ {
+  "date": "2026-12-06",
+  "level": "N4",
+  "words": [
+   {
+    "word": "生きる",
+    "reading": "いきる",
+    "meaning": "to live",
+    "options": [
+     "おくる",
+     "いきる",
+     "かわる",
+     "のこる"
+    ],
+    "answer_index": 1
+   },
+   {
+    "word": "光る",
+    "reading": "ひかる",
+    "meaning": "to shine",
+    "options": [
+     "さがる",
+     "しめる",
+     "ひがる",
+     "ひかる"
+    ],
+    "answer_index": 3
+   },
+   {
+    "word": "力",
+    "reading": "ちから",
+    "meaning": "strength",
+    "options": [
+     "ちから",
+     "きもち",
+     "しみん",
+     "ちがら"
+    ],
+    "answer_index": 0
+   },
+   {
+    "word": "心",
+    "reading": "こころ",
+    "meaning": "heart",
+    "options": [
+     "よっか",
+     "こごろ",
+     "こころ",
+     "みかん"
+    ],
+    "answer_index": 2
+   },
+   {
+    "word": "楽しむ",
+    "reading": "たのしむ",
+    "meaning": "to enjoy",
+    "options": [
+     "たのしむ",
+     "こたえる",
+     "きこえる",
+     "だのしむ"
+    ],
+    "answer_index": 0
+   }
+  ]
+ }
+]

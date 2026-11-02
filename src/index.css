@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
 @import "tailwindcss";
 
 /* Base (light) tone tokens. Sections opt into `.theme-dark` explicitly —
@@ -115,3 +115,22 @@ body {
 .animate-particle { animation: particle-float linear infinite; }
 .animate-line-flow { animation: line-flow 3.5s linear infinite; }
 .animate-node-particle { animation: node-particle linear infinite; offset-rotate: 0deg; }
+
+/* ---------- JapanOne (japanone.app) ---------- */
+/* Brand: navy, yellow, cream; Montserrat with Noto Sans JP for Japanese. */
+@theme {
+  --font-jo: "Montserrat", "Noto Sans JP", system-ui, sans-serif;
+  --color-jo-navy: #12263f;
+  --color-jo-navy-deep: #0c1a2c;
+  --color-jo-yellow: #f2c94c;
+  --color-jo-cream: #f7f4ee;
+  --color-jo-red: #e63946;
+  --color-jo-muted: #4a5a6e;
+  --color-jo-faint: #5a6b80;
+}
+
+.jo {
+  font-family: var(--font-jo);
+  background-color: var(--color-jo-cream);
+  color: var(--color-jo-navy);
+}

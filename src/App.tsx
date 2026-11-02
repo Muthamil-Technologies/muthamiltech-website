@@ -21,8 +21,11 @@ import { Login } from "./pages/learn/Login";
 import { Admin } from "./pages/partners/Admin";
 import { ListingEditor } from "./pages/partners/ListingEditor";
 import { JapanOneHome } from "./pages/JapanOneHome";
-import { JapanOneHub } from "./pages/JapanOneHub";
-import { JapanOneHeader } from "./components/JapanOneHeader";
+import { JOLayout } from "./components/jo/JOFooter";
+import { JOGuide, JOGuides } from "./pages/jo/JOGuide";
+import { JOHome } from "./pages/jo/JOHome";
+import { JOSearch } from "./pages/jo/JOSearch";
+import { JOSection } from "./pages/jo/JOSection";
 import { CvBuilder } from "./pages/japwork/CvBuilder";
 import { PathwayFinder } from "./pages/japwork/PathwayFinder";
 import { TravelPhrases } from "./pages/japtour/TravelPhrases";
@@ -33,32 +36,29 @@ import { PartnerProgramPage } from "./pages/partners/PartnerProgramPage";
 import { PROGRAMS } from "./pages/partners/partnerTypes";
 import { ProviderPage } from "./pages/partners/ProviderPage";
 
-/** japanone.app: the home of every free tool, each in a small layout (guest only). */
+/** japanone.app: the JapanOne site. Section pages, guides and every tool share one layout. */
 function JapanOneApp() {
+  const page = (el: React.ReactNode) => <JOLayout>{el}</JOLayout>;
   return (
     <Routes>
-      <Route path="/" element={<JapanOneHub />} />
-      <Route path="/japtalk/level-check" element={<MiniLayout><JapTalkLevelCheck /></MiniLayout>} />
-      <Route path="/japtutor/plan-builder" element={<MiniLayout><JapTutorPlanBuilder /></MiniLayout>} />
-      <Route path="/learn/japtutor" element={<MiniLayout><JapTutorTest /></MiniLayout>} />
-      <Route path="/learn/japtalk" element={<MiniLayout><JapTalkLessons /></MiniLayout>} />
-      <Route path="/learn/japtalk/:id" element={<MiniLayout><JapTalkLesson /></MiniLayout>} />
-      <Route path="/work/pathway" element={<MiniLayout><PathwayFinder /></MiniLayout>} />
-      <Route path="/work/cv" element={<MiniLayout><CvBuilder /></MiniLayout>} />
-      <Route path="/tour/plan" element={<MiniLayout><TripPlanner /></MiniLayout>} />
-      <Route path="/tour/phrases" element={<MiniLayout><TravelPhrases /></MiniLayout>} />
+      <Route path="/" element={page(<JOHome />)} />
+      <Route path="/search" element={page(<JOSearch />)} />
+      <Route path="/guides" element={page(<JOGuides />)} />
+      <Route path="/guides/:id" element={page(<JOGuide />)} />
+      <Route path="/japtalk/level-check" element={page(<JapTalkLevelCheck />)} />
+      <Route path="/japtutor/plan-builder" element={page(<JapTutorPlanBuilder />)} />
+      <Route path="/learn/japtutor" element={page(<JapTutorTest />)} />
+      <Route path="/learn/japtalk" element={page(<JapTalkLessons />)} />
+      <Route path="/learn/japtalk/:id" element={page(<JapTalkLesson />)} />
+      <Route path="/work/pathway" element={page(<PathwayFinder />)} />
+      <Route path="/work/cv" element={page(<CvBuilder />)} />
+      <Route path="/tour/plan" element={page(<TripPlanner />)} />
+      <Route path="/tour/phrases" element={page(<TravelPhrases />)} />
+      <Route path="/japanone/legal" element={page(<JapanOneLegal />)} />
+      <Route path="/partners" element={page(<PartnersHome />)} />
+      <Route path="/:section" element={page(<JOSection />)} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-  );
-}
-
-function MiniLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex min-h-screen flex-col">
-      <JapanOneHeader />
-      <main className="flex-1">{children}</main>
-      <footer className="py-8 text-center text-xs text-ink-faint">© 2026 Muthamil Technologies</footer>
-    </div>
   );
 }
 
