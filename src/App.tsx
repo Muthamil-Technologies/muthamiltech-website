@@ -34,6 +34,7 @@ import { StudyHome } from "./pages/jo/StudyHome";
 import { LearnHome as JOLearnHome, LiveHome, TravelHome } from "./pages/jo/SectionHomes";
 import { StudySchool } from "./pages/jo/StudySchool";
 import { StudyFaq, StudyVisa } from "./pages/jo/StudyVisaFaq";
+import { StudyCost } from "./pages/jo/StudyCost";
 import { SswHub, WorkHome, WorkStatusPage } from "./pages/jo/WorkPages";
 import { CvBuilder } from "./pages/japwork/CvBuilder";
 import { PathwayFinder } from "./pages/japwork/PathwayFinder";
@@ -69,6 +70,7 @@ function JapanOneApp() {
       <Route path="/live" element={page(<LiveHome />)} />
       <Route path="/study" element={page(<StudyHome />)} />
       <Route path="/study/schools/:id" element={page(<StudySchool />)} />
+      <Route path="/study/cost" element={page(<StudyCost />)} />
       <Route path="/study/visa" element={page(<StudyVisa />)} />
       <Route path="/study/faq" element={page(<StudyFaq />)} />
       <Route path="/study/path" element={page(<StudyPathPlanner />)} />
