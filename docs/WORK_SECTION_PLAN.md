@@ -17,6 +17,5 @@ statuses, separate from types of work.
 | H | Preparation centre: 履歴書 (done), 職務経歴書, interview prep and phrases, self-introduction | CV builder done; rest to add |
 | I | Work FAQs with official references | With Study FAQs |
 
-Open question for the founder: the outline says "not a job portal", but the agreed revenue plan has
-employers posting job listings through the partner portal (a listing board, not placement). Keep
-the partner listings or drop them?
+Decided (Nov 3): employer job listings stay (partner portal, listing board, workers apply to the
+employer directly). Ignore outline items that conflict with the agreed plan.

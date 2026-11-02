@@ -512,5 +512,321 @@
     "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
    }
   ]
+ },
+ {
+  "id": "learn-jft-basic",
+  "section": "learn",
+  "title": "JFT-Basic: the Japanese test for work",
+  "checked": "2026-11-03",
+  "sources": [
+   {
+    "name": "Japan Foundation: about the JFT-Basic",
+    "url": "https://www.jpf.go.jp/jft-basic/e/about/index.html"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "LEARN JAPANESE",
+    "title": "JFT-Basic: the Japanese test for work",
+    "body": "What it is, who it's for and how it works."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Made for people coming to work",
+    "body": "The Japan Foundation Test for Basic Japanese measures the Japanese needed by people about to live in Japan, mainly for work."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Used for SSW (i)",
+    "body": "It shows the Japanese level needed for Specified Skilled Worker (i). It is also used for Employment for Skill Development, and for entry to some Japanese language schools."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Scores and levels",
+    "body": "Scores run from 10 to 250. 200 or more means A2.2 (A2). Since August 2026 it also shows A1 and A2.1."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "On a computer",
+    "body": "About 50 questions in 60 minutes, at test centres: script and vocabulary, conversation and expression, listening, reading.",
+    "note": "Test dates are on the Japan Foundation and Prometric sites."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Japan Foundation (jpf.go.jp)",
+    "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
+   }
+  ]
+ },
+ {
+  "id": "travel-before-you-go",
+  "section": "travel",
+  "title": "Before your trip to Japan",
+  "checked": "2026-11-03",
+  "sources": [
+   {
+    "name": "JNTO: visa information",
+    "url": "https://www.japan.travel/en/plan/visa-info/"
+   },
+   {
+    "name": "JNTO: IC travel cards",
+    "url": "https://www.japan.travel/en/plan/ic-card/"
+   },
+   {
+    "name": "JNTO: tax-free shopping",
+    "url": "https://www.japan.travel/en/plan/japans-tax-exemption/"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "TRAVEL JAPAN",
+    "title": "Before your trip to Japan",
+    "body": "Visa, Visit Japan Web, train cards and tax-free shopping."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Do you need a visa?",
+    "body": "Passport holders of some countries and regions need no visa for tourism stays of 90 days or less. Others do.",
+    "note": "Ask the Japanese embassy or consulate in your country."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Visit Japan Web",
+    "body": "Registering is not required, but registering in advance makes procedures like tax-free shopping easier."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Get an IC card",
+    "body": "Prepaid cards such as Welcome Suica and PASMO work on trains, buses and boats nationwide, and in many convenience stores.",
+    "note": "Welcome Suica and TOURIST PASMO for visitors have no deposit."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Tax-free is changing",
+    "body": "For purchases from November 1, 2026, tax is refunded after Customs checks your items when you leave Japan.",
+    "note": "Items sent overseas by parcel are not tax-free (since April 1, 2025)."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Japan National Tourism Organization (japan.travel)",
+    "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
+   }
+  ]
+ },
+ {
+  "id": "travel-manners",
+  "section": "travel",
+  "title": "Manners in Japan: the basics",
+  "checked": "2026-11-03",
+  "sources": [
+   {
+    "name": "JNTO: customs and manners",
+    "url": "https://www.japan.travel/en/plan/custom-manners/"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "TRAVEL JAPAN",
+    "title": "Manners in Japan: the basics",
+    "body": "Simple things that make your trip smoother."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Quiet on trains",
+    "body": "Keep your phone on silent and avoid talking on it, especially on public transport."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Shoes off",
+    "body": "At a ryokan (Japanese inn), take your shoes off at the entrance."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "No tipping",
+    "body": "Tipping is not expected, for example at western-style hotels."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Slurping is fine",
+    "body": "With noodles, slurping is normal. You can eat sushi with your hands, and ask for other cutlery if chopsticks are hard.",
+    "note": "If in doubt, simply ask."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Japan National Tourism Organization (japan.travel)",
+    "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
+   }
+  ]
+ },
+ {
+  "id": "live-health-insurance",
+  "section": "live",
+  "title": "Health insurance in Japan",
+  "checked": "2026-11-03",
+  "sources": [
+   {
+    "name": "Study in Japan (JASSO): insurance",
+    "url": "https://www.studyinjapan.go.jp/en/life/insurance/"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "LIVE IN JAPAN",
+    "title": "Health insurance in Japan",
+    "body": "National Health Insurance: who joins and what it covers."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Staying 3 months or more?",
+    "body": "Foreign residents staying 3 months or more join National Health Insurance (国民健康保険) unless covered at work.",
+    "note": "Register at your municipal office after your address registration."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "You pay 30%",
+    "body": "Insurance covers 70% of medical costs; you pay the other 30%.",
+    "note": "Treatment outside insurance is paid in full."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Premiums follow income",
+    "body": "Your premium is based on last year's income, including part-time work. Low income can mean a lower premium.",
+    "note": "Declare your income even if it was zero."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Big bills have a cap",
+    "body": "Costs above your monthly limit can be refunded. For a hospital stay, ask for a certificate so you only pay up to the limit."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Study in Japan (JASSO), studyinjapan.go.jp",
+    "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
+   }
+  ]
+ },
+ {
+  "id": "live-pension-refund",
+  "section": "live",
+  "title": "Leaving Japan? Claim your pension refund",
+  "checked": "2026-11-03",
+  "sources": [
+   {
+    "name": "Japan Pension Service: Lump-sum Withdrawal Payments",
+    "url": "https://www.nenkin.go.jp/international/english/japanese-system/benefit/payment.html"
+   },
+   {
+    "name": "Japan Pension Service: leaving Japan",
+    "url": "https://www.nenkin.go.jp/international/english/scene/leavejapan/index.html"
+   },
+   {
+    "name": "Japan Pension Service: public pension overview",
+    "url": "https://www.nenkin.go.jp/international/english/index.html"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "LIVE IN JAPAN",
+    "title": "Leaving Japan? Claim your pension refund",
+    "body": "Many foreign workers never claim it."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Everyone 20 to 59 joins",
+    "body": "The National Pension covers all residents of Japan aged 20 to 59.",
+    "note": "Employees usually join through work (Employees' Pension Insurance)."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Leaving after a short time?",
+    "body": "Non-Japanese people who leave Japan after short periods in the pension system can claim a Lump-sum Withdrawal Payment."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Claim within 2 years",
+    "body": "Apply within two years of leaving Japan.",
+    "note": "Forms in many languages are on the Japan Pension Service website."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Japan Pension Service (nenkin.go.jp)",
+    "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
+   }
+  ]
+ },
+ {
+  "id": "live-help-fresc",
+  "section": "live",
+  "title": "Free help with immigration questions",
+  "checked": "2026-11-03",
+  "sources": [
+   {
+    "name": "Immigration Services Agency: Foreign Residents Support Center (FRESC)",
+    "url": "https://www.moj.go.jp/isa/support/fresc/fresc_2.1.html"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "LIVE IN JAPAN",
+    "title": "Free help with immigration questions",
+    "body": "The Foreign Residents Support Center (FRESC)."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "What it is",
+    "body": "A free consultation desk of the Immigration Services Agency in Shinjuku, Tokyo, for questions about residence status and immigration procedures."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "In your language",
+    "body": "Easy Japanese, English, Vietnamese, Nepali, Indonesian, Filipino, Chinese, Korean, Thai, Spanish, Portuguese and more.",
+    "note": "Interpreters can be arranged."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "How to reach it",
+    "body": "Weekdays 9:00–17:00 (not holidays or New Year). Main line 0570-011000; appointments 03-5363-3025.",
+    "note": "Appointments in person or online."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Immigration Services Agency (moj.go.jp/isa)",
+    "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
+   }
+  ]
  }
 ]
