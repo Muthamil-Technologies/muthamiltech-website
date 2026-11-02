@@ -20,7 +20,7 @@ export function PartnersHome() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-14">
-      <div className="text-xs font-bold tracking-[0.2em] text-accent uppercase">JapanOne Partners</div>
+      <div className="text-xs font-bold tracking-wide text-accent">JapanOne Partners</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Become a partner</h1>
       <p className="mt-3 max-w-2xl text-ink-soft">
         Reach the people our apps serve. Choose the app that fits your business. Every partner and listing is checked by our team.
@@ -29,7 +29,7 @@ export function PartnersHome() {
       <div className="mt-10 grid gap-5 sm:grid-cols-2">
         {PROGRAMS.map((p) => (
           <Link key={p.slug} to={`/partners/${p.slug}`} className="group rounded-2xl border border-line bg-surface p-7 transition hover:border-ink hover:shadow-md">
-            <div className="text-xs font-bold tracking-[0.2em] text-accent uppercase">{p.app}</div>
+            <div className="text-xs font-bold tracking-wide text-accent">{p.app}</div>
             <div className="mt-2 text-xl font-semibold text-ink">{p.who}</div>
             <p className="mt-2 text-sm text-ink-soft">{p.cardBody}</p>
             <div className="mt-5 text-sm font-semibold text-ink group-hover:text-accent">Partner with {p.app} &rarr;</div>

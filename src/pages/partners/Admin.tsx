@@ -89,7 +89,7 @@ export function Admin() {
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-14">
-      <div className="text-xs font-bold tracking-[0.2em] text-accent uppercase">JapanOne admin</div>
+      <div className="text-xs font-bold tracking-wide text-accent">JapanOne admin</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Listings review</h1>
 
       <div className="mt-6 flex flex-wrap gap-2">

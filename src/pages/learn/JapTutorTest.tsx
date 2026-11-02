@@ -147,7 +147,7 @@ export function JapTutorTest() {
   return (
     <div className="mx-auto max-w-2xl px-6 py-14">
       <Link to="/" className="text-sm font-semibold text-accent">&larr; JapanOne</Link>
-      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">JapanOne · JLPT {level.toUpperCase()}</div>
+      <div className="mt-6 text-xs font-bold tracking-wide text-accent">JapanOne · JLPT {level.toUpperCase()}</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Today's daily test</h1>
 
       {stage !== "quiz" && (

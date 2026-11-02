@@ -22,7 +22,7 @@ export function LearnHome() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
-      <div className="text-xs font-bold tracking-[0.2em] text-accent uppercase">JapanOne · Learn on the web</div>
+      <div className="text-xs font-bold tracking-wide text-accent">JapanOne · Learn on the web</div>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">
         {session ? `Welcome back${name ? `, ${name}` : ""}` : "Practise Japanese in your browser"}
       </h1>

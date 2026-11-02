@@ -57,7 +57,7 @@ export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
   return (
     <div className="mx-auto max-w-4xl px-6 py-14">
       <Link to="/partners" className="text-sm font-semibold text-accent">&larr; Become a partner</Link>
-      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">{program.app} Partners</div>
+      <div className="mt-6 text-xs font-bold tracking-wide text-accent">{program.app} Partners</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{program.headline}</h1>
       <p className="mt-3 max-w-2xl text-ink-soft">{program.intro}</p>
 
