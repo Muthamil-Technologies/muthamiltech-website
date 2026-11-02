@@ -71,6 +71,7 @@ export function GoogleButton({ onError }: { onError: (message: string) => void }
           shape: "pill",
           text: "continue_with",
           logo_alignment: "center",
+          locale: "en", // match the page language, not the browser's
           width,
         });
       } catch (e) {

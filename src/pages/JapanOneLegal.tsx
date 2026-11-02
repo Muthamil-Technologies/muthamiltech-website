@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { contact } from "../data/products";
 
-// Privacy & support page for the JapanOne app (iOS and Android), which
+// Privacy & support page for the JapanOne app (iOS and Android) and japanone.app accounts, which
 // replaced JapTalk (its Speak section) and JapTutor (its JLPT section). Keep in
 // step with what the app does, and with the JLPT section's in-app policy
 // (japtalk-mobile: packages/jlpt/lib/screens/legal/privacy_policy_screen.dart).
@@ -15,7 +15,7 @@ export function JapanOneLegal() {
         JapanOne — Privacy &amp; Support
       </h1>
       <p className="mt-2 text-sm text-ink-faint">
-        Last updated: October 2026 · JapanOne is an app by Muthamil Technologies.
+        Last updated: November 2026 · JapanOne (app and japanone.app) is by Muthamil Technologies.
       </p>
 
       <div className="mt-8 flex flex-col gap-6 text-ink-soft">
@@ -42,6 +42,33 @@ export function JapanOneLegal() {
               and settings.
             </li>
           </ul>
+        </section>
+
+        <section id="accounts">
+          <h2 className="text-lg font-semibold text-ink">Accounts on japanone.app (optional)</h2>
+          <p className="mt-2">
+            You can use every page on japanone.app without an account. If you choose to sign in
+            (with Google or an email link), we store:
+          </p>
+          <ul className="mt-2 list-disc pl-6">
+            <li>your email address and, if you use Google, your Google account ID and name;</li>
+            <li>your practice progress and JLPT test results on the website;</li>
+            <li>
+              if you register as a partner (a school, employer, tour agency or shop): your
+              organisation&apos;s details, your listings and their photos, and our review notes.
+            </li>
+          </ul>
+          <p className="mt-2">
+            We use this only to run your account and, for partners, to review and show your
+            listings. We don&apos;t sell it, use it for advertising or share it with anyone else.
+            It is stored with our database provider, Supabase, in Tokyo, Japan. If you report a
+            listing, we store your report so our team can check it.
+          </p>
+          <p className="mt-2">
+            <span className="font-semibold text-ink">Delete your account</span> at any time from
+            your account page: your account, progress and test results are deleted straight
+            away. Organisations you registered stay for their other members until removed.
+          </p>
         </section>
 
         <section id="microphone">
@@ -104,8 +131,8 @@ export function JapanOneLegal() {
           </p>
           <p className="mt-2">
             Deleting the app deletes all its data from your device. Copies in your device backups
-            stay until you delete those backups. Because we don&apos;t hold any of your data,
-            there is nothing for us to delete on our side.
+            stay until you delete those backups. The app itself sends nothing to us; for website
+            accounts, see &ldquo;Accounts on japanone.app&rdquo; above.
           </p>
           <p className="mt-2">
             JapanOne is an app for a general audience and does not knowingly collect information

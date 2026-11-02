@@ -25,6 +25,7 @@ import { JOLayout } from "./components/jo/JOFooter";
 import { JOGuide, JOGuides } from "./pages/jo/JOGuide";
 import { JOHome } from "./pages/jo/JOHome";
 import { JOSearch } from "./pages/jo/JOSearch";
+import { JOAccount } from "./pages/jo/JOAccount";
 import { JOSection } from "./pages/jo/JOSection";
 import { LiveAddressCheck } from "./pages/jo/LiveAddressCheck";
 import { StudyHoursCheck } from "./pages/jo/StudyHoursCheck";
@@ -95,6 +96,8 @@ function JapanOneApp() {
       <Route path="/partners/listing/:id" element={page(<ListingEditor />)} />
       <Route path="/admin" element={page(<Admin />)} />
       <Route path="/login" element={page(<Login />)} />
+      <Route path="/account" element={page(<JOAccount />)} />
+      <Route path="/learn/account" element={<Navigate to="/account" replace />} />
       <Route path="/:section" element={page(<JOSection />)} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

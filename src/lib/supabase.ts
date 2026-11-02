@@ -1,4 +1,3 @@
-import { isJapanOne } from "./brand";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 // Public (anon) values from the Supabase project; set in .env.local and in Netlify.
@@ -6,5 +5,5 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 
-// Accounts are switched off on japanone.app for now (guest practice only, nothing stored on our side).
-export const supabase: SupabaseClient | null = url && anonKey && !isJapanOne ? createClient(url, anonKey) : null;
+// Accounts are optional: every page works without one.
+export const supabase: SupabaseClient | null = url && anonKey ? createClient(url, anonKey) : null;

@@ -6,7 +6,7 @@ import { GoogleButton, googleButtonAvailable } from "../../lib/GoogleButton";
 export function Login() {
   const { session, enabled, signInWithGoogle, sendEmailLink } = useAuth();
   const [params] = useSearchParams();
-  const next = params.get("next") || "/learn";
+  const next = params.get("next") || "/account";
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -43,7 +43,7 @@ export function Login() {
     <div className="mx-auto max-w-md px-6 py-20">
       <div className="text-xs font-bold tracking-wide text-accent">JapanOne</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Sign in to JapanOne</h1>
-      <p className="mt-2 text-ink-soft">One JapanOne account for the Speak and JLPT lessons on the web. No password needed.</p>
+      <p className="mt-2 text-ink-soft">Optional: every page works without an account. Sign in to keep your test results and, for partners, to manage your listings. No password needed.</p>
 
       {!enabled ? (
         <p className="mt-8 rounded-xl border border-line bg-surface p-5 text-sm text-ink-soft">
@@ -109,9 +109,8 @@ export function Login() {
       {error && <p className="mt-4 text-sm text-accent">{error}</p>}
 
       <p className="mt-10 text-xs text-ink-faint">
-        By signing in you agree to our <Link to="/terms" className="underline">Terms</Link> and{" "}
-        <Link to="/learn/privacy" className="underline">Learn privacy notice</Link>. We store your email and your
-        practice progress, nothing else.
+        By signing in you agree to our <a href="https://muthamiltech.com/terms" className="underline">Terms</a> and{" "}
+        <Link to="/japanone/legal#accounts" className="underline">privacy policy</Link>.
       </p>
     </div>
   );

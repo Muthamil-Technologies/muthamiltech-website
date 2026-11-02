@@ -1,8 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
+import { useAuth } from "../../lib/auth";
 import { APP_STORE_URL, SECTIONS } from "../../lib/joSections";
 
 // japanone.app top bar: logo, the six sections, partners, sign in and the app.
 export function JOHeader() {
+  const { session } = useAuth();
   return (
     <header className="sticky top-[env(safe-area-inset-top,0px)] z-40 bg-jo-navy text-white">
       <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 sm:px-6">
@@ -25,7 +27,7 @@ export function JOHeader() {
         </nav>
         <div className="ml-auto flex items-center gap-2">
           <Link to="/partners" className="hidden px-3 py-2 text-[15px] font-bold text-jo-yellow no-underline sm:block">For partners</Link>
-          <Link to="/login" className="rounded-full border border-white/50 px-4 py-2 text-[15px] font-medium text-white no-underline">Sign in</Link>
+          <Link to={session ? "/account" : "/login"} className="rounded-full border border-white/50 px-4 py-2 text-[15px] font-medium text-white no-underline">{session ? "Account" : "Sign in"}</Link>
           <a href={APP_STORE_URL} className="rounded-full bg-jo-yellow px-4 py-2 text-[15px] font-bold text-jo-navy no-underline">Get the app</a>
         </div>
       </div>
