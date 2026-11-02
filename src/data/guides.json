@@ -349,5 +349,168 @@
     "cta": "Comment PAPER if this helped"
    }
   ]
+ },
+ {
+  "id": "learn-jlpt-levels",
+  "section": "learn",
+  "title": "JLPT levels and pass marks",
+  "checked": "2026-11-03",
+  "sources": [
+   {
+    "name": "JLPT (Japan Foundation & JEES): N1–N5 level summary",
+    "url": "https://www.jlpt.jp/e/about/levelsummary.html"
+   },
+   {
+    "name": "JLPT: scoring and pass marks",
+    "url": "https://www.jlpt.jp/e/guideline/results.html"
+   },
+   {
+    "name": "JLPT: test dates",
+    "url": "https://www.jlpt.jp/e/about/index.html"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "LEARN JAPANESE",
+    "title": "JLPT levels and pass marks",
+    "body": "What N5 to N1 mean, and the scores you need."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Five levels, N5 to N1",
+    "body": "N5: some basic Japanese\nN4: basic Japanese\nN3: everyday Japanese, to a certain degree\nN2: everyday Japanese, and a variety of situations to a certain degree\nN1: Japanese in a variety of situations",
+    "note": "N5 is the easiest, N1 the hardest."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Twice a year",
+    "body": "In Japan the test is held in July and December. In 2026: Sunday July 5 and Sunday December 6.",
+    "note": "Outside Japan, some cities hold it only in July or only in December."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Pass marks (out of 180)",
+    "body": "N1: 100 · N2: 90 · N3: 95 · N4: 90 · N5: 80",
+    "note": "Every level is scored from 0 to 180."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Every section counts",
+    "body": "You also need the minimum score in each section: 19 for each 60-point section, 38 for the 120-point section at N4 and N5.",
+    "note": "Miss one section's minimum and you fail, even with a high total."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Japanese-Language Proficiency Test (jlpt.jp)",
+    "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
+   }
+  ]
+ },
+ {
+  "id": "travel-emergency",
+  "section": "travel",
+  "title": "Emergency numbers in Japan",
+  "checked": "2026-11-03",
+  "sources": [
+   {
+    "name": "Japan National Tourism Organization (JNTO): Japan Visitor Hotline",
+    "url": "https://www.japan.travel/en/plan/hotline/"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "TRAVEL JAPAN",
+    "title": "Emergency numbers in Japan",
+    "body": "Save these before your trip."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Police: 110",
+    "body": "For crime, accidents and anything urgent that needs the police.",
+    "note": "Free from any phone."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Fire and ambulance: 119",
+    "body": "For fires and medical emergencies.",
+    "note": "Say where you are as clearly as you can."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Japan Visitor Hotline",
+    "body": "050-3816-2787 (from overseas: +81-50-3816-2787)\n24 hours a day, 365 days a year, in English, Chinese and Korean.",
+    "note": "Help in accidents, illness and natural disasters, plus general tourist information. In a real emergency, call 110 or 119 first."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Japan National Tourism Organization (japan.travel)",
+    "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
+   }
+  ]
+ },
+ {
+  "id": "live-address",
+  "section": "live",
+  "title": "Register your address within 14 days",
+  "checked": "2026-11-03",
+  "sources": [
+   {
+    "name": "Ministry of Internal Affairs and Communications: Move in / Move out (foreign residents)",
+    "url": "https://www.soumu.go.jp/main_sosiki/jichi_gyousei/c-gyousei/zairyu/english/move-in_move-out.html"
+   }
+  ],
+  "slides": [
+   {
+    "kind": "cover",
+    "tag": "LIVE IN JAPAN",
+    "title": "Register your address within 14 days",
+    "body": "The first thing to do after you move in."
+   },
+   {
+    "kind": "fact",
+    "n": "1",
+    "title": "Who must register",
+    "body": "Foreign residents with a residence card (and special permanent residents) who have an address in Japan.",
+    "note": "Not needed for temporary visitors or stays of 3 months or less."
+   },
+   {
+    "kind": "fact",
+    "n": "2",
+    "title": "Arriving from abroad",
+    "body": "Go to your city, ward, town or village office within 14 days of moving in. Bring your residence card.",
+    "note": "No residence card from the airport? Bring your passport."
+   },
+   {
+    "kind": "fact",
+    "n": "3",
+    "title": "Moving within Japan",
+    "body": "Report your move-out at your old municipal office and get a Move-out Certificate. Take it to your new office within 14 days of moving in.",
+    "note": "Moving inside the same city? Just report the change of address."
+   },
+   {
+    "kind": "fact",
+    "n": "4",
+    "title": "Leaving Japan",
+    "body": "Report your move-out to your municipal office before you leave.",
+    "note": "Bring your residence card."
+   },
+   {
+    "kind": "source",
+    "title": "Source",
+    "body": "Ministry of Internal Affairs and Communications (soumu.go.jp)",
+    "note": "Checked Nov 3, 2026. General information, not advice. Check the official site."
+   }
+  ]
  }
 ]

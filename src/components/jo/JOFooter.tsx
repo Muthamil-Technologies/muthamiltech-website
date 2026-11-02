@@ -10,7 +10,7 @@ export function JOFooter() {
         <div className="flex max-w-sm flex-col gap-2.5">
           <strong className="text-[22px] font-black text-white">JapanOne</strong>
           <p className="m-0 text-sm leading-relaxed">
-            General information only, not legal or visa advice. Facts come from official sources (ISA, MEXT, JASSO, MHLW)
+            General information only, not legal or visa advice. Facts come from official sources such as ISA, MEXT, JASSO and MHLW,
             and show the date we checked them.
           </p>
         </div>

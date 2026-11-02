@@ -8,8 +8,10 @@ export const TOOLS: Tool[] = [
   { section: "learn", to: "/learn/speaking", title: "Speaking lessons", sub: "Real conversations at work and in daily life.", keywords: "speak conversation" },
   { section: "learn", to: "/learn/jlpt", title: "JLPT practice test", sub: "N5 · N4 · N3, with answers explained.", keywords: "jlpt exam n5 n4 n3" },
   { section: "learn", to: "/learn/plan", title: "Your JLPT study plan", sub: "From your exam date and daily time to a plan.", keywords: "jlpt schedule" },
+  { section: "study", to: "/study/work-hours", title: "Part-time hours check", sub: "On a student visa: are your work hours inside the limit?", keywords: "part-time arubaito 28 hours student job" },
   { section: "work", to: "/work/pathway", title: "Find your path", sub: "3 questions: the visa routes and next steps that fit you.", keywords: "visa job ssw engineer" },
   { section: "work", to: "/work/cv", title: "Japanese CV (履歴書)", sub: "Fill in your details, then print or save as PDF.", keywords: "resume rirekisho" },
   { section: "travel", to: "/travel/plan", title: "Plan your trip", sub: "A day-by-day plan with estimated costs.", keywords: "itinerary tokyo kyoto osaka" },
   { section: "travel", to: "/travel/phrases", title: "Travel phrases", sub: "Hear them, or show them to staff.", keywords: "phrase japanese words" },
+  { section: "live", to: "/live/address", title: "Address registration checklist", sub: "When to register, where to go and what to bring.", keywords: "city hall move in juminhyo residence card" },
 ];

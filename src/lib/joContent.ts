@@ -4,7 +4,7 @@ import kanjiJson from "../data/dailyKanji.json";
 // Content shared with the social posts (copied in by scripts/sync_content.py).
 
 export type Slide = { kind: "cover" | "fact" | "source"; n?: string; tag?: string; title: string; body: string; note?: string; swipe?: string; style?: string };
-export type Guide = { id: string; section: "study" | "work" | "live"; title: string; checked: string; sources: { name: string; url: string }[]; slides: Slide[] };
+export type Guide = { id: string; section: "learn" | "study" | "work" | "travel" | "live"; title: string; checked: string; sources: { name: string; url: string }[]; slides: Slide[] };
 
 export const GUIDES = guidesJson as Guide[];
 export const guideById = (id: string) => GUIDES.find((g) => g.id === id);
