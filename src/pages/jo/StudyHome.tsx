@@ -89,6 +89,10 @@ export function StudyHome() {
               </li>
             ))}
           </ol>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link to="/study/visa" className="rounded-full bg-jo-navy px-5 py-3 font-bold text-white no-underline">Student visa guide →</Link>
+            <Link to="/study/faq" className="rounded-full border border-jo-navy px-5 py-3 font-bold text-jo-navy no-underline">Questions &amp; answers →</Link>
+          </div>
         </section>
 
         {/* Costs */}
