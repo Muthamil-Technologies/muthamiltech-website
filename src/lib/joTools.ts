@@ -8,6 +8,7 @@ export const TOOLS: Tool[] = [
   { section: "learn", to: "/learn/speaking", title: "Speaking lessons", sub: "Real conversations at work and in daily life.", keywords: "speak conversation" },
   { section: "learn", to: "/learn/jlpt", title: "JLPT practice test", sub: "N5 · N4 · N3, with answers explained.", keywords: "jlpt exam n5 n4 n3" },
   { section: "learn", to: "/learn/plan", title: "Your JLPT study plan", sub: "From your exam date and daily time to a plan.", keywords: "jlpt schedule" },
+  { section: "study", to: "/study/path", title: "Study path planner", sub: "Your month-by-month plan from today to your first day of school.", keywords: "language school university vocational intake apply coe visa timeline" },
   { section: "study", to: "/study/work-hours", title: "Part-time hours check", sub: "On a student visa: are your work hours inside the limit?", keywords: "part-time arubaito 28 hours student job" },
   { section: "work", to: "/work/pathway", title: "Find your path", sub: "3 questions: the visa routes and next steps that fit you.", keywords: "visa job ssw engineer" },
   { section: "work", to: "/work/cv", title: "Japanese CV (履歴書)", sub: "Fill in your details, then print or save as PDF.", keywords: "resume rirekisho" },

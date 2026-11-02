@@ -28,6 +28,7 @@ import { JOSearch } from "./pages/jo/JOSearch";
 import { JOSection } from "./pages/jo/JOSection";
 import { LiveAddressCheck } from "./pages/jo/LiveAddressCheck";
 import { StudyHoursCheck } from "./pages/jo/StudyHoursCheck";
+import { StudyPathPlanner } from "./pages/jo/StudyPathPlanner";
 import { CvBuilder } from "./pages/japwork/CvBuilder";
 import { PathwayFinder } from "./pages/japwork/PathwayFinder";
 import { TravelPhrases } from "./pages/japtour/TravelPhrases";
@@ -57,6 +58,7 @@ function JapanOneApp() {
       <Route path="/learn/jlpt" element={page(<JapTutorTest />)} />
       <Route path="/learn/speaking" element={page(<JapTalkLessons />)} />
       <Route path="/learn/speaking/:id" element={page(<JapTalkLesson />)} />
+      <Route path="/study/path" element={page(<StudyPathPlanner />)} />
       <Route path="/study/work-hours" element={page(<StudyHoursCheck />)} />
       <Route path="/live/address" element={page(<LiveAddressCheck />)} />
       <Route path="/work/pathway" element={page(<PathwayFinder />)} />
