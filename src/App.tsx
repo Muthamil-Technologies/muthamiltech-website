@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useParams } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
 import { Home } from "./pages/Home";
@@ -36,6 +36,11 @@ import { PartnerProgramPage } from "./pages/partners/PartnerProgramPage";
 import { PROGRAMS } from "./pages/partners/partnerTypes";
 import { ProviderPage } from "./pages/partners/ProviderPage";
 
+function OldLesson() {
+  const { id } = useParams();
+  return <Navigate to={`/learn/speaking/${id ?? ""}`} replace />;
+}
+
 /** japanone.app: the JapanOne site. Section pages, guides and every tool share one layout. */
 function JapanOneApp() {
   const page = (el: React.ReactNode) => <JOLayout>{el}</JOLayout>;
@@ -45,15 +50,23 @@ function JapanOneApp() {
       <Route path="/search" element={page(<JOSearch />)} />
       <Route path="/guides" element={page(<JOGuides />)} />
       <Route path="/guides/:id" element={page(<JOGuide />)} />
-      <Route path="/japtalk/level-check" element={page(<JapTalkLevelCheck />)} />
-      <Route path="/japtutor/plan-builder" element={page(<JapTutorPlanBuilder />)} />
-      <Route path="/learn/japtutor" element={page(<JapTutorTest />)} />
-      <Route path="/learn/japtalk" element={page(<JapTalkLessons />)} />
-      <Route path="/learn/japtalk/:id" element={page(<JapTalkLesson />)} />
+      <Route path="/learn/level-check" element={page(<JapTalkLevelCheck />)} />
+      <Route path="/learn/plan" element={page(<JapTutorPlanBuilder />)} />
+      <Route path="/learn/jlpt" element={page(<JapTutorTest />)} />
+      <Route path="/learn/speaking" element={page(<JapTalkLessons />)} />
+      <Route path="/learn/speaking/:id" element={page(<JapTalkLesson />)} />
       <Route path="/work/pathway" element={page(<PathwayFinder />)} />
       <Route path="/work/cv" element={page(<CvBuilder />)} />
-      <Route path="/tour/plan" element={page(<TripPlanner />)} />
-      <Route path="/tour/phrases" element={page(<TravelPhrases />)} />
+      <Route path="/travel/plan" element={page(<TripPlanner />)} />
+      <Route path="/travel/phrases" element={page(<TravelPhrases />)} />
+      {/* Addresses from before the one-app site (shared on social and in older app builds). */}
+      <Route path="/japtalk/level-check" element={<Navigate to="/learn/level-check" replace />} />
+      <Route path="/japtutor/plan-builder" element={<Navigate to="/learn/plan" replace />} />
+      <Route path="/learn/japtutor" element={<Navigate to="/learn/jlpt" replace />} />
+      <Route path="/learn/japtalk" element={<Navigate to="/learn/speaking" replace />} />
+      <Route path="/learn/japtalk/:id" element={<OldLesson />} />
+      <Route path="/tour/plan" element={<Navigate to="/travel/plan" replace />} />
+      <Route path="/tour/phrases" element={<Navigate to="/travel/phrases" replace />} />
       <Route path="/japanone/legal" element={page(<JapanOneLegal />)} />
       <Route path="/partners" element={page(<PartnersHome />)} />
       <Route path="/:section" element={page(<JOSection />)} />
@@ -84,6 +97,11 @@ function App() {
           <Route path="/learn/japtutor" element={<JapTutorTest />} />
           <Route path="/learn/japtalk" element={<JapTalkLessons />} />
           <Route path="/learn/japtalk/:id" element={<JapTalkLesson />} />
+          <Route path="/learn/level-check" element={<JapTalkLevelCheck />} />
+          <Route path="/learn/plan" element={<JapTutorPlanBuilder />} />
+          <Route path="/learn/jlpt" element={<JapTutorTest />} />
+          <Route path="/learn/speaking" element={<JapTalkLessons />} />
+          <Route path="/learn/speaking/:id" element={<JapTalkLesson />} />
           <Route path="/learn/account" element={<Account />} />
           <Route path="/learn/privacy" element={<LearnPrivacy />} />
           <Route path="/login" element={<Login />} />

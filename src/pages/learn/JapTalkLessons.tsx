@@ -45,7 +45,7 @@ export function JapTalkLessons() {
                 return (
                   <Link
                     key={l.id}
-                    to={locked ? "/learn/account" : `/learn/japtalk/${l.id}`}
+                    to={locked ? "/learn/account" : `/learn/speaking/${l.id}`}
                     className="rounded-xl border border-line bg-surface p-5 transition-shadow hover:shadow-md"
                   >
                     <div className="flex items-start justify-between gap-3">

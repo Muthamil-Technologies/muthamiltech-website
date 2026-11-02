@@ -43,7 +43,7 @@ export function JapTalkLevelCheck() {
       </Link>
 
       <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">
-        JapTalk Level Check
+        Level Check
       </div>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink">
         How much Japanese do you already know?
@@ -56,7 +56,7 @@ export function JapTalkLevelCheck() {
       {stage === "intro" && (
         <div className="mt-10 rounded-2xl border border-line bg-surface p-8">
           <p className="text-ink-soft">
-            Answer honestly. There's no wrong place to start — JapTalk meets you wherever
+            Answer honestly. There's no wrong place to start — JapanOne meets you wherever
             you land and builds speaking confidence from there.
           </p>
           <button
@@ -125,7 +125,7 @@ export function JapTalkLevelCheck() {
           <div className="mt-8 border-t border-line pt-6">
             <p className="text-sm font-semibold text-ink">Start speaking: real conversations to read and say aloud.</p>
             <div className="mt-4 flex flex-wrap gap-3">
-              <Link to="/learn/japtalk" className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper hover:bg-accent-deep">
+              <Link to="/learn/speaking" className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper hover:bg-accent-deep">
                 Speaking lessons →
               </Link>
               <a href="https://apps.apple.com/app/id6807840880" target="_blank" rel="noreferrer noopener" className="rounded-full border border-line px-7 py-3.5 text-sm font-semibold text-ink hover:border-ink">

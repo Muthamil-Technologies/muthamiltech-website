@@ -103,7 +103,7 @@ export function PathwayFinder() {
                           <span className={`text-ink ${s.done ? "line-through opacity-60" : ""}`}>
                             {s.text}
                             {s.studyLink && (
-                              <Link to="/learn/japtutor" className="mt-1 block text-sm font-semibold text-accent">
+                              <Link to="/learn/jlpt" className="mt-1 block text-sm font-semibold text-accent">
                                 Practise for the test: free JLPT practice test →
                               </Link>
                             )}

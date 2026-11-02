@@ -12,7 +12,7 @@ const POPULAR = [
   { label: "MEXT scholarship", to: "/guides/study-mext" },
   { label: "Part-time work rules", to: "/guides/study-part-time" },
   { label: "Japanese CV", to: "/work/cv" },
-  { label: "JLPT N4", to: "/learn/japtutor" },
+  { label: "JLPT N4", to: "/learn/jlpt" },
 ];
 
 const JOURNEY = [
@@ -53,14 +53,14 @@ export function JOHome() {
             <h3 className="m-0 text-2xl font-extrabold">Asking your manager for a day off</h3>
             <p lang="ja" className="m-0 text-[22px] leading-relaxed">来週の金曜日、<br />休んでもいいですか。</p>
             <p className="m-0 text-jo-muted">May I take next Friday off?</p>
-            <Link to="/learn/japtalk" className="mt-auto self-start rounded-full bg-[#e3ecfb] px-[18px] py-3 font-bold text-jo-navy no-underline">Practise speaking →</Link>
+            <Link to="/learn/speaking" className="mt-auto self-start rounded-full bg-[#e3ecfb] px-[18px] py-3 font-bold text-jo-navy no-underline">Practise speaking →</Link>
           </article>
           <article className="flex flex-col gap-3.5 rounded-[22px] bg-jo-yellow p-7">
             <span className="text-[13px] font-bold">JLPT PLAN</span>
             <h3 className="m-0 text-2xl font-extrabold">Take a 2-minute level check</h3>
             <p className="m-0 leading-relaxed">Find your level, then get a day-by-day plan to the exam{days > 0 ? `, ${days} days away` : ""}.</p>
             <div className="mt-auto flex items-end justify-between gap-2">
-              <Link to="/japtalk/level-check" className="rounded-full bg-jo-navy px-[18px] py-3 font-bold text-white no-underline">Start →</Link>
+              <Link to="/learn/level-check" className="rounded-full bg-jo-navy px-[18px] py-3 font-bold text-white no-underline">Start →</Link>
               <img src="/characters/maru-celebrate.svg" alt="" className="h-auto w-[110px]" />
             </div>
           </article>
@@ -98,7 +98,7 @@ export function JOHome() {
             <span className="text-[13px] font-bold text-[#9a4612]">TRAVEL</span>
             <h3 className="m-0 text-[30px] font-black leading-tight">Plan your Japan trip in a minute</h3>
             <p className="m-0 leading-relaxed text-[#4a3a2e]">Pick your days, cities and interests. Get a day-by-day plan with the phrases you will need.</p>
-            <Link to="/tour/plan" className="mt-2 self-start rounded-full bg-jo-navy px-5 py-3 font-bold text-white no-underline">Plan a trip →</Link>
+            <Link to="/travel/plan" className="mt-2 self-start rounded-full bg-jo-navy px-5 py-3 font-bold text-white no-underline">Plan a trip →</Link>
           </article>
           <article className="flex flex-col gap-3 rounded-3xl bg-[#fbe3e6] p-8">
             <span className="flex items-center gap-2 text-[13px] font-bold text-[#9e2232]">SHOP <span className="rounded-full bg-white px-2.5 py-0.5 text-[12px]">Coming soon</span></span>

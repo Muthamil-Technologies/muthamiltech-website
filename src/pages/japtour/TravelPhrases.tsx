@@ -25,7 +25,7 @@ export function TravelPhrases() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-12">
       <Link to="/" className="text-sm font-semibold text-accent">&larr; JapanOne</Link>
-      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">JapTour · Travel phrases</div>
+      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">Travel · Phrases</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Japanese for your trip</h1>
       <p className="mt-2 text-ink-soft">Tap ▶ to hear it, or "Show" to hold your phone up for staff to read.</p>
 
@@ -58,7 +58,7 @@ export function TravelPhrases() {
       )}
 
       <p className="mt-10 text-sm text-ink-soft">
-        Plan where to go next: <Link to="/tour/plan" className="font-semibold text-accent">JapTour trip planner →</Link>
+        Plan where to go next: <Link to="/travel/plan" className="font-semibold text-accent">Trip planner →</Link>
       </p>
     </div>
   );

@@ -59,23 +59,23 @@ export function resultForScore(score: number, total: number): LevelResult {
   if (ratio <= 0.25) {
     return {
       label: "Absolute Beginner",
-      blurb: "You're just getting started with Japanese — that's exactly where JapTalk begins, from lesson one.",
+      blurb: "You're just getting started with Japanese — that's exactly where JapanOne begins, from lesson one.",
     };
   }
   if (ratio <= 0.6) {
     return {
       label: "Early N5",
-      blurb: "You've picked up some real basics. JapTalk builds speaking confidence directly on top of what you already know.",
+      blurb: "You've picked up some real basics. JapanOne builds speaking confidence directly on top of what you already know.",
     };
   }
   if (ratio < 1) {
     return {
       label: "Solid N5, building toward N4",
-      blurb: "You have a strong N5 foundation. JapTalk will keep pushing your speaking further, sentence by sentence.",
+      blurb: "You have a strong N5 foundation. JapanOne will keep pushing your speaking further, sentence by sentence.",
     };
   }
   return {
     label: "Strong N5 foundation",
-    blurb: "You're ready to speak with real sentences. JapTalk turns that foundation into real conversation confidence.",
+    blurb: "You're ready to speak with real sentences. JapanOne turns that foundation into real conversation confidence.",
   };
 }

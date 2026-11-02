@@ -28,13 +28,13 @@ export function JapTutorPlanBuilder() {
       </Link>
 
       <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase">
-        JapTutor Plan Builder
+        JLPT Plan Builder
       </div>
       <h1 className="mt-3 text-3xl font-bold tracking-tight text-ink">
         Build your JLPT study plan.
       </h1>
       <p className="mt-3 max-w-lg text-ink-soft">
-        Pick your exam and your daily time, and see exactly what JapTutor would put in front
+        Pick your exam and your daily time, and see exactly what JapanOne would put in front
         of you on day one — the same plan logic the app actually runs.
       </p>
 
@@ -133,7 +133,7 @@ export function JapTutorPlanBuilder() {
                 ))}
             </div>
             <p className="mt-4 text-xs text-ink-faint">
-              JapTutor sequences kana first — the real foundation everything else builds on —
+              JapanOne starts with kana — the real foundation everything else builds on —
               then layers in kanji, vocabulary, and grammar as you're ready. From tomorrow,
               spaced review of what you've learned joins the mix automatically.
             </p>
@@ -141,7 +141,7 @@ export function JapTutorPlanBuilder() {
             <div className="mt-8 border-t border-line pt-6">
               <p className="text-sm font-semibold text-ink">Start today with a free practice test.</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <Link to="/learn/japtutor" className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper hover:bg-accent-deep">
+                <Link to="/learn/jlpt" className="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper hover:bg-accent-deep">
                   JLPT practice test →
                 </Link>
                 <a href="https://apps.apple.com/app/id6807840880" target="_blank" rel="noreferrer noopener" className="rounded-full border border-line px-7 py-3.5 text-sm font-semibold text-ink hover:border-ink">

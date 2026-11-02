@@ -79,7 +79,7 @@ export function TripPlanner() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-12">
       <Link to="/" className="text-sm font-semibold text-accent print:hidden">&larr; JapanOne</Link>
-      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase print:hidden">JapTour · Trip planner</div>
+      <div className="mt-6 text-xs font-bold tracking-[0.2em] text-accent uppercase print:hidden">Travel · Trip planner</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink print:hidden">Plan your Japan trip</h1>
       <p className="mt-2 text-ink-soft print:hidden">Pick places, days, travellers, budget and interests. You get a day-by-day plan with estimated costs.</p>
 
@@ -190,8 +190,8 @@ export function TripPlanner() {
           </div>
 
           <p className="mt-6 text-sm text-ink-soft print:hidden">
-            The JapTour app adds offline maps, phrases with audio, dietary cards, a budget tracker and more.{" "}
-            <Link to="/tour/phrases" className="font-semibold text-accent">Try the travel phrases →</Link>
+            Need words for the trip?{" "}
+            <Link to="/travel/phrases" className="font-semibold text-accent">Try the travel phrases →</Link>
           </p>
         </section>
       )}

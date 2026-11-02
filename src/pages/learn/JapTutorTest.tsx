@@ -180,7 +180,7 @@ export function JapTutorTest() {
           )}
           {enabled && !session && (
             <p className="mt-3 text-sm text-ink-faint">
-              <Link to={`/login?next=${encodeURIComponent(`/learn/japtutor?level=${level}`)}`} className="font-semibold text-accent">Sign in</Link> to keep your
+              <Link to={`/login?next=${encodeURIComponent(`/learn/jlpt?level=${level}`)}`} className="font-semibold text-accent">Sign in</Link> to keep your
               scores on every device.
             </p>
           )}
@@ -267,7 +267,7 @@ export function JapTutorTest() {
           </p>
           <div className="mt-5 flex gap-3">
             <button onClick={restart} className="rounded-full border border-line px-5 py-2.5 font-semibold text-ink">Retake</button>
-            <Link to="/learn/japtalk" className="rounded-full bg-ink px-5 py-2.5 font-semibold text-paper">Try speaking lessons</Link>
+            <Link to="/learn/speaking" className="rounded-full bg-ink px-5 py-2.5 font-semibold text-paper">Try speaking lessons</Link>
           </div>
         </div>
       )}

@@ -57,7 +57,7 @@ export const products: Product[] = [
       "Budget estimates and spending tracker",
     ],
     journeyStep: "Explore",
-    url: "https://japanone.app/tour/plan",
+    url: "https://japanone.app/travel/plan",
   },
 ];
 

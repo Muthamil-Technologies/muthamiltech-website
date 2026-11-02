@@ -3,13 +3,13 @@ import { useAuth } from "../../lib/auth";
 
 const apps = [
   {
-    to: "/learn/japtutor",
+    to: "/learn/jlpt",
     name: "JLPT",
     tag: "JLPT N5 daily test",
     body: "Ten JLPT-style questions: kanji, vocabulary, grammar and reading. See your score by section and what to review.",
   },
   {
-    to: "/learn/japtalk",
+    to: "/learn/speaking",
     name: "Speak",
     tag: "Speaking lessons",
     body: "Real situations, from introductions to the bank and the office. Say or type your answer in Japanese and get it checked.",

@@ -109,7 +109,7 @@ export function JapTalkLesson() {
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-14">
-      <Link to="/learn/japtalk" className="text-sm font-semibold text-accent">&larr; All lessons</Link>
+      <Link to="/learn/speaking" className="text-sm font-semibold text-accent">&larr; All lessons</Link>
       <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink">{lesson.title}</h1>
       <p className="mt-2 text-ink-soft">{lesson.description}</p>
 
@@ -186,7 +186,7 @@ export function JapTalkLesson() {
           </div>
           {enabled && !session && (
             <p className="mt-4 text-sm text-ink-faint">
-              <Link to={`/login?next=/learn/japtalk/${lesson.id}`} className="font-semibold text-accent">Sign in</Link> to
+              <Link to={`/login?next=/learn/speaking/${lesson.id}`} className="font-semibold text-accent">Sign in</Link> to
               save this lesson to your account.
             </p>
           )}
@@ -201,7 +201,7 @@ export function JapTalkLesson() {
             <button onClick={() => { setStep(0); setResult(null); setInput(""); setProgress({ ...progress, completed: false }); }} className="rounded-full border border-line px-5 py-2.5 font-semibold text-ink">
               Practise again
             </button>
-            <Link to="/learn/japtalk" className="rounded-full bg-ink px-5 py-2.5 font-semibold text-paper">More lessons</Link>
+            <Link to="/learn/speaking" className="rounded-full bg-ink px-5 py-2.5 font-semibold text-paper">More lessons</Link>
           </div>
         </div>
       )}
