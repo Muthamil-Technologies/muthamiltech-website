@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Choice } from "./StudyHoursCheck";
+import { Choice } from "../../components/jo/Choice";
 
 // Study tool: a dated plan from today to the first day of school. Timings are JASSO's
 // "Time Schedule" (Study in Japan, checked Nov 3, 2026), counted back from the start month.

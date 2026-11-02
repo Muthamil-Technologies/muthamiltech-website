@@ -28,13 +28,14 @@ import { JOSearch } from "./pages/jo/JOSearch";
 import { JOAccount } from "./pages/jo/JOAccount";
 import { JOSection } from "./pages/jo/JOSection";
 import { LiveAddressCheck } from "./pages/jo/LiveAddressCheck";
-import { StudyHoursCheck } from "./pages/jo/StudyHoursCheck";
 import { StudyPathPlanner } from "./pages/jo/StudyPathPlanner";
 import { StudyHome } from "./pages/jo/StudyHome";
 import { LearnHome as JOLearnHome, LiveHome, TravelHome } from "./pages/jo/SectionHomes";
 import { StudySchool } from "./pages/jo/StudySchool";
 import { StudyFaq, StudyVisa } from "./pages/jo/StudyVisaFaq";
 import { StudyCost } from "./pages/jo/StudyCost";
+import { StudyScholarships } from "./pages/jo/StudyScholarships";
+import { StudyChecklist } from "./pages/jo/StudyChecklist";
 import { SswHub, WorkHome, WorkStatusPage } from "./pages/jo/WorkPages";
 import { CvBuilder } from "./pages/japwork/CvBuilder";
 import { PathwayFinder } from "./pages/japwork/PathwayFinder";
@@ -70,11 +71,13 @@ function JapanOneApp() {
       <Route path="/live" element={page(<LiveHome />)} />
       <Route path="/study" element={page(<StudyHome />)} />
       <Route path="/study/schools/:id" element={page(<StudySchool />)} />
+      <Route path="/study/scholarships" element={page(<StudyScholarships />)} />
+      <Route path="/study/checklist" element={page(<StudyChecklist />)} />
       <Route path="/study/cost" element={page(<StudyCost />)} />
       <Route path="/study/visa" element={page(<StudyVisa />)} />
       <Route path="/study/faq" element={page(<StudyFaq />)} />
       <Route path="/study/path" element={page(<StudyPathPlanner />)} />
-      <Route path="/study/work-hours" element={page(<StudyHoursCheck />)} />
+      <Route path="/study/work-hours" element={<Navigate to="/guides/study-part-time" replace />} />
       <Route path="/live/address" element={page(<LiveAddressCheck />)} />
       <Route path="/work" element={page(<WorkHome />)} />
       <Route path="/work/ssw" element={page(<SswHub />)} />

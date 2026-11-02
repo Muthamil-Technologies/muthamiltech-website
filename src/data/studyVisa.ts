@@ -55,7 +55,7 @@ export const VISA_STEPS: { title: string; body: string[]; src: Src[]; to?: { lab
     title: "5. Part-time work",
     body: ["Get permission (資格外活動許可) before any paid work. Then up to 28 hours a week during term, up to 8 hours a day in your school's long vacations, never in nightlife businesses."],
     src: [S.isaWork],
-    to: { label: "Part-time hours check", path: "/study/work-hours" },
+    to: { label: "Part-time work guide", path: "/guides/study-part-time" },
   },
   {
     title: "6. Changing or leaving your school",
@@ -88,7 +88,7 @@ export const STUDY_FAQS: Faq[] = [
   { q: "How long can I stay on a student visa?", a: "The period of stay is set for each person, up to 4 years and 3 months at a time. You can apply to extend it before it ends.", to: { label: "Student visa guide", path: "/study/visa" }, src: S.isaStudent },
   { q: "What is the EJU?", a: "The Examination for Japanese University Admission for International Students. It is held in June and November, and many universities ask for its scores.", to: { label: "Universities", path: "/study/schools/university" }, src: S.jassoExam },
   { q: "What is the difference between a university and a vocational school?", a: "Universities give bachelor's degrees, usually in 4 years. Vocational schools (専門学校) teach practical skills: a diploma takes 2+ years. Vocational schools need a set level of Japanese, such as JLPT N2 or 6+ months at an approved language school.", to: { label: "Compare school types", path: "/study" }, src: S.jassoVoc },
-  { q: "Can international students work part-time?", a: "Yes, with permission (資格外活動許可): up to 28 hours a week during term and up to 8 hours a day in long vacations.", to: { label: "Part-time hours check", path: "/study/work-hours" }, src: S.isaWork },
+  { q: "Can international students work part-time?", a: "Yes, with permission (資格外活動許可): up to 28 hours a week during term and up to 8 hours a day in long vacations.", to: { label: "Part-time work guide", path: "/guides/study-part-time" }, src: S.isaWork },
   { q: "What is the COE?", a: "The Certificate of Eligibility. After you are accepted, it is applied for at immigration in Japan, usually by your school. You then use it to apply for your visa at the Japanese embassy or consulate.", to: { label: "Student visa guide", path: "/study/visa" }, src: S.jassoImm },
   { q: "What scholarships are there?", a: "The Japanese government (MEXT), JASSO, local governments and private foundations. Most are applied for after you enrol in Japan, usually through your school; a few accept applications from abroad.", to: { label: "MEXT scholarship", path: "/guides/study-mext" }, src: S.jassoScholar },
   { q: "Can I go on to university after language school?", a: "Yes. A common path is a Japanese language school first, then applying to a vocational school or university, with the EJU and other tests along the way.", to: { label: "Study path planner", path: "/study/path" }, src: S.jassoSchedule },

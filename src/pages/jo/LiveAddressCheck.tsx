@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Choice } from "./StudyHoursCheck";
+import { Choice } from "../../components/jo/Choice";
 
 // Live tool: what to do about address registration in your situation. From the live-address
 // guide (Ministry of Internal Affairs and Communications, checked Nov 3, 2026).

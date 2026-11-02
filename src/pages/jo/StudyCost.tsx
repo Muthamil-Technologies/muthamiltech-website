@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Choice } from "./StudyHoursCheck";
+import { Choice } from "../../components/jo/Choice";
 
 // Study tool: an estimate of what studying in Japan costs. Defaults are JASSO figures (first-year
 // admission + tuition by school type; 2023 survey of living costs); every number can be changed.
@@ -80,7 +80,7 @@ export function StudyCost() {
         Defaults from Study in Japan (JASSO):{" "}
         <a href="https://www.studyinjapan.go.jp/en/planning/academic-fees/" target="_blank" rel="noreferrer" className="text-[#1f4fa8] underline">academic fees</a> and{" "}
         <a href="https://www.studyinjapan.go.jp/en/life/cost-of-living/" target="_blank" rel="noreferrer" className="text-[#1f4fa8] underline">living costs (2023 Lifestyle Survey of Privately-Financed International Students)</a>, checked Nov 3, 2026.
-        Part-time work can help, within the rules. <Link to="/study/work-hours" className="font-bold text-[#1f4fa8]">Part-time hours check →</Link>
+        Part-time work can help, within the rules. <Link to="/guides/study-part-time" className="font-bold text-[#1f4fa8]">Part-time work rules →</Link>
       </p>
     </div>
   );
