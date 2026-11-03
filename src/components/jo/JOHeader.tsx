@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
 import { APP_STORE_URL, SECTIONS } from "../../lib/joSections";
 
@@ -8,8 +8,6 @@ import { APP_STORE_URL, SECTIONS } from "../../lib/joSections";
 export function JOHeader() {
   const { session } = useAuth();
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
-  useEffect(() => setOpen(false), [pathname]);
 
   const account = { to: session ? "/account" : "/login", label: session ? "Account" : "Sign in" };
   return (
@@ -51,7 +49,7 @@ export function JOHeader() {
         </div>
       </div>
       {open && (
-        <nav id="jo-menu" aria-label="Menu" className="max-h-[calc(100svh-64px)] overflow-y-auto bg-jo-navy-deep px-4 pb-6 pt-2 lg:hidden">
+        <nav id="jo-menu" aria-label="Menu" onClick={(e) => { if ((e.target as HTMLElement).closest("a")) setOpen(false); }} className="max-h-[calc(100svh-64px)] overflow-y-auto bg-jo-navy-deep px-4 pb-6 pt-2 lg:hidden">
           <ul className="m-0 grid list-none grid-cols-2 gap-2 p-0">
             {SECTIONS.map((s) => (
               <li key={s.id}>
