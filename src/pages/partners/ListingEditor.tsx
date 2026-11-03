@@ -4,18 +4,24 @@ import {
   db, DETAIL_FIELDS, DETAIL_TABLE, LANGS, mediaUrl, PRODUCT_LABEL, PRODUCT_OF, STATUS_LABEL, STATUS_TONE,
   type Details, type Field, type Listing, type Product, type Provider,
 } from "../../lib/listings";
+import { FIELD_JA, OPTION_JA, PRODUCT_JA, STATUS_JA, UI, savedMissing } from "../../data/partnerJa";
+import { LangSwitch, usePartnerLang, type Lang } from "../../lib/partnerLang";
+
+const fieldLabel = (f: Field, lang: Lang) => (lang === "ja" ? FIELD_JA[f.key]?.label : undefined) ?? f.label;
+const fieldHint = (f: Field, lang: Lang) => (lang === "ja" ? FIELD_JA[f.key]?.hint : undefined) ?? f.hint;
+const optionLabel = (f: Field, v: string, l: string, lang: Lang) => (lang === "ja" ? OPTION_JA[`${f.key}.${v}`] : undefined) ?? l;
 
 type Media = { id: string; path: string; sort: number };
 type Review = { decision: string; reason: string | null; created_at: string };
 
 const input = "mt-1 w-full rounded-lg border border-line bg-paper px-3 py-2 text-ink outline-none focus:border-accent disabled:opacity-60";
 
-function FieldInput({ f, value, onChange, disabled }: { f: Field; value: unknown; onChange: (v: unknown) => void; disabled: boolean }) {
+function FieldInput({ f, value, onChange, disabled, lang }: { f: Field; value: unknown; onChange: (v: unknown) => void; disabled: boolean; lang: Lang }) {
   if (f.type === "select")
     return (
       <select disabled={disabled} required={f.required} value={(value as string) ?? ""} onChange={(e) => onChange(e.target.value || null)} className={input}>
         <option value="">—</option>
-        {f.options!.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
+        {f.options!.map(([v, l]) => <option key={v} value={v}>{optionLabel(f, v, l, lang)}</option>)}
       </select>
     );
   if (f.type === "multi") {
@@ -26,7 +32,7 @@ function FieldInput({ f, value, onChange, disabled }: { f: Field; value: unknown
           <label key={v} className={`cursor-pointer rounded-full border px-3 py-1 text-sm ${set.has(v) ? "border-accent bg-red-50 text-ink" : "border-line text-ink-soft"}`}>
             <input type="checkbox" className="hidden" disabled={disabled} checked={set.has(v)}
               onChange={() => { if (set.has(v)) set.delete(v); else set.add(v); onChange([...set]); }} />
-            {l}
+            {optionLabel(f, v, l, lang)}
           </label>
         ))}
       </div>
@@ -58,6 +64,9 @@ export function ListingEditor() {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [msg, setMsg] = useState<{ tone: "ok" | "err"; text: string } | null>(null);
   const [busy, setBusy] = useState(false);
+  const [lang, setLang] = usePartnerLang();
+  const ja = lang === "ja";
+  const t = (x: { en: string; ja: string }) => x[lang];
 
   const product: Product | null = provider ? PRODUCT_OF[provider.kind] : null;
   const editable = isNew || listing.status === "draft" || listing.status === "rejected";
@@ -67,7 +76,7 @@ export function ListingEditor() {
       let providerId = params.get("provider");
       if (!isNew) {
         const { data: l } = await db().from("listings").select("*").eq("id", id!).single();
-        if (!l) return setMsg({ tone: "err", text: "Listing not found." });
+        if (!l) return setMsg({ tone: "err", text: t(UI.notFound) });
         setListing(l as Listing);
         providerId = (l as Listing).provider_id;
         const { data: d } = await db().from(DETAIL_TABLE[(l as Listing).product]).select("*").eq("listing_id", id!).maybeSingle();
@@ -103,7 +112,7 @@ export function ListingEditor() {
         const { error } = await db().from(DETAIL_TABLE[product]).upsert({ ...rest, listing_id: listingId });
         if (error) throw error;
       }
-      setMsg({ tone: "ok", text: missing.length ? `Saved as draft. Still needed before submitting: ${missing.map((f) => f.label).join(", ")}.` : "Saved." });
+      setMsg({ tone: "ok", text: missing.length ? savedMissing(lang, missing.map((f) => fieldLabel(f, lang))) : t(UI.saved) });
       if (isNew) navigate(`/partners/listing/${listingId}`, { replace: true });
       else setListing((l) => ({ ...l, status: "draft" }));
       return listingId;
@@ -121,14 +130,14 @@ export function ListingEditor() {
     const { error } = await db().rpc("submit_listing", { p_listing: listingId });
     if (error) return setMsg({ tone: "err", text: error.message });
     setListing((l) => ({ ...l, status: "submitted" }));
-    setMsg({ tone: "ok", text: "Sent for review. We usually check listings within 1–2 working days." });
+    setMsg({ tone: "ok", text: t(UI.sent) });
   }
 
   async function withdraw() {
     const { error } = await db().rpc("withdraw_listing", { p_listing: listing.id });
     if (error) return setMsg({ tone: "err", text: error.message });
     setListing((l) => ({ ...l, status: "draft" }));
-    setMsg({ tone: "ok", text: "Back to draft. Edit it and submit again; it will be reviewed again." });
+    setMsg({ tone: "ok", text: t(UI.backToDraft) });
   }
 
   async function upload(e: ChangeEvent<HTMLInputElement>) {
@@ -150,49 +159,52 @@ export function ListingEditor() {
     setMedia((all) => all.filter((x) => x.id !== m.id));
   }
 
-  if (!provider || !product) return <div className="mx-auto max-w-3xl px-6 py-14 text-ink-soft">{msg?.text ?? "Loading…"}</div>;
+  if (!provider || !product) return <div className="mx-auto max-w-3xl px-6 py-14 text-ink-soft">{msg?.text ?? t(UI.loading)}</div>;
   const status = listing.status;
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-14">
-      <Link to={`/partners/p/${provider.id}`} className="text-sm font-semibold text-accent">&larr; {provider.name}</Link>
+    <div lang={lang} className="mx-auto max-w-3xl px-6 py-14">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <Link to={`/partners/p/${provider.id}`} className="text-sm font-semibold text-accent">&larr; {provider.name}</Link>
+        <LangSwitch lang={lang} setLang={setLang} />
+      </div>
       <div className="mt-6 flex items-center justify-between gap-4">
-        <h1 className="text-3xl font-bold tracking-tight text-ink">{isNew ? `New ${PRODUCT_LABEL[product].toLowerCase()}` : listing.title}</h1>
-        {status && <span className={`rounded-full px-3 py-1 text-xs font-semibold ${STATUS_TONE[status]}`}>{STATUS_LABEL[status]}</span>}
+        <h1 className="text-3xl font-bold tracking-tight text-ink">{isNew ? (ja ? `${PRODUCT_JA[product]}を新規作成` : `New ${PRODUCT_LABEL[product].toLowerCase()}`) : listing.title}</h1>
+        {status && <span className={`rounded-full px-3 py-1 text-xs font-semibold ${STATUS_TONE[status]}`}>{ja ? STATUS_JA[status] : STATUS_LABEL[status]}</span>}
       </div>
 
       {reviews[0] && reviews[0].decision === "rejected" && (
         <div className="mt-6 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-900">
-          <div className="font-semibold">Changes needed</div>
-          <div className="mt-1">{reviews[0].reason ?? "Please check the listing and submit it again."}</div>
+          <div className="font-semibold">{t(UI.changesNeeded)}</div>
+          <div className="mt-1">{reviews[0].reason ?? t(UI.changesDefault)}</div>
         </div>
       )}
       {!editable && (
         <div className="mt-6 rounded-xl border border-line bg-surface p-4 text-sm text-ink-soft">
-          {status === "submitted" ? "This listing is being reviewed." : status === "published" ? "This listing is live." : "This listing can't be edited."}{" "}
+          {t(status === "submitted" ? UI.reviewing : status === "published" ? UI.live : UI.cantEdit)}{" "}
           {(status === "submitted" || status === "published") && (
-            <button onClick={withdraw} className="font-semibold text-accent">Withdraw to edit</button>
+            <button onClick={withdraw} className="font-semibold text-accent">{t(UI.withdraw)}</button>
           )}
         </div>
       )}
 
       <section className="mt-8 grid gap-4 rounded-2xl border border-line bg-surface p-6">
         <label className="text-sm">
-          <span className="font-medium text-ink">Title *</span>
+          <span className="font-medium text-ink">{t(UI.title)} *</span>
           <input disabled={!editable} required value={listing.title ?? ""} onChange={(e) => setListing({ ...listing, title: e.target.value })} className={input} />
         </label>
         <label className="text-sm">
-          <span className="font-medium text-ink">Description</span>
+          <span className="font-medium text-ink">{t(UI.description)}</span>
           <textarea disabled={!editable} rows={5} value={listing.summary ?? ""} onChange={(e) => setListing({ ...listing, summary: e.target.value })} className={input} />
         </label>
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="text-sm">
-            <span className="font-medium text-ink">{product === "item" ? "Ships from (country)" : "Area (prefecture / city)"}</span>
+            <span className="font-medium text-ink">{t(product === "item" ? UI.shipsFrom : UI.area)}</span>
             <input disabled={!editable} value={listing.area ?? ""} onChange={(e) => setListing({ ...listing, area: e.target.value })} className={input} />
           </label>
           <label className="text-sm">
-            <span className="font-medium text-ink">Written in</span>
-            <span className="ml-1 text-xs text-ink-faint">(workers see it in this language)</span>
+            <span className="font-medium text-ink">{t(UI.writtenIn)}</span>
+            <span className="ml-1 text-xs text-ink-faint">{t(UI.writtenHint)}</span>
             <select disabled={!editable} value={listing.default_lang} onChange={(e) => setListing({ ...listing, default_lang: e.target.value, languages: [e.target.value] })} className={input}>
               {LANGS.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
             </select>
@@ -201,20 +213,20 @@ export function ListingEditor() {
       </section>
 
       <section className="mt-6 grid gap-4 rounded-2xl border border-line bg-surface p-6 sm:grid-cols-2">
-        <h2 className="text-lg font-semibold text-ink sm:col-span-2">{PRODUCT_LABEL[product]} details</h2>
+        <h2 className="text-lg font-semibold text-ink sm:col-span-2">{ja ? `${PRODUCT_JA[product]}の詳細` : `${PRODUCT_LABEL[product]} details`}</h2>
         {DETAIL_FIELDS[product].map((f) => (
           <label key={f.key} className={`text-sm ${f.type === "multi" || f.type === "list" || f.type === "dates" || f.key === "apply_target" || f.key.endsWith("_url") ? "sm:col-span-2" : ""}`}>
-            <span className="font-medium text-ink">{f.label}{f.required && " *"}</span>
-            <FieldInput f={f} value={details[f.key]} disabled={!editable} onChange={(v) => setDetails({ ...details, [f.key]: v })} />
-            {f.hint && <span className="mt-1 block text-xs text-ink-faint">{f.hint}</span>}
+            <span className="font-medium text-ink">{fieldLabel(f, lang)}{f.required && " *"}</span>
+            <FieldInput f={f} lang={lang} value={details[f.key]} disabled={!editable} onChange={(v) => setDetails({ ...details, [f.key]: v })} />
+            {fieldHint(f, lang) && <span className="mt-1 block text-xs text-ink-faint">{fieldHint(f, lang)}</span>}
           </label>
         ))}
       </section>
 
       <section className="mt-6 rounded-2xl border border-line bg-surface p-6">
-        <h2 className="text-lg font-semibold text-ink">Photos</h2>
+        <h2 className="text-lg font-semibold text-ink">{t(UI.photos)}</h2>
         {!listing.id ? (
-          <p className="mt-2 text-sm text-ink-soft">Save the listing first, then add photos.</p>
+          <p className="mt-2 text-sm text-ink-soft">{t(UI.saveFirst)}</p>
         ) : (
           <>
             <div className="mt-3 flex flex-wrap gap-3">
@@ -234,15 +246,15 @@ export function ListingEditor() {
       {editable && (
         <div className="mt-6 flex flex-wrap gap-3">
           <button disabled={busy || !listing.title} onClick={save} className="rounded-full border border-line px-6 py-3 font-semibold text-ink disabled:opacity-50">
-            Save draft
+            {t(UI.saveDraft)}
           </button>
           <button disabled={busy || !listing.title} onClick={submit} className="rounded-full bg-ink px-6 py-3 font-semibold text-paper hover:bg-accent-deep disabled:opacity-50">
-            Submit for review
+            {t(UI.submit)}
           </button>
         </div>
       )}
       <p className="mt-8 text-xs text-ink-faint">
-        Listings must be accurate and legal. {product === "job" ? "Never charge applicants any fee. " : ""}We may remove any listing that breaks our rules.
+        {t(UI.rules)} {product === "job" ? `${t(UI.noFees)} ` : ""}{t(UI.remove)}
       </p>
     </div>
   );

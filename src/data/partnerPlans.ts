@@ -1,12 +1,12 @@
 // The JapanOne partner program, in English and Japanese (decided Nov 3, 2026).
-// Founding partners list at ¥0 until March 31, 2027; paid plans start April 2027. Fees are flat
+// Every partner's first 6 months are free, counted from sign-up; billing starts only after we
+// confirm it a month ahead (and never before April 2027, see memory: revenue strategy). Fees are flat
 // advertising fees only: never per hire (有料職業紹介) or per booking (旅行業), and users never pay.
 // Paid placements are labelled as advertising (広告 / PR).
 
-export type Lang = "en" | "ja";
-export type T = Record<Lang, string>;
+import type { Lang } from "../lib/partnerLang";
 
-export const FOUNDING_END = "2027-03-31";
+export type T = Record<Lang, string>;
 
 export const HERO = {
   title: { en: "Become a JapanOne partner", ja: "JapanOne パートナー募集" },
@@ -14,20 +14,20 @@ export const HERO = {
     en: "Reach people who are learning Japanese and coming to Japan to study, work and travel. Your school, jobs, tours or products appear next to the guides they already use.",
     ja: "日本語を学び、留学・就労・旅行で日本を目指す人々へ。貴社の学校・求人・ツアー・商品を、利用者が毎日使うガイドの隣に掲載します。",
   },
-  cta: { en: "Become a founding partner", ja: "創設パートナーに申し込む" },
+  cta: { en: "Start your 6 months free", ja: "6か月無料で始める" },
 } satisfies Record<string, T>;
 
 export const FOUNDING = {
-  title: { en: "Founding partners: ¥0 until March 31, 2027", ja: "創設パートナー：2027年3月31日まで ¥0" },
+  title: { en: "Your first 6 months free", ja: "最初の6か月間は無料" },
   points: [
-    { en: "Full listings and your own partner page, at no charge", ja: "掲載・パートナーページを無償でご利用いただけます" },
-    { en: "A Founding Partner badge on your partner page", ja: "パートナーページに「創設パートナー」バッジを表示" },
-    { en: "50% off your first paid year when paid plans start", ja: "有料プラン開始後、最初の1年間は50%割引" },
+    { en: "Any plan, including Featured, free for your first 6 months", ja: "フィーチャーを含むすべてのプランを、最初の6か月間無料でご利用いただけます" },
+    { en: "A Founding Partner badge for our first partners", ja: "初期パートナーには「創設パートナー」バッジを表示" },
+    { en: "Founding partners then get 50% off their first paid year", ja: "創設パートナーは、その後の有料期間の最初の1年間50%割引" },
     { en: "No contract: leave at any time", ja: "契約期間の縛りはなく、いつでも退会できます" },
   ],
   note: {
-    en: "Paid plans start in April 2027. We will confirm the date and terms at least one month before, and nothing is charged unless you choose a paid plan.",
-    ja: "有料プランは2027年4月開始予定です。開始日と条件は1か月以上前にお知らせします。有料プランをお選びいただかない限り、料金は発生しません。",
+    en: "The 6 months count from the day your partner account is approved. We will tell you at least one month before anything is charged, and nothing is charged unless you choose a paid plan.",
+    ja: "6か月間は、パートナーアカウントの承認日から数えます。料金が発生する1か月以上前に必ずお知らせします。有料プランをお選びいただかない限り、料金は発生しません。",
   },
 } satisfies { title: T; points: T[]; note: T };
 
@@ -97,8 +97,8 @@ export const PLANS: Plan[] = [
 ];
 
 export const PRICE_NOTE: T = {
-  en: "From April 2027. Monthly, excluding consumption tax (10%). Schools, employers and tour agencies pay the first price; shops pay the second. Founding partners get 50% off for their first paid year.",
-  ja: "2027年4月から。月額・税抜（消費税10%別）。学校・企業・旅行会社は上段、ショップは下段の料金です。創設パートナーは有料プランの最初の1年間50%割引。",
+  en: "After your first 6 months free. Monthly, excluding consumption tax (10%). Schools, employers and tour agencies pay the first price; shops pay the second. Founding partners get 50% off for their first paid year.",
+  ja: "最初の6か月間の無料期間の後。月額・税抜（消費税10%別）。学校・企業・旅行会社は上段、ショップは下段の料金です。創設パートナーは有料期間の最初の1年間50%割引。",
 };
 
 export const STEPS: { title: T; text: T }[] = [
@@ -110,10 +110,10 @@ export const STEPS: { title: T; text: T }[] = [
 
 export const FAQ: { q: T; a: T }[] = [
   {
-    q: { en: "Why is it ¥0 now?", ja: "なぜ今は無償なのですか？" },
+    q: { en: "Why are the first 6 months free?", ja: "なぜ最初の6か月間は無料なのですか？" },
     a: {
-      en: "JapanOne is new. Until March 31, 2027 we are building the program with our first partners, so listing costs nothing and founding partners keep 50% off their first paid year.",
-      ja: "JapanOne はサービス開始直後のため、2027年3月31日までは最初のパートナーの皆さまと一緒にプログラムを作る期間としています。この期間の掲載は無償で、創設パートナーには有料プラン最初の1年間50%割引を適用します。",
+      en: "So you can see the views, clicks and enquiries JapanOne brings before you pay anything. If it doesn't work for you, leave at no cost.",
+      ja: "JapanOne からの閲覧数・クリック数・お問い合わせを、お支払いの前に実際にご確認いただくためです。ご期待に沿わない場合は、費用なしで退会できます。",
     },
   },
   {

@@ -59,7 +59,16 @@ function useReveal() {
   }, [pathname]);
 }
 
+// A new page starts at the top (links to a #part of a page scroll there instead).
+function useScrollTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (!hash) window.scrollTo(0, 0);
+  }, [pathname, hash]);
+}
+
 export function JOLayout({ children }: { children: React.ReactNode }) {
+  useScrollTop();
   useReveal();
   return (
     <div className="jo flex min-h-svh flex-col">

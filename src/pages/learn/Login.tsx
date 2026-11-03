@@ -2,11 +2,18 @@ import { useCallback, useState, type FormEvent } from "react";
 import { Link, Navigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
 import { GoogleButton, googleButtonAvailable } from "../../lib/GoogleButton";
+import { UI } from "../../data/partnerJa";
+import { usePartnerLang } from "../../lib/partnerLang";
 
 export function Login() {
   const { session, enabled, signInWithGoogle, sendEmailLink } = useAuth();
   const [params] = useSearchParams();
   const next = params.get("next") || "/account";
+  // Partners who chose Japanese see this page in Japanese; learners always see English for now.
+  const [partnerLang] = usePartnerLang();
+  const forPartner = next.startsWith("/partners");
+  const ja = forPartner && partnerLang === "ja";
+  const t = (x: { en: string; ja: string }) => (ja ? x.ja : x.en);
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -42,8 +49,8 @@ export function Login() {
   return (
     <div className="mx-auto max-w-md px-6 py-20">
       <div className="text-xs font-bold tracking-wide text-accent">JapanOne</div>
-      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Sign in to JapanOne</h1>
-      <p className="mt-2 text-ink-soft">Optional: every page works without an account. Sign in to keep your test results and, for partners, to manage your listings. No password needed.</p>
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">{t(UI.signInTitle)}</h1>
+      <p className="mt-2 text-ink-soft">{forPartner ? t(UI.signInLine) : "Optional: every page works without an account. Sign in to keep your test results and, for partners, to manage your listings. No password needed."}</p>
 
       {!enabled ? (
         <p className="mt-8 rounded-xl border border-line bg-surface p-5 text-sm text-ink-soft">
@@ -52,11 +59,8 @@ export function Login() {
         </p>
       ) : sent ? (
         <div className="mt-8 rounded-xl border border-line bg-surface p-6">
-          <div className="font-semibold text-ink">Check your email</div>
-          <p className="mt-2 text-sm text-ink-soft">
-            We sent a sign-in link to <span className="font-medium text-ink">{email}</span>. Open it on this device. It
-            may take a minute; check spam if you don't see it.
-          </p>
+          <div className="font-semibold text-ink">{t(UI.checkEmail)}</div>
+          <p className="mt-2 text-sm text-ink-soft">{t(UI.emailSent).replace("{email}", email)}</p>
         </div>
       ) : (
         <div className="mt-8 space-y-6">
@@ -73,19 +77,19 @@ export function Login() {
                 <path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z" />
                 <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.3-.4-3.5z" />
               </svg>
-              Continue with Google
+              {t(UI.google)}
             </button>
           )}
 
           <div className="flex items-center gap-3 text-xs text-ink-faint">
             <div className="h-px flex-1 bg-line" />
-            or
+            {t(UI.or)}
             <div className="h-px flex-1 bg-line" />
           </div>
 
           <form onSubmit={onEmail} className="space-y-3">
             <label className="block text-sm font-medium text-ink" htmlFor="email">
-              Email
+              {t(UI.emailLabel)}
             </label>
             <input
               id="email"
@@ -100,7 +104,7 @@ export function Login() {
               disabled={busy}
               className="w-full rounded-full bg-ink px-6 py-3 font-semibold text-paper hover:bg-accent-deep disabled:opacity-50"
             >
-              {busy ? "Sending…" : "Email me a sign-in link"}
+              {busy ? t(UI.sending) : t(UI.sendLink)}
             </button>
           </form>
         </div>
@@ -109,8 +113,8 @@ export function Login() {
       {error && <p className="mt-4 text-sm text-accent">{error}</p>}
 
       <p className="mt-10 text-xs text-ink-faint">
-        By signing in you agree to our <Link to="/terms" className="underline">Terms of Use</Link> and{" "}
-        <Link to="/japanone/legal#accounts" className="underline">privacy policy</Link>.
+        {t(UI.agree)} <Link to="/terms" className="underline">{t(UI.terms)}</Link> {t(UI.and)}{" "}
+        <Link to="/japanone/legal#accounts" className="underline">{t(UI.privacy)}</Link>{ja ? "" : "."}
       </p>
     </div>
   );

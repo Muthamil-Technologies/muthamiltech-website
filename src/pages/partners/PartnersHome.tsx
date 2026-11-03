@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Heading, Steps } from "../../components/jo/SectionParts";
 import { SectionIcon } from "../../components/jo/SectionIcon";
-import { ASK, FAQ, FOUNDING, HERO, PLANS, PRICE_NOTE, PROGRAM_JA, STEPS, WE_DO, WE_DONT, yen, type Lang } from "../../data/partnerPlans";
+import { ASK, FAQ, FOUNDING, HERO, PLANS, PRICE_NOTE, PROGRAM_JA, STEPS, WE_DO, WE_DONT, yen } from "../../data/partnerPlans";
 import { useAuth } from "../../lib/auth";
+import { LangSwitch, usePartnerLang, type Lang } from "../../lib/partnerLang";
 import { sectionById } from "../../lib/joSections";
 import { db, KIND_LABEL, type Provider } from "../../lib/listings";
 import { PROGRAMS } from "./partnerTypes";
@@ -12,7 +13,7 @@ const L = {
   who: { en: "Choose your partner type", ja: "パートナーの種類を選ぶ" },
   whatWeDo: { en: "What JapanOne does", ja: "JapanOne が行うこと" },
   whatWeDont: { en: "What we don't do", ja: "JapanOne が行わないこと" },
-  plans: { en: "Plans from April 2027", ja: "2027年4月からのプラン" },
+  plans: { en: "Plans", ja: "料金プラン" },
   month: { en: "/ month", ja: "/ 月（税抜）" },
   shops: { en: "Shops", ja: "ショップ" },
   how: { en: "How it works", ja: "ご利用の流れ" },
@@ -23,8 +24,7 @@ const L = {
 /** "Become a partner": the program, plans and prices, in English or Japanese (?lang=ja). */
 export function PartnersHome() {
   const { session } = useAuth();
-  const [params, setParams] = useSearchParams();
-  const lang: Lang = params.get("lang") === "ja" ? "ja" : "en";
+  const [lang, setLang] = usePartnerLang();
   const t = (x: Record<Lang, string>) => x[lang];
   const [mine, setMine] = useState<Provider[] | null>(null);
 
@@ -43,19 +43,12 @@ export function PartnersHome() {
     if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
   }, [hash]);
 
-  const setLang = (l: Lang) => setParams(l === "ja" ? { lang: "ja" } : {}, { replace: true });
-
   return (
     <div lang={lang}>
       <header className="bg-jo-navy text-white">
         <div className="mx-auto max-w-[1200px] px-4 pb-16 pt-8 sm:px-6 lg:pb-20" data-reveal>
-          <div className="mb-8 flex justify-end" role="group" aria-label="Language / 言語">
-            {(["en", "ja"] as const).map((l) => (
-              <button key={l} type="button" onClick={() => setLang(l)} aria-pressed={lang === l}
-                className={`cursor-pointer px-4 py-2 font-bold first:rounded-l-full last:rounded-r-full ${lang === l ? "bg-jo-yellow text-jo-navy" : "bg-white/10 text-white"}`}>
-                {l === "en" ? "English" : "日本語"}
-              </button>
-            ))}
+          <div className="mb-8 flex justify-end">
+            <LangSwitch lang={lang} setLang={setLang} dark />
           </div>
           <h1 className="t-section m-0 max-w-[16ch]">{t(HERO.title)}</h1>
           <p className="m-0 mt-5 max-w-[46ch] text-[20px] leading-relaxed text-[#d9e1ec]">{t(HERO.line)}</p>
