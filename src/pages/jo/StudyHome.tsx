@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ListingSection } from "../../components/jo/Listings";
 import { GuideSection, Heading, PartnerBand, SectionHero, Steps, ToolPanel } from "../../components/jo/SectionParts";
 import { SCHOOL_TYPES, STUDY_FACTS } from "../../data/studySchools";
 import { formatChecked } from "../../lib/joContent";
@@ -68,6 +69,8 @@ export function StudyHome() {
             </ul>
           </div>
         </section>
+
+        <ListingSection product="course" title="Courses from schools" color={s.tag} />
 
         {/* Steps */}
         <section className="pt-20">

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { ListingSection } from "../../components/jo/Listings";
 import { Link } from "react-router-dom";
 import {
   activityIndex, BUDGET_TIERS, DESTINATION_OPTIONS, generate, PREFERENCE_OPTIONS,
@@ -176,6 +177,10 @@ export function TripPlanner() {
                 {d.foodSuggestions.length > 0 && <p className="mt-3 text-sm text-ink-soft">🍜 Try: {d.foodSuggestions.join(" · ")}</p>}
               </article>
             ))}
+          </div>
+
+          <div className="print:hidden">
+            <ListingSection product="tour" title="Tours for your trip" color="#9a4612" areas={trip.destinations} limit={4} />
           </div>
 
           <div className="mt-6 rounded-2xl border border-line bg-surface p-5">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { DailyKanji } from "../../components/jo/DailyKanji";
+import { ListingSection } from "../../components/jo/Listings";
 import { GuideSection, Heading, PartnerBand, SectionHero, SourceLine, Steps, ToolPanel } from "../../components/jo/SectionParts";
 import { JLPT_DATE, sectionById } from "../../lib/joSections";
 
@@ -130,6 +131,7 @@ export function TravelHome() {
           </div>
           <SourceLine items={[SRC.jnto]} />
         </section>
+        <ListingSection product="tour" title="Tours and experiences" color={ORANGE} />
         <ToolPanel id="travel" />
         <GuideSection id="travel" />
         <PartnerBand id="travel" />

@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
+import { ListingSection } from "../../components/jo/Listings";
 import { GuideSection, Heading, PartnerBand, SectionHero, ToolPanel } from "../../components/jo/SectionParts";
 import { SSW_FIELDS, STATUSES, WORK_FACTS, statusById } from "../../data/workStatuses";
 import { formatChecked } from "../../lib/joContent";
@@ -17,6 +18,8 @@ export function WorkHome() {
       <SectionHero id="work" title="Work in Japan" line="The residence statuses that let you work, what each needs, and your rights at work." cta={{ to: "/work/pathway", label: "Find your path →" }} />
 
       <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
+        <ListingSection product="job" title="Jobs in Japan" color={GREEN} />
+
         <section className="pt-20">
           <Heading title="Who works here" />
           <div className="grid gap-4 md:grid-cols-[1.2fr_1fr]" data-reveal>
