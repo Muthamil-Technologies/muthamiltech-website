@@ -78,7 +78,9 @@ export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
       </ol>
       <p className="mt-4 max-w-2xl text-sm text-ink-faint">{program.note}</p>
       <p className="mt-2 text-sm text-ink-soft">
-        Questions before you register? <Link to={`/contact?topic=${program.kind}`} className="font-semibold text-accent">Contact us</Link>
+        <Link to="/partners#plans" className="font-semibold text-accent">Plans and prices</Link>
+        {" · "}<Link to="/partners?lang=ja#plans" lang="ja" className="font-semibold text-accent">料金プラン（日本語）</Link>
+        {" · "}Questions before you register? <Link to={`/contact?topic=${program.kind}`} className="font-semibold text-accent">Contact us</Link>
       </p>
 
       {!ready ? null : !session ? (
