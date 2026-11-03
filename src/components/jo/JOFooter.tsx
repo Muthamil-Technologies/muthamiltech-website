@@ -24,6 +24,7 @@ export function JOFooter() {
           <div className="flex flex-col gap-2">
             <strong className="text-white">Company</strong>
             <Link to="/partners" className="text-[#b9c6d6] hover:text-white">For partners</Link>
+            <Link to="/contact" className="text-[#b9c6d6] hover:text-white">Contact us</Link>
             <Link to="/japanone/legal" className="text-[#b9c6d6] hover:text-white">Privacy &amp; support</Link>
             <Link to="/terms" className="text-[#b9c6d6] hover:text-white">Terms of Use</Link>
           </div>

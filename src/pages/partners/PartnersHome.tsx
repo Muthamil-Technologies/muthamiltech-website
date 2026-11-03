@@ -29,6 +29,7 @@ export function PartnersHome() {
         your business. Our team checks every partner and every listing.
       </p>
       <p lang="ja" className="mt-2 text-sm text-jo-muted">日本の企業・団体の皆さまへ：掲載のご案内は日本語でも承ります。</p>
+      <p className="mt-2 text-jo-muted">Questions first? <Link to="/contact" className="font-bold text-jo-navy">Contact us →</Link></p>
 
       <div className="mt-10 grid gap-[18px] md:grid-cols-2 xl:grid-cols-4">
         {PROGRAMS.map((p) => {

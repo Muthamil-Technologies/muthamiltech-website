@@ -77,6 +77,9 @@ export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
         ))}
       </ol>
       <p className="mt-4 max-w-2xl text-sm text-ink-faint">{program.note}</p>
+      <p className="mt-2 text-sm text-ink-soft">
+        Questions before you register? <Link to={`/contact?topic=${program.kind}`} className="font-semibold text-accent">Contact us</Link>
+      </p>
 
       {!ready ? null : !session ? (
         <Link to={`/login?next=/partners/${program.slug}`} className="mt-8 inline-block rounded-full bg-ink px-6 py-3 font-semibold text-paper hover:bg-accent-deep">

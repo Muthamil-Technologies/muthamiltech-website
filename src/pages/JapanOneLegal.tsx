@@ -143,17 +143,19 @@ export function JapanOneLegal() {
         <section id="contacting-support">
           <h2 className="text-lg font-semibold text-ink">Contacting support</h2>
           <p className="mt-2">
-            If you email us, we receive your email address and whatever you include in your
-            message. We use it only to reply to you. Messages are handled by our email provider
-            and are never used for marketing or shared with anyone else. You can ask us to
-            delete your messages at any time.
+            If you use the contact form on japanone.app or email us, we receive your name, your email
+            address, the topic you chose and whatever you include in your message. We use it only to
+            reply to you. Contact form messages are delivered through our website host (Netlify) and,
+            like emails, are handled by our email provider. They are never used for marketing or shared
+            with anyone else. You can ask us to delete your messages at any time.
           </p>
         </section>
 
         <section id="support">
           <h2 className="text-lg font-semibold text-ink">Support</h2>
           <p className="mt-2">
-            Questions, bug reports, or feedback about JapanOne can be sent to{" "}
+            Questions, bug reports, or feedback about JapanOne can be sent with the{" "}
+            <a href="https://japanone.app/contact" className="text-accent">contact form</a> or to{" "}
             <a href={`mailto:${contact.email}`} className="text-accent">
               {contact.email}
             </a>
