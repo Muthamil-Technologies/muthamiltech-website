@@ -1,12 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { GuideCard } from "../../components/jo/GuideCard";
-import { SectionIcon } from "../../components/jo/SectionIcon";
+import { GuideSection, Heading, PartnerBand, Photo, SectionHero, ToolPanel } from "../../components/jo/SectionParts";
 import { SSW_FIELDS, STATUSES, WORK_FACTS, statusById } from "../../data/workStatuses";
-import { GUIDES, formatChecked } from "../../lib/joContent";
-import { sectionById } from "../../lib/joSections";
-import { TOOLS } from "../../lib/joTools";
-import { PROGRAMS } from "../partners/partnerTypes";
-import { Heading } from "./JOHome";
+import { formatChecked } from "../../lib/joContent";
 import { Sources } from "./StudySchool";
 
 const GREEN = "#17714c";
@@ -15,108 +10,76 @@ const WORK_NOTE = "General information, not visa advice. Immigration rules chang
 // /work: the Work in Japan overview: who works here, the statuses that allow work, SSW, your
 // rights, preparation tools. Information only: JapanOne is not a recruiter.
 export function WorkHome() {
-  const s = sectionById("work")!;
   const f = WORK_FACTS;
-  const tools = TOOLS.filter((t) => t.section === "work");
-  const guides = GUIDES.filter((g) => g.section === "work");
-  const program = PROGRAMS.find((p) => p.section === "work")!;
 
   return (
     <>
-      <header style={{ background: s.tint }}>
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-6 px-4 py-12 sm:px-6">
-          <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white"><SectionIcon id="work" color={s.ink} size={34} /></span>
-          <div className="min-w-0 flex-[999_1_480px]">
-            <h1 className="m-0 text-[40px] font-black leading-tight sm:text-5xl">Work in Japan</h1>
-            <p className="m-0 mt-2 max-w-2xl text-lg leading-relaxed text-jo-muted">The residence statuses that let you work, what each needs, and your rights at work, from official sources.</p>
-          </div>
-          <Link to="/work/pathway" className="rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">Find your path →</Link>
-        </div>
-      </header>
+      <SectionHero id="work" photoId="work-hero" title="Work in Japan" line="The residence statuses that let you work, what each needs, and your rights at work." cta={{ to: "/work/pathway", label: "Find your path →" }} />
 
-      <div className="mx-auto max-w-[1200px] px-4 pb-16 sm:px-6">
-        <section className="pt-12">
-          <div className="grid gap-3.5 md:grid-cols-3">
-            <div className="rounded-[22px] bg-jo-navy p-6 text-white">
-              <p className="m-0 text-4xl font-black text-jo-yellow">{f.residents}</p>
-              <p className="m-0 mt-2 leading-relaxed">{f.residentsText}</p>
+      <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
+        <section className="pt-20">
+          <Heading title="Who works here" />
+          <div className="grid gap-4 md:grid-cols-[1.2fr_1fr]" data-reveal>
+            <div className="flex flex-col justify-end gap-3 rounded-[28px] bg-jo-navy p-8 text-white sm:p-10">
+              <p className="t-figure m-0 text-jo-yellow">{f.residents}</p>
+              <p className="m-0 max-w-[30ch] text-[20px] leading-relaxed">{f.residentsText}</p>
             </div>
-            <div className="rounded-[22px] bg-white p-6 md:col-span-2">
-              <p className="m-0 text-4xl font-black">{f.ssw1} <span className="text-2xl text-jo-muted">+ {f.ssw2}</span></p>
-              <p className="m-0 mt-2 leading-relaxed text-jo-muted">{f.sswText}</p>
+            <div className="flex flex-col justify-center gap-3 rounded-[28px] bg-white p-8 sm:p-10">
+              <p className="m-0 text-[44px] font-black leading-none">{f.ssw1}</p>
+              <p className="m-0 text-[24px] font-black text-jo-muted">+ {f.ssw2}</p>
+              <p className="m-0 leading-relaxed text-jo-muted">{f.sswText}</p>
             </div>
           </div>
-          <p className="m-0 mt-2 text-[13px] text-jo-faint">Source: <a href={f.src.url} target="_blank" rel="noreferrer" className="text-jo-faint underline">{f.src.name}</a></p>
+          <p className="t-small m-0 mt-3 text-jo-muted">Source: <a href={f.src.url} target="_blank" rel="noreferrer" className="text-jo-muted underline">{f.src.name}</a></p>
         </section>
 
-        <section className="pt-14">
-          <Heading tag="RESIDENCE STATUS" tagColor={GREEN} title="Statuses that let you work" />
-          <p className="-mt-3 mb-6 max-w-3xl leading-relaxed text-jo-muted">
-            In Japan, your residence status (在留資格) decides what work you may do. The type of job and the status are different things: check that the job fits your status.
-          </p>
-          <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
-            {STATUSES.map((t) => (
-              <Link key={t.id} to={`/work/status/${t.id}`} className="flex flex-col gap-2 rounded-[18px] bg-white p-[22px] text-jo-navy no-underline hover:shadow-[0_6px_20px_rgba(18,38,63,0.1)]">
-                <strong className="text-lg leading-snug">{t.name}</strong>
-                <span lang="ja" className="text-sm font-bold text-jo-muted">{t.ja}</span>
-                <span className="leading-relaxed text-jo-muted">{t.line}</span>
-                {t.changing && <span className="mt-auto pt-2 text-sm font-bold text-[#9a4612]">Rules changing in 2027</span>}
-              </Link>
-            ))}
-            <Link to="/guides/study-part-time" className="flex flex-col gap-2 rounded-[18px] bg-white p-[22px] text-jo-navy no-underline hover:shadow-[0_6px_20px_rgba(18,38,63,0.1)]">
-              <strong className="text-lg">Students: part-time work</strong>
-              <span lang="ja" className="text-sm font-bold text-jo-muted">資格外活動許可</span>
-              <span className="leading-relaxed text-jo-muted">Up to 28 hours a week with permission.</span>
-            </Link>
+        <section className="pt-20">
+          <Heading title="Statuses that let you work" />
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr]">
+            <div className="flex flex-col gap-5">
+              <p className="m-0 text-[20px] leading-relaxed">
+                Your residence status (在留資格) decides what work you may do. The job and the status are different things: check that the job fits your status.
+              </p>
+              <Photo id="work-street" className="aspect-[4/3] rounded-[28px]" />
+            </div>
+            <ul className="m-0 flex list-none flex-col gap-1 rounded-[28px] bg-white p-3 sm:p-5" data-reveal>
+              {STATUSES.map((t) => (
+                <li key={t.id}>
+                  <Link to={`/work/status/${t.id}`} className="flex flex-col gap-1 rounded-2xl px-3 py-3.5 text-jo-navy no-underline hover:bg-jo-cream sm:px-4">
+                    <span className="t-title">{t.name}</span>
+                    <span lang="ja" className="t-small font-bold text-jo-muted">{t.ja}</span>
+                    <span className="text-jo-muted">{t.line}</span>
+                    {t.changing && <span className="t-small font-bold text-[#9a4612]">Rules changing in 2027</span>}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link to="/guides/study-part-time" className="flex flex-col gap-1 rounded-2xl px-3 py-3.5 text-jo-navy no-underline hover:bg-jo-cream sm:px-4">
+                  <span className="t-title">Students: part-time work</span>
+                  <span lang="ja" className="t-small font-bold text-jo-muted">資格外活動許可</span>
+                  <span className="text-jo-muted">Up to 28 hours a week with permission.</span>
+                </Link>
+              </li>
+            </ul>
           </div>
         </section>
 
-        <section className="pt-14">
-          <Link to="/work/ssw" className="flex flex-wrap items-center gap-6 rounded-3xl bg-white p-8 text-jo-navy no-underline shadow-[0_6px_20px_rgba(18,38,63,0.06)]">
-            <div className="min-w-0 flex-[999_1_420px]">
-              <p className="m-0 text-sm font-bold tracking-wide" style={{ color: GREEN }}>SPECIFIED SKILLED WORKER (特定技能)</p>
-              <h2 className="m-0 mt-1 text-[28px] font-black leading-tight">{SSW_FIELDS.length} fields, two levels, the tests and the 2027 changes</h2>
-              <p className="m-0 mt-2 leading-relaxed text-jo-muted">The most common route into skilled jobs in Japan, explained from the Immigration Services Agency's current guide.</p>
+        <section className="pt-20">
+          <Link to="/work/ssw" className="grid overflow-hidden rounded-[28px] text-jo-navy no-underline md:grid-cols-[1fr_1.2fr]" style={{ background: "#dff3ea" }}>
+            <Photo id="work-ssw" className="min-h-[240px]" />
+            <div className="flex flex-col gap-4 p-7 sm:p-10">
+              <h2 className="t-heading m-0">Specified Skilled Worker: {SSW_FIELDS.length} fields</h2>
+              <p className="m-0 text-[20px] leading-relaxed">特定技能, the most common route into skilled jobs: both levels, the tests and the 2027 changes, from the Immigration Services Agency's guide.</p>
+              <span className="self-start rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white">Open the SSW guide →</span>
             </div>
-            <span className="rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white">Open the SSW guide →</span>
           </Link>
         </section>
 
-        <section className="pt-14">
-          <Heading title="Prepare" />
-          <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
-            {tools.map((t) => (
-              <Link key={t.to} to={t.to} className="flex flex-col gap-2 rounded-[18px] bg-white p-[22px] text-jo-navy no-underline hover:shadow-[0_6px_20px_rgba(18,38,63,0.1)]">
-                <strong className="text-lg">{t.title}</strong>
-                <span className="leading-relaxed text-jo-muted">{t.sub}</span>
-                <span className="mt-auto pt-2 font-bold" style={{ color: GREEN }}>Open →</span>
-              </Link>
-            ))}
-            <Link to="/learn/speaking" className="flex flex-col gap-2 rounded-[18px] bg-white p-[22px] text-jo-navy no-underline hover:shadow-[0_6px_20px_rgba(18,38,63,0.1)]">
-              <strong className="text-lg">Japanese for work</strong>
-              <span className="leading-relaxed text-jo-muted">Speaking lessons for real workplace situations.</span>
-              <span className="mt-auto pt-2 font-bold" style={{ color: GREEN }}>Open →</span>
-            </Link>
-          </div>
-        </section>
+        <ToolPanel id="work" title="Prepare" extra={[{ to: "/learn/speaking", title: "Japanese for work", sub: "Speaking lessons for real workplace situations." }]} />
+        <GuideSection id="work" title="Your rights at work" />
+        <PartnerBand id="work" photoId="work-partner" />
 
-        <section className="pt-14">
-          <Heading title="Your rights at work" />
-          <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">{guides.map((g) => <GuideCard key={g.id} guide={g} />)}</div>
-        </section>
-
-        <section className="pt-14">
-          <div className="flex flex-wrap items-center gap-6 rounded-3xl bg-jo-navy p-8 text-white">
-            <div className="flex min-w-0 flex-[999_1_420px] flex-col gap-2">
-              <span className="text-sm font-bold tracking-wide text-jo-yellow">FOR {program.who.toUpperCase()}</span>
-              <h2 className="m-0 text-[28px] font-black leading-tight">{program.headline}</h2>
-              <p className="m-0 leading-relaxed text-[#d9e1ec]">{program.cardBody}</p>
-            </div>
-            <Link to={`/partners/${program.slug}`} className="rounded-[14px] bg-jo-yellow px-6 py-3.5 font-bold text-jo-navy no-underline">Become a partner →</Link>
-          </div>
-        </section>
-
-        <p className="mt-10 text-sm text-jo-muted">Checked {formatChecked(f.checked)}. General information, not visa or legal advice. JapanOne does not recruit or place workers.</p>
+        <p className="t-small mt-10 text-jo-muted">Checked {formatChecked(f.checked)}. General information, not visa or legal advice. JapanOne does not recruit or place workers.</p>
       </div>
     </>
   );
@@ -201,7 +164,7 @@ export function SswHub() {
             <li key={x.ja} className="flex flex-col gap-1 rounded-[14px] bg-white p-4">
               <b>{x.en}</b>
               <span lang="ja" className="text-sm text-jo-muted">{x.ja}</span>
-              <span className="flex flex-wrap gap-1.5 text-xs font-bold">
+              <span className="flex flex-wrap gap-1.5 t-small font-bold">
                 <span className="rounded-full bg-[#dff3ea] px-2 py-0.5 text-[#17714c]">SSW (i)</span>
                 {x.ii && <span className="rounded-full bg-jo-navy px-2 py-0.5 text-white">SSW (ii)</span>}
                 {x.soon && <span className="rounded-full bg-[#fdeadb] px-2 py-0.5 text-[#9a4612]">New: starts when ready</span>}

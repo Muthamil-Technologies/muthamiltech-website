@@ -12,6 +12,8 @@ export type PartnerProgram = {
   who: string;
   cardBody: string;
   headline: string;
+  /** Short headline for the partner band on section pages (two lines at phone width). */
+  band: string;
   intro: string;
   steps: [string, string][];
   note: string;
@@ -29,6 +31,7 @@ export const PROGRAMS: PartnerProgram[] = [
     who: "Language schools & educational institutes",
     cardBody: "Introduce your Japanese courses and programmes to learners who want to study in Japan.",
     headline: "Reach learners who want to study in Japan",
+    band: "Reach future students",
     intro:
       "JapanOne helps people learn Japanese and plan their studies in Japan: JLPT practice, school types, scholarships and student visa rules. List your courses so they find you while they plan.",
     steps: [
@@ -48,6 +51,7 @@ export const PROGRAMS: PartnerProgram[] = [
     who: "Employers & registered support organisations",
     cardBody: "Post jobs for foreign workers in Japan: caregiving, construction, food, factory, hotel and more.",
     headline: "Reach foreign workers looking for jobs in Japan",
+    band: "Reach job seekers in Japan",
     intro:
       "JapanOne helps people preparing for skilled and hands-on jobs in Japan: their visa route, Japanese CV, interview practice and rights at work. Post your jobs and reach them there.",
     steps: [
@@ -67,6 +71,7 @@ export const PROGRAMS: PartnerProgram[] = [
     who: "Tour agencies & local guides",
     cardBody: "List your Japan tours and day trips for travellers planning their trip in JapanOne.",
     headline: "Reach travellers planning their Japan trip",
+    band: "Reach travellers to Japan",
     intro:
       "JapanOne builds day-by-day itineraries for visitors to Japan. List your tours and experiences so travellers find them while they plan.",
     steps: [
@@ -86,6 +91,7 @@ export const PROGRAMS: PartnerProgram[] = [
     who: "Shop owners & makers in Japan",
     cardBody: "Sell Made-in-Japan products to people around the world who love Japan.",
     headline: "Sell Made in Japan to people who love Japan",
+    band: "Sell to people who love Japan",
     intro:
       "JapanOne Shop will show products from small Japanese shops and makers to learners, students and travellers around the world. Register now and your shop is ready when Shop opens.",
     steps: [

@@ -134,3 +134,42 @@ body {
   background-color: var(--color-jo-cream);
   color: var(--color-jo-navy);
 }
+
+/* JapanOne type scale: display, section title, heading, title, body (17px), small (14px).
+   Nothing meant to be read goes below 14px. */
+.jo {
+  font-size: 17px;
+  line-height: 1.6;
+}
+.jo .t-display { font-size: clamp(48px, 7.4vw, 104px); line-height: 0.98; letter-spacing: -0.03em; font-weight: 900; }
+.jo .t-section { font-size: clamp(40px, 6vw, 80px); line-height: 1; letter-spacing: -0.03em; font-weight: 900; }
+.jo .t-figure { font-size: clamp(48px, 5.4vw, 76px); line-height: 1; letter-spacing: -0.03em; font-weight: 900; }
+.jo .t-heading { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 900; }
+.jo .t-title { font-size: 20px; line-height: 1.3; font-weight: 800; }
+.jo .t-small { font-size: 14px; line-height: 1.5; }
+
+/* Section entrances: the parts of a [data-reveal] block rise in one after another as it enters.
+   Only hidden once the script has marked the page ready, so nothing stays hidden without it. */
+html[data-reveal-ready] .jo [data-reveal] > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 75ms);
+}
+html[data-reveal-ready] .jo [data-reveal].is-in > * { opacity: 1; transform: none; }
+
+/* Feedback on every control. */
+.jo a, .jo button { transition: transform 0.15s ease-out, background-color 0.2s, color 0.2s; }
+.jo a:active, .jo button:active { transform: scale(0.97); }
+.jo .lift:hover { transform: translateY(-3px); }
+
+/* The hero photograph settles slowly into place. */
+@keyframes jo-settle { from { transform: scale(1.08); } to { transform: scale(1); } }
+.jo .settle { animation: jo-settle 9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-reveal-ready] .jo [data-reveal] > * { opacity: 1; transform: none; transition: none; }
+  .jo a, .jo button { transition: none; }
+  .jo a:active, .jo button:active, .jo .lift:hover { transform: none; }
+  .jo .settle { animation: none; }
+}

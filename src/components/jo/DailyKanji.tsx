@@ -19,13 +19,10 @@ export function DailyKanji() {
   const restart = () => { setPicked(null); setI(0); setScore(0); };
 
   return (
-    <article className="flex flex-col gap-4 rounded-[22px] bg-jo-navy p-7 text-white">
-      <span className="text-[13px] font-bold text-jo-yellow">
-        KANJI QUIZ · {day.level} · {done ? "done" : `${i + 1} of ${day.words.length}`}
-      </span>
+    <article className="flex flex-col gap-4 rounded-[28px] bg-jo-navy p-7 text-white">
       {done ? (
         <div className="flex flex-1 flex-col items-center justify-center gap-3 py-6 text-center">
-          <p className="m-0 text-5xl font-black">{score}/{day.words.length}</p>
+          <p className="t-heading m-0">{score}/{day.words.length}</p>
           <p className="m-0 text-[#d9e1ec]">A new set every day at 17:30.</p>
           <button type="button" onClick={restart} className="cursor-pointer rounded-full bg-jo-yellow px-5 py-3 font-bold text-jo-navy">Try again</button>
         </div>
@@ -53,6 +50,9 @@ export function DailyKanji() {
           )}
         </>
       )}
+      <p className="m-0 mt-auto text-[#d9e1ec]">
+        Today's kanji quiz · {day.level} · {done ? "done" : `${i + 1} of ${day.words.length}`}
+      </p>
     </article>
   );
 }
