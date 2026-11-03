@@ -44,6 +44,15 @@ export const WE_DONT: T[] = [
   { en: "Charge users: JapanOne stays open to everyone", ja: "利用者から料金はいただきません" },
 ];
 
+/** Paid-plan prices stay off the site until they are set from real results (decided Nov 3, 2026);
+ *  the amounts below are the current plan, shown only when this is true. */
+export const SHOW_PRICES = false;
+
+export const PRICE_LATER: T = {
+  en: "Monthly price shared before your free period ends",
+  ja: "月額料金は無料期間の終了前にお知らせします",
+};
+
 export type Plan = {
   id: "basic" | "standard" | "featured";
   name: T;
@@ -96,10 +105,15 @@ export const PLANS: Plan[] = [
   },
 ];
 
-export const PRICE_NOTE: T = {
-  en: "After your first 6 months free. Monthly, excluding consumption tax (10%). Schools, employers and tour agencies pay the first price; shops pay the second. Founding partners get 50% off for their first paid year.",
-  ja: "最初の6か月間の無料期間の後。月額・税抜（消費税10%別）。学校・企業・旅行会社は上段、ショップは下段の料金です。創設パートナーは有料期間の最初の1年間50%割引。",
-};
+export const PRICE_NOTE: T = SHOW_PRICES
+  ? {
+      en: "After your first 6 months free. Monthly, excluding consumption tax (10%). Schools, employers and tour agencies pay the first price; shops pay the second. Founding partners get 50% off for their first paid year.",
+      ja: "最初の6か月間の無料期間の後。月額・税抜（消費税10%別）。学校・企業・旅行会社は上段、ショップは下段の料金です。創設パートナーは有料期間の最初の1年間50%割引。",
+    }
+  : {
+      en: "Every plan is free for your first 6 months. We share the monthly price of Standard and Featured at least one month before your free period ends, and nothing is charged unless you choose a paid plan. Basic stays ¥0. Founding partners get 50% off their first paid year.",
+      ja: "すべてのプランは最初の6か月間無料です。スタンダードとフィーチャーの月額料金は、無料期間の終了の1か月以上前にお知らせします。有料プランをお選びいただかない限り、料金は発生しません。ベーシックは¥0のままです。創設パートナーは有料期間の最初の1年間50%割引。",
+    };
 
 export const STEPS: { title: T; text: T }[] = [
   { title: { en: "Create an account", ja: "アカウント作成" }, text: { en: "Sign in with Google or your email.", ja: "Google またはメールアドレスでログインします。" } },

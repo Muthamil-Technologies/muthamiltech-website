@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Heading, Steps } from "../../components/jo/SectionParts";
 import { SectionIcon } from "../../components/jo/SectionIcon";
-import { ASK, FAQ, FOUNDING, HERO, PLANS, PRICE_NOTE, PROGRAM_JA, STEPS, WE_DO, WE_DONT, yen } from "../../data/partnerPlans";
+import { ASK, FAQ, FOUNDING, HERO, PLANS, PRICE_LATER, PRICE_NOTE, PROGRAM_JA, SHOW_PRICES, STEPS, WE_DO, WE_DONT, yen } from "../../data/partnerPlans";
 import { useAuth } from "../../lib/auth";
 import { LangSwitch, usePartnerLang, type Lang } from "../../lib/partnerLang";
 import { sectionById } from "../../lib/joSections";
@@ -123,11 +123,17 @@ export function PartnersHome() {
                 <article key={p.id} className={`flex flex-col gap-4 rounded-[28px] p-7 sm:p-9 ${featured ? "bg-jo-navy text-white" : "bg-white"}`}>
                   <h3 className="t-title m-0">{t(p.name)}</h3>
                   <p className={`m-0 ${soft}`}>{t(p.line)}</p>
-                  <p className="m-0">
-                    <span className={`text-[44px] font-black leading-none ${featured ? "text-jo-yellow" : ""}`}>{yen(p.price, lang)}</span>
-                    {p.price > 0 && <span className={`ml-1 ${soft}`}>{t(L.month)}</span>}
-                  </p>
-                  {p.price > 0 && <p className={`m-0 font-bold ${soft}`}>{t(L.shops)}: {yen(p.shopPrice, lang)} {t(L.month)}</p>}
+                  {p.price === 0 || SHOW_PRICES ? (
+                    <>
+                      <p className="m-0">
+                        <span className={`text-[44px] font-black leading-none ${featured ? "text-jo-yellow" : ""}`}>{yen(p.price, lang)}</span>
+                        {p.price > 0 && <span className={`ml-1 ${soft}`}>{t(L.month)}</span>}
+                      </p>
+                      {p.price > 0 && <p className={`m-0 font-bold ${soft}`}>{t(L.shops)}: {yen(p.shopPrice, lang)} {t(L.month)}</p>}
+                    </>
+                  ) : (
+                    <p className={`m-0 text-[20px] font-bold leading-snug ${soft}`}>{t(PRICE_LATER)}</p>
+                  )}
                   <ul className="m-0 mt-2 flex flex-col gap-2 pl-6 leading-snug">
                     {p.features.map((f) => <li key={f.en}>{t(f)}</li>)}
                   </ul>
