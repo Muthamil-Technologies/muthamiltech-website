@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { GuideSection, Heading, PartnerBand, Photo, SectionHero, ToolPanel } from "../../components/jo/SectionParts";
+import { GuideSection, Heading, PartnerBand, SectionHero, ToolPanel } from "../../components/jo/SectionParts";
 import { SSW_FIELDS, STATUSES, WORK_FACTS, statusById } from "../../data/workStatuses";
 import { formatChecked } from "../../lib/joContent";
 import { Sources } from "./StudySchool";
@@ -14,7 +14,7 @@ export function WorkHome() {
 
   return (
     <>
-      <SectionHero id="work" photoId="work-hero" title="Work in Japan" line="The residence statuses that let you work, what each needs, and your rights at work." cta={{ to: "/work/pathway", label: "Find your path →" }} />
+      <SectionHero id="work" title="Work in Japan" line="The residence statuses that let you work, what each needs, and your rights at work." cta={{ to: "/work/pathway", label: "Find your path →" }} />
 
       <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
         <section className="pt-20">
@@ -40,7 +40,6 @@ export function WorkHome() {
               <p className="m-0 text-[20px] leading-relaxed">
                 Your residence status (在留資格) decides what work you may do. The job and the status are different things: check that the job fits your status.
               </p>
-              <Photo id="work-street" className="aspect-[4/3] rounded-[28px]" />
             </div>
             <ul className="m-0 flex list-none flex-col gap-1 rounded-[28px] bg-white p-3 sm:p-5" data-reveal>
               {STATUSES.map((t) => (
@@ -65,8 +64,7 @@ export function WorkHome() {
         </section>
 
         <section className="pt-20">
-          <Link to="/work/ssw" className="grid overflow-hidden rounded-[28px] text-jo-navy no-underline md:grid-cols-[1fr_1.2fr]" style={{ background: "#dff3ea" }}>
-            <Photo id="work-ssw" className="min-h-[240px]" />
+          <Link to="/work/ssw" className="block rounded-[28px] text-jo-navy no-underline" style={{ background: "#dff3ea" }}>
             <div className="flex flex-col gap-4 p-7 sm:p-10">
               <h2 className="t-heading m-0">Specified Skilled Worker: {SSW_FIELDS.length} fields</h2>
               <p className="m-0 text-[20px] leading-relaxed">特定技能, the most common route into skilled jobs: both levels, the tests and the 2027 changes, from the Immigration Services Agency's guide.</p>
@@ -77,7 +75,7 @@ export function WorkHome() {
 
         <ToolPanel id="work" title="Prepare" extra={[{ to: "/learn/speaking", title: "Japanese for work", sub: "Speaking lessons for real workplace situations." }]} />
         <GuideSection id="work" title="Your rights at work" />
-        <PartnerBand id="work" photoId="work-partner" />
+        <PartnerBand id="work" />
 
         <p className="t-small mt-10 text-jo-muted">Checked {formatChecked(f.checked)}. General information, not visa or legal advice. JapanOne does not recruit or place workers.</p>
       </div>

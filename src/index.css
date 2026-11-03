@@ -163,13 +163,9 @@ html[data-reveal-ready] .jo [data-reveal].is-in > * { opacity: 1; transform: non
 .jo a:active, .jo button:active { transform: scale(0.97); }
 .jo .lift:hover { transform: translateY(-3px); }
 
-/* The hero photograph settles slowly into place. */
-@keyframes jo-settle { from { transform: scale(1.08); } to { transform: scale(1); } }
-.jo .settle { animation: jo-settle 9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
 
 @media (prefers-reduced-motion: reduce) {
   html[data-reveal-ready] .jo [data-reveal] > * { opacity: 1; transform: none; transition: none; }
   .jo a, .jo button { transition: none; }
   .jo a:active, .jo button:active, .jo .lift:hover { transform: none; }
-  .jo .settle { animation: none; }
 }

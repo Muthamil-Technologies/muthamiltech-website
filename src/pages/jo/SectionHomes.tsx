@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { DailyKanji } from "../../components/jo/DailyKanji";
-import { GuideSection, Heading, PartnerBand, Photo, SectionHero, SourceLine, Steps, ToolPanel } from "../../components/jo/SectionParts";
+import { GuideSection, Heading, PartnerBand, SectionHero, SourceLine, Steps, ToolPanel } from "../../components/jo/SectionParts";
 import { JLPT_DATE, sectionById } from "../../lib/joSections";
 
 // Overview pages for Learn, Travel and Live. Every fact here repeats a guide or an official page
@@ -44,7 +44,7 @@ export function LearnHome() {
   const days = Math.ceil((JLPT_DATE.getTime() - Date.now()) / 86400_000);
   return (
     <>
-      <SectionHero id="learn" photoId="learn-hero" title="Learn Japanese" line="Speak in real situations, prepare for the JLPT and build the Japanese you need for study or work." cta={{ to: "/learn/level-check", label: "Check your level →" }} />
+      <SectionHero id="learn" title="Learn Japanese" line="Speak in real situations, prepare for the JLPT and build the Japanese you need for study or work." cta={{ to: "/learn/level-check", label: "Check your level →" }} />
       <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
         <section className="pt-20">
           <div className="grid gap-4 md:grid-cols-3" data-reveal>
@@ -72,9 +72,7 @@ export function LearnHome() {
 
         <section className="pt-20">
           <Heading title="How much Japanese do you need?" />
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr]">
-          <Photo id="study-class" className="aspect-[4/3] rounded-[28px]" />
-          <ul className="m-0 flex list-none flex-col gap-1 rounded-[28px] bg-white p-3 sm:p-5" data-reveal>
+          <ul className="m-0 grid list-none gap-x-10 gap-y-1 rounded-[28px] bg-white p-3 sm:p-5 md:grid-cols-2" data-reveal>
             {LEVEL_NEEDS.map(([goal, need, to]) => (
               <li key={goal}>
                 <Link to={to} className="flex flex-col gap-1 rounded-2xl px-3 py-3.5 text-jo-navy no-underline hover:bg-jo-cream sm:px-4">
@@ -84,13 +82,12 @@ export function LearnHome() {
               </li>
             ))}
           </ul>
-          </div>
           <SourceLine items={[SRC.ssw, SRC.b1, SRC.jft, SRC.jassoVoc, SRC.jassoUni]} />
         </section>
 
-        <ToolPanel id="learn" photoId="learn-kanji" />
+        <ToolPanel id="learn" />
         <GuideSection id="learn" />
-        <PartnerBand id="learn" photoId="study-hero" />
+        <PartnerBand id="learn" />
       </div>
     </>
   );
@@ -106,7 +103,7 @@ const BEFORE = [
 export function TravelHome() {
   return (
     <>
-      <SectionHero id="travel" photoId="travel-hero" title="Travel in Japan" line="Plan your days, get by with simple Japanese, and know what to do if something goes wrong." cta={{ to: "/travel/plan", label: "Plan a trip →" }} />
+      <SectionHero id="travel" title="Travel in Japan" line="Plan your days, get by with simple Japanese, and know what to do if something goes wrong." cta={{ to: "/travel/plan", label: "Plan a trip →" }} />
       <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
         <section className="pt-20">
           <div className="grid gap-4 md:grid-cols-[1fr_2fr]" data-reveal>
@@ -133,10 +130,9 @@ export function TravelHome() {
           </div>
           <SourceLine items={[SRC.jnto]} />
         </section>
-        <Photo id="travel-yukata" className="mt-20 aspect-[16/9] rounded-[28px] md:aspect-[21/9]" />
-        <ToolPanel id="travel" photoId="travel-kiyomizu" />
+        <ToolPanel id="travel" />
         <GuideSection id="travel" />
-        <PartnerBand id="travel" photoId="travel-torii" />
+        <PartnerBand id="travel" />
       </div>
     </>
   );
@@ -153,7 +149,7 @@ export function LiveHome() {
   const s = sectionById("live")!;
   return (
     <>
-      <SectionHero id="live" photoId="live-hero" title="Live in Japan" line="City hall, insurance, pension and where to get help: the everyday rules for foreign residents." cta={{ to: "/live/address", label: "Address checklist →" }} />
+      <SectionHero id="live" title="Live in Japan" line="City hall, insurance, pension and where to get help: the everyday rules for foreign residents." cta={{ to: "/live/address", label: "Address checklist →" }} />
       <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
         <section className="pt-20">
           <Heading title="Your first weeks" />
@@ -170,14 +166,7 @@ export function LiveHome() {
               <Link to="/guides/live-help-fresc" className="font-bold text-jo-yellow">More →</Link>
               <p className="t-small m-0 mt-auto text-[#b9c6d6]">Source: <a href={SRC.fresc.url} target="_blank" rel="noreferrer" className="text-[#b9c6d6] underline">{SRC.fresc.name}</a></p>
             </div>
-            <Photo id="live-town" className="min-h-[260px] rounded-[28px]" />
-          </div>
-        </section>
-
-        <section className="pt-20">
-          <div className="grid gap-4 md:grid-cols-2" data-reveal>
-          <Photo id="live-shibuya" className="min-h-[260px] rounded-[28px]" />
-          <div className="rounded-[28px] bg-white p-7 sm:p-9">
+            <div className="rounded-[28px] bg-white p-7 sm:p-9">
             <h2 className="t-heading m-0">Leaving Japan?</h2>
             <p className="m-0 mt-2 text-[20px]">Two things to do before you go.</p>
             <ol className="m-0 mt-4 flex flex-col gap-2 pl-6 text-[20px] leading-relaxed">
@@ -185,11 +174,11 @@ export function LiveHome() {
               <li>Claim your pension refund (Lump-sum Withdrawal Payment) within 2 years of leaving.</li>
             </ol>
             <Link to="/guides/live-pension-refund" className="mt-4 inline-block font-bold" style={{ color: TEAL }}>Pension refund guide →</Link>
-          </div>
+            </div>
           </div>
         </section>
 
-        <ToolPanel id="live" photoId="live-supermarket" />
+        <ToolPanel id="live" />
         <GuideSection id="live" />
       </div>
     </>

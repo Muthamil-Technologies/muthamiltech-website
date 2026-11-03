@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { DailyKanji } from "../../components/jo/DailyKanji";
-import { GuideList, Heading, Photo, Steps } from "../../components/jo/SectionParts";
+import { GuideList, Heading, Steps } from "../../components/jo/SectionParts";
 import { SectionIcon } from "../../components/jo/SectionIcon";
 import { GUIDES } from "../../lib/joContent";
 import { APP_STORE_URL, JLPT_DATE, SECTIONS } from "../../lib/joSections";
@@ -71,10 +71,7 @@ export function JOHome() {
         {/* Journey */}
         <section className="pt-24">
           <Heading title="From home to your first day" />
-          <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.3fr]">
-            <Photo id="home-arrive" className="aspect-[4/3] rounded-[28px]" />
-            <Steps items={JOURNEY} color="#12263f" />
-          </div>
+          <Steps items={JOURNEY} color="#12263f" />
         </section>
 
         {/* Guides */}
@@ -87,7 +84,6 @@ export function JOHome() {
         <section className="pt-24">
           <div className="grid gap-4 md:grid-cols-2" data-reveal>
             <article className="flex flex-col overflow-hidden rounded-[28px] bg-[#fdeadb]">
-              <Photo id="home-torii" className="aspect-[16/9]" />
               <div className="flex flex-1 flex-col gap-3 p-7 sm:p-9">
                 <h2 className="t-heading m-0">Plan your Japan trip</h2>
                 <p className="m-0 leading-relaxed text-[#4a3a2e]">Pick your days, cities and interests. Get a day-by-day plan with the phrases you will need.</p>
@@ -95,7 +91,6 @@ export function JOHome() {
               </div>
             </article>
             <article className="flex flex-col overflow-hidden rounded-[28px] bg-[#fbe3e6]">
-              <Photo id="home-shop" className="aspect-[16/9]" />
               <div className="flex flex-1 flex-col gap-3 p-7 sm:p-9">
                 <h2 className="t-heading m-0">Made in Japan, from local sellers</h2>
                 <p className="m-0 leading-relaxed text-[#4a2e33]">Coming soon: snacks, stationery, kitchen tools and crafts from small Japanese shops. Are you a Japanese seller? Join before we open.</p>
@@ -107,7 +102,7 @@ export function JOHome() {
 
         {/* Partners */}
         <section className="pt-24">
-          <div className="grid overflow-hidden rounded-[28px] bg-jo-navy text-white md:grid-cols-[1.3fr_1fr]">
+          <div className="rounded-[28px] bg-jo-navy text-white">
             <div className="flex flex-col gap-4 p-7 sm:p-11" data-reveal>
               <h2 className="t-heading m-0 text-white">Reach people coming to Japan</h2>
               <p className="m-0 max-w-[48ch] leading-relaxed text-[#d9e1ec]">Schools, employers, tour agencies and sellers: create a partner account and add your school, jobs, tours or products. We review each listing before it goes live.</p>
@@ -116,7 +111,6 @@ export function JOHome() {
                 <span lang="ja" className="t-small text-[#b9c6d6]">日本語でもご案内しています</span>
               </div>
             </div>
-            <Photo id="study-partner" className="min-h-[240px]" />
           </div>
         </section>
 

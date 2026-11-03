@@ -38,10 +38,7 @@ export function JOFooter() {
           </div>
         </nav>
       </div>
-      <div className="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-3 px-4 pb-7 text-sm sm:px-6">
-        <span>© 2026 Muthamil Technologies</span>
-        <Link to="/credits" className="text-[#b9c6d6] hover:text-white">Photo credits</Link>
-      </div>
+      <div className="mx-auto max-w-[1200px] px-4 pb-7 text-sm sm:px-6">© 2026 Muthamil Technologies</div>
     </footer>
   );
 }

@@ -3,7 +3,6 @@ import { GUIDES, formatChecked, type Guide } from "../../lib/joContent";
 import { sectionById, type SectionId } from "../../lib/joSections";
 import { TOOLS } from "../../lib/joTools";
 import { PROGRAMS } from "../../pages/partners/partnerTypes";
-import { photo, type PhotoId } from "../../data/joPhotos";
 
 // Building blocks shared by the section pages (/learn, /study, /work, /travel, /live).
 
@@ -17,43 +16,31 @@ export function Heading({ title, link, id }: { title: string; link?: { to: strin
   );
 }
 
-/** A real photograph of Japan, credited on /credits. */
-export function Photo({ id, className = "", settle = false, eager = false }: { id: PhotoId; className?: string; settle?: boolean; eager?: boolean }) {
-  const p = photo(id);
-  return (
-    <div className={`overflow-hidden bg-jo-navy ${className}`}>
-      <img src={p.src} alt={p.alt} loading={eager ? "eager" : "lazy"} decoding="async" className={`h-full w-full object-cover ${settle ? "settle" : ""}`} style={{ objectPosition: p.focus ?? "50% 50%" }} />
-    </div>
-  );
-}
-
-/** The top of a section page: the title at display size beside a large photograph of that part of life in Japan. */
-export function SectionHero({ id, title, line, cta, photoId }: { id: SectionId; title: string; line: string; cta?: { to: string; label: string }; photoId: PhotoId }) {
+/** The top of a section page: the title at display size, what the section covers, and its main tool. */
+export function SectionHero({ id, title, line, cta }: { id: SectionId; title: string; line: string; cta?: { to: string; label: string } }) {
   const s = sectionById(id)!;
   return (
     <header style={{ background: s.tint }}>
-      <div className="mx-auto grid max-w-[1200px] items-center gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-12 lg:py-14" data-reveal>
-        <div className="flex flex-col gap-5">
+      <div className="mx-auto flex max-w-[1200px] flex-wrap items-end justify-between gap-8 px-4 py-14 sm:px-6 lg:py-20" data-reveal>
+        <div className="flex max-w-[760px] flex-col gap-5">
           <h1 className="t-section m-0">{title}</h1>
-          <p className="m-0 max-w-[34ch] text-[20px] leading-relaxed">{line}</p>
-          {cta && <Link to={cta.to} className="self-start rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">{cta.label}</Link>}
+          <p className="m-0 max-w-[40ch] text-[20px] leading-relaxed">{line}</p>
         </div>
-        <Photo id={photoId} settle eager className="aspect-[4/3] rounded-[28px] lg:aspect-[5/4]" />
+        {cta && <Link to={cta.to} className="rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">{cta.label}</Link>}
       </div>
     </header>
   );
 }
 
 /** A section's tools as one navy panel of large links: the things you can do here. */
-export function ToolPanel({ id, title = "Tools", extra = [], photoId }: { id: SectionId; title?: string; extra?: { to: string; title: string; sub: string }[]; photoId?: PhotoId }) {
+export function ToolPanel({ id, title = "Tools", extra = [] }: { id: SectionId; title?: string; extra?: { to: string; title: string; sub: string }[] }) {
   const tools = [...TOOLS.filter((t) => t.section === id), ...extra];
   if (!tools.length) return null;
   return (
     <section className="pt-20" aria-labelledby={`${id}-tools`}>
-      <div className={`grid overflow-hidden rounded-[28px] bg-jo-navy text-white ${photoId ? "lg:grid-cols-[1.5fr_1fr]" : ""}`}>
-       <div className="p-6 sm:p-10">
+      <div className="rounded-[28px] bg-jo-navy p-6 text-white sm:p-10">
         <h2 id={`${id}-tools`} className="t-heading m-0 mb-6 text-white">{title}</h2>
-        <ul className={`m-0 grid list-none gap-x-10 gap-y-1 p-0 ${photoId ? "" : "md:grid-cols-2"}`} data-reveal>
+        <ul className="m-0 grid list-none gap-x-10 gap-y-1 p-0 md:grid-cols-2" data-reveal>
           {tools.map((t) => (
             <li key={t.to}>
               <Link to={t.to} className="group flex items-start justify-between gap-4 rounded-2xl px-3 py-4 text-white no-underline hover:bg-white/10 sm:px-4">
@@ -66,8 +53,6 @@ export function ToolPanel({ id, title = "Tools", extra = [], photoId }: { id: Se
             </li>
           ))}
         </ul>
-       </div>
-        {photoId && <Photo id={photoId} className="min-h-[240px]" />}
       </div>
     </section>
   );
@@ -130,19 +115,18 @@ export function Steps({ items, color }: { items: { title: string; text: string; 
   );
 }
 
-/** "Become a partner" for the businesses that serve this section, with a photo of their world. */
-export function PartnerBand({ id, photoId }: { id: SectionId; photoId?: PhotoId }) {
+/** "Become a partner" for the businesses that serve this section. */
+export function PartnerBand({ id }: { id: SectionId }) {
   const program = PROGRAMS.find((p) => p.section === id || p.alsoOn?.includes(id));
   if (!program) return null;
   return (
     <section className="pt-20">
-      <div className="grid overflow-hidden rounded-[28px] bg-jo-navy text-white md:grid-cols-[1.3fr_1fr]">
+      <div className="rounded-[28px] bg-jo-navy text-white">
         <div className="flex flex-col gap-4 p-7 sm:p-10" data-reveal>
           <h2 className="t-heading m-0 text-white">{program.band}</h2>
           <p className="m-0 max-w-[48ch] leading-relaxed text-[#d9e1ec]">For {program.who.toLowerCase()}: {program.cardBody.charAt(0).toLowerCase() + program.cardBody.slice(1)}</p>
           <Link to={`/partners/${program.slug}`} className="self-start rounded-full bg-jo-yellow px-6 py-3.5 font-bold text-jo-navy no-underline">Become a partner →</Link>
         </div>
-        {photoId && <Photo id={photoId} className="min-h-[220px]" />}
       </div>
     </section>
   );

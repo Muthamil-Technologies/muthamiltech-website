@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { GuideSection, PartnerBand, Photo, SectionHero, ToolPanel } from "../../components/jo/SectionParts";
+import { GuideSection, PartnerBand, SectionHero, ToolPanel } from "../../components/jo/SectionParts";
 import { sectionById } from "../../lib/joSections";
 
 // Fallback page for a section without its own overview (today: /shop, which is "coming soon").
@@ -11,17 +11,14 @@ export function JOSection() {
   if (s.id === "shop") {
     return (
       <>
-        <SectionHero id="shop" photoId="shop-pottery" title="Shop" line="Made in Japan, straight from local sellers: snacks, stationery, kitchen tools and crafts. Coming soon." cta={{ to: "/partners/shop", label: "Japanese sellers: join early →" }} />
+        <SectionHero id="shop" title="Shop" line="Made in Japan, straight from local sellers: snacks, stationery, kitchen tools and crafts. Coming soon." cta={{ to: "/partners/shop", label: "Japanese sellers: join early →" }} />
         <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
           <section className="pt-20">
-            <div className="grid overflow-hidden rounded-[28px] bg-white md:grid-cols-[1.3fr_1fr]">
-            <div className="p-7 sm:p-10" data-reveal>
+            <div className="rounded-[28px] bg-white p-7 sm:p-10" data-reveal>
               <h2 className="t-heading m-0">Opening with the first sellers</h2>
               <p className="m-0 mt-3 max-w-[56ch] text-[20px] leading-relaxed">We are inviting small Japanese shops and makers now. Shopping opens once the first sellers are checked and ready.</p>
               <p lang="ja" className="m-0 mt-3 text-jo-muted">出店をご希望の事業者さまは、パートナー登録からご連絡ください。</p>
               <Link to="/partners/shop" className="mt-5 inline-block rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">Become a seller →</Link>
-            </div>
-            <Photo id="home-shop" className="min-h-[240px]" />
             </div>
           </section>
         </div>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GuideSection, Heading, PartnerBand, Photo, SectionHero, Steps, ToolPanel } from "../../components/jo/SectionParts";
+import { GuideSection, Heading, PartnerBand, SectionHero, Steps, ToolPanel } from "../../components/jo/SectionParts";
 import { SCHOOL_TYPES, STUDY_FACTS } from "../../data/studySchools";
 import { formatChecked } from "../../lib/joContent";
 import { sectionById } from "../../lib/joSections";
@@ -19,7 +19,7 @@ export function StudyHome() {
 
   return (
     <>
-      <SectionHero id="study" photoId="study-hero" title="Study in Japan" line="Schools, costs, scholarships and the student visa, from official sources." cta={{ to: "/study/path", label: "Plan your path →" }} />
+      <SectionHero id="study" title="Study in Japan" line="Schools, costs, scholarships and the student visa, from official sources." cta={{ to: "/study/path", label: "Plan your path →" }} />
 
       <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
         {/* Why Japan: one big figure, the rest as a list */}
@@ -50,7 +50,6 @@ export function StudyHome() {
               <p className="m-0 text-[20px] leading-relaxed">
                 Higher education in Japan starts after 12 years of schooling. The school year usually runs from April to March; most schools take students in April, some also in autumn.
               </p>
-              <Photo id="study-class" className="aspect-[4/3] rounded-[28px]" />
               <dl className="t-small m-0 grid grid-cols-2 gap-x-6 gap-y-2 text-jo-muted">
                 {f.schools.map(([k, v]) => <div key={k}><dt>{k}</dt><dd className="m-0 text-[20px] font-black text-jo-navy">{v}</dd></div>)}
               </dl>
@@ -73,10 +72,7 @@ export function StudyHome() {
         {/* Steps */}
         <section className="pt-20">
           <Heading title="From application to arrival" link={{ to: "/study/path", label: "Your dated plan →" }} />
-          <div className="grid items-start gap-8 lg:grid-cols-[1fr_2fr]">
-            <Photo id="home-arrive" className="aspect-[4/3] rounded-[28px]" />
-            <Steps items={STEPS} color={s.ink} />
-          </div>
+          <Steps items={STEPS} color={s.ink} />
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/study/visa" className="rounded-full bg-jo-navy px-5 py-3 font-bold text-white no-underline">Student visa guide →</Link>
             <Link to="/study/faq" className="rounded-full bg-white px-5 py-3 font-bold text-jo-navy no-underline">Questions &amp; answers →</Link>
@@ -110,7 +106,7 @@ export function StudyHome() {
 
         <ToolPanel id="study" />
         <GuideSection id="study" />
-        <PartnerBand id="study" photoId="study-partner" />
+        <PartnerBand id="study" />
 
         <p className="t-small mt-10 text-jo-muted">Figures checked {formatChecked(f.checked)}. General information, not visa advice.</p>
       </div>
