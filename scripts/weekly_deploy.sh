@@ -5,7 +5,7 @@
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 cd "$(dirname "$0")/.." || exit 1
 LOG="$PWD/scripts/weekly-deploy.log"
-try() { for i in 1 2 3 4 5; do "$@" && return 0; sleep 20; done; return 1; }  # GitHub sign-in fails now and then
+try() { for i in {1..15}; do "$@" && return 0; sleep 5; done; return 1; }  # GitHub sign-in fails about half the time
 {
   echo "=== $(date '+%F %T')"
   try git fetch -q origin main || { echo "fetch failed"; exit 1; }
