@@ -7,7 +7,8 @@ import { AuthProvider } from './lib/auth'
 import { isJapanOne } from './lib/brand'
 
 if (isJapanOne) {
-  document.title = 'JapanOne | Gateway to Japan: learn, travel, work'
+  // The page's own title comes from the server (netlify/edge-functions/japanone-meta.ts).
+  if (!document.title.includes('JapanOne')) document.title = 'JapanOne | Gateway to Japan: learn, travel, work'
   document.querySelector('link[rel="icon"]')?.setAttribute('href', '/japanone_logo_64.png')
   const apple = document.createElement('link')
   apple.rel = 'apple-touch-icon'
