@@ -26,7 +26,7 @@ export const PAGES: Record<string, SeoPage> = {
   ]
  },
  "/learn/jlpt": {
-  "title": "JLPT practice test N5, N4, N3 | JapanOne",
+  "title": "JLPT sample test N5, N4, N3 | JapanOne",
   "description": "JLPT-style practice questions for N5, N4 and N3. Not affiliated with the official JLPT.",
   "h1": "JLPT practice test",
   "text": [
@@ -175,6 +175,22 @@ export const PAGES: Record<string, SeoPage> = {
   "h1": "Find your work pathway",
   "text": [
    "Answer a few questions to see which work routes to Japan may fit you."
+  ]
+ },
+ "/work/salary": {
+  "title": "Take-home pay calculator for Japan | JapanOne",
+  "description": "Estimate your salary in Japan after insurance and tax, by prefecture. For reference only.",
+  "h1": "Take-home pay calculator",
+  "text": [
+   "Estimate your salary in Japan after insurance and tax, by prefecture. For reference only."
+  ]
+ },
+ "/work/part-time": {
+  "title": "Part-time pay calculator and minimum wage by prefecture | JapanOne",
+  "description": "Estimate part-time pay in Japan from your hours, with the minimum wage for each prefecture. For reference only.",
+  "h1": "Part-time pay calculator",
+  "text": [
+   "Estimate part-time pay in Japan from your hours, with the minimum wage for each prefecture. For reference only."
   ]
  },
  "/work/cv": {
@@ -949,10 +965,10 @@ export const PAGES: Record<string, SeoPage> = {
   "h1": "Specified Skilled Worker (ii) (特定技能2号)",
   "text": [
    "For people with proficient skills: a long-term status, with family allowed.",
-   "From April 1, 2027, new applications need Japanese at B1 level or higher. Rules for changes and extensions will be announced later.",
+   "From April 1, 2027, Certificate of Eligibility applications need Japanese at B1 level or higher. Rules for changes and extensions will be announced later.",
    "Stay: Renewed every 3 years, 2 years, 1 year or 6 months, with no limit on renewals",
    "Skills: Confirmed by a skills test",
-   "Japanese: B1 or higher for applications from April 1, 2027",
+   "Japanese: B1 or higher for Certificate of Eligibility applications from April 1, 2027",
    "Family: Spouse and children can join if requirements are met",
    "Available in 11 of the specified fields.",
    "In industrial product manufacturing, only machining and metal processing, electric and electronic equipment assembly, and metal surface treatment.",
