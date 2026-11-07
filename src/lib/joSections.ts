@@ -14,13 +14,16 @@ export type Section = {
 };
 
 export const SECTIONS: Section[] = [
-  { id: "learn", label: "Learn", line: "Speaking practice, JLPT N5–N3, daily kanji", tint: "#e3ecfb", ink: "#1f4fa8", tag: "#1f4fa8" },
+  { id: "learn", label: "Learn", line: "Game, exam prep, sample tests, speaking, study in Japan", tint: "#e3ecfb", ink: "#1f4fa8", tag: "#1f4fa8" },
   { id: "study", label: "Study", line: "Schools, scholarships, student visa", tint: "#ece6fb", ink: "#5b3fb0", tag: "#4a2f99" },
-  { id: "work", label: "Work", line: "Visa paths, Japanese CV, your rights", tint: "#dff3ea", ink: "#17714c", tag: "#17714c" },
+  { id: "work", label: "Work", line: "Visa paths, Japanese CV, pay calculators, your rights", tint: "#dff3ea", ink: "#17714c", tag: "#17714c" },
   { id: "travel", label: "Travel", line: "Trip planner, travel phrases", tint: "#fdeadb", ink: "#b4561a", tag: "#9a4612" },
   { id: "live", label: "Live", line: "City hall, insurance, tax, housing", tint: "#dcf0f5", ink: "#11697d", tag: "#11697d" },
   { id: "shop", label: "Shop", line: "Made in Japan, from local sellers", tint: "#fbe3e6", ink: "#b42a3a", tag: "#9e2232" },
 ];
+
+/** The menu, like the app's tabs: Study in Japan sits inside Learn. */
+export const MENU_SECTIONS = SECTIONS.filter((s) => s.id !== "study");
 
 export const sectionById = (id: string) => SECTIONS.find((s) => s.id === id);
 

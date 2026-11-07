@@ -1,6 +1,6 @@
 // Export the JapanOne content the website uses to one JSON file the app bundles, so both show
 // the same facts. Run from Website/: node scripts/export_app_content.mjs
-import { readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -29,4 +29,5 @@ const content = {
   work: { statuses: STATUSES, sswFields: SSW_FIELDS, facts: WORK_FACTS },
 };
 writeFileSync(out, JSON.stringify(content) + "\n");
+copyFileSync(join(dirname(out), "..", "..", "..", "Website", "src", "data", "workPay.json"), join(dirname(out), "work_pay.json"));
 console.log(`wrote ${out}: ${content.guides.length} guides, ${content.study.schoolTypes.length} school types, ${content.work.statuses.length} statuses, ${content.scholarships.list.length} scholarships`);

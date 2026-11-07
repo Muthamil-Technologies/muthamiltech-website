@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
-import { APP_STORE_URL, SECTIONS } from "../../lib/joSections";
+import { APP_STORE_URL, MENU_SECTIONS } from "../../lib/joSections";
 
-// japanone.app top bar. Desktop: logo, the six sections, partners, sign in and the app.
+// japanone.app top bar. Desktop: logo, the sections, partners, sign in and the app.
 // Phone: one short bar (logo, the app, a menu button); the menu holds everything else.
 export function JOHeader() {
   const { session } = useAuth();
   const [open, setOpen] = useState(false);
+  const inStudy = useLocation().pathname.startsWith("/study");
 
   const account = { to: session ? "/account" : "/login", label: session ? "Account" : "Sign in" };
   return (
@@ -18,12 +19,12 @@ export function JOHeader() {
           <span className="text-[20px] font-black sm:text-[22px]">JapanOne</span>
         </Link>
         <nav aria-label="Main" className="hidden flex-1 gap-1 lg:flex">
-          {SECTIONS.map((s) => (
+          {MENU_SECTIONS.map((s) => (
             <NavLink
               key={s.id}
               to={`/${s.id}`}
               className={({ isActive }) =>
-                `rounded-full px-3 py-2 font-medium no-underline ${isActive ? "bg-white/10 text-jo-yellow" : "text-white hover:text-jo-yellow"}`
+                `rounded-full px-3 py-2 font-medium no-underline ${isActive || (inStudy && s.id === "learn") ? "bg-white/10 text-jo-yellow" : "text-white hover:text-jo-yellow"}`
               }
             >
               {s.label}
@@ -51,9 +52,9 @@ export function JOHeader() {
       {open && (
         <nav id="jo-menu" aria-label="Menu" onClick={(e) => { if ((e.target as HTMLElement).closest("a")) setOpen(false); }} className="max-h-[calc(100svh-64px)] overflow-y-auto bg-jo-navy-deep px-4 pb-6 pt-2 lg:hidden">
           <ul className="m-0 grid list-none grid-cols-2 gap-2 p-0">
-            {SECTIONS.map((s) => (
+            {MENU_SECTIONS.map((s) => (
               <li key={s.id}>
-                <NavLink to={`/${s.id}`} className={({ isActive }) => `block rounded-2xl px-4 py-3.5 text-[20px] font-extrabold no-underline ${isActive ? "bg-white/15 text-jo-yellow" : "bg-white/5 text-white"}`}>
+                <NavLink to={`/${s.id}`} className={({ isActive }) => `block rounded-2xl px-4 py-3.5 text-[20px] font-extrabold no-underline ${isActive || (inStudy && s.id === "learn") ? "bg-white/15 text-jo-yellow" : "bg-white/5 text-white"}`}>
                   {s.label}
                 </NavLink>
               </li>

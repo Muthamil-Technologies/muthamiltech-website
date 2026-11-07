@@ -148,7 +148,7 @@ export function JapTutorTest() {
     <div className="mx-auto max-w-2xl px-6 py-14">
       <Link to="/" className="text-sm font-semibold text-accent">&larr; JapanOne</Link>
       <div className="mt-6 text-xs font-bold tracking-wide text-accent">JapanOne · JLPT {level.toUpperCase()}</div>
-      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Today's daily test</h1>
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Take sample test</h1>
 
       {stage !== "quiz" && (
         <div className="mt-6 inline-flex rounded-full border border-line bg-surface p-1" role="group" aria-label="JLPT level">

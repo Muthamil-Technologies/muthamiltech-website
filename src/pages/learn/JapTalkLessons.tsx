@@ -21,7 +21,7 @@ export function JapTalkLessons() {
     <div className="mx-auto max-w-4xl px-6 py-14">
       <Link to="/" className="text-sm font-semibold text-accent">&larr; JapanOne</Link>
       <div className="mt-6 text-xs font-bold tracking-wide text-accent">JapanOne · Speak</div>
-      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Speaking lessons</h1>
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">Speaking practice</h1>
       <p className="mt-2 max-w-2xl text-ink-soft">
         Each lesson is a real situation. Read the prompt, then say or type what you'd say in Japanese.
       </p>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { social } from "../../lib/brand";
-import { SECTIONS } from "../../lib/joSections";
+import { MENU_SECTIONS } from "../../lib/joSections";
 import { JOHeader } from "./JOHeader";
 
 export function JOFooter() {
@@ -18,7 +18,7 @@ export function JOFooter() {
         <nav aria-label="Footer" className="flex flex-wrap gap-9">
           <div className="flex flex-col gap-2">
             <strong className="text-white">Explore</strong>
-            {SECTIONS.map((s) => (
+            {MENU_SECTIONS.map((s) => (
               <Link key={s.id} to={`/${s.id}`} className="text-[#b9c6d6] hover:text-white">{s.label}</Link>
             ))}
           </div>

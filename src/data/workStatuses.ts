@@ -48,11 +48,11 @@ export const STATUSES: WorkStatus[] = [
     name: "Specified Skilled Worker (ii)",
     ja: "特定技能2号",
     line: "For people with proficient skills: a long-term status, with family allowed.",
-    changing: "From April 1, 2027, new applications need Japanese at B1 level or higher. Rules for changes and extensions will be announced later.",
+    changing: "From April 1, 2027, Certificate of Eligibility applications need Japanese at B1 level or higher. Rules for changes and extensions will be announced later.",
     facts: [
       ["Stay", "Renewed every 3 years, 2 years, 1 year or 6 months, with no limit on renewals"],
       ["Skills", "Confirmed by a skills test"],
-      ["Japanese", "B1 or higher for applications from April 1, 2027"],
+      ["Japanese", "B1 or higher for Certificate of Eligibility applications from April 1, 2027"],
       ["Family", "Spouse and children can join if requirements are met"],
     ],
     points: [

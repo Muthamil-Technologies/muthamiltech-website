@@ -104,7 +104,7 @@ export function PathwayFinder() {
                             {s.text}
                             {s.studyLink && (
                               <Link to="/learn/jlpt" className="mt-1 block text-sm font-semibold text-accent">
-                                Practise for the test: free JLPT practice test →
+                                Practise for the test: JLPT sample test →
                               </Link>
                             )}
                             {s.text.startsWith("Make a Japanese CV") && (

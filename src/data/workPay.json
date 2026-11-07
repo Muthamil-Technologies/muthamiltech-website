@@ -1,0 +1,415 @@
+{
+ "checked": "2026-11-07",
+ "prefectures": [
+  {
+   "name": "Hokkaido",
+   "ja": "北海道",
+   "health": 10.28,
+   "wage": 1131,
+   "previousWage": 1075,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Aomori",
+   "ja": "青森",
+   "health": 9.85,
+   "wage": 1090,
+   "previousWage": 1029,
+   "wageFrom": "2026-10-29"
+  },
+  {
+   "name": "Iwate",
+   "ja": "岩手",
+   "health": 9.51,
+   "wage": 1090,
+   "previousWage": 1031,
+   "wageFrom": "2026-12-01"
+  },
+  {
+   "name": "Miyagi",
+   "ja": "宮城",
+   "health": 10.1,
+   "wage": 1098,
+   "previousWage": 1038,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Akita",
+   "ja": "秋田",
+   "health": 10.01,
+   "wage": 1090,
+   "previousWage": 1031,
+   "wageFrom": "2026-10-14"
+  },
+  {
+   "name": "Yamagata",
+   "ja": "山形",
+   "health": 9.75,
+   "wage": 1092,
+   "previousWage": 1032,
+   "wageFrom": "2026-10-30"
+  },
+  {
+   "name": "Fukushima",
+   "ja": "福島",
+   "health": 9.5,
+   "wage": 1094,
+   "previousWage": 1033,
+   "wageFrom": "2026-10-16"
+  },
+  {
+   "name": "Ibaraki",
+   "ja": "茨城",
+   "health": 9.52,
+   "wage": 1136,
+   "previousWage": 1074,
+   "wageFrom": "2026-10-18"
+  },
+  {
+   "name": "Tochigi",
+   "ja": "栃木",
+   "health": 9.82,
+   "wage": 1125,
+   "previousWage": 1068,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Gunma",
+   "ja": "群馬",
+   "health": 9.68,
+   "wage": 1120,
+   "previousWage": 1063,
+   "wageFrom": "2026-10-03"
+  },
+  {
+   "name": "Saitama",
+   "ja": "埼玉",
+   "health": 9.67,
+   "wage": 1196,
+   "previousWage": 1141,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Chiba",
+   "ja": "千葉",
+   "health": 9.73,
+   "wage": 1195,
+   "previousWage": 1140,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Tokyo",
+   "ja": "東京",
+   "health": 9.85,
+   "wage": 1280,
+   "previousWage": 1226,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Kanagawa",
+   "ja": "神奈川",
+   "health": 9.92,
+   "wage": 1279,
+   "previousWage": 1225,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Niigata",
+   "ja": "新潟",
+   "health": 9.21,
+   "wage": 1108,
+   "previousWage": 1050,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Toyama",
+   "ja": "富山",
+   "health": 9.59,
+   "wage": 1119,
+   "previousWage": 1062,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Ishikawa",
+   "ja": "石川",
+   "health": 9.7,
+   "wage": 1113,
+   "previousWage": 1054,
+   "wageFrom": "2026-10-03"
+  },
+  {
+   "name": "Fukui",
+   "ja": "福井",
+   "health": 9.71,
+   "wage": 1112,
+   "previousWage": 1053,
+   "wageFrom": "2026-10-04"
+  },
+  {
+   "name": "Yamanashi",
+   "ja": "山梨",
+   "health": 9.55,
+   "wage": 1113,
+   "previousWage": 1052,
+   "wageFrom": "2026-11-01"
+  },
+  {
+   "name": "Nagano",
+   "ja": "長野",
+   "health": 9.63,
+   "wage": 1117,
+   "previousWage": 1061,
+   "wageFrom": "2026-10-02"
+  },
+  {
+   "name": "Gifu",
+   "ja": "岐阜",
+   "health": 9.8,
+   "wage": 1121,
+   "previousWage": 1065,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Shizuoka",
+   "ja": "静岡",
+   "health": 9.61,
+   "wage": 1154,
+   "previousWage": 1097,
+   "wageFrom": "2026-10-15"
+  },
+  {
+   "name": "Aichi",
+   "ja": "愛知",
+   "health": 9.93,
+   "wage": 1195,
+   "previousWage": 1140,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Mie",
+   "ja": "三重",
+   "health": 9.77,
+   "wage": 1143,
+   "previousWage": 1087,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Shiga",
+   "ja": "滋賀",
+   "health": 9.88,
+   "wage": 1136,
+   "previousWage": 1080,
+   "wageFrom": "2026-10-03"
+  },
+  {
+   "name": "Kyoto",
+   "ja": "京都",
+   "health": 9.89,
+   "wage": 1180,
+   "previousWage": 1122,
+   "wageFrom": "2026-11-16"
+  },
+  {
+   "name": "Osaka",
+   "ja": "大阪",
+   "health": 10.13,
+   "wage": 1231,
+   "previousWage": 1177,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Hyogo",
+   "ja": "兵庫",
+   "health": 10.12,
+   "wage": 1172,
+   "previousWage": 1116,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Nara",
+   "ja": "奈良",
+   "health": 9.91,
+   "wage": 1107,
+   "previousWage": 1051,
+   "wageFrom": "2026-10-04"
+  },
+  {
+   "name": "Wakayama",
+   "ja": "和歌山",
+   "health": 10.06,
+   "wage": 1101,
+   "previousWage": 1045,
+   "wageFrom": "2026-10-03"
+  },
+  {
+   "name": "Tottori",
+   "ja": "鳥取",
+   "health": 9.86,
+   "wage": 1090,
+   "previousWage": 1030,
+   "wageFrom": "2026-10-03"
+  },
+  {
+   "name": "Shimane",
+   "ja": "島根",
+   "health": 9.94,
+   "wage": 1092,
+   "previousWage": 1033,
+   "wageFrom": "2026-10-10"
+  },
+  {
+   "name": "Okayama",
+   "ja": "岡山",
+   "health": 10.05,
+   "wage": 1104,
+   "previousWage": 1047,
+   "wageFrom": "2026-10-02"
+  },
+  {
+   "name": "Hiroshima",
+   "ja": "広島",
+   "health": 9.78,
+   "wage": 1141,
+   "previousWage": 1085,
+   "wageFrom": "2026-10-11"
+  },
+  {
+   "name": "Yamaguchi",
+   "ja": "山口",
+   "health": 10.15,
+   "wage": 1101,
+   "previousWage": 1043,
+   "wageFrom": "2026-10-08"
+  },
+  {
+   "name": "Tokushima",
+   "ja": "徳島",
+   "health": 10.24,
+   "wage": 1103,
+   "previousWage": 1046,
+   "wageFrom": "2026-11-01"
+  },
+  {
+   "name": "Kagawa",
+   "ja": "香川",
+   "health": 10.02,
+   "wage": 1092,
+   "previousWage": 1036,
+   "wageFrom": "2026-10-01"
+  },
+  {
+   "name": "Ehime",
+   "ja": "愛媛",
+   "health": 9.98,
+   "wage": 1093,
+   "previousWage": 1033,
+   "wageFrom": "2026-11-01"
+  },
+  {
+   "name": "Kochi",
+   "ja": "高知",
+   "health": 10.05,
+   "wage": 1086,
+   "previousWage": 1023,
+   "wageFrom": "2026-10-29"
+  },
+  {
+   "name": "Fukuoka",
+   "ja": "福岡",
+   "health": 10.11,
+   "wage": 1114,
+   "previousWage": 1057,
+   "wageFrom": "2026-10-04"
+  },
+  {
+   "name": "Saga",
+   "ja": "佐賀",
+   "health": 10.55,
+   "wage": 1095,
+   "previousWage": 1030,
+   "wageFrom": "2026-11-15"
+  },
+  {
+   "name": "Nagasaki",
+   "ja": "長崎",
+   "health": 10.06,
+   "wage": 1087,
+   "previousWage": 1031,
+   "wageFrom": "2026-11-02"
+  },
+  {
+   "name": "Kumamoto",
+   "ja": "熊本",
+   "health": 10.08,
+   "wage": 1092,
+   "previousWage": 1034,
+   "wageFrom": "2026-12-01"
+  },
+  {
+   "name": "Oita",
+   "ja": "大分",
+   "health": 10.08,
+   "wage": 1096,
+   "previousWage": 1035,
+   "wageFrom": "2026-11-01"
+  },
+  {
+   "name": "Miyazaki",
+   "ja": "宮崎",
+   "health": 9.77,
+   "wage": 1085,
+   "previousWage": 1023,
+   "wageFrom": "2026-10-24"
+  },
+  {
+   "name": "Kagoshima",
+   "ja": "鹿児島",
+   "health": 10.13,
+   "wage": 1090,
+   "previousWage": 1026,
+   "wageFrom": "2026-10-25"
+  },
+  {
+   "name": "Okinawa",
+   "ja": "沖縄",
+   "health": 9.44,
+   "wage": 1086,
+   "previousWage": 1023,
+   "wageFrom": "2026-12-02"
+  }
+ ],
+ "sources": [
+  {
+   "name": "Ministry of Health, Labour and Welfare: minimum wage by prefecture, FY2026",
+   "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/minimumichiran/index.html"
+  },
+  {
+   "name": "Japan Health Insurance Association: FY2026 rates by prefecture",
+   "url": "https://www.kyoukaikenpo.or.jp/about/business/insurance_rate/rate_prefectures/r08/index.html"
+  },
+  {
+   "name": "Japan Pension Service: employees' pension contributions",
+   "url": "https://www.nenkin.go.jp/service/kounen/hokenryo/hoshu/20150515-01.html"
+  },
+  {
+   "name": "Ministry of Health, Labour and Welfare: employment insurance rates, FY2026",
+   "url": "https://www.mhlw.go.jp/content/001692566.pdf"
+  },
+  {
+   "name": "National Tax Agency: 2026 changes to the basic deduction",
+   "url": "https://www.nta.go.jp/users/gensen/2026kiso/index.htm"
+  },
+  {
+   "name": "Yokohama City: resident tax questions on the 2026 changes",
+   "url": "https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/zeikin/y-shizei/kojin-shiminzei-kenminzei/R8kaiseisitsumon.html"
+  },
+  {
+   "name": "Immigration Services Agency: part-time work on a Student visa",
+   "url": "https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00003.html"
+  },
+  {
+   "name": "Ministry of Health, Labour and Welfare: social insurance for part-time workers",
+   "url": "https://www.mhlw.go.jp/tekiyoukakudai/jugyouin/taisho/"
+  }
+ ]
+}

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ListingSection } from "../../components/jo/Listings";
 import { GuideSection, Heading, PartnerBand, SectionHero, Steps, ToolPanel } from "../../components/jo/SectionParts";
+import { JapaneseYouNeed } from "./SectionHomes";
 import { SCHOOL_TYPES, STUDY_FACTS } from "../../data/studySchools";
 import { formatChecked } from "../../lib/joContent";
 import { sectionById } from "../../lib/joSections";
@@ -108,7 +109,9 @@ export function StudyHome() {
         </section>
 
         <ToolPanel id="study" />
-        <GuideSection id="study" />
+        <JapaneseYouNeed />
+        <GuideSection id="study" title="Guides" />
+        <GuideSection id="learn" title="Japanese guides" />
         <PartnerBand id="study" />
 
         <p className="t-small mt-10 text-jo-muted">Figures checked {formatChecked(f.checked)}. General information, not visa advice.</p>

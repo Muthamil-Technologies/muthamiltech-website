@@ -1,10 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { DailyKanji } from "../../components/jo/DailyKanji";
-import { GuideList, Heading, Steps } from "../../components/jo/SectionParts";
+import { GuideList, Heading } from "../../components/jo/SectionParts";
 import { SectionIcon } from "../../components/jo/SectionIcon";
 import { GUIDES } from "../../lib/joContent";
-import { APP_STORE_URL, JLPT_DATE, SECTIONS } from "../../lib/joSections";
+import { APP_STORE_URL, JLPT_DATE, MENU_SECTIONS } from "../../lib/joSections";
 
 const daysToJlpt = () => Math.ceil((JLPT_DATE.getTime() - Date.now()) / 86400_000);
 
@@ -12,14 +11,7 @@ const POPULAR = [
   { label: "MEXT scholarship", to: "/guides/study-mext" },
   { label: "Part-time work rules", to: "/guides/study-part-time" },
   { label: "Japanese CV", to: "/work/cv" },
-  { label: "JLPT N4", to: "/learn/jlpt" },
-];
-
-const JOURNEY = [
-  { title: "Plan", text: "Intake dates, real costs, JLPT and EJU, which visa fits you", to: "/study" },
-  { title: "Prepare", text: "Certificate of Eligibility, proof of funds, red flags to avoid", to: "/study" },
-  { title: "Arrive", text: "Your first 14 days: city hall, insurance, pension, bank", to: "/live" },
-  { title: "Work & stay", text: "Changing jobs, taxes, pension refund, permanent residency", to: "/work" },
+  { label: "Take-home pay", to: "/work/salary" },
 ];
 
 export function JOHome() {
@@ -28,10 +20,10 @@ export function JOHome() {
     <>
       <Hero days={days} />
 
-      {/* Six sections */}
+      {/* Sections */}
       <section className="relative mx-auto -mt-10 max-w-[1200px] px-4 sm:px-6" aria-label="Sections">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6" data-reveal>
-          {SECTIONS.map((s) => (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5" data-reveal>
+          {MENU_SECTIONS.map((s) => (
             <Link key={s.id} to={`/${s.id}`} className="lift flex flex-col gap-3 rounded-[24px] bg-white px-5 py-6 text-jo-navy no-underline">
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl" style={{ background: s.tint }}>
                 <SectionIcon id={s.id} color={s.ink} size={30} />
@@ -44,60 +36,10 @@ export function JOHome() {
       </section>
 
       <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
-        {/* Today */}
-        <section className="pt-24">
-          <Heading title="Practise for 5 minutes" link={{ to: "/learn", label: "All lessons →" }} />
-          <div className="grid gap-4 md:grid-cols-3" data-reveal>
-            <DailyKanji />
-            <article className="flex flex-col gap-3.5 rounded-[28px] bg-white p-7">
-              <h3 className="t-small m-0 font-bold text-[#1f4fa8]">Speaking at work</h3>
-              <p className="t-title m-0">Asking your manager for a day off</p>
-              <p lang="ja" className="m-0 text-[24px] leading-relaxed">来週の金曜日、<br />休んでもいいですか。</p>
-              <p className="m-0 text-jo-muted">May I take next Friday off?</p>
-              <Link to="/learn/speaking" className="mt-auto self-start rounded-full bg-[#e3ecfb] px-5 py-3 font-bold text-jo-navy no-underline">Practise speaking →</Link>
-            </article>
-            <article className="flex flex-col gap-3.5 rounded-[28px] bg-jo-yellow p-7">
-              <h3 className="t-small m-0 font-bold">Your JLPT plan</h3>
-              <p className="t-title m-0">Take a 2-minute level check</p>
-              <p className="m-0 leading-relaxed">Find your level, then get a day-by-day plan to the exam{days > 0 ? `, ${days} days away` : ""}.</p>
-              <div className="mt-auto flex items-end justify-between gap-2">
-                <Link to="/learn/level-check" className="rounded-full bg-jo-navy px-5 py-3 font-bold text-white no-underline">Start →</Link>
-                <img src="/characters/maru-celebrate.svg" alt="" className="h-auto w-[110px]" />
-              </div>
-            </article>
-          </div>
-        </section>
-
-        {/* Journey */}
-        <section className="pt-24">
-          <Heading title="From home to your first day" />
-          <Steps items={JOURNEY} color="#12263f" />
-        </section>
-
         {/* Guides */}
         <section className="pt-24">
-          <Heading title="Good to know" link={{ to: "/guides", label: `All ${GUIDES.length} guides →` }} />
-          <GuideList guides={GUIDES.slice(0, 8)} showSection />
-        </section>
-
-        {/* Travel + Shop */}
-        <section className="pt-24">
-          <div className="grid gap-4 md:grid-cols-2" data-reveal>
-            <article className="flex flex-col overflow-hidden rounded-[28px] bg-[#fdeadb]">
-              <div className="flex flex-1 flex-col gap-3 p-7 sm:p-9">
-                <h2 className="t-heading m-0">Plan your Japan trip</h2>
-                <p className="m-0 leading-relaxed text-[#4a3a2e]">Pick your days, cities and interests. Get a day-by-day plan with the phrases you will need.</p>
-                <Link to="/travel/plan" className="mt-auto self-start rounded-full bg-jo-navy px-5 py-3 font-bold text-white no-underline">Plan a trip →</Link>
-              </div>
-            </article>
-            <article className="flex flex-col overflow-hidden rounded-[28px] bg-[#fbe3e6]">
-              <div className="flex flex-1 flex-col gap-3 p-7 sm:p-9">
-                <h2 className="t-heading m-0">Made in Japan, from local sellers</h2>
-                <p className="m-0 leading-relaxed text-[#4a2e33]">Coming soon: snacks, stationery, kitchen tools and crafts from small Japanese shops. Are you a Japanese seller? Join before we open.</p>
-                <Link to="/partners/shop" className="mt-auto self-start rounded-full bg-jo-navy px-5 py-3 font-bold text-white no-underline">Sellers: join early →</Link>
-              </div>
-            </article>
-          </div>
+          <Heading title="Guides" link={{ to: "/guides", label: `All ${GUIDES.length} guides →` }} />
+          <GuideList guides={GUIDES.slice(0, 6)} showSection />
         </section>
 
         {/* Partners */}
@@ -120,7 +62,7 @@ export function JOHome() {
             <img src="/japanone_logo_180.png" alt="" className="h-24 w-24 rounded-full" />
             <div className="flex min-w-0 flex-[999_1_380px] flex-col gap-2">
               <h2 className="t-heading m-0">Get the JapanOne app</h2>
-              <p className="m-0 leading-relaxed text-jo-muted">Speaking practice, JLPT prep and daily kanji on your iPhone.</p>
+              <p className="m-0 leading-relaxed text-jo-muted">The Japanese game, sample tests, speaking practice and pay calculators on your iPhone.</p>
             </div>
             <a href={APP_STORE_URL} className="rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">Download on the App Store</a>
           </div>

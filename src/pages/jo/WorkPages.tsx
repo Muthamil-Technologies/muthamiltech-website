@@ -131,7 +131,7 @@ export function SswHub() {
         Created in April 2019 so that work-ready foreign workers with skills can fill jobs in fields that are short of people.
       </p>
       <p className="m-0 mt-5 rounded-[18px] bg-[#fdeadb] p-5 font-medium leading-relaxed">
-        <b>Changing in 2027:</b> from April 1, 2027, SSW (ii) applications need Japanese at B1 or higher, the support rules for SSW (i) change, and Employment for Skill Development replaces Technical Intern Training.
+        <b>Changing in 2027:</b> from April 1, 2027, SSW (ii) Certificate of Eligibility applications need Japanese at B1 or higher, the support rules for SSW (i) change, and Employment for Skill Development replaces Technical Intern Training.
       </p>
 
       <section className="mt-10">

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Route, Routes, Navigate, useParams } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { Nav } from "./components/Nav";
@@ -39,6 +40,7 @@ import { StudyFaq, StudyVisa } from "./pages/jo/StudyVisaFaq";
 import { StudyCost } from "./pages/jo/StudyCost";
 import { StudyScholarships } from "./pages/jo/StudyScholarships";
 import { StudyChecklist } from "./pages/jo/StudyChecklist";
+import { PartTimeCalculator, SalaryCalculator } from "./pages/jo/PayCalculators";
 import { SswHub, WorkHome, WorkStatusPage } from "./pages/jo/WorkPages";
 import { CvBuilder } from "./pages/japwork/CvBuilder";
 import { PathwayFinder } from "./pages/japwork/PathwayFinder";
@@ -87,6 +89,8 @@ function JapanOneApp() {
       <Route path="/work/status/:id" element={page(<WorkStatusPage />)} />
       <Route path="/work/pathway" element={page(<PathwayFinder />)} />
       <Route path="/work/cv" element={page(<CvBuilder />)} />
+      <Route path="/work/salary" element={page(<SalaryCalculator />)} />
+      <Route path="/work/part-time" element={page(<PartTimeCalculator />)} />
       <Route path="/travel/plan" element={page(<TripPlanner />)} />
       <Route path="/travel/phrases" element={page(<TravelPhrases />)} />
       {/* Addresses from before the one-app site (shared on social and in older app builds). */}
@@ -118,8 +122,18 @@ function JapanOneApp() {
   );
 }
 
+// Only in `npm run mock`; left out of live builds.
+const PracticeBar = import.meta.env.VITE_MOCK_DB === "1" ? lazy(() => import("./lib/PracticeBar")) : null;
+
 function App() {
-  if (isJapanOne) return <JapanOneApp />;
+  if (isJapanOne) {
+    return (
+      <>
+        <JapanOneApp />
+        {PracticeBar && <Suspense fallback={null}><PracticeBar /></Suspense>}
+      </>
+    );
+  }
   return (
     <div className="flex min-h-screen flex-col">
       <Nav />

@@ -1,18 +1,15 @@
 import { Link } from "react-router-dom";
-import { DailyKanji } from "../../components/jo/DailyKanji";
 import { ListingSection } from "../../components/jo/Listings";
 import { GuideSection, Heading, PartnerBand, SectionHero, SourceLine, Steps, ToolPanel } from "../../components/jo/SectionParts";
-import { JLPT_DATE, sectionById } from "../../lib/joSections";
+import { APP_STORE_URL, sectionById } from "../../lib/joSections";
 
 // Overview pages for Learn, Travel and Live. Every fact here repeats a guide or an official page
 // already cited elsewhere on the site, with its source under the block.
 
-const BLUE = "#1f4fa8";
 const ORANGE = "#9a4612";
 const TEAL = "#11697d";
 
 const SRC = {
-  jlpt: { name: "JLPT: levels and pass marks", url: "https://www.jlpt.jp/e/about/levelsummary.html" },
   jassoVoc: { name: "JASSO: vocational schools", url: "https://www.studyinjapan.go.jp/en/planning/learn-about-schools/vocational-schools/" },
   jassoUni: { name: "JASSO: universities", url: "https://www.studyinjapan.go.jp/en/planning/learn-about-schools/universities/" },
   ssw: { name: "ISA: Specified Skilled Worker guide (Oct 23, 2026)", url: "https://www.moj.go.jp/isa/content/930004452.pdf" },
@@ -28,67 +25,65 @@ const SRC = {
 
 const LEVEL_NEEDS: [string, string, string][] = [
   ["Specified Skilled Worker (i)", "A2.2 or higher (for example JFT-Basic 200+)", "/work/status/ssw-1"],
-  ["Specified Skilled Worker (ii)", "B1 or higher, for applications from April 1, 2027", "/work/status/ssw-2"],
+  ["Specified Skilled Worker (ii)", "B1 or higher, for Certificate of Eligibility applications from April 1, 2027", "/work/status/ssw-2"],
   ["Vocational school (専門学校)", "JLPT N2 or N1, or 6+ months at an approved language school, or other routes", "/study/schools/vocational-school"],
   ["University, taught in Japanese", "A guide: JLPT N1 or N2 plus EJU Japanese 250+", "/study/schools/university"],
 ];
 
-const LEVELS: [string, string][] = [
-  ["N5", "Some basic Japanese"],
-  ["N4", "Basic Japanese"],
-  ["N3", "Everyday Japanese, to a certain degree"],
-  ["N2", "Everyday Japanese, and more situations to a certain degree"],
-  ["N1", "Japanese in a wide variety of situations"],
+/** How much Japanese each goal needs, shown under Study in Japan like the app. */
+export function JapaneseYouNeed() {
+  return (
+    <section className="pt-20" id="japanese-you-need">
+      <Heading title="Japanese you need" />
+      <ul className="m-0 grid list-none gap-x-10 gap-y-1 rounded-[28px] bg-white p-3 sm:p-5 md:grid-cols-2" data-reveal>
+        {LEVEL_NEEDS.map(([goal, need, to]) => (
+          <li key={goal}>
+            <Link to={to} className="flex flex-col gap-1 rounded-2xl px-3 py-3.5 text-jo-navy no-underline hover:bg-jo-cream sm:px-4">
+              <span className="t-title">{goal}</span>
+              <span className="text-jo-muted">{need}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <SourceLine items={[SRC.ssw, SRC.b1, SRC.jft, SRC.jassoVoc, SRC.jassoUni]} />
+    </section>
+  );
+}
+
+const LEARN_BLOCKS = [
+  { to: "/learn/plan", title: "Prepare for exam", sub: "A dated JLPT study plan, from your exam date and daily time." },
+  { to: "/learn/jlpt", title: "Take sample test", sub: "N5 · N4 · N3, with answers explained." },
+  { to: "/learn/speaking", title: "Speaking practice", sub: "Real conversations at work and in daily life." },
+  { to: "/study", title: "Study in Japan", sub: "Schools, scholarships, costs and the student visa." },
 ];
 
+// /learn: the same five blocks, in the same order, as the app's Learn tab.
 export function LearnHome() {
-  const days = Math.ceil((JLPT_DATE.getTime() - Date.now()) / 86400_000);
   return (
     <>
-      <SectionHero id="learn" title="Learn Japanese" line="Speak in real situations, prepare for the JLPT and build the Japanese you need for study or work." cta={{ to: "/learn/level-check", label: "Check your level →" }} />
-      <div className="mx-auto max-w-[1200px] px-4 pb-24 sm:px-6">
-        <section className="pt-20">
-          <div className="grid gap-4 md:grid-cols-3" data-reveal>
-            <DailyKanji />
-            <div className="flex flex-col gap-4 rounded-[28px] bg-white p-7 sm:p-9 md:col-span-2">
-              <h2 className="t-heading m-0">{days > 0 ? `JLPT: Sunday, December 6` : "JLPT: five levels"}</h2>
-              {days > 0 && <p className="m-0 text-[20px] font-bold" style={{ color: BLUE }}>{days} days to go</p>}
-              <ol className="m-0 grid list-none gap-2 p-0 sm:grid-cols-5">
-                {LEVELS.map(([l, t]) => (
-                  <li key={l} className="rounded-2xl bg-[#e3ecfb] p-3">
-                    <b className="text-[24px] font-black">{l}</b>
-                    <span className="mt-1 block leading-snug">{t}</span>
-                  </li>
-                ))}
-              </ol>
-              <div className="mt-auto flex flex-wrap gap-4 pt-2 font-bold">
-                <Link to="/learn/jlpt" style={{ color: BLUE }}>Practice test →</Link>
-                <Link to="/learn/plan" style={{ color: BLUE }}>Study plan →</Link>
-                <Link to="/guides/learn-jlpt-levels" style={{ color: BLUE }}>Pass marks →</Link>
-              </div>
-              <SourceLine items={[SRC.jlpt]} />
-            </div>
-          </div>
-        </section>
-
-        <section className="pt-20">
-          <Heading title="How much Japanese do you need?" />
-          <ul className="m-0 grid list-none gap-x-10 gap-y-1 rounded-[28px] bg-white p-3 sm:p-5 md:grid-cols-2" data-reveal>
-            {LEVEL_NEEDS.map(([goal, need, to]) => (
-              <li key={goal}>
-                <Link to={to} className="flex flex-col gap-1 rounded-2xl px-3 py-3.5 text-jo-navy no-underline hover:bg-jo-cream sm:px-4">
-                  <span className="t-title">{goal}</span>
-                  <span className="text-jo-muted">{need}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <SourceLine items={[SRC.ssw, SRC.b1, SRC.jft, SRC.jassoVoc, SRC.jassoUni]} />
-        </section>
-
-        <ToolPanel id="learn" />
-        <GuideSection id="learn" />
-        <PartnerBand id="learn" />
+      <SectionHero id="learn" title="Learn" line="Practise Japanese and plan your study." />
+      <div className="mx-auto max-w-[900px] px-4 pb-24 pt-12 sm:px-6">
+        <a href={APP_STORE_URL} className="lift flex items-center justify-between gap-6 rounded-[28px] bg-jo-navy p-7 text-white no-underline sm:p-9">
+          <span className="flex flex-col gap-2">
+            <span className="t-small font-extrabold text-jo-yellow">Best way to practise</span>
+            <span className="text-[32px] font-black leading-tight">Learn with game</span>
+            <span className="text-[#d9e1ec]">Clear stages, earn stars and beat your best score.</span>
+            <span className="mt-2 self-start rounded-full bg-jo-yellow px-5 py-2.5 font-bold text-jo-navy">Play in the app</span>
+          </span>
+        </a>
+        <ul className="m-0 mt-3 grid list-none gap-3 p-0 sm:grid-cols-2" data-reveal>
+          {LEARN_BLOCKS.map((b) => (
+            <li key={b.to}>
+              <Link to={b.to} className="lift flex h-full flex-col gap-1 rounded-[24px] bg-white p-6 text-jo-navy no-underline">
+                <span className="text-[24px] font-black leading-tight">{b.title}</span>
+                <span className="text-jo-muted">{b.sub}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Link to="/learn/level-check" className="mt-3 flex items-center justify-between rounded-[24px] bg-white p-6 font-bold text-jo-navy no-underline">
+          Check your level <span aria-hidden="true">→</span>
+        </Link>
       </div>
     </>
   );

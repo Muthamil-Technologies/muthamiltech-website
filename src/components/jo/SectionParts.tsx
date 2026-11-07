@@ -79,7 +79,7 @@ export function GuideList({ guides, showSection = false }: { guides: Guide[]; sh
   );
 }
 
-export function GuideSection({ id, title = "Good to know" }: { id: SectionId; title?: string }) {
+export function GuideSection({ id, title = "Guides" }: { id: SectionId; title?: string }) {
   const guides = GUIDES.filter((g) => g.section === id);
   if (!guides.length) return null;
   return (
