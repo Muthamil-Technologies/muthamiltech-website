@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ListingSection } from "../../components/jo/Listings";
 import { GuideSection, Heading, PartnerBand, SectionHero, SourceLine, Steps, ToolPanel } from "../../components/jo/SectionParts";
-import { APP_STORE_URL, sectionById } from "../../lib/joSections";
+import { ANDROID_BETA_URL, APP_STORE_URL, sectionById } from "../../lib/joSections";
 
 // Overview pages for Learn, Travel and Live. Every fact here repeats a guide or an official page
 // already cited elsewhere on the site, with its source under the block.
@@ -71,6 +71,9 @@ export function LearnHome() {
             <span className="mt-2 self-start rounded-full bg-jo-yellow px-5 py-2.5 font-bold text-jo-navy">Play in the app</span>
           </span>
         </a>
+        <p className="m-0 mt-3 text-center text-jo-muted">
+          On Android? <a href={ANDROID_BETA_URL} target="_blank" rel="noopener" className="font-bold text-jo-navy">Join the beta →</a>
+        </p>
         <ul className="m-0 mt-3 grid list-none gap-3 p-0 sm:grid-cols-2" data-reveal>
           {LEARN_BLOCKS.map((b) => (
             <li key={b.to}>

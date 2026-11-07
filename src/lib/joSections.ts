@@ -30,5 +30,8 @@ export const sectionById = (id: string) => SECTIONS.find((s) => s.id === id);
 /** The JapanOne app on the App Store (the former JapTalk listing, same Apple ID). */
 export const APP_STORE_URL = "https://apps.apple.com/app/id6807840880";
 
+/** Android beta sign-up (Google Form; its thank-you page links the tester group and Play opt-in). */
+export const ANDROID_BETA_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfElJpGR1N2-HZ33ideAntPuYTGNItWcSF7ZNbbOaIZm5mpgQ/viewform";
+
 /** First Sunday of December 2026, 9:00 JST. */
 export const JLPT_DATE = new Date("2026-12-06T09:00:00+09:00");

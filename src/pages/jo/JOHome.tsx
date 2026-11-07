@@ -3,7 +3,7 @@ import { useState } from "react";
 import { GuideList, Heading } from "../../components/jo/SectionParts";
 import { SectionIcon } from "../../components/jo/SectionIcon";
 import { GUIDES } from "../../lib/joContent";
-import { APP_STORE_URL, JLPT_DATE, MENU_SECTIONS } from "../../lib/joSections";
+import { ANDROID_BETA_URL, APP_STORE_URL, JLPT_DATE, MENU_SECTIONS } from "../../lib/joSections";
 
 const daysToJlpt = () => Math.ceil((JLPT_DATE.getTime() - Date.now()) / 86400_000);
 
@@ -62,9 +62,12 @@ export function JOHome() {
             <img src="/japanone_logo_180.png" alt="" className="h-24 w-24 rounded-full" />
             <div className="flex min-w-0 flex-[999_1_380px] flex-col gap-2">
               <h2 className="t-heading m-0">Get the JapanOne app</h2>
-              <p className="m-0 leading-relaxed text-jo-muted">The Japanese game, sample tests, speaking practice and pay calculators on your iPhone.</p>
+              <p className="m-0 leading-relaxed text-jo-muted">The Japanese game, sample tests, speaking practice and pay calculators on your phone. On Android? Try the beta before launch.</p>
             </div>
-            <a href={APP_STORE_URL} className="rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">Download on the App Store</a>
+            <div className="flex flex-wrap gap-3">
+              <a href={APP_STORE_URL} className="rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">Download on the App Store</a>
+              <a href={ANDROID_BETA_URL} target="_blank" rel="noopener" className="rounded-full border-2 border-jo-navy px-6 py-3 font-bold text-jo-navy no-underline">Join the Android beta</a>
+            </div>
           </div>
         </section>
       </div>
