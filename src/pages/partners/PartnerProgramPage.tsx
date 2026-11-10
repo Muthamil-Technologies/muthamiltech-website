@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { NOUN_JA, PROGRAM_TEXT_JA, UI } from "../../data/partnerJa";
+import { PARTNER_SIGNUP_OPEN, SIGNUP_SOON } from "../../data/partnerPlans";
 import { useAuth } from "../../lib/auth";
 import { LangSwitch, usePartnerLang } from "../../lib/partnerLang";
 import { db, type Provider, type ProviderKind } from "../../lib/listings";
@@ -95,7 +96,15 @@ export function PartnerProgramPage({ program }: { program: PartnerProgram }) {
         {" · "}{t(UI.questions)} <Link to={`/contact?topic=${program.kind}`} className="font-semibold text-accent">{t(UI.contact)}</Link>
       </p>
 
-      {!ready ? null : !session ? (
+      {!PARTNER_SIGNUP_OPEN ? (
+        <section className="mt-8 max-w-2xl rounded-2xl border border-line bg-surface p-6">
+          <h2 className="text-lg font-semibold text-ink">{t(SIGNUP_SOON.title)}</h2>
+          <p className="mt-2 text-ink-soft">{t(SIGNUP_SOON.line)}</p>
+          <Link to={`/contact?topic=${program.kind}`} className="mt-5 inline-block rounded-full bg-ink px-6 py-3 font-semibold text-paper hover:bg-accent-deep">
+            {t(SIGNUP_SOON.cta)}
+          </Link>
+        </section>
+      ) : !ready ? null : !session ? (
         <Link to={`/login?next=/partners/${program.slug}`} className="mt-8 inline-block rounded-full bg-ink px-6 py-3 font-semibold text-paper hover:bg-accent-deep">
           {t(UI.signIn)}
         </Link>

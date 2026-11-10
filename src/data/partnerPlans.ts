@@ -48,6 +48,19 @@ export const WE_DONT: T[] = [
  *  the amounts below are the current plan, shown only when this is true. */
 export const SHOW_PRICES = false;
 
+/** Partner sign-in and registration. Closed until email alerts, the admin account, Supabase Pro and the
+ *  partner terms are ready; until then partner pages ask companies to register their interest instead. */
+export const PARTNER_SIGNUP_OPEN = false;
+
+export const SIGNUP_SOON = {
+  title: { en: "Partner sign-up opens soon", ja: "パートナー登録はまもなく開始します" },
+  line: {
+    en: "Tell us you're interested and we'll contact you first, with the founding offer.",
+    ja: "ご関心をお知らせください。開始時に創業パートナー特典とあわせて優先的にご連絡します。",
+  },
+  cta: { en: "Register your interest", ja: "関心を登録する" },
+} as const;
+
 export const PRICE_LATER: T = {
   en: "Monthly price shared before your free period ends",
   ja: "月額料金は無料期間の終了前にお知らせします",
