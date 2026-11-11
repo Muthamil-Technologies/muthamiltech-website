@@ -11,7 +11,7 @@ export function JOFooter() {
         <div className="flex max-w-sm flex-col gap-2.5">
           <strong className="text-[22px] font-black text-white">JapanOne</strong>
           <p className="m-0 leading-relaxed">
-            © Muthamil Technologies. No copying or scraping: see the Terms of Use. General information only, not legal or visa advice. Facts come from official sources such as ISA, MEXT, JASSO and MHLW,
+            © JapanOne. No copying or scraping: see the Terms of Use. General information only, not legal or visa advice. Facts come from official sources such as ISA, MEXT, JASSO and MHLW,
             and show the date we checked them.
           </p>
         </div>
@@ -38,7 +38,7 @@ export function JOFooter() {
           </div>
         </nav>
       </div>
-      <div className="mx-auto max-w-[1200px] px-4 pb-7 text-sm sm:px-6">© 2026 Muthamil Technologies</div>
+      <div className="mx-auto max-w-[1200px] px-4 pb-7 text-sm sm:px-6">© 2026 JapanOne</div>
     </footer>
   );
 }

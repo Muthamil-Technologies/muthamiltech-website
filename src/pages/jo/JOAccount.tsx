@@ -36,7 +36,7 @@ export function JOAccount() {
     const { error } = await supabase.rpc("delete_my_account");
     if (error) {
       setDeleting(false);
-      return setError("We couldn't delete your account. Please try again, or email hello@muthamiltech.com.");
+      return setError("We couldn't delete your account. Please try again, or write to us from the Contact page.");
     }
     await signOut();
     navigate("/?deleted=1", { replace: true });

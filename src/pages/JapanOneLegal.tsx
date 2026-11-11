@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { contact } from "../data/products";
 import { SHOW_PARTNERS } from "../lib/joSections";
 
 // Privacy & support page for the JapanOne app (iOS and Android) and japanone.app accounts, which
@@ -10,13 +9,13 @@ export function JapanOneLegal() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-20">
       <Link to="/" className="text-sm font-semibold text-accent">
-        &larr; Back to Muthamil Technologies
+        &larr; Back to JapanOne
       </Link>
       <h1 className="mt-6 text-3xl font-bold tracking-tight text-ink">
         JapanOne — Privacy &amp; Support
       </h1>
       <p className="mt-2 text-sm text-ink-faint">
-        Last updated: November 2026 · JapanOne (app and japanone.app) is by Muthamil Technologies.
+        Last updated: November 2026 · JapanOne (app and japanone.app).
       </p>
 
       <div className="mt-8 flex flex-col gap-6 text-ink-soft">
@@ -156,11 +155,7 @@ export function JapanOneLegal() {
           <h2 className="text-lg font-semibold text-ink">Support</h2>
           <p className="mt-2">
             Questions, bug reports, or feedback about JapanOne can be sent with the{" "}
-            <a href="https://japanone.app/contact" className="text-accent">contact form</a> or to{" "}
-            <a href={`mailto:${contact.email}`} className="text-accent">
-              {contact.email}
-            </a>
-            . We read every message.
+            <a href="https://japanone.app/contact" className="text-accent">contact form</a>. We read every message.
           </p>
         </section>
 

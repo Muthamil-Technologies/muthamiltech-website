@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { contact } from "../../data/products";
 import { SHOW_PARTNERS } from "../../lib/joSections";
 
 // Terms of Use for JapanOne (japanone.app and the JapanOne app). Plain English; keep the
@@ -12,8 +11,8 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     title: "1. About these terms",
     body: (
       <p>
-        These terms apply to the JapanOne website (japanone.app) and the JapanOne app, made by Muthamil Technologies in Tokyo,
-        Japan ("we", "us"). By using JapanOne you agree to them. If you don't agree, please don't use JapanOne.
+        These terms apply to the JapanOne website (japanone.app) and the JapanOne app ("JapanOne", "we", "us"),
+        run from Tokyo, Japan. By using JapanOne you agree to them. If you don't agree, please don't use JapanOne.
       </p>
     ),
   },
@@ -71,7 +70,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
       <>
         <p>
           The text, guides, lessons, quizzes, tools, data compilations, images, characters (including Maru), design and software of
-          JapanOne belong to Muthamil Technologies or our licensors and are protected by copyright and other laws. "JapanOne" and
+          JapanOne belong to us or our licensors and are protected by copyright and other laws. "JapanOne" and
           its logo are our marks.
         </p>
         <p>
@@ -136,7 +135,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     body: (
       <p>
         Questions, permission requests or reports:{" "}
-        <a href={`mailto:${contact.email}`} className="text-[#1f4fa8] underline">{contact.email}</a>
+        <Link to="/contact" className="text-[#1f4fa8] underline">the contact form</Link>.
       </p>
     ),
   },
