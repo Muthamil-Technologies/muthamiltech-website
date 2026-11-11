@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { contact } from "../../data/products";
+import { SHOW_PARTNERS } from "../../lib/joSections";
 
 // Terms of Use for JapanOne (japanone.app and the JapanOne app). Plain English; keep the
 // "not advice", "not an agent" and "no copying or scraping" sections in step with the product.
-const UPDATED = "November 4, 2026";
+const UPDATED = "November 11, 2026";
 
 const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
   {
@@ -40,13 +41,15 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
       <>
         <p>
           JapanOne does not recruit or place workers, admit students, sell tours or take bookings, applications or payments for
-          anyone. Schools, employers, tour agencies and shops ("partners") list their own information. When you apply, book or buy,
-          you deal directly with the partner on their own channels, and your agreement is with them, not with us.
+          anyone.{SHOW_PARTNERS && <> Schools, employers, tour agencies and shops ("partners") list their own information. When you apply, book or buy,
+          you deal directly with the partner on their own channels, and your agreement is with them, not with us.</>}
+          {!SHOW_PARTNERS && <> When you contact a school, employer or other organisation from a link in our guides, you deal with them
+          directly and your agreement is with them, not with us.</>}
         </p>
-        <p>
+        {SHOW_PARTNERS && <p>
           We review listings before they go live, but we can't check every detail. If something looks wrong, use "Report this
           listing" or contact us.
-        </p>
+        </p>}
       </>
     ),
   },
@@ -91,7 +94,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
           <li>copy, decompile or reverse-engineer the app or the website's software, or build a competing product from it;</li>
           <li>frame or mirror JapanOne, or remove copyright, source or "not advice" notices;</li>
           <li>use the JapanOne name, logo or characters in a way that suggests we are connected with or endorse you;</li>
-          <li>post false listings or reports, spam, break the law, or interfere with JapanOne or other people's use of it.</li>
+          <li>{SHOW_PARTNERS ? "post false listings or reports, spam" : "spam"}, break the law, or interfere with JapanOne or other people's use of it.</li>
         </ul>
         <p>
           We may block access, remove content or end accounts that break these rules, and we may take legal action, including for
@@ -116,7 +119,7 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     body: (
       <p>
         We work to keep JapanOne accurate and available, but it is provided as it is. To the extent permitted by law, we are not
-        responsible for losses caused by decisions made on general information, by partners' listings, products or services, or by
+        responsible for losses caused by decisions made on general information, {SHOW_PARTNERS ? "by partners' listings, products or services, " : ""}or by
         third-party websites we link to. Nothing in these terms limits rights you have under Japanese law, including the Consumer
         Contract Act, or our responsibility for our own intentional acts or gross negligence.
       </p>

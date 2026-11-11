@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { contact } from "../data/products";
+import { SHOW_PARTNERS } from "../lib/joSections";
 
 // Privacy & support page for the JapanOne app (iOS and Android) and japanone.app accounts, which
 // replaced JapTalk (its Speak section) and JapTutor (its JLPT section). Keep in
@@ -47,22 +48,23 @@ export function JapanOneLegal() {
         <section id="accounts">
           <h2 className="text-lg font-semibold text-ink">Accounts on japanone.app (optional)</h2>
           <p className="mt-2">
-            You can use every page on japanone.app without an account. If you choose to sign in
+            Guides and tools on japanone.app work without an account; the Japanese practice tools on
+            the website need you to sign in (the app needs no account). If you sign in
             (with Google or an email link), we store:
           </p>
           <ul className="mt-2 list-disc pl-6">
             <li>your email address and, if you use Google, your Google account ID and name;</li>
             <li>your practice progress and JLPT test results on the website;</li>
-            <li>
+            {SHOW_PARTNERS && <li>
               if you register as a partner (a school, employer, tour agency or shop): your
               organisation&apos;s details, your listings and their photos, and our review notes.
-            </li>
+            </li>}
           </ul>
           <p className="mt-2">
-            We use this only to run your account and, for partners, to review and show your
-            listings. We don&apos;t sell it, use it for advertising or share it with anyone else.
-            It is stored with our database provider, Supabase, in Tokyo, Japan. If you report a
-            listing, we store your report so our team can check it.
+            We use this only to run your account{SHOW_PARTNERS && <> and, for partners, to review and show your
+            listings</>}. We don&apos;t sell it, use it for advertising or share it with anyone else.
+            It is stored with our database provider, Supabase, in Tokyo, Japan.{SHOW_PARTNERS && <> If you report a
+            listing, we store your report so our team can check it.</>}
           </p>
           <p className="mt-2">
             <span className="font-semibold text-ink">Delete your account</span> at any time from
@@ -116,9 +118,8 @@ export function JapanOneLegal() {
         <section id="purchases">
           <h2 className="text-lg font-semibold text-ink">Purchases</h2>
           <p className="mt-2">
-            JapanOne has no purchases; every lesson is free. If paid features are ever added,
-            they will be bought through the App Store or Google Play, and we never receive your
-            payment details. This page will be updated before that ships.
+            JapanOne has no purchases or payments, in the app or on the website, and we never
+            ask for payment details.
           </p>
         </section>
 
