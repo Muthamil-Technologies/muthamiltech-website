@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Choice } from "../../components/jo/Choice";
+import { SHOW_PARTNERS } from "../../lib/joSections";
 
 // Contact form for users and partners. Sent with Netlify Forms (form "contact"; the hidden copy in
 // index.html lets Netlify detect it), which emails each message to us, so no address is in the page.
-const TOPICS: [string, string][] = [
+const ALL_TOPICS: [string, string][] = [
   ["user", "Using JapanOne"],
   ["school", "School or institute"],
   ["employer", "Employer"],
@@ -12,6 +13,7 @@ const TOPICS: [string, string][] = [
   ["seller", "Shop"],
   ["other", "Something else"],
 ];
+const TOPICS = SHOW_PARTNERS ? ALL_TOPICS : ALL_TOPICS.filter(([v]) => v === "user" || v === "other");
 
 const field = "w-full rounded-xl border border-[#d9dee6] bg-white px-3 py-2.5 text-base text-jo-navy";
 
@@ -52,7 +54,7 @@ export function JOContact() {
     <div className="mx-auto max-w-[760px] px-4 py-14 sm:px-6">
       <h1 className="mb-3 mt-0 text-[36px] font-black sm:text-[44px]">Contact us</h1>
       <p className="m-0 text-lg leading-relaxed text-jo-muted">
-        A question about JapanOne, an idea, or interest in becoming a partner? Send us a message and we'll reply by email.
+        {SHOW_PARTNERS ? "A question about JapanOne, an idea, or interest in becoming a partner?" : "A question about JapanOne, an idea, or a problem with the app?"} Send us a message and we'll reply by email.
       </p>
       <p lang="ja" className="mt-2 text-sm text-jo-muted">日本語でのお問い合わせも承ります。</p>
 

@@ -50,7 +50,7 @@ export function Login() {
     <div className="mx-auto max-w-md px-6 py-20">
       <div className="text-xs font-bold tracking-wide text-accent">JapanOne</div>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink">{t(UI.signInTitle)}</h1>
-      <p className="mt-2 text-ink-soft">{forPartner ? t(UI.signInLine) : "Optional: every page works without an account. Sign in to keep your test results and, for partners, to manage your listings. No password needed."}</p>
+      <p className="mt-2 text-ink-soft">{forPartner ? t(UI.signInLine) : "Sign in to use the sample tests, exam plan and speaking practice on the web and keep your results. No password needed. In the app you don't need an account."}</p>
 
       {!enabled ? (
         <p className="mt-8 rounded-xl border border-line bg-surface p-5 text-sm text-ink-soft">

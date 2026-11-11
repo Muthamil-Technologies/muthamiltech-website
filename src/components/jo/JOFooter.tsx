@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { social } from "../../lib/brand";
-import { MENU_SECTIONS } from "../../lib/joSections";
+import { MENU_SECTIONS, SHOW_PARTNERS } from "../../lib/joSections";
 import { JOHeader } from "./JOHeader";
 
 export function JOFooter() {
@@ -24,7 +24,7 @@ export function JOFooter() {
           </div>
           <div className="flex flex-col gap-2">
             <strong className="text-white">Company</strong>
-            <Link to="/partners" className="text-[#b9c6d6] hover:text-white">For partners</Link>
+            {SHOW_PARTNERS && <Link to="/partners" className="text-[#b9c6d6] hover:text-white">For partners</Link>}
             <Link to="/contact" className="text-[#b9c6d6] hover:text-white">Contact us</Link>
             <Link to="/japanone/legal" className="text-[#b9c6d6] hover:text-white">Privacy &amp; support</Link>
             <Link to="/terms" className="text-[#b9c6d6] hover:text-white">Terms of Use</Link>

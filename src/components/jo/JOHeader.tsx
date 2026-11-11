@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
-import { ANDROID_BETA_URL, APP_STORE_URL, MENU_SECTIONS } from "../../lib/joSections";
+import { ANDROID_BETA_URL, APP_STORE_URL, MENU_SECTIONS, SHOW_PARTNERS } from "../../lib/joSections";
 
-// japanone.app top bar. Desktop: logo, the sections, partners, sign in and the app.
+// japanone.app top bar. Desktop: logo, the sections, (partners,) sign in and the app.
 // Phone: one short bar (logo, the app, a menu button); the menu holds everything else.
 export function JOHeader() {
   const { session } = useAuth();
@@ -32,7 +32,7 @@ export function JOHeader() {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-2">
-          <Link to="/partners" className="hidden px-3 py-2 font-bold text-jo-yellow no-underline lg:block">For partners</Link>
+          {SHOW_PARTNERS && <Link to="/partners" className="hidden px-3 py-2 font-bold text-jo-yellow no-underline lg:block">For partners</Link>}
           <Link to={account.to} className="hidden rounded-full bg-white/10 px-4 py-2 font-medium text-white no-underline hover:bg-white/20 lg:block">{account.label}</Link>
           <GetTheApp />
           <button
@@ -61,7 +61,7 @@ export function JOHeader() {
             ))}
           </ul>
           <div className="mt-4 flex flex-wrap gap-2">
-            <Link to="/partners" className="rounded-full bg-jo-yellow/15 px-4 py-2.5 font-bold text-jo-yellow no-underline">For partners</Link>
+            {SHOW_PARTNERS && <Link to="/partners" className="rounded-full bg-jo-yellow/15 px-4 py-2.5 font-bold text-jo-yellow no-underline">For partners</Link>}
             <Link to={account.to} className="rounded-full bg-white/10 px-4 py-2.5 font-medium text-white no-underline">{account.label}</Link>
             <Link to="/contact" className="rounded-full bg-white/10 px-4 py-2.5 font-medium text-white no-underline">Contact us</Link>
           </div>

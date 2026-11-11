@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
 import { KIND_LABEL, type Provider } from "../../lib/listings";
 import { supabase } from "../../lib/supabase";
+import { SHOW_PARTNERS } from "../../lib/joSections";
 
 type Result = { level: string; score: number; total: number; taken_at: string };
 
@@ -67,7 +68,7 @@ export function JOAccount() {
         )}
       </section>
 
-      <section className="mt-6 rounded-[22px] bg-white p-6">
+      {SHOW_PARTNERS && <section className="mt-6 rounded-[22px] bg-white p-6">
         <h2 className="m-0 text-xl font-black">Partner organisations</h2>
         {orgs.length === 0 ? (
           <p className="m-0 mt-2 text-jo-muted">You haven't registered a school, company, agency or shop. <Link to="/partners" className="font-bold text-[#1f4fa8]">Become a partner →</Link></p>
@@ -78,12 +79,12 @@ export function JOAccount() {
             ))}
           </ul>
         )}
-      </section>
+      </section>}
 
       <section className="mt-6 rounded-[22px] border-2 border-[#f3c7cd] bg-white p-6">
         <h2 className="m-0 text-xl font-black text-[#9e2232]">Delete your account</h2>
         <p className="m-0 mt-2 leading-relaxed text-jo-muted">
-          This deletes your account, progress and test results now. It can't be undone. Organisations you registered stay for their other members.
+          This deletes your account, progress and test results now. It can't be undone.{SHOW_PARTNERS && " Organisations you registered stay for their other members."}
         </p>
         <label className="mt-4 block">
           <span className="font-bold">Type DELETE to confirm</span>

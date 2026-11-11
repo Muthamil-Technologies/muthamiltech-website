@@ -22,8 +22,12 @@ export const SECTIONS: Section[] = [
   { id: "shop", label: "Shop", line: "Made in Japan, from local sellers", tint: "#fbe3e6", ink: "#b42a3a", tag: "#9e2232" },
 ];
 
-/** The menu, like the app's tabs: Study in Japan sits inside Learn. */
-export const MENU_SECTIONS = SECTIONS.filter((s) => s.id !== "study");
+/** Partner pages, listings and Shop. Off while the site is for users only (2026-11-11); flip to true
+ * to bring back /partners, /listings, the partner bands and the Shop section. */
+export const SHOW_PARTNERS = false;
+
+/** The menu, like the app's tabs: Study in Japan sits inside Learn. Shop only with partners on. */
+export const MENU_SECTIONS = SECTIONS.filter((s) => s.id !== "study" && (SHOW_PARTNERS || s.id !== "shop"));
 
 export const sectionById = (id: string) => SECTIONS.find((s) => s.id === id);
 

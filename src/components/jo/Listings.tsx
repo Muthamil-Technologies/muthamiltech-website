@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import type { Product } from "../../lib/listings";
 import { facts, fetchListings, headline, isFeatured, kicker, type PublicListing } from "../../lib/publicListings";
 import { Heading } from "./SectionParts";
+import { SHOW_PARTNERS } from "../../lib/joSections";
 
 // Partner listings on section pages. Paid placements are labelled 広告 (Japan's stealth-marketing
 // rules); nothing renders until there is at least one published listing.
@@ -45,7 +46,13 @@ export function ListingCard({ l, color }: { l: PublicListing; color: string }) {
 }
 
 /** A section of listings: hidden while there are none. `areas` keeps only listings in those places. */
-export function ListingSection({ product, title, color, areas, limit = 7 }: { product: Product; title: string; color: string; areas?: string[]; limit?: number }) {
+type ListingSectionProps = { product: Product; title: string; color: string; areas?: string[]; limit?: number };
+
+export function ListingSection(props: ListingSectionProps) {
+  return SHOW_PARTNERS ? <Listed {...props} /> : null;
+}
+
+function Listed({ product, title, color, areas, limit = 7 }: ListingSectionProps) {
   const [items, setItems] = useState<PublicListing[] | null>(null);
   const key = areas?.join("|") ?? "";
   useEffect(() => {

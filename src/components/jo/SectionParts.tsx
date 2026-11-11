@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { GUIDES, formatChecked, type Guide } from "../../lib/joContent";
-import { sectionById, type SectionId } from "../../lib/joSections";
+import { SHOW_PARTNERS, sectionById, type SectionId } from "../../lib/joSections";
 import { TOOLS } from "../../lib/joTools";
 import { PROGRAMS } from "../../pages/partners/partnerTypes";
 
@@ -117,6 +117,7 @@ export function Steps({ items, color }: { items: { title: string; text: string; 
 
 /** "Become a partner" for the businesses that serve this section. */
 export function PartnerBand({ id }: { id: SectionId }) {
+  if (!SHOW_PARTNERS) return null;
   const program = PROGRAMS.find((p) => p.section === id || p.alsoOn?.includes(id));
   if (!program) return null;
   return (

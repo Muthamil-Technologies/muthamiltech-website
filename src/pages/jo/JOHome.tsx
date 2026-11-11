@@ -3,7 +3,7 @@ import { useState } from "react";
 import { GuideList, Heading } from "../../components/jo/SectionParts";
 import { SectionIcon } from "../../components/jo/SectionIcon";
 import { GUIDES } from "../../lib/joContent";
-import { ANDROID_BETA_URL, APP_STORE_URL, JLPT_DATE, MENU_SECTIONS } from "../../lib/joSections";
+import { ANDROID_BETA_URL, APP_STORE_URL, JLPT_DATE, MENU_SECTIONS, SHOW_PARTNERS } from "../../lib/joSections";
 
 const daysToJlpt = () => Math.ceil((JLPT_DATE.getTime() - Date.now()) / 86400_000);
 
@@ -43,7 +43,7 @@ export function JOHome() {
         </section>
 
         {/* Partners */}
-        <section className="pt-24">
+        {SHOW_PARTNERS && <section className="pt-24">
           <div className="rounded-[28px] bg-jo-navy text-white">
             <div className="flex flex-col gap-4 p-7 sm:p-11" data-reveal>
               <h2 className="t-heading m-0 text-white">Reach people coming to Japan</h2>
@@ -54,7 +54,7 @@ export function JOHome() {
               </div>
             </div>
           </div>
-        </section>
+        </section>}
 
         {/* App */}
         <section className="pt-24">
@@ -62,7 +62,7 @@ export function JOHome() {
             <img src="/japanone_logo_180.png" alt="" className="h-24 w-24 rounded-full" />
             <div className="flex min-w-0 flex-[999_1_380px] flex-col gap-2">
               <h2 className="t-heading m-0">Get the JapanOne app</h2>
-              <p className="m-0 leading-relaxed text-jo-muted">The Japanese game, sample tests, speaking practice and pay calculators on your phone. On Android? Try the beta before launch.</p>
+              <p className="m-0 leading-relaxed text-jo-muted">The Japanese game, sample tests, speaking practice and pay calculators on your phone, no account needed. On Android? Try the beta before launch.</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a href={APP_STORE_URL} className="rounded-full bg-jo-navy px-6 py-3.5 font-bold text-white no-underline">Download on the App Store</a>
@@ -83,7 +83,7 @@ function Hero({ days }: { days: number }) {
       <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-4 pb-20 pt-12 sm:px-6 lg:grid-cols-[2fr_1fr] lg:pt-16" data-reveal>
         <div className="flex min-w-0 flex-col gap-6">
           <h1 className="m-0 text-[clamp(48px,5.6vw,84px)] font-black leading-[0.98] tracking-[-0.03em]">Your gateway <br className="hidden sm:block" />to <span className="text-jo-yellow">Japan</span></h1>
-          <p className="m-0 max-w-[40ch] text-[20px] leading-relaxed text-[#d9e1ec]">Learn Japanese, find a school or a job, plan your trip and shop Made in Japan, with one app and one account.</p>
+          <p className="m-0 max-w-[40ch] text-[20px] leading-relaxed text-[#d9e1ec]">Learn Japanese and get ready to study, work, travel and live in Japan, all in one app.</p>
           <form role="search" onSubmit={(e) => { e.preventDefault(); navigate(`/search?q=${encodeURIComponent(q.trim())}`); }}
             className="flex max-w-[640px] gap-2 rounded-2xl bg-white p-2">
             <label htmlFor="jo-q" className="sr-only">Search JapanOne</label>

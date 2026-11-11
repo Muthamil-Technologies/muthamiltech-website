@@ -50,6 +50,8 @@ import { isJapanOne } from "./lib/brand";
 import { PartnersHome } from "./pages/partners/PartnersHome";
 import { PartnerProgramPage } from "./pages/partners/PartnerProgramPage";
 import { PROGRAMS } from "./pages/partners/partnerTypes";
+import { LearnGate } from "./components/jo/LearnGate";
+import { SHOW_PARTNERS } from "./lib/joSections";
 import { ProviderPage } from "./pages/partners/ProviderPage";
 
 function OldLesson() {
@@ -60,17 +62,19 @@ function OldLesson() {
 /** japanone.app: the JapanOne site. Section pages, guides and every tool share one layout. */
 function JapanOneApp() {
   const page = (el: React.ReactNode) => <JOLayout>{el}</JOLayout>;
+  // Learning tools on the web: signed-in users only; everyone else is offered sign-in or the app.
+  const learn = (el: React.ReactNode) => page(<LearnGate>{el}</LearnGate>);
   return (
     <Routes>
       <Route path="/" element={page(<JOHome />)} />
       <Route path="/search" element={page(<JOSearch />)} />
       <Route path="/guides" element={page(<JOGuides />)} />
       <Route path="/guides/:id" element={page(<JOGuide />)} />
-      <Route path="/learn/level-check" element={page(<JapTalkLevelCheck />)} />
-      <Route path="/learn/plan" element={page(<JapTutorPlanBuilder />)} />
-      <Route path="/learn/jlpt" element={page(<JapTutorTest />)} />
-      <Route path="/learn/speaking" element={page(<JapTalkLessons />)} />
-      <Route path="/learn/speaking/:id" element={page(<JapTalkLesson />)} />
+      <Route path="/learn/level-check" element={learn(<JapTalkLevelCheck />)} />
+      <Route path="/learn/plan" element={learn(<JapTutorPlanBuilder />)} />
+      <Route path="/learn/jlpt" element={learn(<JapTutorTest />)} />
+      <Route path="/learn/speaking" element={learn(<JapTalkLessons />)} />
+      <Route path="/learn/speaking/:id" element={learn(<JapTalkLesson />)} />
       <Route path="/learn" element={page(<JOLearnHome />)} />
       <Route path="/travel" element={page(<TravelHome />)} />
       <Route path="/live" element={page(<LiveHome />)} />
@@ -104,15 +108,15 @@ function JapanOneApp() {
       <Route path="/japanone/legal" element={page(<JapanOneLegal />)} />
       <Route path="/terms" element={page(<JOTerms />)} />
       <Route path="/contact" element={page(<JOContact />)} />
-      <Route path="/listings/:id" element={page(<JOListing />)} />
-      <Route path="/partners" element={page(<PartnersHome />)} />
-      {PROGRAMS.map((p) => (
+      {SHOW_PARTNERS && <Route path="/listings/:id" element={page(<JOListing />)} />}
+      {SHOW_PARTNERS && <Route path="/partners" element={page(<PartnersHome />)} />}
+      {SHOW_PARTNERS && PROGRAMS.map((p) => (
         <Route key={p.slug} path={`/partners/${p.slug}`} element={page(<PartnerProgramPage program={p} />)} />
       ))}
-      <Route path="/partners/tour" element={<Navigate to="/partners/travel" replace />} />
-      <Route path="/partners/p/:id" element={page(<ProviderPage />)} />
-      <Route path="/partners/listing/:id" element={page(<ListingEditor />)} />
-      <Route path="/admin" element={page(<Admin />)} />
+      {SHOW_PARTNERS && <Route path="/partners/tour" element={<Navigate to="/partners/travel" replace />} />}
+      {SHOW_PARTNERS && <Route path="/partners/p/:id" element={page(<ProviderPage />)} />}
+      {SHOW_PARTNERS && <Route path="/partners/listing/:id" element={page(<ListingEditor />)} />}
+      {SHOW_PARTNERS && <Route path="/admin" element={page(<Admin />)} />}
       <Route path="/login" element={page(<Login />)} />
       <Route path="/account" element={page(<JOAccount />)} />
       <Route path="/learn/account" element={<Navigate to="/account" replace />} />

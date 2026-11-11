@@ -1,12 +1,12 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { GuideSection, PartnerBand, SectionHero, ToolPanel } from "../../components/jo/SectionParts";
-import { sectionById } from "../../lib/joSections";
+import { SHOW_PARTNERS, sectionById } from "../../lib/joSections";
 
 // Fallback page for a section without its own overview (today: /shop, which is "coming soon").
 export function JOSection() {
   const { section = "" } = useParams();
   const s = sectionById(section);
-  if (!s) return <Navigate to="/" replace />;
+  if (!s || (s.id === "shop" && !SHOW_PARTNERS)) return <Navigate to="/" replace />;
 
   if (s.id === "shop") {
     return (

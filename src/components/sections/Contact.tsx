@@ -13,16 +13,8 @@ export function Contact() {
           Let's build something useful.
         </h2>
         <p className="mt-4 text-lg text-ink-soft">
-          Have an idea, feedback, partnership opportunity, or want to learn more about our
+          Have an idea, feedback, or want to learn more about our
           products?
-        </p>
-        <p className="mx-auto mt-6 max-w-xl rounded-2xl border border-line bg-surface p-5 text-sm text-ink-soft">
-          <span className="block font-semibold text-ink">For schools, employers, tour agencies and shops</span>
-          Reach people coming to Japan by listing on JapanOne. There is no charge to list during our launch period.{" "}
-          <a href="https://japanone.app/partners" className="font-semibold text-ink underline">Become a partner →</a>
-          <span className="mt-3 block" lang="ja">
-            学校・求人・ツアー・商品の掲載をご希望の事業者さまは、JapanOneのパートナーページからご登録いただくか、メールでお気軽にご連絡ください。
-          </span>
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
